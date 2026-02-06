@@ -1,5 +1,5 @@
 ---
-name: sentiment-reality-gap-cn
+name: sentiment-reality-gap
 description: 识别A股市场中被过度看空但基本面稳健的逆向投资机会。当用户询问逆向投资、超跌反弹、市场错误定价、情绪与基本面背离、被市场误解的公司、负面情绪过度反应、或者寻找"市场错杀"机会时使用此技能。
 license: Apache-2.0
 ---

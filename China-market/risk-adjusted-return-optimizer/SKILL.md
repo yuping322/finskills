@@ -1,5 +1,5 @@
 ---
-name: risk-adjusted-return-optimizer-cn
+name: risk-adjusted-return-optimizer
 description: 为中国投资者构建风险调整后收益最优的A股投资组合，根据资金规模、风险偏好和投资期限进行资产配置。当用户询问构建投资组合、资产配置、A股组合优化、仓位管理、再平衡策略，或要求根据特定金额和风险偏好提供组合构建建议时使用此技能。
 license: Apache-2.0
 ---

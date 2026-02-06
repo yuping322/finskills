@@ -1,5 +1,5 @@
 ---
-name: esg-screener-cn
+name: esg-screener
 description: 从ESG（环境、社会、治理）视角筛选和分析A股上市公司，评估可持续发展实践、争议事件和负责任投资标准。当用户询问ESG投资、可持续投资、社会责任投资、绿色投资、碳足迹分析、公司治理评估、争议事件筛查、排除清单，或对公司或组合进行ESG评分时使用此技能。
 license: Apache-2.0
 ---

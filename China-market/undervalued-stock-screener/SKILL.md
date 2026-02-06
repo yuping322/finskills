@@ -1,5 +1,5 @@
 ---
-name: undervalued-stock-screener-cn
+name: undervalued-stock-screener
 description: 扫描A股市场，筛选基本面强劲但市值被低估的上市公司。当用户询问低估值股票、价值投资筛选、A股便宜股票、低PE或低PB公司、基本面强但被低估的公司、或要求运行估值筛选器时使用此技能。
 license: Apache-2.0
 ---

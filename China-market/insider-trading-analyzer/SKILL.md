@@ -1,5 +1,5 @@
 ---
-name: insider-trading-analyzer-cn
+name: insider-trading-analyzer
 description: 分析A股市场董监高及重要股东增减持行为，识别具有显著管理层信心信号的公司。当用户询问董监高增持、大股东买入、内部人交易分析、管理层增持信号、股东增减持动态时使用此技能。
 license: Apache-2.0
 ---

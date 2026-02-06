@@ -1,5 +1,5 @@
 ---
-name: sector-rotation-detector-cn
+name: sector-rotation-detector
 description: 通过分析中国宏观经济指标和经济周期定位，识别A股市场行业轮动信号，判断未来6–12个月哪些行业可能跑赢或跑输大盘。当用户询问行业轮动、宏观驱动的板块配置、经济周期投资、超配或低配哪些行业、利率/通胀对行业的影响、或A股宏观投资策略时使用此技能。
 license: Apache-2.0
 ---

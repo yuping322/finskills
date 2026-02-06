@@ -1,5 +1,5 @@
 ---
-name: portfolio-health-check-cn
+name: portfolio-health-check
 description: 诊断现有投资组合的风险和低效问题。当用户要求审查、审计或压力测试其当前持仓，评估组合集中度，检查因子暴露，评估相关性风险，识别隐性偏移，或获取其已有组合的改进建议时使用此技能。
 license: Apache-2.0
 ---

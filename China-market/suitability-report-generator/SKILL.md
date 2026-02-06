@@ -1,5 +1,5 @@
 ---
-name: suitability-report-generator-cn
+name: suitability-report-generator
 description: 生成机构级投资适当性报告，包括投资理由、风险披露和客户适当性评估。当用户要求记录投资决策、创建合规报告、生成风险披露文件、准备面向客户的投资理由说明、撰写适当性评估报告，或为投资建议或组合出具信义义务文档时使用此技能。
 license: Apache-2.0
 ---
