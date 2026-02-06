@@ -185,7 +185,7 @@ def fetch_pmi() -> dict:
                 "series": records,
             }
     except Exception as e:
-        result["pmi"] = {"error": str(e)}
+        result["manufacturing_pmi"] = {"error": str(e)}
 
     return result
 
