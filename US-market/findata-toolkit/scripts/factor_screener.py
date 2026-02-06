@@ -108,18 +108,12 @@ def _percentile_rank(values: list[float | None], higher_is_better: bool = True) 
 
     indices, vals = zip(*valid)
     sorted_vals = sorted(vals, reverse=not higher_is_better)
-
-    # Build average ranks for tied values
-    from collections import defaultdict
-    positions = defaultdict(list)
-    for pos, v in enumerate(sorted_vals):
-        positions[v].append(pos)
-    avg_ranks = {v: sum(ps) / len(ps) for v, ps in positions.items()}
+    ranks = {v: r for r, v in enumerate(sorted_vals)}
 
     result = [None] * len(values)
     n = len(valid)
     for idx, val in zip(indices, vals):
-        rank = avg_ranks[val]
+        rank = sorted_vals.index(val)
         result[idx] = round((1 - rank / max(n - 1, 1)) * 100, 2)
 
     return result
