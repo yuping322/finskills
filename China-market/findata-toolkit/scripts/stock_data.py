@@ -392,7 +392,9 @@ def screen_stocks(symbols: list[str], filters: dict | None = None) -> dict:
 
             reasons = []
             pe = (m.get("valuation") or {}).get("pe_ttm")
-            if pe is not None and (pe <= 0 or pe > defaults["max_pe"]):
+            if pe is not None and pe <= 0:
+                reasons.append(f"PE {pe:.1f} 无效（为零或负值，通常表示亏损）")
+            elif pe is not None and pe > defaults["max_pe"]:
                 reasons.append(f"PE {pe:.1f} > {defaults['max_pe']:.1f}")
 
             pb = (m.get("valuation") or {}).get("pb")
