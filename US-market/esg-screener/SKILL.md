@@ -99,21 +99,9 @@ Format per [references/output-template.md](references/output-template.md):
 7. **Individual Company Cards** — Detailed ESG profile per company
 8. **Disclaimers**
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can support ESG analysis:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/stock_data.py --metrics` | Financial metrics for ESG-financial integration | `python stock_data.py MSFT --metrics` |
-| `us_market/factor_screener.py` | Multi-factor screening (quality + ESG overlay) | `python factor_screener.py --universe "..." --factors quality` |
-| `us_market/financial_calc.py --quality` | Governance-linked earnings quality | `python financial_calc.py MSFT --quality` |
-
-**No API keys required** — all scripts use free data sources (yfinance).
-
-Note: ESG ratings data (MSCI, Sustainalytics) is not freely available via API. The scripts provide financial fundamentals that complement ESG analysis.
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 

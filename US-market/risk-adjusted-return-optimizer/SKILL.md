@@ -102,20 +102,9 @@ Present using the structured format in [references/output-template.md](reference
 8. **Implementation Guide** — Order of operations for funding the portfolio
 9. **Disclaimers**
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can be used for portfolio construction:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/portfolio_analytics.py` | Portfolio health score, risk metrics, stress test | `python portfolio_analytics.py --holdings "AAPL:30,MSFT:25,BND:30,GLD:15"` |
-| `us_market/portfolio_analytics.py --risk` | VaR, CVaR, Sharpe, Sortino, beta | `python portfolio_analytics.py --holdings "..." --risk --benchmark SPY` |
-| `us_market/macro_data.py --cycle` | Business cycle for tactical allocation | `python macro_data.py --cycle` |
-| `us_market/stock_data.py --history` | Historical price data for correlation | `python stock_data.py SPY BND GLD --history` |
-
-**No API keys required** — all scripts use free data sources (yfinance, FRED).
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 

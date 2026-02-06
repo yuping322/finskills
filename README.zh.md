@@ -8,15 +8,18 @@
 
 ## 概述
 
-FinSkills 提供 28 个专业技能（14 个美股技能，14 个 A 股技能），旨在通过系统化、数据驱动的分析帮助投资者和分析师做出明智决策。每个技能遵循一致的架构，采用渐进式加载设计以优化上下文使用。
+FinSkills 提供 30 个专业技能（15 个美股技能，15 个 A 股技能），旨在通过系统化、数据驱动的分析帮助投资者和分析师做出明智决策。每个技能遵循一致的架构，采用渐进式加载设计以优化上下文使用。
 
-技能按三个分析层次组织：
+技能按三个分析层次及数据工具层组织：
 
 | 层次 | 技能 | 目的 |
 |------|------|------|
 | **发现与筛选** | 低估值筛选、董监高分析、情绪偏差、小盘成长、量化因子、ESG筛选 | 寻找投资候选 |
 | **深度分析** | 高股息策略、科技估值、行业轮动、财务报表分析、事件驱动 | 评估特定机会 |
 | **组合与文档** | 收益优化器、组合健康诊断、适当性报告 | 构建、监控和记录 |
+| **数据工具** | 金融数据工具包 | 实时市场数据获取和定量计算 |
+
+每个分析技能可以借助**金融数据工具包**——一个提供实时市场数据和定量计算的伴生技能。当分析技能需要真实数据时，它会按名称引用工具包；LLM 在上下文中同时看到两个技能，会自动调用工具包。
 
 ## 相关项目
 
@@ -40,7 +43,19 @@ finskills/
 │   ├── financial-statement-analyzer/   # 财务深度分析
 │   ├── event-driven-detector/          # 特殊情况
 │   ├── quant-factor-screener/          # 多因子筛选
-│   └── esg-screener/                   # ESG分析
+│   ├── esg-screener/                   # ESG分析
+│   └── findata-toolkit/               # 📦 数据工具包（脚本 + 配置）
+│       ├── SKILL.md                   # 工具包技能定义
+│       ├── requirements.txt           # Python 依赖
+│       ├── config/data_sources.yaml   # 数据源配置
+│       └── scripts/                   # 自包含脚本
+│           ├── common/               # 共享工具
+│           ├── stock_data.py         # yfinance: 行情、指标、筛选
+│           ├── sec_edgar.py          # SEC文件与内部交易
+│           ├── financial_calc.py     # 杜邦、Z/M/F评分
+│           ├── portfolio_analytics.py # VaR、压力测试、健康评分
+│           ├── factor_screener.py    # 多因子打分引擎
+│           └── macro_data.py         # FRED宏观指标
 ├── China-market/                       # A股市场技能（中文）
 │   ├── undervalued-stock-screener/
 │   ├── insider-trading-analyzer/
@@ -55,23 +70,15 @@ finskills/
 │   ├── financial-statement-analyzer/   # 财务深度分析
 │   ├── event-driven-detector/          # 事件驱动
 │   ├── quant-factor-screener/          # 量化因子
-│   └── esg-screener/                   # ESG筛选
-├── scripts/                            # 数据获取与计算脚本
-│   ├── common/                        # 共享工具（配置、输出助手）
-│   ├── us_market/                     # 美股脚本（yfinance, SEC EDGAR, FRED）
-│   │   ├── stock_data.py             # 股票指标、筛选、行情
-│   │   ├── sec_edgar.py              # SEC文件与内部交易
-│   │   ├── financial_calc.py         # 杜邦、Z/M/F评分、盈利质量
-│   │   ├── portfolio_analytics.py    # 组合风险、VaR、压力测试
-│   │   ├── factor_screener.py        # 多因子打分引擎
-│   │   └── macro_data.py             # FRED宏观指标
-│   ├── china_market/                  # A股脚本（AKShare）
-│   │   ├── stock_data.py             # A股数据、董监高、北向资金
-│   │   └── macro_data.py             # 中国宏观（LPR、PMI、CPI、M2）
-│   ├── requirements.txt              # Python依赖
-│   └── setup.sh                       # 一键安装
-├── config/
-│   └── data_sources.yaml             # 数据源配置
+│   ├── esg-screener/                   # ESG筛选
+│   └── findata-toolkit/               # 📦 数据工具包（脚本 + 配置）
+│       ├── SKILL.md                   # 工具包技能定义
+│       ├── requirements.txt           # Python 依赖
+│       ├── config/data_sources.yaml   # 数据源配置
+│       └── scripts/                   # 自包含脚本
+│           ├── common/               # 共享工具
+│           ├── stock_data.py         # AKShare: 行情、指标、筛选
+│           └── macro_data.py         # 宏观数据（LPR、PMI、CPI、M2）
 ├── README.md                           # 英文版本
 └── README.zh.md                        # 本文件（中文版本）
 ```
@@ -96,6 +103,7 @@ finskills/
 | 12 | **Event-Driven Detector** | 公司事件定价偏差：并购套利、分拆、回购、重组、指数调整 | [US-market/event-driven-detector/](US-market/event-driven-detector/) |
 | 13 | **Quant Factor Screener** | 系统化多因子筛选（价值、动量、质量、低波、规模、成长），含因子择时和拥挤度分析 | [US-market/quant-factor-screener/](US-market/quant-factor-screener/) |
 | 14 | **ESG Screener** | ESG评分、争议筛查、碳分析、治理质量、负责任投资整合 | [US-market/esg-screener/](US-market/esg-screener/) |
+| 15 | **FinData Toolkit** 📦 | 美股实时数据：股票指标（yfinance）、SEC文件（EDGAR）、财务计算器、组合分析、因子筛选、宏观指标（FRED）。无需API密钥。 | [US-market/findata-toolkit/](US-market/findata-toolkit/) |
 
 ### China-market（A 股 · 中文）
 
@@ -115,6 +123,7 @@ finskills/
 | 12 | **事件驱动机会识别器** | A股公司事件分析：资产注入、国企改革、分拆上市、回购增持、指数调整、限售股解禁 | [China-market/event-driven-detector/](China-market/event-driven-detector/) |
 | 13 | **量化因子筛选器** | A股多因子筛选，含中国特色因子（换手率、北向资金），基于PMI/社融数据的因子择时 | [China-market/quant-factor-screener/](China-market/quant-factor-screener/) |
 | 14 | **ESG筛选器** | 中国特色ESG分析：双碳目标、共同富裕框架、证监会ESG披露要求 | [China-market/esg-screener/](China-market/esg-screener/) |
+| 15 | **金融数据工具包** 📦 | A股实时数据：行情指标（AKShare）、董监高增减持、北向资金、宏观数据（LPR、PMI、CPI、M2）。无需API密钥。 | [China-market/findata-toolkit/](China-market/findata-toolkit/) |
 
 ## 技能架构
 
@@ -128,6 +137,31 @@ skill-name/
     └── output-template.md          # 报告模板：结构化输出格式
 ```
 
+### 工具包技能
+
+工具包技能封装可执行脚本和数据获取工具。它们是**自包含的**——每个工具包包含自己的 `requirements.txt`、配置和脚本：
+
+```
+findata-toolkit/
+├── SKILL.md                        # 工具描述和使用示例
+├── requirements.txt                # Python 依赖（pip install -r）
+├── config/data_sources.yaml        # 数据源配置
+├── LICENSE.txt
+└── scripts/
+    ├── common/                    # 共享工具（配置、输出助手）
+    ├── stock_data.py              # 股票指标、筛选、行情
+    ├── financial_calc.py          # 杜邦、Z/M/F评分、盈利质量
+    └── ...                        # 其他领域脚本
+```
+
+### 分析技能如何使用工具包
+
+分析技能（如*低估值股票筛选器*）在其 `SKILL.md` 中按名称引用工具包：
+
+> 如需实时市场数据支撑分析，请使用**金融数据工具包**技能（`findata-toolkit-cn`）。
+
+LLM 在系统提示中同时看到两个技能。当分析技能需要实时数据时，LLM 识别工具包引用并自动调用其脚本。无需特殊连线——耦合通过技能描述中的**自然语言**实现。
+
 ### 渐进式加载（Progressive Disclosure）
 
 - **始终在上下文中**：仅 `SKILL.md` 的 YAML frontmatter（`name`、`description`），用于判断是否触发
@@ -135,6 +169,17 @@ skill-name/
 - **按需加载**：`references/` 目录下的详细方法论和模板 — 仅在执行分析时读取
 
 这种设计确保在不需要时节省上下文窗口，在需要时提供完整的分析框架。
+
+## 数据来源
+
+所有主要数据源**免费**，**无需API密钥**：
+
+| 来源 | 市场 | API密钥 | 提供内容 |
+|------|------|---------|----------|
+| **yfinance** | 美股 | 无需 | 股票报价、财务数据、历史行情、分析师数据 |
+| **SEC EDGAR** | 美股 | 无需 | 内部交易（Form 4）、公司文件（10-K, 10-Q） |
+| **FRED** | 美股 | 无需 | 宏观指标（利率、CPI、GDP、就业） |
+| **AKShare** | A股 | 无需 | A股数据、宏观指标、北向资金 |
 
 ## 市场差异化设计
 
@@ -195,70 +240,19 @@ China-market 技能并非简单翻译 US-market 版本，而是针对 A 股市�
 - *"用多因子模型帮我筛选A股"*
 - *"帮我找ESG评分最高的沪深300成分股"*
 
-## 脚本与工具
-
-FinSkills 包含 Python 脚本，可获取实时市场数据并执行量化计算。**所有主要数据源均免费，无需 API 密钥。**
-
-### 快速开始
-
-```bash
-cd finskills/scripts
-bash setup.sh            # 安装 Python 依赖
-```
-
-### 可用脚本
-
-| 脚本 | 市场 | 用途 | 关键功能 |
-|------|------|------|----------|
-| `us_market/stock_data.py` | 美股 | 股票指标、筛选、行情、财务报表 | P/E, ROIC, FCF, 分析师共识 |
-| `us_market/sec_edgar.py` | 美股 | SEC文件 & 内部交易（Form 4） | 内部人买入集群, CIK查询 |
-| `us_market/financial_calc.py` | 美股 | 财务报表计算器 | 杜邦（5因子）, Altman Z, Beneish M, Piotroski F, 盈利质量 |
-| `us_market/portfolio_analytics.py` | 美股 | 组合风险分析 | 集中度, 相关性, VaR/CVaR, 压力测试, 健康评分（0-100） |
-| `us_market/factor_screener.py` | 美股 | 多因子股票筛选 | 价值、动量、质量、低波、规模、成长 评分与排名 |
-| `us_market/macro_data.py` | 美股 | 宏观经济指标（FRED） | 利率, 通胀, GDP, 就业, 经济周期 |
-| `china_market/stock_data.py` | A股 | A股数据、董监高、北向资金 | 实时行情, 财务指标, 增减持, 北向资金 |
-| `china_market/macro_data.py` | A股 | 中国宏观指标 | LPR, CPI/PPI, PMI, 社融, M2, 经济周期 |
-
-### 数据来源
-
-| 来源 | 市场 | API密钥 | 提供内容 |
-|------|------|---------|----------|
-| **yfinance** | 美股 | 无需 | 股票报价、财务数据、历史行情、分析师数据 |
-| **SEC EDGAR** | 美股 | 无需 | 内部交易（Form 4）、公司文件（10-K, 10-Q） |
-| **FRED** | 美股 | 无需 | 宏观指标（利率、CPI、GDP、就业） |
-| **AKShare** | A股 | 无需 | A股数据、宏观指标、北向资金 |
-
-### 使用示例
-
-```bash
-# 美股：按基本面指标筛选
-python us_market/stock_data.py AAPL MSFT GOOGL --screen
-
-# 美股：全面财务分析（杜邦 + Z值 + M值 + F值）
-python us_market/financial_calc.py AAPL --all
-
-# 美股：组合健康检查与压力测试
-python us_market/portfolio_analytics.py --holdings "AAPL:30,MSFT:25,GOOGL:20,AMZN:15,META:10"
-
-# 美股：宏观仪表盘与经济周期判断
-python us_market/macro_data.py --cycle
-
-# A股：获取股票指标
-python china_market/stock_data.py 600519 --metrics
-
-# A股：董监高增减持
-python china_market/stock_data.py 600519 --insider
-
-# A股：宏观仪表盘
-python china_market/macro_data.py --dashboard
-```
-
 ## 安装与使用
 
 这些技能专为 Claude（Anthropic 的 AI 助手）设计。使用方法：
 
-1. **安装技能**：将技能目录放置在您的 Claude 技能目录中（通常为 `$CODEX_HOME/skills/` 或类似路径）
-2. **安装脚本依赖**：运行 `cd scripts && bash setup.sh` 安装 Python 数据获取依赖
+1. **安装技能**：将技能目录放置在您的 Claude 技能目录中（通常为 `$CODEX_HOME/skills/` 或类似路径）。每个技能自包含，可以单独安装。
+2. **安装工具包依赖**：如需实时数据能力，安装工具包的 Python 依赖：
+   ```bash
+   # 美股市场工具包
+   cd US-market/findata-toolkit && pip install -r requirements.txt
+
+   # A股市场工具包
+   cd China-market/findata-toolkit && pip install -r requirements.txt
+   ```
 3. **自然触发**：使用与技能描述匹配的自然语言查询
 4. **遵循工作流程**：每个技能将引导您完成其分析工作流程
 5. **查阅参考资料**：详细方法论可在 `references/` 子目录中找到
@@ -273,6 +267,7 @@ python china_market/macro_data.py --dashboard
 4. 提供结构化输出模板
 5. 添加适当的免责声明
 6. China-market 技能须针对 A 股市场特性全面重写（而非翻译）
+7. 保持技能自包含——所有资源必须位于技能目录内
 
 ## 免责声明
 

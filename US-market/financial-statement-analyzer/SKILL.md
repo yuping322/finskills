@@ -127,25 +127,9 @@ Compile findings per [references/output-template.md](references/output-template.
 9. **Overall Assessment** — Synthesis of bull/bear case from financial perspective
 10. **Disclaimers**
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can be used to fetch data and run calculations:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/financial_calc.py --all` | Run all analyses (DuPont, Z/M/F-Scores) | `python financial_calc.py AAPL --all` |
-| `us_market/financial_calc.py --dupont` | 5-factor DuPont decomposition | `python financial_calc.py AAPL --dupont` |
-| `us_market/financial_calc.py --zscore` | Altman Z-Score (bankruptcy risk) | `python financial_calc.py AAPL --zscore` |
-| `us_market/financial_calc.py --mscore` | Beneish M-Score (manipulation detection) | `python financial_calc.py AAPL --mscore` |
-| `us_market/financial_calc.py --fscore` | Piotroski F-Score (financial strength) | `python financial_calc.py AAPL --fscore` |
-| `us_market/financial_calc.py --quality` | Earnings quality assessment | `python financial_calc.py AAPL --quality` |
-| `us_market/financial_calc.py --working-capital` | Working capital & CCC analysis | `python financial_calc.py AAPL --working-capital` |
-| `us_market/stock_data.py --financials` | Raw financial statements | `python stock_data.py AAPL --financials` |
-| `us_market/sec_edgar.py filings` | SEC filings (10-K, 10-Q) | `python sec_edgar.py filings AAPL --form-type 10-K` |
-
-**No API keys required** — all scripts use free data sources (yfinance, SEC EDGAR).
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 

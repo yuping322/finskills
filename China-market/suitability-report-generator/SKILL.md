@@ -92,18 +92,9 @@ license: Apache-2.0
 5. **关键假设和局限** — 显式记录
 6. **监管免责声明** — 符合法规要求的措辞
 
-## 脚本与工具
+## 数据增强
 
-以下 `scripts/` 目录中的脚本可为适当性报告提供数据支持：
-
-| 脚本 | 用途 | 使用示例 |
-|------|------|----------|
-| `china_market/stock_data.py --metrics` | 获取投资标的指标 | `python stock_data.py 600519 --metrics` |
-| `china_market/stock_data.py --financials` | 获取财务报表 | `python stock_data.py 600519 --financials` |
-
-**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
-
-安装依赖：`pip install -r scripts/requirements.txt`
+如需实时市场数据支撑分析，请使用**金融数据工具包**技能（`findata-toolkit-cn`）。该工具包提供A股实时行情、财务指标、董监高增减持、北向资金、宏观数据等功能，所有数据源免费，无需API密钥。
 
 ## 重要注意事项
 

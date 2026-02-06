@@ -128,20 +128,9 @@ ROE = 税负系数 × 利息负担系数 × 营业利润率 × 资产周转率 �
 9. **综合评估** — 从财务视角的多空分析
 10. **免责声明**
 
-## 脚本与工具
+## 数据增强
 
-以下 `scripts/` 目录中的脚本可用于获取数据和执行计算：
-
-| 脚本 | 用途 | 使用示例 |
-|------|------|----------|
-| `china_market/stock_data.py --financials` | 获取三大报表 | `python stock_data.py 600519 --financials` |
-| `china_market/stock_data.py --metrics` | 获取财务指标 | `python stock_data.py 600519 --metrics` |
-
-**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
-
-注意：DuPont分解、Z-Score、M-Score等计算功能在 `us_market/financial_calc.py` 中实现，A股版本需要配合AKShare数据手动调整。
-
-安装依赖：`pip install -r scripts/requirements.txt`
+如需实时市场数据支撑分析，请使用**金融数据工具包**技能（`findata-toolkit-cn`）。该工具包提供A股实时行情、财务指标、董监高增减持、北向资金、宏观数据等功能，所有数据源免费，无需API密钥。
 
 ## 重要注意事项
 

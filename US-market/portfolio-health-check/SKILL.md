@@ -117,22 +117,9 @@ Synthesize findings into a health report. Format per [references/output-template
 5. **Improvement Actions** — Prioritized, specific recommendations with rationale
 6. **Rebalancing Suggestions** — Concrete trades to improve the portfolio
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can be used to perform live portfolio analysis:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/portfolio_analytics.py` | Full health score (0–100) | `python portfolio_analytics.py --holdings "AAPL:30,MSFT:25,GOOGL:20,AMZN:15,META:10"` |
-| `us_market/portfolio_analytics.py --concentration` | Concentration analysis only | `python portfolio_analytics.py --holdings "..." --concentration` |
-| `us_market/portfolio_analytics.py --correlation` | Correlation clusters & EDR | `python portfolio_analytics.py --holdings "..." --correlation` |
-| `us_market/portfolio_analytics.py --risk` | VaR, CVaR, Sharpe, Sortino, beta | `python portfolio_analytics.py --holdings "..." --risk` |
-| `us_market/portfolio_analytics.py --stress` | Historical stress testing | `python portfolio_analytics.py --holdings "..." --stress` |
-| `us_market/stock_data.py` | Supplementary stock metrics | `python stock_data.py AAPL --metrics` |
-
-**No API keys required** — all scripts use free data sources (yfinance).
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 

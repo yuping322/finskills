@@ -8,15 +8,18 @@ A comprehensive collection of Claude Skills for financial investment analysis, c
 
 ## Overview
 
-FinSkills provides 28 specialized skills (14 for US markets, 14 for A-share markets) designed to help investors and analysts make informed decisions through systematic, data-driven analysis. Each skill follows a consistent architecture with progressive disclosure to optimize context usage.
+FinSkills provides 30 specialized skills (15 for US markets, 15 for A-share markets) designed to help investors and analysts make informed decisions through systematic, data-driven analysis. Each skill follows a consistent architecture with progressive disclosure to optimize context usage.
 
-The skills are organized into three analytical tiers:
+The skills are organized into three analytical tiers plus a data toolkit tier:
 
 | Tier | Skills | Purpose |
 |------|--------|---------|
 | **Discovery & Screening** | Undervalued Stock Screener, Insider Trading Analyzer, Sentiment-Reality Gap, Small-Cap Growth Identifier, Quant Factor Screener, ESG Screener | Find investment candidates |
 | **Deep Analysis** | Dividend Aristocrat Calculator, Tech Hype vs Fundamentals, Sector Rotation Detector, Financial Statement Analyzer, Event-Driven Detector | Evaluate specific opportunities |
 | **Portfolio & Documentation** | Risk-Adjusted Return Optimizer, Portfolio Health Check, Suitability Report Generator | Construct, monitor, and document |
+| **Data Toolkit** | FinData Toolkit | Live market data fetching and quantitative calculations |
+
+Each analysis skill can leverage the **FinData Toolkit** — a companion skill that provides live market data and quantitative calculations. When an analysis skill needs real data, it references the toolkit by name; the LLM sees both skills in its context and knows to invoke the toolkit automatically.
 
 ## Related Projects
 
@@ -40,7 +43,19 @@ finskills/
 │   ├── financial-statement-analyzer/   # Financial deep dive
 │   ├── event-driven-detector/          # Special situations
 │   ├── quant-factor-screener/          # Multi-factor screening
-│   └── esg-screener/                   # ESG analysis
+│   ├── esg-screener/                   # ESG analysis
+│   └── findata-toolkit/               # 📦 Data toolkit (scripts + config)
+│       ├── SKILL.md                   # Toolkit skill definition
+│       ├── requirements.txt           # Python dependencies
+│       ├── config/data_sources.yaml   # Data source config
+│       └── scripts/                   # Self-contained scripts
+│           ├── common/               # Shared utilities
+│           ├── stock_data.py         # yfinance: quotes, metrics, screening
+│           ├── sec_edgar.py          # SEC filings & insider trades
+│           ├── financial_calc.py     # DuPont, Z/M/F-Score calculators
+│           ├── portfolio_analytics.py # VaR, stress testing, health score
+│           ├── factor_screener.py    # Multi-factor scoring engine
+│           └── macro_data.py         # FRED macro indicators
 ├── China-market/                       # A-Share Market Skills (Chinese)
 │   ├── undervalued-stock-screener/
 │   ├── insider-trading-analyzer/
@@ -55,25 +70,17 @@ finskills/
 │   ├── financial-statement-analyzer/   # 财务报表深度分析
 │   ├── event-driven-detector/          # 事件驱动机会
 │   ├── quant-factor-screener/          # 量化因子筛选
-│   └── esg-screener/                   # ESG筛选
-├── scripts/                            # Data Fetching & Calculation Scripts
-│   ├── common/                        # Shared utilities (config, output helpers)
-│   ├── us_market/                     # US market scripts (yfinance, SEC EDGAR, FRED)
-│   │   ├── stock_data.py             # Stock metrics, screening, history
-│   │   ├── sec_edgar.py              # SEC filings & insider trades
-│   │   ├── financial_calc.py         # DuPont, Z/M/F-Scores, earnings quality
-│   │   ├── portfolio_analytics.py    # Portfolio risk, VaR, stress testing
-│   │   ├── factor_screener.py        # Multi-factor scoring engine
-│   │   └── macro_data.py             # FRED macro indicators
-│   ├── china_market/                  # A-share market scripts (AKShare)
-│   │   ├── stock_data.py             # A-share data, insider trades, northbound
-│   │   └── macro_data.py             # China macro (LPR, PMI, CPI, M2)
-│   ├── requirements.txt              # Python dependencies
-│   └── setup.sh                       # One-command setup
-├── config/
-│   └── data_sources.yaml             # Data source configuration
+│   ├── esg-screener/                   # ESG筛选
+│   └── findata-toolkit/               # 📦 数据工具包（脚本 + 配置）
+│       ├── SKILL.md                   # 工具包技能定义
+│       ├── requirements.txt           # Python 依赖
+│       ├── config/data_sources.yaml   # 数据源配置
+│       └── scripts/                   # 自包含脚本
+│           ├── common/               # 共享工具
+│           ├── stock_data.py         # AKShare: 行情、指标、筛选
+│           └── macro_data.py         # 宏观数据（LPR、PMI、CPI、M2）
 ├── README.md                           # This file (English)
-└── README_CN.md                        # Chinese version
+└── README.zh.md                        # Chinese version
 ```
 
 ## Skills Overview
@@ -96,6 +103,7 @@ finskills/
 | 12 | **Event-Driven Detector** | Identify mispricing from corporate events: M&A arbitrage, spinoffs, buybacks, restructurings, index changes | [US-market/event-driven-detector/](US-market/event-driven-detector/) |
 | 13 | **Quant Factor Screener** | Systematic multi-factor screening (value, momentum, quality, low-vol, size, growth) with factor timing and crowding analysis | [US-market/quant-factor-screener/](US-market/quant-factor-screener/) |
 | 14 | **ESG Screener** | ESG scoring, controversy screening, carbon analysis, governance quality, and responsible investing integration | [US-market/esg-screener/](US-market/esg-screener/) |
+| 15 | **FinData Toolkit** 📦 | Live US market data: stock metrics (yfinance), SEC filings (EDGAR), financial calculators, portfolio analytics, factor screening, macro indicators (FRED). No API keys required. | [US-market/findata-toolkit/](US-market/findata-toolkit/) |
 
 ### China-market (A-Shares · Chinese)
 
@@ -115,6 +123,7 @@ finskills/
 | 12 | **事件驱动机会识别器** | Analyze A-share corporate events: asset injections, SOE reform, share buyback programs, spin-offs, index rebalancing, lock-up expirations | [China-market/event-driven-detector/](China-market/event-driven-detector/) |
 | 13 | **量化因子筛选器** | Multi-factor A-share screening with China-specific factors (turnover rate, northbound capital), factor timing via PMI/social financing data | [China-market/quant-factor-screener/](China-market/quant-factor-screener/) |
 | 14 | **ESG筛选器** | ESG analysis with Chinese characteristics: dual-carbon goals, common prosperity framework, CSRC ESG disclosure requirements | [China-market/esg-screener/](China-market/esg-screener/) |
+| 15 | **金融数据工具包** 📦 | A股实时数据：行情指标（AKShare）、董监高增减持、北向资金、宏观数据（LPR、PMI、CPI、M2）。无需API密钥。 | [China-market/findata-toolkit/](China-market/findata-toolkit/) |
 
 ## Skill Architecture
 
@@ -128,6 +137,31 @@ skill-name/
     └── output-template.md          # Report template: Structured output format
 ```
 
+### Toolkit Skills
+
+Toolkit skills bundle executable scripts and data-fetching utilities. They are **self-contained** — each toolkit includes its own `requirements.txt`, config, and scripts:
+
+```
+findata-toolkit/
+├── SKILL.md                        # Tool descriptions and usage examples
+├── requirements.txt                # Python dependencies (pip install -r)
+├── config/data_sources.yaml        # Data source configuration
+├── LICENSE.txt
+└── scripts/
+    ├── common/                    # Shared utilities (config, output helpers)
+    ├── stock_data.py              # Stock metrics, screening, history
+    ├── financial_calc.py          # DuPont, Z/M/F-Scores, earnings quality
+    └── ...                        # Additional domain scripts
+```
+
+### How Analysis Skills Use Toolkits
+
+Analysis skills (e.g., *Undervalued Stock Screener*) reference the toolkit by name in their `SKILL.md`:
+
+> For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`).
+
+The LLM sees both skills in its system prompt. When the analysis skill requires live data, the LLM recognizes the toolkit reference and invokes its scripts automatically. No special wiring is needed — the coupling is through **natural language** in the skill descriptions.
+
 ### Progressive Disclosure Design
 
 - **Always in context**: Only the YAML frontmatter (`name`, `description`) from `SKILL.md` is used for trigger detection
@@ -135,6 +169,17 @@ skill-name/
 - **Loaded on demand**: Files in `references/` directory — detailed methodologies and templates loaded only when executing analysis
 
 This design optimizes context window usage while providing complete analytical frameworks when needed.
+
+## Data Sources
+
+All primary data sources are **free** and require **no API keys**:
+
+| Source | Market | API Key | What It Provides |
+|--------|--------|---------|------------------|
+| **yfinance** | US | None | Stock quotes, financials, history, analyst data |
+| **SEC EDGAR** | US | None | Insider trades (Form 4), company filings (10-K, 10-Q) |
+| **FRED** | US | None | Macro indicators (rates, CPI, GDP, employment) |
+| **AKShare** | A-share | None | A-share data, macro indicators, northbound flow |
 
 ## Market-Specific Design
 
@@ -195,70 +240,19 @@ China-market skills are not simple translations of US-market versions. They are 
 - *"用多因子模型帮我筛选A股"*
 - *"帮我找ESG评分最高的沪深300成分股"*
 
-## Scripts & Tools
-
-FinSkills includes Python scripts that fetch live market data and perform quantitative calculations. **All primary data sources are free and require NO API keys.**
-
-### Quick Start
-
-```bash
-cd finskills/scripts
-bash setup.sh            # Install Python dependencies
-```
-
-### Available Scripts
-
-| Script | Market | Purpose | Key Functions |
-|--------|--------|---------|---------------|
-| `us_market/stock_data.py` | US | Stock metrics, screening, history, financials | P/E, ROIC, FCF, analyst consensus |
-| `us_market/sec_edgar.py` | US | SEC filings & insider trades (Form 4) | Insider buying clusters, CIK lookup |
-| `us_market/financial_calc.py` | US | Financial statement calculators | DuPont (5-factor), Altman Z-Score, Beneish M-Score, Piotroski F-Score, earnings quality, working capital |
-| `us_market/portfolio_analytics.py` | US | Portfolio risk analysis | Concentration, correlation, VaR/CVaR, stress testing, health score (0–100) |
-| `us_market/factor_screener.py` | US | Multi-factor stock screening | Value, momentum, quality, low-vol, size, growth scoring & ranking |
-| `us_market/macro_data.py` | US | Macro economic indicators (FRED) | Rates, inflation, GDP, employment, business cycle |
-| `china_market/stock_data.py` | A-share | A-share data, insider trades, northbound flow | 实时行情, 财务指标, 董监高增减持, 北向资金 |
-| `china_market/macro_data.py` | A-share | China macro indicators | LPR, CPI/PPI, PMI, 社融, M2, 经济周期 |
-
-### Data Sources
-
-| Source | Market | API Key | What It Provides |
-|--------|--------|---------|------------------|
-| **yfinance** | US | None | Stock quotes, financials, history, analyst data |
-| **SEC EDGAR** | US | None | Insider trades (Form 4), company filings (10-K, 10-Q) |
-| **FRED** | US | None | Macro indicators (rates, CPI, GDP, employment) |
-| **AKShare** | A-share | None | A-share data, macro indicators, northbound flow |
-
-### Example Usage
-
-```bash
-# US: Screen stocks by fundamental metrics
-python us_market/stock_data.py AAPL MSFT GOOGL --screen
-
-# US: Full financial analysis (DuPont + Z-Score + M-Score + F-Score)
-python us_market/financial_calc.py AAPL --all
-
-# US: Portfolio health check with stress testing
-python us_market/portfolio_analytics.py --holdings "AAPL:30,MSFT:25,GOOGL:20,AMZN:15,META:10"
-
-# US: Macro dashboard and business cycle assessment
-python us_market/macro_data.py --cycle
-
-# China: A-share stock metrics
-python china_market/stock_data.py 600519 --metrics
-
-# China: Insider trading data
-python china_market/stock_data.py 600519 --insider
-
-# China: Macro dashboard
-python china_market/macro_data.py --dashboard
-```
-
 ## Installation & Usage
 
 These skills are designed for Claude (Anthropic's AI assistant). To use them:
 
-1. **Install skills**: Place the skill directories in your Claude skills directory (typically `$CODEX_HOME/skills/` or similar)
-2. **Set up scripts**: Run `cd scripts && bash setup.sh` to install Python dependencies for live data
+1. **Install skills**: Place the skill directories in your Claude skills directory (typically `$CODEX_HOME/skills/` or similar). Each skill is self-contained and can be installed individually.
+2. **Install toolkit dependencies**: For live data capabilities, install the toolkit's Python dependencies:
+   ```bash
+   # US market toolkit
+   cd US-market/findata-toolkit && pip install -r requirements.txt
+
+   # China A-share market toolkit
+   cd China-market/findata-toolkit && pip install -r requirements.txt
+   ```
 3. **Trigger naturally**: Use natural language queries that match the skill descriptions
 4. **Follow workflows**: Each skill will guide you through its analysis workflow
 5. **Review references**: Detailed methodologies are available in `references/` subdirectories
@@ -273,6 +267,7 @@ Contributions are welcome! When adding new skills:
 4. Provide structured output templates
 5. Add appropriate disclaimers
 6. For China-market skills, fully rewrite (don't translate) for A-share market characteristics
+7. Keep skills self-contained — all resources must reside within the skill directory
 
 ## Disclaimer
 

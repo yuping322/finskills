@@ -1,5 +1,5 @@
 """
-FinSkills Shared Utilities
+FinData Toolkit Shared Utilities
 Common functions used across all scripts.
 """
 import json

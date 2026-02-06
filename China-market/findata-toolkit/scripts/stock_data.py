@@ -18,7 +18,7 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common.utils import output_json, safe_div, safe_float, error_exit
 
 

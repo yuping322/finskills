@@ -79,22 +79,9 @@ license: Apache-2.0
 6. **情景分析** — 失效触发条件与风险矩阵
 7. **风险提示**
 
-## 脚本与工具
+## 数据增强
 
-以下 `scripts/` 目录中的脚本可用于获取宏观数据：
-
-| 脚本 | 用途 | 使用示例 |
-|------|------|----------|
-| `china_market/macro_data.py --dashboard` | 全面宏观仪表盘 | `python macro_data.py --dashboard` |
-| `china_market/macro_data.py --rates` | LPR、Shibor等利率数据 | `python macro_data.py --rates` |
-| `china_market/macro_data.py --inflation` | CPI/PPI数据 | `python macro_data.py --inflation` |
-| `china_market/macro_data.py --pmi` | PMI制造业/非制造业 | `python macro_data.py --pmi` |
-| `china_market/macro_data.py --social-financing` | 社融规模和M2 | `python macro_data.py --social-financing` |
-| `china_market/macro_data.py --cycle` | 经济周期阶段判断 | `python macro_data.py --cycle` |
-
-**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
-
-安装依赖：`pip install -r scripts/requirements.txt`
+如需实时市场数据支撑分析，请使用**金融数据工具包**技能（`findata-toolkit-cn`）。该工具包提供A股实时行情、财务指标、董监高增减持、北向资金、宏观数据等功能，所有数据源免费，无需API密钥。
 
 ## 重要注意事项
 

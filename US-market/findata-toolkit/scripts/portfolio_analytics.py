@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 from datetime import datetime, timedelta
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common.utils import output_json, safe_div, safe_float, error_exit
 
 
@@ -188,6 +188,7 @@ def correlation_analysis(holdings: dict[str, float]) -> dict:
 
     # Effective Diversification Ratio
     weights = np.array([holdings.get(t, 0) / 100 for t in available])
+    weights = weights / weights.sum()  # renormalize after filtering
     vols = returns[available].std() * np.sqrt(252)
     weighted_vol_sum = np.sum(weights * vols.values)
     cov_matrix = returns[available].cov() * 252

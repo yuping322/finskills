@@ -1,5 +1,5 @@
 """
-FinSkills Configuration Manager
+FinData Toolkit Configuration Manager
 Load data source configuration and API keys.
 """
 import os
@@ -39,14 +39,6 @@ def get_config() -> dict:
                 "alpha_vantage_key": os.getenv("ALPHA_VANTAGE_API_KEY"),
             },
         },
-        "china_market": {
-            "primary": {
-                "stock_data": "akshare",
-            },
-            "optional": {
-                "tushare_token": os.getenv("TUSHARE_TOKEN"),
-            },
-        },
         "sec_edgar": {
             "user_agent": os.getenv(
                 "SEC_EDGAR_USER_AGENT", "FinSkills research@example.com"
@@ -55,7 +47,6 @@ def get_config() -> dict:
         "rate_limits": {
             "yahoo_finance": 2,
             "sec_edgar": 10,
-            "akshare": 5,
             "fred": 5,
         },
     }

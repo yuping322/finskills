@@ -91,20 +91,9 @@ Format per [references/output-template.md](references/output-template.md):
 7. **Risk Considerations** — Factor drawdown history and current risks
 8. **Disclaimers**
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can be used to perform live factor screening:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/factor_screener.py` | Multi-factor screening & scoring | `python factor_screener.py --sp500-sample --top 10` |
-| `us_market/factor_screener.py --factors` | Screen with specific factors | `python factor_screener.py --universe "AAPL,MSFT,GOOGL" --factors value,quality` |
-| `us_market/macro_data.py --cycle` | Business cycle phase detection | `python macro_data.py --cycle` |
-| `us_market/stock_data.py` | Supplementary stock metrics | `python stock_data.py AAPL --metrics` |
-
-**No API keys required** — all scripts use free data sources (yfinance, FRED).
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 

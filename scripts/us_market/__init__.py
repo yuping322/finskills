@@ -1,1 +1,0 @@
-# FinSkills US Market Scripts

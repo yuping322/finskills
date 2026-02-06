@@ -1,6 +1,5 @@
-# FinSkills Data Source Configuration
-# ====================================
-# Configure your preferred data sources and API keys here.
+# FinData Toolkit — US Market Data Source Configuration
+# ====================================================
 # All primary sources are free and require NO API key.
 
 us_market:
@@ -14,15 +13,6 @@ us_market:
   optional:
     alpha_vantage_key: "${ALPHA_VANTAGE_API_KEY}"
 
-china_market:
-  primary:
-    stock_data: "akshare"           # AKShare — free, no key
-
-  # Optional: register at https://tushare.pro/register
-  # export TUSHARE_TOKEN=your_token_here
-  optional:
-    tushare_token: "${TUSHARE_TOKEN}"
-
 # EDGAR requires a User-Agent header with your identity
 sec_edgar:
   user_agent: "FinSkills research@example.com"
@@ -31,5 +21,4 @@ sec_edgar:
 rate_limits:
   yahoo_finance: 2
   sec_edgar: 10
-  akshare: 5
   fred: 5

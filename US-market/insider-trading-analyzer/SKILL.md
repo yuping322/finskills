@@ -64,20 +64,9 @@ Present findings as a structured report:
 4. **Comparative Table** — Side-by-side insider buying metrics
 5. **Disclaimers** — Insider trading data interpretation caveats
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can be used to fetch live insider trading data:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/sec_edgar.py insider` | Fetch Form 4 insider trades | `python sec_edgar.py insider AAPL --days 90` |
-| `us_market/sec_edgar.py filings` | Fetch company filings (10-K, 10-Q) | `python sec_edgar.py filings AAPL --form-type 10-K` |
-| `us_market/sec_edgar.py cik` | Lookup CIK number | `python sec_edgar.py cik AAPL` |
-| `us_market/stock_data.py` | Supplementary stock metrics | `python stock_data.py AAPL --metrics` |
-
-**No API keys required** — uses SEC EDGAR public API (requires User-Agent header, pre-configured).
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 

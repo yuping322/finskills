@@ -1,1 +1,0 @@
-# FinSkills Common Utilities

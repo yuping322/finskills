@@ -1,19 +1,14 @@
-# FinSkills Script Dependencies
+# FinData Toolkit — US Market Dependencies
 # Install: pip install -r requirements.txt
 
 # === Core Data Fetching ===
 yfinance>=0.2.31          # US stock data (no API key)
-akshare>=1.12.0           # A-share data (no API key)
 pandas-datareader>=0.10.0 # FRED macro data (no API key)
 
 # === Data Processing ===
 pandas>=2.0.0
 numpy>=1.24.0
 scipy>=1.10.0
-
-# === Optional: Enhanced Data Sources (free API key) ===
-# alpha-vantage>=2.3.1    # Uncomment if you have an Alpha Vantage key
-# tushare>=1.4.0          # Uncomment if you have a Tushare token
 
 # === SEC EDGAR ===
 requests>=2.31.0          # HTTP client for EDGAR API

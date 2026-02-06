@@ -78,22 +78,9 @@ Present using the structured format in [references/output-template.md](reference
 6. **Risk Matrix** — Invalidation triggers and scenario analysis
 7. **Disclaimers**
 
-## Scripts & Tools
+## Data Enhancement
 
-The following scripts in `scripts/` can be used to fetch live macro data:
-
-| Script | Purpose | Usage Example |
-|--------|---------|---------------|
-| `us_market/macro_data.py --dashboard` | Full macro dashboard | `python macro_data.py --dashboard` |
-| `us_market/macro_data.py --rates` | Interest rates & yield curve | `python macro_data.py --rates` |
-| `us_market/macro_data.py --inflation` | CPI, PCE, breakeven inflation | `python macro_data.py --inflation` |
-| `us_market/macro_data.py --gdp` | GDP growth & leading indicators | `python macro_data.py --gdp` |
-| `us_market/macro_data.py --employment` | Employment data (NFP, claims, JOLTS) | `python macro_data.py --employment` |
-| `us_market/macro_data.py --cycle` | Business cycle phase assessment | `python macro_data.py --cycle` |
-
-**No API keys required** — all scripts use FRED (Federal Reserve Economic Data).
-
-Install dependencies: `pip install -r scripts/requirements.txt`
+For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
 
 ## Important Guidelines
 
