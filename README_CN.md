@@ -73,6 +73,7 @@ finskills/
 ```
 skill-name/
 ├── SKILL.md                        # 主文件：触发条件、工作流程、核心指引
+├── LICENSE.txt                     # Apache 2.0 许可证
 └── references/
     ├── xxx-methodology.md          # 详细方法论：计算公式、评分标准、行业基准
     └── output-template.md          # 报告模板：结构化输出格式
@@ -152,7 +153,7 @@ China-market 技能并非简单翻译 US-market 版本，而是针对 A 股市�
 
 ## 许可证
 
-[如适用，请指定许可证]
+Apache-2.0 — 详见 [LICENSE](LICENSE)。
 
 ---
 

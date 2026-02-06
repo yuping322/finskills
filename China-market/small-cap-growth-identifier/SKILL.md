@@ -1,6 +1,7 @@
 ---
 name: small-cap-growth-identifier-cn
 description: 识别A股市场中被忽视的小市值高成长公司。当用户询问小盘成长股、低市值高增长公司、被忽略的小盘股、专精特新企业、或要求筛选市值小但增长快的A股时使用此技能。
+license: Apache-2.0
 ---
 
 # 小盘成长股发现器

@@ -1,6 +1,7 @@
 ---
 name: insider-trading-analyzer
 description: Analyze insider trading patterns to surface companies with significant, meaningful insider buying activity. Use when the user asks to review insider trading activity, find stocks insiders are buying, analyze SEC Form 4 filings, detect insider buying clusters, assess management confidence through insider purchases, or identify bullish insider signals in a sector or industry.
+license: Apache-2.0
 ---
 
 # Insider Trading Pattern Analyzer

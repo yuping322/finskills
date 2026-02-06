@@ -1,6 +1,7 @@
 ---
 name: tech-hype-vs-fundamentals
 description: Compare leading tech stocks to distinguish hype-driven overvaluation from fundamentally justified pricing, and identify undervalued tech names the market is overlooking. Use when the user asks to evaluate tech stock valuations, find overvalued or undervalued tech companies, assess whether a tech stock's growth justifies its multiple, compare tech company fundamentals, analyze revenue growth vs. valuation, or identify mispriced technology stocks.
+license: Apache-2.0
 ---
 
 # Tech Stock Hype vs Fundamentals Analyzer

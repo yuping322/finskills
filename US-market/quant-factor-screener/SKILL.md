@@ -1,6 +1,7 @@
 ---
 name: quant-factor-screener
 description: Systematic multi-factor stock screening using formal factor models to identify stocks with favorable factor exposures. Use when the user asks about factor investing, multi-factor screening, value/momentum/quality factor analysis, factor scoring, factor timing, smart beta strategies, quantitative stock screening, or systematic equity selection based on academic factors.
+license: Apache-2.0
 ---
 
 # Quantitative Factor Screener

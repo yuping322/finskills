@@ -1,6 +1,7 @@
 ---
 name: risk-adjusted-return-optimizer
 description: Build diversified portfolios optimized for risk-adjusted returns based on user-specified portfolio size, risk tolerance, and time horizon. Use when the user asks to build a portfolio, construct an asset allocation, optimize risk-adjusted returns, create a diversified investment plan, determine position sizing, design a rebalancing strategy, or requests portfolio construction advice for a specific dollar amount and risk profile.
+license: Apache-2.0
 ---
 
 # Risk-Adjusted Return Optimizer

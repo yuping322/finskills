@@ -1,6 +1,7 @@
 ---
 name: event-driven-detector
 description: Identify and analyze corporate events that create mispricing opportunities, including M&A, spinoffs, buybacks, restructurings, and index changes. Use when the user asks about merger arbitrage, spinoff opportunities, share buyback analysis, corporate restructuring plays, index rebalancing trades, special situations investing, or event-driven strategies.
+license: Apache-2.0
 ---
 
 # Event-Driven Opportunity Detector

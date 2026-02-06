@@ -1,6 +1,7 @@
 ---
 name: portfolio-health-check
 description: Diagnose risks and inefficiencies in an existing investment portfolio. Use when the user asks to review, audit, or stress-test their current holdings, evaluate portfolio concentration, check factor exposures, assess correlation risks, identify hidden tilts, or get actionable improvement suggestions for a portfolio they already own.
+license: Apache-2.0
 ---
 
 # Portfolio Health Check

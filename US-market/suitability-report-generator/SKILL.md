@@ -1,6 +1,7 @@
 ---
 name: suitability-report-generator
 description: Generate institutional-grade investment suitability reports including rationale, risk disclosure, and client suitability assessment. Use when the user asks to document investment decisions, create compliance reports, generate risk disclosures, prepare client-facing investment justifications, write suitability assessments, or produce fiduciary documentation for an investment recommendation or portfolio.
+license: Apache-2.0
 ---
 
 # Investment Suitability Report Generator

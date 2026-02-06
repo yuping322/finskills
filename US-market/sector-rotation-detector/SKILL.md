@@ -1,6 +1,7 @@
 ---
 name: sector-rotation-detector
 description: Detect sector rotation signals by analyzing macroeconomic indicators and business cycle positioning to identify which sectors are likely to outperform or underperform over the next 6–12 months. Use when the user asks about sector rotation, macro-driven sector allocation, business cycle investing, which sectors to overweight or underweight, interest rate impact on sectors, inflation plays, or macro investment strategy.
+license: Apache-2.0
 ---
 
 # Sector Rotation Signal Detector

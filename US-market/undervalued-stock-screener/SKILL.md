@@ -1,6 +1,7 @@
 ---
 name: undervalued-stock-screener
 description: Screen and identify undervalued stocks with strong fundamentals using professional equity research methodology. Use when the user asks to find undervalued stocks, screen for cheap or bargain stocks, identify value investing opportunities, perform fundamental stock analysis, find stocks trading below intrinsic value, or requests a stock screener based on financial metrics like P/E ratio, debt-to-equity, free cash flow, or ROIC.
+license: Apache-2.0
 ---
 
 # Undervalued Stock Screener

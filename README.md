@@ -73,6 +73,7 @@ Each skill follows a consistent three-layer architecture:
 ```
 skill-name/
 ├── SKILL.md                        # Main file: Trigger conditions, workflow, core guidance
+├── LICENSE.txt                     # Apache 2.0 license
 └── references/
     ├── xxx-methodology.md          # Detailed methodology: Formulas, scoring criteria, industry benchmarks
     └── output-template.md          # Report template: Structured output format
@@ -152,7 +153,7 @@ Contributions are welcome! When adding new skills:
 
 ## License
 
-[Specify license if applicable]
+Apache-2.0 — See [LICENSE](LICENSE) for details.
 
 ---
 

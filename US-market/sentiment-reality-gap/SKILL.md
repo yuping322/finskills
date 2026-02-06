@@ -1,6 +1,7 @@
 ---
 name: sentiment-reality-gap
 description: Identify stocks where market sentiment is significantly more negative than fundamentals warrant — the gap between narrative and reality. Use when the user asks to find contrarian opportunities, stocks with sentiment-fundamental misalignment, oversold but fundamentally strong companies, stocks punished by negative narratives, or wants to analyze whether market fear is justified for specific stocks or sectors.
+license: Apache-2.0
 ---
 
 # Market Sentiment vs Reality Gap Analyzer
