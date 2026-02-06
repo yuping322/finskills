@@ -2,9 +2,15 @@
 
 A comprehensive collection of Claude Skills for financial investment analysis, covering both US and China A-share markets, providing end-to-end analytical capabilities from value screening to portfolio construction.
 
+> 💡 **Explore More Skills**: FinSkills is part of the broader [OpenSkills](https://github.com/Geeksfino/openskills.git) ecosystem — a comprehensive collection of open-source Claude Skills covering diverse domains and use cases. Check it out for more specialized AI capabilities!
+
 ## Overview
 
 FinSkills provides 16 specialized skills (8 for US markets, 8 for A-share markets) designed to help investors and analysts make informed decisions through systematic, data-driven analysis. Each skill follows a consistent architecture with progressive disclosure to optimize context usage.
+
+## Related Projects
+
+**OpenSkills** — A comprehensive collection of open-source Claude Skills covering diverse domains and use cases. If you're interested in exploring more skills beyond financial analysis, check out the [OpenSkills repository](https://github.com/Geeksfino/openskills.git) for a wide range of specialized AI capabilities and workflows.
 
 ## Directory Structure
 

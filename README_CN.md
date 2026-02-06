@@ -2,9 +2,15 @@
 
 一套面向金融投资分析的 Claude Skills 集合，覆盖美股和 A 股两大市场，提供从价值筛选到组合构建的全流程分析能力。
 
+> 💡 **探索更多技能**：FinSkills 是更广泛的 [OpenSkills](https://github.com/Geeksfino/openskills.git) 生态系统的一部分——一个涵盖多个领域和用例的全面开源 Claude Skills 集合。欢迎访问以了解更多专业化的 AI 能力！
+
 ## 概述
 
 FinSkills 提供 16 个专业技能（8 个美股技能，8 个 A 股技能），旨在通过系统化、数据驱动的分析帮助投资者和分析师做出明智决策。每个技能遵循一致的架构，采用渐进式加载设计以优化上下文使用。
+
+## 相关项目
+
+**OpenSkills** — 一个全面的开源 Claude Skills 集合，涵盖多个领域和用例。如果您想探索除金融分析之外的更多技能，请访问 [OpenSkills 仓库](https://github.com/Geeksfino/openskills.git)，了解各种专业化的 AI 能力和工作流程。
 
 ## 目录结构
 
