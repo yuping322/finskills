@@ -1,6 +1,6 @@
 # FinSkills — 金融分析技能集
 
-[English](README.md) | [中文](README_CN.md)
+[English](README.md) | [中文](README.zh.md)
 
 一套面向金融投资分析的 Claude Skills 集合，覆盖美股和 A 股两大市场，提供从价值筛选到组合构建、风险诊断和机构级文档的全流程分析能力。
 
@@ -56,8 +56,24 @@ finskills/
 │   ├── event-driven-detector/          # 事件驱动
 │   ├── quant-factor-screener/          # 量化因子
 │   └── esg-screener/                   # ESG筛选
+├── scripts/                            # 数据获取与计算脚本
+│   ├── common/                        # 共享工具（配置、输出助手）
+│   ├── us_market/                     # 美股脚本（yfinance, SEC EDGAR, FRED）
+│   │   ├── stock_data.py             # 股票指标、筛选、行情
+│   │   ├── sec_edgar.py              # SEC文件与内部交易
+│   │   ├── financial_calc.py         # 杜邦、Z/M/F评分、盈利质量
+│   │   ├── portfolio_analytics.py    # 组合风险、VaR、压力测试
+│   │   ├── factor_screener.py        # 多因子打分引擎
+│   │   └── macro_data.py             # FRED宏观指标
+│   ├── china_market/                  # A股脚本（AKShare）
+│   │   ├── stock_data.py             # A股数据、董监高、北向资金
+│   │   └── macro_data.py             # 中国宏观（LPR、PMI、CPI、M2）
+│   ├── requirements.txt              # Python依赖
+│   └── setup.sh                       # 一键安装
+├── config/
+│   └── data_sources.yaml             # 数据源配置
 ├── README.md                           # 英文版本
-└── README_CN.md                        # 本文件（中文版本）
+└── README.zh.md                        # 本文件（中文版本）
 ```
 
 ## 技能一览
@@ -179,14 +195,73 @@ China-market 技能并非简单翻译 US-market 版本，而是针对 A 股市�
 - *"用多因子模型帮我筛选A股"*
 - *"帮我找ESG评分最高的沪深300成分股"*
 
+## 脚本与工具
+
+FinSkills 包含 Python 脚本，可获取实时市场数据并执行量化计算。**所有主要数据源均免费，无需 API 密钥。**
+
+### 快速开始
+
+```bash
+cd finskills/scripts
+bash setup.sh            # 安装 Python 依赖
+```
+
+### 可用脚本
+
+| 脚本 | 市场 | 用途 | 关键功能 |
+|------|------|------|----------|
+| `us_market/stock_data.py` | 美股 | 股票指标、筛选、行情、财务报表 | P/E, ROIC, FCF, 分析师共识 |
+| `us_market/sec_edgar.py` | 美股 | SEC文件 & 内部交易（Form 4） | 内部人买入集群, CIK查询 |
+| `us_market/financial_calc.py` | 美股 | 财务报表计算器 | 杜邦（5因子）, Altman Z, Beneish M, Piotroski F, 盈利质量 |
+| `us_market/portfolio_analytics.py` | 美股 | 组合风险分析 | 集中度, 相关性, VaR/CVaR, 压力测试, 健康评分（0-100） |
+| `us_market/factor_screener.py` | 美股 | 多因子股票筛选 | 价值、动量、质量、低波、规模、成长 评分与排名 |
+| `us_market/macro_data.py` | 美股 | 宏观经济指标（FRED） | 利率, 通胀, GDP, 就业, 经济周期 |
+| `china_market/stock_data.py` | A股 | A股数据、董监高、北向资金 | 实时行情, 财务指标, 增减持, 北向资金 |
+| `china_market/macro_data.py` | A股 | 中国宏观指标 | LPR, CPI/PPI, PMI, 社融, M2, 经济周期 |
+
+### 数据来源
+
+| 来源 | 市场 | API密钥 | 提供内容 |
+|------|------|---------|----------|
+| **yfinance** | 美股 | 无需 | 股票报价、财务数据、历史行情、分析师数据 |
+| **SEC EDGAR** | 美股 | 无需 | 内部交易（Form 4）、公司文件（10-K, 10-Q） |
+| **FRED** | 美股 | 无需 | 宏观指标（利率、CPI、GDP、就业） |
+| **AKShare** | A股 | 无需 | A股数据、宏观指标、北向资金 |
+
+### 使用示例
+
+```bash
+# 美股：按基本面指标筛选
+python us_market/stock_data.py AAPL MSFT GOOGL --screen
+
+# 美股：全面财务分析（杜邦 + Z值 + M值 + F值）
+python us_market/financial_calc.py AAPL --all
+
+# 美股：组合健康检查与压力测试
+python us_market/portfolio_analytics.py --holdings "AAPL:30,MSFT:25,GOOGL:20,AMZN:15,META:10"
+
+# 美股：宏观仪表盘与经济周期判断
+python us_market/macro_data.py --cycle
+
+# A股：获取股票指标
+python china_market/stock_data.py 600519 --metrics
+
+# A股：董监高增减持
+python china_market/stock_data.py 600519 --insider
+
+# A股：宏观仪表盘
+python china_market/macro_data.py --dashboard
+```
+
 ## 安装与使用
 
 这些技能专为 Claude（Anthropic 的 AI 助手）设计。使用方法：
 
 1. **安装技能**：将技能目录放置在您的 Claude 技能目录中（通常为 `$CODEX_HOME/skills/` 或类似路径）
-2. **自然触发**：使用与技能描述匹配的自然语言查询
-3. **遵循工作流程**：每个技能将引导您完成其分析工作流程
-4. **查阅参考资料**：详细方法论可在 `references/` 子目录中找到
+2. **安装脚本依赖**：运行 `cd scripts && bash setup.sh` 安装 Python 数据获取依赖
+3. **自然触发**：使用与技能描述匹配的自然语言查询
+4. **遵循工作流程**：每个技能将引导您完成其分析工作流程
+5. **查阅参考资料**：详细方法论可在 `references/` 子目录中找到
 
 ## 贡献指南
 

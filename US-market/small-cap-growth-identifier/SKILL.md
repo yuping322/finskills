@@ -69,6 +69,21 @@ Present using the structured format in [references/output-template.md](reference
 4. **Comparative Table** — Side-by-side metrics
 5. **Disclaimers** — Emphasizing small-cap liquidity and volatility risks
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used to fetch live data:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/stock_data.py --metrics` | Full financial metrics for screening | `python stock_data.py SYMBOL --metrics` |
+| `us_market/stock_data.py --screen` | Batch screen against value filters | `python stock_data.py TICKER1 TICKER2 ... --screen` |
+| `us_market/sec_edgar.py insider` | Insider ownership via Form 4 | `python sec_edgar.py insider SYMBOL --days 180` |
+| `us_market/financial_calc.py --fscore` | Piotroski F-Score | `python financial_calc.py SYMBOL --fscore` |
+
+**No API keys required** — all scripts use free data sources (yfinance, SEC EDGAR).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Survivorship bias**: Most small caps fail or stagnate. The goal is to find the exceptional few — maintain a high bar.

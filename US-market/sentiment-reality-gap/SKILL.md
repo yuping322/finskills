@@ -81,6 +81,21 @@ Present as a structured report:
 4. **Comparative Table** — Side-by-side gap analysis
 5. **Disclaimers**
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used to fetch live data:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/stock_data.py --metrics` | Fundamental metrics to validate strength | `python stock_data.py INTC --metrics` |
+| `us_market/stock_data.py --history` | Price history (identify drawdowns) | `python stock_data.py INTC --history --period 1y` |
+| `us_market/financial_calc.py --quality` | Earnings quality assessment | `python financial_calc.py INTC --quality` |
+| `us_market/financial_calc.py --fscore` | Piotroski F-Score (financial strength) | `python financial_calc.py INTC --fscore` |
+
+**No API keys required** — all scripts use free data sources (yfinance).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Intellectual honesty**: Being contrarian for its own sake is not the goal. Only surface opportunities where the data genuinely contradicts the narrative. If sentiment is negative *and warranted*, say so.

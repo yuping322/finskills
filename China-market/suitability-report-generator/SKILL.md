@@ -92,6 +92,19 @@ license: Apache-2.0
 5. **关键假设和局限** — 显式记录
 6. **监管免责声明** — 符合法规要求的措辞
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可为适当性报告提供数据支持：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取投资标的指标 | `python stock_data.py 600519 --metrics` |
+| `china_market/stock_data.py --financials` | 获取财务报表 | `python stock_data.py 600519 --financials` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **清晰优先**：为客户而非合规官员撰写。先用通俗语言，必要时再使用专业术语。

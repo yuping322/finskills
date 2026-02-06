@@ -115,6 +115,21 @@ license: Apache-2.0
 5. **改进建议** — 按优先级排列的具体建议及理由
 6. **调仓方案** — 具体的改进交易建议
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于组合风险分析：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取持仓指标 | `python stock_data.py 600519 000858 --metrics` |
+| `china_market/stock_data.py --history` | 获取历史行情（相关性分析） | `python stock_data.py 600519 --history` |
+| `china_market/stock_data.py --northbound` | 北向资金流向分析 | `python stock_data.py --northbound` |
+| `china_market/macro_data.py --cycle` | 经济周期判断 | `python macro_data.py --cycle` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **诊断而非重建**：本技能评估现有组合。如需从零构建新组合，请使用风险调整收益优化器。

@@ -60,6 +60,20 @@ license: Apache-2.0
 | 正自由现金流 | 确认盈利质量 | 高应收账款/存货的公司需警惕 |
 | 高ROE/ROIC | 确认资本效率 | 关注杜邦分析，区分高杠杆驱动vs真实盈利能力 |
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取实时数据和执行计算：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py` | 获取A股基本信息和财务指标 | `python stock_data.py 600519 --metrics` |
+| `china_market/stock_data.py --screen` | 批量筛选A股 | `python stock_data.py 600519 000858 --screen` |
+| `china_market/stock_data.py --history` | 获取历史行情 | `python stock_data.py 600519 --history` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **A股估值中枢偏高**：A股历史估值中枢高于美股等成熟市场（部分因审批制/注册制初期供给不足），因此使用行业相对估值法更为适用。

@@ -102,6 +102,21 @@ Present using the structured format in [references/output-template.md](reference
 8. **Implementation Guide** — Order of operations for funding the portfolio
 9. **Disclaimers**
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used for portfolio construction:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/portfolio_analytics.py` | Portfolio health score, risk metrics, stress test | `python portfolio_analytics.py --holdings "AAPL:30,MSFT:25,BND:30,GLD:15"` |
+| `us_market/portfolio_analytics.py --risk` | VaR, CVaR, Sharpe, Sortino, beta | `python portfolio_analytics.py --holdings "..." --risk --benchmark SPY` |
+| `us_market/macro_data.py --cycle` | Business cycle for tactical allocation | `python macro_data.py --cycle` |
+| `us_market/stock_data.py --history` | Historical price data for correlation | `python stock_data.py SPY BND GLD --history` |
+
+**No API keys required** — all scripts use free data sources (yfinance, FRED).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Risk tolerance means different things**: Ask clarifying questions — "aggressive" to a 25-year-old with $50K is different from "aggressive" to a 60-year-old with $50K. Time horizon, income needs, and loss tolerance all matter.

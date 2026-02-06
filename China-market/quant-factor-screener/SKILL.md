@@ -91,6 +91,20 @@ license: Apache-2.0
 7. **风险提示** — 因子回撤历史和当前风险
 8. **免责声明**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于因子筛选：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取估值和基本面数据 | `python stock_data.py 600519 --metrics` |
+| `china_market/stock_data.py --history` | 获取行情数据（动量因子） | `python stock_data.py 600519 --history` |
+| `china_market/macro_data.py --cycle` | 经济周期判断（因子择时） | `python macro_data.py --cycle` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **因子不是万能的**：因子有长期跑输的时候。A股的价值因子在2019–2020年严重跑输。动量因子会周期性崩溃。设定合理预期。

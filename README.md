@@ -1,6 +1,6 @@
 # FinSkills — Financial Analysis Skills Collection
 
-[English](README.md) | [中文](README_CN.md)
+[English](README.md) | [中文](README.zh.md)
 
 A comprehensive collection of Claude Skills for financial investment analysis, covering both US and China A-share markets, providing end-to-end analytical capabilities from value screening to portfolio construction, risk diagnostics, and institutional-grade documentation.
 
@@ -56,6 +56,22 @@ finskills/
 │   ├── event-driven-detector/          # 事件驱动机会
 │   ├── quant-factor-screener/          # 量化因子筛选
 │   └── esg-screener/                   # ESG筛选
+├── scripts/                            # Data Fetching & Calculation Scripts
+│   ├── common/                        # Shared utilities (config, output helpers)
+│   ├── us_market/                     # US market scripts (yfinance, SEC EDGAR, FRED)
+│   │   ├── stock_data.py             # Stock metrics, screening, history
+│   │   ├── sec_edgar.py              # SEC filings & insider trades
+│   │   ├── financial_calc.py         # DuPont, Z/M/F-Scores, earnings quality
+│   │   ├── portfolio_analytics.py    # Portfolio risk, VaR, stress testing
+│   │   ├── factor_screener.py        # Multi-factor scoring engine
+│   │   └── macro_data.py             # FRED macro indicators
+│   ├── china_market/                  # A-share market scripts (AKShare)
+│   │   ├── stock_data.py             # A-share data, insider trades, northbound
+│   │   └── macro_data.py             # China macro (LPR, PMI, CPI, M2)
+│   ├── requirements.txt              # Python dependencies
+│   └── setup.sh                       # One-command setup
+├── config/
+│   └── data_sources.yaml             # Data source configuration
 ├── README.md                           # This file (English)
 └── README_CN.md                        # Chinese version
 ```
@@ -179,14 +195,73 @@ China-market skills are not simple translations of US-market versions. They are 
 - *"用多因子模型帮我筛选A股"*
 - *"帮我找ESG评分最高的沪深300成分股"*
 
+## Scripts & Tools
+
+FinSkills includes Python scripts that fetch live market data and perform quantitative calculations. **All primary data sources are free and require NO API keys.**
+
+### Quick Start
+
+```bash
+cd finskills/scripts
+bash setup.sh            # Install Python dependencies
+```
+
+### Available Scripts
+
+| Script | Market | Purpose | Key Functions |
+|--------|--------|---------|---------------|
+| `us_market/stock_data.py` | US | Stock metrics, screening, history, financials | P/E, ROIC, FCF, analyst consensus |
+| `us_market/sec_edgar.py` | US | SEC filings & insider trades (Form 4) | Insider buying clusters, CIK lookup |
+| `us_market/financial_calc.py` | US | Financial statement calculators | DuPont (5-factor), Altman Z-Score, Beneish M-Score, Piotroski F-Score, earnings quality, working capital |
+| `us_market/portfolio_analytics.py` | US | Portfolio risk analysis | Concentration, correlation, VaR/CVaR, stress testing, health score (0–100) |
+| `us_market/factor_screener.py` | US | Multi-factor stock screening | Value, momentum, quality, low-vol, size, growth scoring & ranking |
+| `us_market/macro_data.py` | US | Macro economic indicators (FRED) | Rates, inflation, GDP, employment, business cycle |
+| `china_market/stock_data.py` | A-share | A-share data, insider trades, northbound flow | 实时行情, 财务指标, 董监高增减持, 北向资金 |
+| `china_market/macro_data.py` | A-share | China macro indicators | LPR, CPI/PPI, PMI, 社融, M2, 经济周期 |
+
+### Data Sources
+
+| Source | Market | API Key | What It Provides |
+|--------|--------|---------|------------------|
+| **yfinance** | US | None | Stock quotes, financials, history, analyst data |
+| **SEC EDGAR** | US | None | Insider trades (Form 4), company filings (10-K, 10-Q) |
+| **FRED** | US | None | Macro indicators (rates, CPI, GDP, employment) |
+| **AKShare** | A-share | None | A-share data, macro indicators, northbound flow |
+
+### Example Usage
+
+```bash
+# US: Screen stocks by fundamental metrics
+python us_market/stock_data.py AAPL MSFT GOOGL --screen
+
+# US: Full financial analysis (DuPont + Z-Score + M-Score + F-Score)
+python us_market/financial_calc.py AAPL --all
+
+# US: Portfolio health check with stress testing
+python us_market/portfolio_analytics.py --holdings "AAPL:30,MSFT:25,GOOGL:20,AMZN:15,META:10"
+
+# US: Macro dashboard and business cycle assessment
+python us_market/macro_data.py --cycle
+
+# China: A-share stock metrics
+python china_market/stock_data.py 600519 --metrics
+
+# China: Insider trading data
+python china_market/stock_data.py 600519 --insider
+
+# China: Macro dashboard
+python china_market/macro_data.py --dashboard
+```
+
 ## Installation & Usage
 
 These skills are designed for Claude (Anthropic's AI assistant). To use them:
 
 1. **Install skills**: Place the skill directories in your Claude skills directory (typically `$CODEX_HOME/skills/` or similar)
-2. **Trigger naturally**: Use natural language queries that match the skill descriptions
-3. **Follow workflows**: Each skill will guide you through its analysis workflow
-4. **Review references**: Detailed methodologies are available in `references/` subdirectories
+2. **Set up scripts**: Run `cd scripts && bash setup.sh` to install Python dependencies for live data
+3. **Trigger naturally**: Use natural language queries that match the skill descriptions
+4. **Follow workflows**: Each skill will guide you through its analysis workflow
+5. **Review references**: Detailed methodologies are available in `references/` subdirectories
 
 ## Contributing
 

@@ -71,6 +71,19 @@ license: Apache-2.0
 5. **收入测算** — 假设10万元投资的未来分红收入预测
 6. **风险提示**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取红利数据：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取股息率、派息比例、FCF等 | `python stock_data.py 601988 600036 --metrics` |
+| `china_market/stock_data.py --history` | 获取历史行情（复利计算） | `python stock_data.py 601988 --history --period 5y` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **A股分红特点**：多数公司每年仅分红一次（年报后），少数半年分红。与美股季度分红习惯不同。

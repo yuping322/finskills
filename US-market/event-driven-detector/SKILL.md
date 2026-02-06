@@ -71,6 +71,21 @@ Rank opportunities by risk-adjusted return. Present per [references/output-templ
 4. **Historical Comparables** — Similar past events and outcomes
 5. **Disclaimers**
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used to support event-driven analysis:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/sec_edgar.py filings` | Fetch SEC filings (8-K, SC 13D, S-4) | `python sec_edgar.py filings SYMBOL --form-type 8-K` |
+| `us_market/stock_data.py --metrics` | Financial metrics for valuation | `python stock_data.py SYMBOL --metrics` |
+| `us_market/stock_data.py --history` | Price history around event dates | `python stock_data.py SYMBOL --history --period 6mo` |
+| `us_market/financial_calc.py --all` | Full financial analysis for targets | `python financial_calc.py SYMBOL --all` |
+
+**No API keys required** — all scripts use free data sources (yfinance, SEC EDGAR).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Event-driven ≠ risk-free**: Every event has failure/reversal risk. Always quantify the downside scenario.

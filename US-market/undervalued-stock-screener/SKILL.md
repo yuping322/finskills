@@ -56,6 +56,20 @@ Present findings in a structured report:
 4. **Comparative Table** — Side-by-side metrics for all identified stocks
 5. **Disclaimers** — Standard investment research disclaimers
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used to fetch live data and perform calculations:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/stock_data.py` | Fetch stock metrics, screen by filters | `python stock_data.py AAPL MSFT --screen` |
+| `us_market/stock_data.py --metrics` | Full financial metrics for a stock | `python stock_data.py AAPL --metrics` |
+| `us_market/financial_calc.py` | DuPont, Z-Score, M-Score, F-Score | `python financial_calc.py AAPL --all` |
+
+**No API keys required** — all scripts use free data sources (yfinance, SEC EDGAR).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Data currency**: Always state the date/period of data used. Acknowledge any data limitations.

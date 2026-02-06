@@ -58,6 +58,20 @@ license: Apache-2.0
 
 以结构化报告呈现，格式参见 [references/output-template.md](references/output-template.md)。
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取小盘股数据：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取财务指标 | `python stock_data.py 300XXX --metrics` |
+| `china_market/stock_data.py --screen` | 批量筛选 | `python stock_data.py CODE1 CODE2 --screen` |
+| `china_market/stock_data.py --insider` | 董监高增减持 | `python stock_data.py 300XXX --insider` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **A股小盘的定义不同于美股**：20亿美元约等于140亿元人民币。A股200亿元以下的公司可能在美股标准下属于micro-cap。

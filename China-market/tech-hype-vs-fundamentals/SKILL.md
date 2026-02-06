@@ -66,6 +66,19 @@ license: Apache-2.0
 
 以结构化报告呈现，格式参见 [references/output-template.md](references/output-template.md)。
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取实时数据：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取科技股财务指标 | `python stock_data.py 002415 300750 --metrics` |
+| `china_market/stock_data.py --financials` | 获取财务报表 | `python stock_data.py 002415 --financials` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **A股科技估值的政策溢价**：国产替代/自主可控逻辑使得A股科技公司享有政策溢价（相比海外同行）。这部分溢价有合理性，不应简单视为泡沫。

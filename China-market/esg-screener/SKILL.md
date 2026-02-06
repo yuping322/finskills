@@ -98,6 +98,21 @@ license: Apache-2.0
 7. **个别公司卡片** — 每家公司的详细ESG画像
 8. **免责声明**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可支持ESG分析：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取基本面指标（ESG-财务整合） | `python stock_data.py 600519 --metrics` |
+| `china_market/stock_data.py --financials` | 获取财务报表 | `python stock_data.py 600519 --financials` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+注意：A股ESG评级数据（中证ESG、华证ESG、Wind ESG）暂无免费API，脚本提供基本面财务数据以辅助ESG分析。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **ESG ≠ 公益**：负责任投资不需要牺牲回报。将ESG呈现为风险管理和质量筛选框架。

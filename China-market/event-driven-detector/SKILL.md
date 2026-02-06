@@ -72,6 +72,19 @@ license: Apache-2.0
 4. **历史可比** — 类似过往事件及结果
 5. **免责声明**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于支持事件驱动分析：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取标的估值数据 | `python stock_data.py 600519 --metrics` |
+| `china_market/stock_data.py --history` | 获取事件前后行情 | `python stock_data.py 600519 --history --period 6m` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **事件驱动 ≠ 无风险**：每个事件都有失败/反转风险。始终量化下行情景。

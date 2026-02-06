@@ -66,6 +66,20 @@ license: Apache-2.0
 4. **对比表** — 多家公司增持数据横向对比
 5. **风险提示**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取董监高交易数据：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --insider` | 获取董监高增减持数据 | `python stock_data.py 600519 --insider` |
+| `china_market/stock_data.py --metrics` | 获取股票财务指标 | `python stock_data.py 600519 --metrics` |
+| `china_market/stock_data.py --northbound` | 北向资金流向 | `python stock_data.py --northbound` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **合规交易**：本分析涉及的是依法依规公开披露的董监高增减持行为，非违法内幕交易。

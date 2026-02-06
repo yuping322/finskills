@@ -94,6 +94,20 @@ license: Apache-2.0
 8. **实施指南** — 建仓顺序
 9. **风险提示**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于组合构建：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取候选标的指标 | `python stock_data.py 600519 000858 --metrics` |
+| `china_market/stock_data.py --history` | 获取历史行情计算相关性 | `python stock_data.py 600519 --history` |
+| `china_market/macro_data.py --cycle` | 经济周期判断（战术配置） | `python macro_data.py --cycle` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **A股无资本利得税**：个人投资者股票交易免征资本利得税，这使得频繁再平衡的税负成本很低（仅印花税0.05%和佣金）。

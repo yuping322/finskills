@@ -78,6 +78,23 @@ Present using the structured format in [references/output-template.md](reference
 6. **Risk Matrix** — Invalidation triggers and scenario analysis
 7. **Disclaimers**
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used to fetch live macro data:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/macro_data.py --dashboard` | Full macro dashboard | `python macro_data.py --dashboard` |
+| `us_market/macro_data.py --rates` | Interest rates & yield curve | `python macro_data.py --rates` |
+| `us_market/macro_data.py --inflation` | CPI, PCE, breakeven inflation | `python macro_data.py --inflation` |
+| `us_market/macro_data.py --gdp` | GDP growth & leading indicators | `python macro_data.py --gdp` |
+| `us_market/macro_data.py --employment` | Employment data (NFP, claims, JOLTS) | `python macro_data.py --employment` |
+| `us_market/macro_data.py --cycle` | Business cycle phase assessment | `python macro_data.py --cycle` |
+
+**No API keys required** — all scripts use FRED (Federal Reserve Economic Data).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Humility about macro**: Macro forecasting is notoriously difficult. Express all views in probabilistic terms, never certainties.

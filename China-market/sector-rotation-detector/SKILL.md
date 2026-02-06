@@ -79,6 +79,23 @@ license: Apache-2.0
 6. **情景分析** — 失效触发条件与风险矩阵
 7. **风险提示**
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取宏观数据：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/macro_data.py --dashboard` | 全面宏观仪表盘 | `python macro_data.py --dashboard` |
+| `china_market/macro_data.py --rates` | LPR、Shibor等利率数据 | `python macro_data.py --rates` |
+| `china_market/macro_data.py --inflation` | CPI/PPI数据 | `python macro_data.py --inflation` |
+| `china_market/macro_data.py --pmi` | PMI制造业/非制造业 | `python macro_data.py --pmi` |
+| `china_market/macro_data.py --social-financing` | 社融规模和M2 | `python macro_data.py --social-financing` |
+| `china_market/macro_data.py --cycle` | 经济周期阶段判断 | `python macro_data.py --cycle` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **对宏观预测保持谦逊**：宏观预测难度极高，所有观点以概率形式表达，不做确定性判断。

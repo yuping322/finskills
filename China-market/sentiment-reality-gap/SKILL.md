@@ -68,6 +68,20 @@ license: Apache-2.0
 
 以**情绪-基本面偏差**排名（情绪越差+基本面越好 = 排名越高）。报告格式参见 [references/output-template.md](references/output-template.md)。
 
+## 脚本与工具
+
+以下 `scripts/` 目录中的脚本可用于获取基本面数据验证：
+
+| 脚本 | 用途 | 使用示例 |
+|------|------|----------|
+| `china_market/stock_data.py --metrics` | 获取基本面指标 | `python stock_data.py 601012 --metrics` |
+| `china_market/stock_data.py --history` | 获取历史行情（识别回撤） | `python stock_data.py 601012 --history` |
+| `china_market/stock_data.py --financials` | 获取财务报表 | `python stock_data.py 601012 --financials` |
+
+**无需API密钥** — 所有脚本使用免费数据源（AKShare）。
+
+安装依赖：`pip install -r scripts/requirements.txt`
+
 ## 重要注意事项
 
 - **智识诚实**：不为逆向而逆向。如果分析表明"低估是合理的"，坦诚指出。

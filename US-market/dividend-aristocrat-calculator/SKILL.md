@@ -73,6 +73,20 @@ Present using the structured report format in [references/output-template.md](re
 5. **Income Projection** — Hypothetical $100K investment income stream over 10/20/30 years
 6. **Disclaimers**
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can be used to fetch live data:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/stock_data.py --metrics` | Fetch dividend yield, payout ratio, FCF | `python stock_data.py JNJ PG KO --metrics` |
+| `us_market/stock_data.py --history` | 10-year price history for DRIP calculations | `python stock_data.py JNJ --history --period 10y` |
+| `us_market/financial_calc.py --fscore` | Piotroski F-Score (financial strength) | `python financial_calc.py JNJ --fscore` |
+
+**No API keys required** — all scripts use free data sources (yfinance).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **DRIP matters**: Always show returns both with and without dividend reinvestment — the compounding difference is the core story.

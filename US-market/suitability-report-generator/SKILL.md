@@ -92,6 +92,21 @@ Compile into a structured report per [references/output-template.md](references/
 5. **Key Assumptions and Limitations** — Explicit documentation
 6. **Regulatory Disclaimers** — Jurisdiction-appropriate language
 
+## Scripts & Tools
+
+The following scripts in `scripts/` can produce data for suitability reports:
+
+| Script | Purpose | Usage Example |
+|--------|---------|---------------|
+| `us_market/portfolio_analytics.py` | Portfolio risk metrics for risk disclosure | `python portfolio_analytics.py --holdings "..." --risk` |
+| `us_market/portfolio_analytics.py --stress` | Stress testing for scenario analysis | `python portfolio_analytics.py --holdings "..." --stress` |
+| `us_market/stock_data.py --metrics` | Metrics for investment rationale | `python stock_data.py AAPL --metrics` |
+| `us_market/financial_calc.py --all` | Financial quality indicators | `python financial_calc.py AAPL --all` |
+
+**No API keys required** — all scripts use free data sources (yfinance).
+
+Install dependencies: `pip install -r scripts/requirements.txt`
+
 ## Important Guidelines
 
 - **Clarity over jargon**: Write for the client, not for compliance officers. Use plain language first, then technical terms where necessary.
