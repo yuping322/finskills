@@ -1,0 +1,81 @@
+{
+  "name": "stock_main_stock_holder",
+  "kind": "tool_view",
+  "description": "新浪财经-股本股东-主要股东",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "stock": {
+        "type": "string",
+        "description": "stock=\"600004\"; 股票代码"
+      }
+    },
+    "required": [
+      "stock"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_main_stock_holder",
+      "description": "新浪财经-股本股东-主要股东",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "stock": {
+            "type": "string",
+            "description": "stock=\"600004\"; 股票代码"
+          }
+        },
+        "required": [
+          "stock"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取所有历史数据",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vCI_StockHolder/stockid/600004.phtml",
+      "output": {
+        "编号": {
+          "type": "string",
+          "description": "-"
+        },
+        "持股数量": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "持股比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "股本性质": {
+          "type": "string",
+          "description": "-"
+        },
+        "截至日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "股东说明": {
+          "type": "string",
+          "description": "-"
+        },
+        "股东总数": {
+          "type": "number",
+          "description": "-"
+        },
+        "平均持股数": {
+          "type": "number",
+          "description": "备注: 按总股本计算"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_main_stock_holder_df = ak.stock_main_stock_holder(stock=\"600004\")\nprint(stock_main_stock_holder_df)",
+        "data": "数据示例\n\n```\n      编号                股东名称          持股数量  ...  股东说明      股东总数     平均持股数\n0      1          上海国际集团有限公司  6.331323e+09  ...   NaN  164613.0  178312.0\n1      2      中国移动通信集团广东有限公司  5.334893e+09  ...   NaN  164613.0  178312.0\n2      3   富德生命人寿保险股份有限公司-传统  2.779437e+09  ...   NaN  164613.0  178312.0\n3      4  富德生命人寿保险股份有限公司-资本金  1.763232e+09  ...   NaN  164613.0  178312.0\n4      5       上海上国投资产管理有限公司  1.395571e+09  ...   NaN  164613.0  178312.0\n...   ..                 ...           ...  ...   ...       ...       ...\n1383   6        东方国际（集团）有限公司  5.000000e+07  ...   NaN       NaN       NaN\n1384   7            申能股份有限公司  5.000000e+07  ...   NaN       NaN       NaN\n1385   8    上海外高桥保税区开发股份有限公司  4.000000e+07  ...   NaN       NaN       NaN\n1386   9      上海市城市建设投资开发总公司  3.800000e+07  ...   NaN       NaN       NaN\n1387  10          中国华北电力集团公司  3.000000e+07  ...   NaN       NaN       NaN\n[1388 rows x 10 columns]"
+      }
+    }
+  }
+}

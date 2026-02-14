@@ -1,0 +1,67 @@
+{
+  "name": "limit_up_pool_daily",
+  "kind": "custom_view",
+  "description": "涨停池/强势股池聚合：涨停股池、昨日涨停、强势股、次新、炸板、跌停等（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "zt_pool",
+      "tool": "stock_zt_pool_em",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "zt_pool_previous",
+      "tool": "stock_zt_pool_previous_em",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "zt_pool_strong",
+      "tool": "stock_zt_pool_strong_em",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "zt_pool_sub_new",
+      "tool": "stock_zt_pool_sub_new_em",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "zt_pool_zbgc",
+      "tool": "stock_zt_pool_zbgc_em",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "zt_pool_dtgc",
+      "tool": "stock_zt_pool_dtgc_em",
+      "args": {
+        "date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_zt_pool_em",
+    "stock_zt_pool_previous_em",
+    "stock_zt_pool_strong_em",
+    "stock_zt_pool_sub_new_em",
+    "stock_zt_pool_zbgc_em",
+    "stock_zt_pool_dtgc_em"
+  ]
+}

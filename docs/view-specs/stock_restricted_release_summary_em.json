@@ -1,0 +1,97 @@
+{
+  "name": "stock_restricted_release_summary_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-限售股解禁",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"全部股票\"; choice of {\"全部股票\", \"沪市A股\", \"科创板\", \"深市A股\", \"创业板\", \"京市A股\"}"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20221101\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20221209\""
+      }
+    },
+    "required": [
+      "symbol",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_restricted_release_summary_em",
+      "description": "东方财富网-数据中心-特色数据-限售股解禁",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"全部股票\"; choice of {\"全部股票\", \"沪市A股\", \"科创板\", \"深市A股\", \"创业板\", \"京市A股\"}"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20221101\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20221209\""
+          }
+        },
+        "required": [
+          "symbol",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 在近期限售股解禁数据",
+      "url": "https://data.eastmoney.com/dxf/marketStatistics.html?type=day&startdate=2022-11-08&enddate=2022-12-19",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "解禁时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "当日解禁股票家数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "解禁数量": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "实际解禁数量": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "实际解禁市值": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "沪深300指数": {
+          "type": "number",
+          "description": "-"
+        },
+        "沪深300指数涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_restricted_release_summary_em_df = ak.stock_restricted_release_summary_em(symbol=\"全部股票\", start_date=\"20221108\", end_date=\"20221209\")\nprint(stock_restricted_release_summary_em_df)",
+        "data": "数据示例\n\n```\n    序号        解禁时间  当日解禁股票家数  ...        实际解禁市值    沪深300指数  沪深300指数涨跌幅\n0    1  2022-11-08        15  ...  1.172407e+10  3749.3251     -0.6879\n1    2  2022-11-09        10  ...  2.572546e+09  3714.2704     -0.9350\n2    3  2022-11-10        15  ...  9.329462e+09  3685.6885     -0.7695\n3    4  2022-11-11        17  ...  4.912280e+09  3788.4387      2.7878\n4    5  2022-11-14        15  ...  2.318019e+10  3794.0171      0.1472\n5    6  2022-11-15        14  ...  1.714207e+10  3865.9726      1.8966\n6    7  2022-11-16        12  ...  1.209874e+10  3834.3899     -0.8169\n7    8  2022-11-17        11  ...  4.802956e+09  3818.6640     -0.4101\n8    9  2022-11-18        22  ...  8.274363e+10  3801.5686     -0.4477\n9   10  2022-11-21        20  ...  1.283129e+10  3769.1269     -0.8534\n10  11  2022-11-22         9  ...  9.232523e+09  3769.5727      0.0118\n11  12  2022-11-23         7  ...  3.737618e+08  3773.5287      0.1049\n12  13  2022-11-24         7  ...  4.706748e+09  3756.8082     -0.4431\n13  14  2022-11-25        11  ...  2.465310e+09  3775.7764      0.5049\n14  15  2022-11-28        17  ...  4.328994e+10  3733.2424     -1.1265\n15  16  2022-11-29        13  ...  7.017021e+10  3848.4224      3.0853\n16  17  2022-11-30        11  ...  1.060871e+10  3853.0365      0.1199\n17  18  2022-12-01        15  ...  3.325098e+09  3894.7687      1.0831\n18  19  2022-12-02        15  ...  4.087764e+09  3870.9478     -0.6116\n19  20  2022-12-05        35  ...  1.952387e+10        NaN         NaN\n20  21  2022-12-06        19  ...  1.600255e+10        NaN         NaN\n21  22  2022-12-07        14  ...  2.661094e+09        NaN         NaN\n22  23  2022-12-08        10  ...  2.100872e+09        NaN         NaN\n23  24  2022-12-09         8  ...  1.630020e+10        NaN         NaN"
+      }
+    }
+  }
+}

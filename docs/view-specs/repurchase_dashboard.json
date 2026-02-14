@@ -1,0 +1,43 @@
+{
+  "name": "repurchase_dashboard",
+  "kind": "custom_view",
+  "description": "股票回购聚合视图：回购清单 + 个股股本变动（可选；工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "股票代码（6位，可选；用于股本变动查询）"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD（可选；用于股本变动查询）"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD（可选；用于股本变动查询）"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "repurchase_list",
+      "tool": "stock_repurchase_em",
+      "args": {}
+    },
+    {
+      "key": "share_change",
+      "tool": "stock_share_change_cninfo",
+      "args": {
+        "symbol": "000001",
+        "start_date": "20210215",
+        "end_date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_repurchase_em",
+    "stock_share_change_cninfo"
+  ]
+}

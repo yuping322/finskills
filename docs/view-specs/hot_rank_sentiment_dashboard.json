@@ -1,0 +1,49 @@
+{
+  "name": "hot_rank_sentiment_dashboard",
+  "kind": "custom_view",
+  "description": "人气/热度与情绪代理聚合：人气榜、相关股票、关注指数、投票等（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "东方财富人气榜股票标识（如 SZ000665），可选"
+      },
+      "comment_symbol": {
+        "type": "string",
+        "description": "千股千评/关注指数用股票代码（如 600000），可选"
+      },
+      "xq_hot_deal_symbol": {
+        "type": "string",
+        "description": "雪球交易热度榜：最热门/本周新增"
+      },
+      "include_vote": {
+        "type": "boolean",
+        "description": "是否附带百度股评投票"
+      },
+      "vote_indicator": {
+        "type": "string",
+        "description": "指数/股票"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "hot_rank_list",
+      "tool": "stock_hot_rank_em",
+      "args": {}
+    },
+    {
+      "key": "xq_hot_deal",
+      "tool": "stock_hot_deal_xq",
+      "args": {
+        "symbol": "最热门"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_hot_rank_em",
+    "stock_hot_deal_xq"
+  ]
+}

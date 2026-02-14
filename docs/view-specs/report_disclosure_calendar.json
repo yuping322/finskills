@@ -1,0 +1,32 @@
+{
+  "name": "report_disclosure_calendar",
+  "kind": "custom_view",
+  "description": "定期报告披露日历（交易所口径汇总；工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "market": {
+        "type": "string",
+        "description": "沪深京/深市/深主板/创业板/沪市/沪主板/科创板/北交所"
+      },
+      "period": {
+        "type": "string",
+        "description": "报告期，如 2025年报 / 2025一季 / 2025半年报 / 2025三季（以接口实际可用为准）"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "report_disclosure",
+      "tool": "stock_report_disclosure",
+      "args": {
+        "market": "沪深京",
+        "period": "2025年报"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_report_disclosure"
+  ]
+}

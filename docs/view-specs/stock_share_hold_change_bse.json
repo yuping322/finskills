@@ -1,0 +1,85 @@
+{
+  "name": "stock_share_hold_change_bse",
+  "kind": "tool_view",
+  "description": "北京证券交易所-信息披露-监管信息-董监高及相关人员持股变动",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"430489\"; choice of {\"全部\", \"具体股票代码\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_share_hold_change_bse",
+      "description": "北京证券交易所-信息披露-监管信息-董监高及相关人员持股变动",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"430489\"; choice of {\"全部\", \"具体股票代码\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的数据",
+      "url": "https://www.bse.cn/disclosure/djg_sharehold_change.html",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "姓名": {
+          "type": "string",
+          "description": "-"
+        },
+        "职务": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动股数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "变动前持股数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "变动后持股数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "变动均价": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "变动原因": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_share_hold_change_bse_df = ak.stock_share_hold_change_bse(symbol=\"430489\")\nprint(stock_share_hold_change_bse_df)",
+        "data": "数据示例\n\n```\n   代码    简称   姓名     职务        变动日期   变动股数   变动前持股数   变动后持股数  变动均价  变动原因\n0  430489  佳先股份   李兑      董事  2023-07-28  7.151   0.0000   7.1510  4.66  竞价交易\n1  430489  佳先股份   李平  高级管理人员  2023-07-14  2.000  23.0565  25.0565  4.64  竞价交易\n2  430489  佳先股份  周星源  高级管理人员  2023-06-21  2.000  28.2896  30.2896  4.59  竞价交易\n3  430489  佳先股份   汪静  高级管理人员  2023-06-20  1.000  70.0360  71.0360  4.52  竞价交易\n4  430489  佳先股份   汪静  高级管理人员  2023-06-19  1.000  69.0360  70.0360  4.56  竞价交易\n5  430489  佳先股份   丁柱  高级管理人员  2023-06-16  0.500  53.2920  53.7920  4.50  竞价交易\n6  430489  佳先股份   丁柱  高级管理人员  2023-06-15  0.500  52.7920  53.2920  4.48  竞价交易\n7  430489  佳先股份   丁柱  高级管理人员  2023-06-14  1.000  51.7920  52.7920  4.48  竞价交易"
+      }
+    }
+  }
+}

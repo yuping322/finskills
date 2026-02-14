@@ -1,0 +1,925 @@
+{
+  "mode": "run",
+  "skills": 53,
+  "items": 131,
+  "failures": 131,
+  "results": [
+    {
+      "skill": "ab-ah-premium-monitor",
+      "view": "ab_ah_premium_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_ab_comparison_em: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?np=1&fltt=1&invt=2&fs=m%3A1%2Bb%3ABK0498%2Cm%3A0%2Bb%3ABK0498&fields=f201%2Cf202%2Cf203%2Cf196%2Cf200%2Cf197%2Cf152%2Cf12%2Cf13%2Cf14%2Cf1%2Cf2%2Cf4%2Cf3%2Cf199&fid=f199&pn=1&pz=100&po=1&dect=1&wbp2u=%7C0%7C0%7C0%7Cweb (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_ah_spot_em: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?np=1&fltt=1&invt=2&fs=b%3ADLMK0101&fields=f193%2Cf191%2Cf192%2Cf12%2Cf13%2Cf14%2Cf1%2Cf2%2Cf4%2Cf3%2Cf152%2Cf186%2Cf190%2Cf187%2Cf189%2Cf188&fid=f3&pn=1&pz=100&po=1&dect=1&wbp2u=%7C0%7C0%7C0%7Cweb (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_ah_spot: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://stock.gtimg.cn/data/hk_rank.php?board=A_H&metric=price&pageSize=20&reqPage=1&order=decs&var_name=list_data (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_ah_name: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://stock.gtimg.cn/data/hk_rank.php?board=A_H&metric=price&pageSize=20&reqPage=1&order=decs&var_name=list_data (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_snapshot",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_concept_name_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_board_concept_spot_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_concept_cons_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_board_concept_hist_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_cons_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "notice_daily_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_notice_report: HTTPSConnectionPool(host='np-anotice-stock.eastmoney.com', port=443): Max retries exceeded with url: /api/security/ann?sr=-1&page_size=100&page_index=1&ann_type=A&client_source=web&f_node=5&s_node=0&begin_time=2026-02-12&end_time=2026-02-12 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "cninfo_disclosure_search",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_a_disclosure_report_cninfo: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://www.cninfo.com.cn/new/data/szse_stock.json (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "cninfo_disclosure_relation_search",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_a_disclosure_relation_cninfo: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://www.cninfo.com.cn/new/data/szse_stock.json (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "report_disclosure_calendar",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_report_disclosure: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://www.cninfo.com.cn/new/information/getPrbookInfo?sectionTime=2025-12-31&firstTime=&lastTime=&market=szsh&stockCode=&orderClos=&isDesc=&pagesize=10000&pagenum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "dividend_actions_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_fhps_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=PLAN_NOTICE_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_SHAREBONUS_DET&columns=ALL&quoteColumns=&js=%7B%22data%22%3A%28x%29%2C%22pages%22%3A%28tp%29%7D&source=WEB&client=WEB&filter=%28REPORT_DATE%3D%272025-12-31%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); news_trade_notify_dividend_baidu: Failed to obtain Baidu cookies: Network request failed: Failed to perform, curl: (7) Failed to connect to 127.0.0.1 port 7897 after 0 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "stock_history_dividend",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /q/go.php/vInvestConsult/kind/lsfh/index.phtml?p=1&num=50000 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "stock_history_dividend_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vISSUE_ShareBonus/stockid/000001.phtml (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "stock_dividend_cninfo",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='webapi.cninfo.com.cn', port=443): Max retries exceeded with url: /api/sysapi/p_sysapi1139?scode=000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "dragon-tiger-list-analyzer",
+      "view": "dragon_tiger_daily",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_lhb_detail_daily_sina: HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /q/go.php/vInvestConsult/kind/lhb/index.phtml?tradedate=2026-02-12 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_lhb_detail_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=SECURITY_CODE%2CTRADE_DATE&sortTypes=1%2C-1&pageSize=5000&pageNumber=1&reportName=RPT_DAILYBILLBOARD_DETAILSNEW&columns=SECURITY_CODE%2CSECUCODE%2CSECURITY_NAME_ABBR%2CTRADE_DATE%2CEXPLAIN%2CCLOSE_PRICE%2CCHANGE_RATE%2CBILLBOARD_NET_AMT%2CBILLBOARD_BUY_AMT%2CBILLBOARD_SELL_AMT%2CBILLBOARD_DEAL_AMT%2CACCUM_AMOUNT%2CDEAL_NET_RATIO%2CDEAL_AMOUNT_RATIO%2CTURNOVERRATE%2CFREE_MARKET_CAP%2CEXPLANATION%2CD1_CLOSE_ADJCHRATE%2CD2_CLOSE_ADJCHRATE%2CD5_CLOSE_ADJCHRATE%2CD10_CLOSE_ADJCHRATE%2CSECURITY_TYPE_CODE&source=WEB&client=WEB&filter=%28TRADE_DATE%3C%3D%272026-02-12%27%29%28TRADE_DATE%3E%3D%272026-02-12%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_lhb_jgmmtj_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=NET_BUY_AMT%2CTRADE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1%2C1&pageSize=500&pageNumber=1&reportName=RPT_ORGANIZATION_TRADE_DETAILS&columns=ALL&source=WEB&client=WEB&filter=%28TRADE_DATE%3E%3D%272026-02-12%27%29%28TRADE_DATE%3C%3D%272026-02-12%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_lhb_hyyyb_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=TOTAL_NETAMT%2CONLIST_DATE%2COPERATEDEPT_CODE&sortTypes=-1%2C-1%2C1&pageSize=5000&pageNumber=1&reportName=RPT_OPERATEDEPT_ACTIVE&columns=ALL&source=WEB&client=WEB&filter=%28ONLIST_DATE%3E%3D%272026-02-12%27%29%28ONLIST_DATE%3C%3D%272026-02-12%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "dragon-tiger-list-analyzer",
+      "view": "dragon_tiger_stock_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_lhb_stock_detail_em: 'default'; stock_lhb_stock_statistic_em: '000001'"
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "equity_pledge_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_gpzy_profile_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=TRADE_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_CSDC_STATISTICS&columns=ALL&quoteColumns=&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_gpzy_industry_data_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=AVERAGE_PLEDGE_RATIO&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_CSDC_INDUSTRY_STATISTICS&columns=INDUSTRY_CODE%2CINDUSTRY%2CTRADE_DATE%2CAVERAGE_PLEDGE_RATIO%2CORG_NUM%2CPLEDGE_TOTAL_NUM%2CTOTAL_PLEDGE_SHARES%2CPLEDGE_TOTAL_MARKETCAP&quoteColumns=&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_gpzy_distribute_statistics_company_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=ORG_NUM&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_GDZY_ZYJG_SUM&columns=ALL&quoteColumns=&source=WEB&client=WEB&filter=%28PFORG_TYPE%3D%22%E8%AF%81%E5%88%B8%22%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_gpzy_distribute_statistics_bank_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=ORG_NUM&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_GDZY_ZYJG_SUM&columns=ALL&quoteColumns=&source=WEB&client=WEB&filter=%28PFORG_TYPE%3D%22%E9%93%B6%E8%A1%8C%22%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_gpzy_pledge_ratio_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=PLEDGE_RATIO&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_CSDC_LIST&columns=ALL&quoteColumns=&source=WEB&client=WEB&filter=%28TRADE_DATE%3D%272026-02-12%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_gpzy_pledge_ratio_detail_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=NOTICE_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPTA_APP_ACCUMDETAILS&columns=ALL&quoteColumns=&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "stock_gpzy_pledge_ratio_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=PLEDGE_RATIO&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_CSDC_LIST&columns=ALL&quoteColumns=&source=WEB&client=WEB&filter=%28TRADE_DATE%3D%272025-01-01%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "stock_gpzy_pledge_ratio_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=NOTICE_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPTA_APP_ACCUMDETAILS&columns=ALL&quoteColumns=&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "equity-research-orchestrator",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "equity-research-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A6%2Cm%3A0+t%3A80%2Cm%3A1+t%3A2%2Cm%3A1+t%3A23%2Cm%3A0+t%3A81+s%3A2048&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "akshare has no attribute 'stock_a_indicator_lg'"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_financial_abstract_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/finance.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_rate_sina",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='global.finance.sina.com.cn', port=443): Max retries exceeded with url: /api/openapi.php/EsgService.getEsgStocks?page=1&num=200 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_msci_sina",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='global.finance.sina.com.cn', port=443): Max retries exceeded with url: /api/openapi.php/EsgService.getMsciEsgStocks?p=1&num=100 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_rft_sina",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='global.finance.sina.com.cn', port=443): Max retries exceeded with url: /api/openapi.php/EsgService.getRftEsgStocks?p=1&num=20000 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_zd_sina",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='global.finance.sina.com.cn', port=443): Max retries exceeded with url: /api/openapi.php/EsgService.getZdEsgStocks?p=1&num=100 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_hz_sina",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='global.finance.sina.com.cn', port=443): Max retries exceeded with url: /api/openapi.php/EsgService.getHzEsgStocks?p=1&num=100 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "etf-allocator",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "etf-allocator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_bid_ask_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_bid_ask_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "factor-crowding-monitor",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "factor-crowding-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_financial_abstract_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/finance.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_financial_analysis_indicator",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/000001/ctrl/2020/displaytype/4.phtml (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_balance_sheet_by_report_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emweb.securities.eastmoney.com', port=443): Max retries exceeded with url: /PC_HSF10/NewFinanceAnalysis/Index?type=web&code=000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_profit_sheet_by_report_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emweb.securities.eastmoney.com', port=443): Max retries exceeded with url: /PC_HSF10/NewFinanceAnalysis/Index?type=web&code=000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_cash_flow_sheet_by_report_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emweb.securities.eastmoney.com', port=443): Max retries exceeded with url: /PC_HSF10/NewFinanceAnalysis/Index?type=web&code=000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "fund_flow_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_market_fund_flow: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/fflow/daykline/get?lmt=0&klt=101&secid=1.000001&secid2=0.399001&fields1=f1%2Cf2%2Cf3%2Cf7&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf62%2Cf63%2Cf64%2Cf65&ut=b2884a393a59ad64002292a3e90d46a5&_=1770894483317 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_main_fund_flow: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?fid=f184&po=1&pz=100&pn=1&np=1&fltt=2&invt=2&fields=f2%2Cf3%2Cf12%2Cf13%2Cf14%2Cf62%2Cf184%2Cf225%2Cf165%2Cf263%2Cf109%2Cf175%2Cf264%2Cf160%2Cf100%2Cf124%2Cf265%2Cf1&ut=b2884a393a59ad64002292a3e90d46a5&fs=m%3A0%2Bt%3A6%2Bf%3A%212%2Cm%3A0%2Bt%3A13%2Bf%3A%212%2Cm%3A0%2Bt%3A80%2Bf%3A%212%2Cm%3A1%2Bt%3A2%2Bf%3A%212%2Cm%3A1%2Bt%3A23%2Bf%3A%212%2Cm%3A0%2Bt%3A7%2Bf%3A%212%2Cm%3A1%2Bt%3A3%2Bf%3A%212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_individual_fund_flow_rank: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?fid=f62&po=1&pz=100&pn=1&np=1&fltt=2&invt=2&ut=b2884a393a59ad64002292a3e90d46a5&fs=m%3A0%2Bt%3A6%2Bf%3A%212%2Cm%3A0%2Bt%3A13%2Bf%3A%212%2Cm%3A0%2Bt%3A80%2Bf%3A%212%2Cm%3A1%2Bt%3A2%2Bf%3A%212%2Cm%3A1%2Bt%3A23%2Bf%3A%212%2Cm%3A0%2Bt%3A7%2Bf%3A%212%2Cm%3A1%2Bt%3A3%2Bf%3A%212&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf184%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf204%2Cf205%2Cf124 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sector_fund_flow_rank: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t%3A2&stat=1&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf184%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf204%2Cf205%2Cf124&rt=52975239&_=1770894488161 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_fund_flow_big_deal: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://data.10jqka.com.cn/funds/ddzz/order/desc/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_market_fund_flow",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/fflow/daykline/get?lmt=0&klt=101&secid=1.000001&secid2=0.399001&fields1=f1%2Cf2%2Cf3%2Cf7&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf62%2Cf63%2Cf64%2Cf65&ut=b2884a393a59ad64002292a3e90d46a5&_=1770894488169 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_sector_fund_flow_rank",
+      "ok": false,
+      "mode": "run",
+      "error": "'按报告期'"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_fund_flow_big_deal",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://data.10jqka.com.cn/funds/ddzz/order/desc/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "goodwill-risk-monitor",
+      "view": "goodwill_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_sy_profile_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=REPORT_DATE&sortTypes=-1&pageSize=5000&pageNumber=1&reportName=RPT_GOODWILL_MARKETSTATISTICS&token=894050c76af8597a853f5b408b759f5d&columns=ALL&filter=%28%28GOODWILL_STATE%3D%221%22%29%28+%7C+IMPAIRMENT_STATE%3D%221%22%29%29%28TRADE_BOARD%3D%22all%22%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sy_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=5000&pageNumber=1&columns=ALL&token=894050c76af8597a853f5b408b759f5d&reportName=RPT_GOODWILL_STOCKDETAILS&filter=%28REPORT_DATE%3D%272025-12-31%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sy_hy_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=SUMSHEQUITY_RATIO&sortTypes=-1&pageSize=5000&pageNumber=1&columns=ALL&token=894050c76af8597a853f5b408b759f5d&reportName=RPT_GOODWILL_INDUSTATISTICS&filter=%28REPORT_DATE%3D%272025-12-31%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sy_jz_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=GOODWILL_CHANGE&sortTypes=-1&pageSize=5000&pageNumber=1&columns=ALL&token=894050c76af8597a853f5b408b759f5d&reportName=RPT_GOODWILL_STOCKDETAILS&filter=%28REPORT_DATE%3D%272025-12-31%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sy_yq_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=5000&pageNumber=1&columns=ALL&token=894050c76af8597a853f5b408b759f5d&reportName=RPT_GOODWILL_STOCKPREDICT&filter=%28REPORT_DATE%3D%272025-12-31%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "dividend_actions_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_fhps_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=PLAN_NOTICE_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_SHAREBONUS_DET&columns=ALL&quoteColumns=&js=%7B%22data%22%3A%28x%29%2C%22pages%22%3A%28tp%29%7D&source=WEB&client=WEB&filter=%28REPORT_DATE%3D%272025-12-31%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); news_trade_notify_dividend_baidu: Failed to obtain Baidu cookies: Network request failed: Failed to perform, curl: (7) Failed to connect to 127.0.0.1 port 7897 after 0 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "stock_history_dividend",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /q/go.php/vInvestConsult/kind/lsfh/index.phtml?p=1&num=50000 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "stock_history_dividend_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vISSUE_ShareBonus/stockid/000001.phtml (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "stock_dividend_cninfo",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='webapi.cninfo.com.cn', port=443): Max retries exceeded with url: /api/sysapi/p_sysapi1139?scode=000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "hot_rank_sentiment_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_hot_rank_em: HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getAllCurrentList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hot_deal_xq: HTTPSConnectionPool(host='xueqiu.com', port=443): Max retries exceeded with url: /service/v5/stock/screener/screen?category=CN&size=10000&order=desc&order_by=deal&only_count=0&page=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_rank_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getAllCurrentList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_rank_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getHisList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_keyword_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getHotStockRankList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hsgt-holdings-monitor",
+      "view": "hsgt_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_hsgt_fund_flow_summary_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPT_MUTUAL_QUOTA&columns=TRADE_DATE%2CMUTUAL_TYPE%2CBOARD_TYPE%2CMUTUAL_TYPE_NAME%2CFUNDS_DIRECTION%2CINDEX_CODE%2CINDEX_NAME%2CBOARD_CODE&quoteColumns=status~07~BOARD_CODE%2CdayNetAmtIn~07~BOARD_CODE%2CdayAmtRemain~07~BOARD_CODE%2CdayAmtThreshold~07~BOARD_CODE%2Cf104~07~BOARD_CODE%2Cf105~07~BOARD_CODE%2Cf106~07~BOARD_CODE%2Cf3~03~INDEX_CODE~INDEX_f3%2CnetBuyAmt~07~BOARD_CODE&quoteType=0&pageNumber=1&pageSize=2000&sortTypes=1&sortColumns=MUTUAL_TYPE&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_hist_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=TRADE_DATE&sortTypes=-1&pageSize=1000&pageNumber=1&reportName=RPT_MUTUAL_DEAL_HISTORY&columns=ALL&source=WEB&client=WEB&filter=%28MUTUAL_TYPE%3D%22005%22%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_hold_stock_em: HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/list.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_board_rank_em: HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/hy.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_fund_min_em: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/kamtbs.rtmin/get?fields1=f1%2Cf2%2Cf3%2Cf4&fields2=f51%2Cf54%2Cf52%2Cf58%2Cf53%2Cf62%2Cf56%2Cf57%2Cf60%2Cf61&ut=b2884a393a59ad64002292a3e90d46a5&_=1707125786160 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hsgt-holdings-monitor",
+      "view": "stock_hsgt_fund_flow_summary_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPT_MUTUAL_QUOTA&columns=TRADE_DATE%2CMUTUAL_TYPE%2CBOARD_TYPE%2CMUTUAL_TYPE_NAME%2CFUNDS_DIRECTION%2CINDEX_CODE%2CINDEX_NAME%2CBOARD_CODE&quoteColumns=status~07~BOARD_CODE%2CdayNetAmtIn~07~BOARD_CODE%2CdayAmtRemain~07~BOARD_CODE%2CdayAmtThreshold~07~BOARD_CODE%2Cf104~07~BOARD_CODE%2Cf105~07~BOARD_CODE%2Cf106~07~BOARD_CODE%2Cf3~03~INDEX_CODE~INDEX_f3%2CnetBuyAmt~07~BOARD_CODE&quoteType=0&pageNumber=1&pageSize=2000&sortTypes=1&sortColumns=MUTUAL_TYPE&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "hsgt-holdings-monitor",
+      "view": "stock_hsgt_hold_stock_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/list.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "industry_board_snapshot",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_industry_summary_ths: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://q.10jqka.com.cn/thshy/index/field/199112/order/desc/page/1/ajax/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_board_industry_name_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sector_fund_flow_rank: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t%3A2&stat=1&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf184%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf204%2Cf205%2Cf124&rt=52975239&_=1770894493465 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "industry_board_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_industry_spot_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_board_industry_cons_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_board_industry_hist_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_index_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='q.10jqka.com.cn', port=443): Max retries exceeded with url: /thshy/detail/code/881272/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://data.10jqka.com.cn/funds/hyzjl/field/tradezdf/order/desc/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_index_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='q.10jqka.com.cn', port=443): Max retries exceeded with url: /thshy/detail/code/881272/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://data.10jqka.com.cn/funds/hyzjl/field/tradezdf/order/desc/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_ggcg_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_inner_trade_xq",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='xueqiu.com', port=443): Max retries exceeded with url: /service/v5/stock/f10/cn/skholderchg?size=100000&page=1&extend=true (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_shareholder_change_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/event.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "intraday-microstructure-analyzer",
+      "view": "intraday_microstructure_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_bid_ask_em: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_intraday_em: HTTPSConnectionPool(host='70.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/details/sse?fields1=f1%2Cf2%2Cf3%2Cf4&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55&mpi=2000&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&pos=-0&secid=0.000001&wbp2u=%7C0%7C0%7C0%7Cweb (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "investment-memo-generator",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "investment-memo-generator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "restricted_release_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_restricted_release_summary_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=FREE_DATE&sortTypes=1&pageSize=500&pageNumber=1&columns=ALL&quoteColumns=f2~03~INDEX_CODE%2Cf3~03~INDEX_CODE%2Cf124~03~INDEX_CODE&quoteType=0&source=WEB&client=WEB&filter=%28INDEX_CODE%3D%22000300%22%29%28FREE_DATE%3E%3D%0A++++++++%272026-02-12%27%29%28FREE_DATE%3C%3D%272026-03-14%27%29&reportName=RPT_LIFTDAY_STA (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_restricted_release_detail_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=FREE_DATE%2CCURRENT_FREE_SHARES&sortTypes=1%2C1&pageSize=500&pageNumber=1&reportName=RPT_LIFT_STAGE&columns=SECURITY_CODE%2CSECURITY_NAME_ABBR%2CFREE_DATE%2CCURRENT_FREE_SHARES%2CABLE_FREE_SHARES%2CLIFT_MARKET_CAP%2CFREE_RATIO%2CNEW%2CB20_ADJCHRATE%2CA20_ADJCHRATE%2CFREE_SHARES_TYPE%2CTOTAL_RATIO%2CNON_FREE_SHARES%2CBATCH_HOLDER_NUM&source=WEB&client=WEB&filter=%28FREE_DATE%3E%3D%272026-02-12%27%29%28FREE_DATE%3C%3D%272026-03-14%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "stock_restricted_release_summary_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "stock_restricted_release_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=FREE_DATE%2CCURRENT_FREE_SHARES&sortTypes=1%2C1&pageSize=500&pageNumber=1&reportName=RPT_LIFT_STAGE&columns=SECURITY_CODE%2CSECURITY_NAME_ABBR%2CFREE_DATE%2CCURRENT_FREE_SHARES%2CABLE_FREE_SHARES%2CLIFT_MARKET_CAP%2CFREE_RATIO%2CNEW%2CB20_ADJCHRATE%2CA20_ADJCHRATE%2CFREE_SHARES_TYPE%2CTOTAL_RATIO%2CNON_FREE_SHARES%2CBATCH_HOLDER_NUM&source=WEB&client=WEB&filter=%28FREE_DATE%3E%3D%272025-01-01%27%29%28FREE_DATE%3C%3D%272025-01-01%27%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "stock_restricted_release_stockholder_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=ADD_LISTING_SHARES&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_LIFT_GD&filter=%28SECURITY_CODE%3D%22000001%22%29%28FREE_DATE%3D%272025-01-01%27%29&columns=LIMITED_HOLDER_NAME%2CADD_LISTING_SHARES%2CACTUAL_LISTED_SHARES%2CADD_LISTING_CAP%2CLOCK_MONTH%2CRESIDUAL_LIMITED_SHARES%2CFREE_SHARES_TYPE%2CPLAN_FEATURE&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "ipo-newlist-monitor",
+      "view": "ipo_newlist_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_ipo_declare: akshare has no attribute 'stock_ipo_declare'; stock_new_ipo_cninfo: HTTPSConnectionPool(host='webapi.cninfo.com.cn', port=443): Max retries exceeded with url: /api/sysapi/p_sysapi1097?timetype=36&market=ALL (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_a_new_em: HTTPSConnectionPool(host='40.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f26&fs=m%3A0+f%3A8%2Cm%3A1+f%3A8&fields=f2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_a_new: HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /quotes_service/api/json_v2.php/Market_Center.getHQNodeStockCount?node=new_stock (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_xgsr_ths: HTTPSConnectionPool(host='data.10jqka.com.cn', port=443): Max retries exceeded with url: /ipo/xgsr/field/SSRQ/order/desc/page/1/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_ipo_benefit_ths: HTTPSConnectionPool(host='data.10jqka.com.cn', port=443): Max retries exceeded with url: /ipo/syg/field/invest/order/desc/page/1/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "limit-up-limit-down-risk-checker",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "limit-up-limit-down-risk-checker",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "limit-up-pool-analyzer",
+      "view": "limit_up_pool_daily",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zt_pool_em: HTTPSConnectionPool(host='push2ex.eastmoney.com', port=443): Max retries exceeded with url: /getTopicZTPool?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=10000&sort=fbt%3Aasc&date=20260212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zt_pool_previous_em: HTTPSConnectionPool(host='push2ex.eastmoney.com', port=443): Max retries exceeded with url: /getYesterdayZTPool?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=5000&sort=zs%3Adesc&date=20260212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zt_pool_strong_em: HTTPSConnectionPool(host='push2ex.eastmoney.com', port=443): Max retries exceeded with url: /getTopicQSPool?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=5000&sort=zdp%3Adesc&date=20260212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zt_pool_sub_new_em: HTTPSConnectionPool(host='push2ex.eastmoney.com', port=443): Max retries exceeded with url: /getTopicCXPooll?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=5000&sort=ods%3Aasc&date=20260212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zt_pool_zbgc_em: HTTPSConnectionPool(host='push2ex.eastmoney.com', port=443): Max retries exceeded with url: /getTopicZBPool?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=5000&sort=fbt%3Aasc&date=20260212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zt_pool_dtgc_em: HTTPSConnectionPool(host='push2ex.eastmoney.com', port=443): Max retries exceeded with url: /getTopicDTPool?ut=7eea3edcaed734bea9cbfc24409ed989&dpt=wz.ztzt&Pageindex=0&pagesize=10000&sort=fund%3Aasc&date=20260212 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "liquidity-impact-estimator",
+      "view": "macro_china_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "macro_china_lpr: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPTA_WEB_RATE&columns=ALL&sortColumns=TRADE_DATE&sortTypes=-1&token=894050c76af8597a853f5b408b759f5d&pageNumber=1&pageSize=500&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); rate_interbank: '上海银行间同业拆放利率(Shibor)'; macro_china_cpi_monthly: HTTPSConnectionPool(host='datacenter-api.jin10.com', port=443): Max retries exceeded with url: /reports/list_v2?max_date=&category=ec&attr_id=72&_=1770894532933 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_ppi_monthly: akshare has no attribute 'macro_china_ppi_monthly'; macro_china_pmi: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?columns=REPORT_DATE%2CTIME%2CMAKE_INDEX%2CMAKE_SAME%2CNMAKE_INDEX%2CNMAKE_SAME&pageNumber=1&pageSize=2000&sortColumns=REPORT_DATE&sortTypes=-1&source=WEB&client=WEB&reportName=RPT_ECONOMY_PMI&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_shrzgm: HTTPSConnectionPool(host='data.mofcom.gov.cn', port=443): Max retries exceeded with url: /datamofcom/front/gnmy/shrzgmQuery (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_m2_monthly: akshare has no attribute 'macro_china_m2_monthly'"
+    },
+    {
+      "skill": "macro-liquidity-monitor",
+      "view": "macro_china_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "macro_china_lpr: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPTA_WEB_RATE&columns=ALL&sortColumns=TRADE_DATE&sortTypes=-1&token=894050c76af8597a853f5b408b759f5d&pageNumber=1&pageSize=500&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); rate_interbank: '上海银行间同业拆放利率(Shibor)'; macro_china_cpi_monthly: HTTPSConnectionPool(host='datacenter-api.jin10.com', port=443): Max retries exceeded with url: /reports/list_v2?max_date=&category=ec&attr_id=72&_=1770894532945 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_ppi_monthly: akshare has no attribute 'macro_china_ppi_monthly'; macro_china_pmi: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?columns=REPORT_DATE%2CTIME%2CMAKE_INDEX%2CMAKE_SAME%2CNMAKE_INDEX%2CNMAKE_SAME&pageNumber=1&pageSize=2000&sortColumns=REPORT_DATE&sortTypes=-1&source=WEB&client=WEB&reportName=RPT_ECONOMY_PMI&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_shrzgm: HTTPSConnectionPool(host='data.mofcom.gov.cn', port=443): Max retries exceeded with url: /datamofcom/front/gnmy/shrzgmQuery (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_m2_monthly: akshare has no attribute 'macro_china_m2_monthly'"
+    },
+    {
+      "skill": "margin-risk-monitor",
+      "view": "margin_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_margin_ratio_pa: HTTPSConnectionPool(host='stock.pingan.com', port=443): Max retries exceeded with url: /fss/servlet/fsscoreapp/stockSource/mrgRatio (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_margin_account_info: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPTA_WEB_MARGIN_DAILYTRADE&columns=ALL&pageNumber=1&pageSize=500&sortColumns=STATISTICS_DATE&sortTypes=-1&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_margin_sse: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /marketdata/tradedata/queryMargin.do?isPagination=true&beginDate=20260212&endDate=20260212&tabType=&stockCode=&pageHelp.pageSize=5000&pageHelp.pageNo=1&pageHelp.beginPage=1&pageHelp.cacheSize=1&pageHelp.endPage=5 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_margin_detail_sse: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /marketdata/tradedata/queryMargin.do?isPagination=true&tabType=mxtype&detailsDate=20260212&stockCode=&beginDate=&endDate=&pageHelp.pageSize=5000&pageHelp.pageCount=50&pageHelp.pageNo=1&pageHelp.beginPage=1&pageHelp.cacheSize=1&pageHelp.endPage=21 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_margin_szse: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1837_xxpl&txtDate=2026-02-12&tab1PAGENO=1&random=0.7425245522795993 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_margin_detail_szse: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1837_xxpl&txtDate=2026-02-12&tab2PAGENO=1&random=0.24279342734085696&TABKEY=tab2 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_margin_underlying_info_szse: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1834_xxpl&txtDate=2026-02-12&tab1PAGENO=1&random=0.7425245522795993&TABKEY=tab1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "market-breadth-monitor",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "market-breadth-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "market-overview-dashboard",
+      "view": "market_overview_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_sse_summary: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://query.sse.com.cn/commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_GPSJZM_TJSJ_L&PRODUCT_NAME=%E8%82%A1%E7%A5%A8%2C%E4%B8%BB%E6%9D%BF%2C%E7%A7%91%E5%88%9B%E6%9D%BF&type=inParams (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_szse_summary: HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://www.szse.cn/api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1803_sczm&TABKEY=tab1&txtQueryDate=2026-02-12&random=0.39339437497296137 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_sse_deal_daily: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?sqlId=COMMON_SSE_SJ_GPSJ_CJGK_MRGK_C&PRODUCT_CODE=01%2C02%2C03%2C11%2C17&type=inParams&SEARCH_DATE=2026-02-12 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "northbound-flow-analyzer",
+      "view": "hsgt_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_hsgt_fund_flow_summary_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPT_MUTUAL_QUOTA&columns=TRADE_DATE%2CMUTUAL_TYPE%2CBOARD_TYPE%2CMUTUAL_TYPE_NAME%2CFUNDS_DIRECTION%2CINDEX_CODE%2CINDEX_NAME%2CBOARD_CODE&quoteColumns=status~07~BOARD_CODE%2CdayNetAmtIn~07~BOARD_CODE%2CdayAmtRemain~07~BOARD_CODE%2CdayAmtThreshold~07~BOARD_CODE%2Cf104~07~BOARD_CODE%2Cf105~07~BOARD_CODE%2Cf106~07~BOARD_CODE%2Cf3~03~INDEX_CODE~INDEX_f3%2CnetBuyAmt~07~BOARD_CODE&quoteType=0&pageNumber=1&pageSize=2000&sortTypes=1&sortColumns=MUTUAL_TYPE&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_hist_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=TRADE_DATE&sortTypes=-1&pageSize=1000&pageNumber=1&reportName=RPT_MUTUAL_DEAL_HISTORY&columns=ALL&source=WEB&client=WEB&filter=%28MUTUAL_TYPE%3D%22005%22%29 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_hold_stock_em: HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/list.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_board_rank_em: HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/hy.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hsgt_fund_min_em: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/kamtbs.rtmin/get?fields1=f1%2Cf2%2Cf3%2Cf4&fields2=f51%2Cf54%2Cf52%2Cf58%2Cf53%2Cf62%2Cf56%2Cf57%2Cf60%2Cf61&ut=b2884a393a59ad64002292a3e90d46a5&_=1707125786160 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "northbound-flow-analyzer",
+      "view": "stock_hsgt_fund_flow_summary_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPT_MUTUAL_QUOTA&columns=TRADE_DATE%2CMUTUAL_TYPE%2CBOARD_TYPE%2CMUTUAL_TYPE_NAME%2CFUNDS_DIRECTION%2CINDEX_CODE%2CINDEX_NAME%2CBOARD_CODE&quoteColumns=status~07~BOARD_CODE%2CdayNetAmtIn~07~BOARD_CODE%2CdayAmtRemain~07~BOARD_CODE%2CdayAmtThreshold~07~BOARD_CODE%2Cf104~07~BOARD_CODE%2Cf105~07~BOARD_CODE%2Cf106~07~BOARD_CODE%2Cf3~03~INDEX_CODE~INDEX_f3%2CnetBuyAmt~07~BOARD_CODE&quoteType=0&pageNumber=1&pageSize=2000&sortTypes=1&sortColumns=MUTUAL_TYPE&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "northbound-flow-analyzer",
+      "view": "stock_hsgt_hold_stock_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/list.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "peer-comparison-analyzer",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "peer-comparison-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "policy-sensitivity-brief",
+      "view": "macro_china_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "macro_china_lpr: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPTA_WEB_RATE&columns=ALL&sortColumns=TRADE_DATE&sortTypes=-1&token=894050c76af8597a853f5b408b759f5d&pageNumber=1&pageSize=500&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); rate_interbank: '上海银行间同业拆放利率(Shibor)'; macro_china_cpi_monthly: HTTPSConnectionPool(host='datacenter-api.jin10.com', port=443): Max retries exceeded with url: /reports/list_v2?max_date=&category=ec&attr_id=72&_=1770894532969 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_ppi_monthly: akshare has no attribute 'macro_china_ppi_monthly'; macro_china_pmi: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?columns=REPORT_DATE%2CTIME%2CMAKE_INDEX%2CMAKE_SAME%2CNMAKE_INDEX%2CNMAKE_SAME&pageNumber=1&pageSize=2000&sortColumns=REPORT_DATE&sortTypes=-1&source=WEB&client=WEB&reportName=RPT_ECONOMY_PMI&p=1&pageNo=1&pageNum=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_shrzgm: HTTPSConnectionPool(host='data.mofcom.gov.cn', port=443): Max retries exceeded with url: /datamofcom/front/gnmy/shrzgmQuery (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); macro_china_m2_monthly: akshare has no attribute 'macro_china_m2_monthly'"
+    },
+    {
+      "skill": "portfolio-health-check",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "portfolio-monitor-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A6%2Cm%3A0+t%3A80%2Cm%3A1+t%3A2%2Cm%3A1+t%3A23%2Cm%3A0+t%3A81+s%3A2048&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "akshare has no attribute 'stock_a_indicator_lg'"
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_financial_abstract_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/finance.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "rebalancing-planner",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "risk-adjusted-return-optimizer",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_index_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='q.10jqka.com.cn', port=443): Max retries exceeded with url: /thshy/detail/code/881272/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://data.10jqka.com.cn/funds/hyzjl/field/tradezdf/order/desc/ajax/1/free/1/ (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "hot_rank_sentiment_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_hot_rank_em: HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getAllCurrentList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hot_deal_xq: HTTPSConnectionPool(host='xueqiu.com', port=443): Max retries exceeded with url: /service/v5/stock/screener/screen?category=CN&size=10000&order=desc&order_by=deal&only_count=0&page=1 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_rank_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getAllCurrentList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_rank_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getHisList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_keyword_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='emappdata.eastmoney.com', port=443): Max retries exceeded with url: /stockrank/getHotStockRankList (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "shareholder-risk-check",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "shareholder-risk-check",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "shareholder-structure-monitor",
+      "view": "shareholder_structure_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_a_gdhs: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=HOLD_NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_HOLDERNUMLATEST&columns=SECURITY_CODE%2CSECURITY_NAME_ABBR%2CEND_DATE%2CINTERVAL_CHRATE%2CAVG_MARKET_CAP%2CAVG_HOLD_NUM%2CTOTAL_MARKET_CAP%2CTOTAL_A_SHARES%2CHOLD_NOTICE_DATE%2CHOLDER_NUM%2CPRE_HOLDER_NUM%2CHOLDER_NUM_CHANGE%2CHOLDER_NUM_RATIO%2CEND_DATE%2CPRE_END_DATE&quoteColumns=f2%2Cf3&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_a_gdhs_detail_em: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=END_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_HOLDERNUM_DET&columns=SECURITY_CODE%2CSECURITY_NAME_ABBR%2CCHANGE_SHARES%2CCHANGE_REASON%2CEND_DATE%2CINTERVAL_CHRATE%2CAVG_MARKET_CAP%2CAVG_HOLD_NUM%2CTOTAL_MARKET_CAP%2CTOTAL_A_SHARES%2CHOLD_NOTICE_DATE%2CHOLDER_NUM%2CPRE_HOLDER_NUM%2CHOLDER_NUM_CHANGE%2CHOLDER_NUM_RATIO%2CEND_DATE%2CPRE_END_DATE&quoteColumns=f2%2Cf3&filter=%28SECURITY_CODE%3D%22000001%22%29&source=WEB&client=WEB (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_main_stock_holder: HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vCI_StockHolder/stockid/000001.phtml (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_circulate_stock_holder: HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vCI_CirculateStockHolder/stockid/000001.phtml (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_shareholder_change_ths: HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/event.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_share_hold_change_sse: HTTPSConnectionPool(host='query.sse.com.cn', port=443): Max retries exceeded with url: /commonQuery.do?isPagination=true&pageHelp.pageSize=100&pageHelp.pageNo=1&pageHelp.beginPage=1&pageHelp.cacheSize=1&pageHelp.endPage=1&sqlId=COMMON_SSE_XXPL_CXJL_SSGSGFBDQK_S&COMPANY_CODE=000001&NAME=&BEGIN_DATE=1990-01-01&END_DATE=2050-01-01&BOARDTYPE= (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_share_hold_change_szse: HTTPSConnectionPool(host='www.szse.cn', port=443): Max retries exceeded with url: /api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1801_cxda&TABKEY=tab1&PAGENO=1&random=0.7874198771222201&txtDMorJC=000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_share_hold_change_bse: HTTPSConnectionPool(host='www.bse.cn', port=443): Max retries exceeded with url: /djgCgbdController/getDjgCgbdList.do?page=0&startTime=&endTime=&stockCode=000001&djgName=&ssgs=1&sortfield=bean.change_date+desc%2C+bean.stock_code+asc%2C+bean.change_amount+desc%2C+bean.price&sorttype=desc (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hold_num_cninfo: HTTPSConnectionPool(host='webapi.cninfo.com.cn', port=443): Max retries exceeded with url: /api/sysapi/p_sysapi1034?rdate=20251231 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hold_change_cninfo: HTTPSConnectionPool(host='webapi.cninfo.com.cn', port=443): Max retries exceeded with url: /api/sysapi/p_sysapi1029?market= (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_hold_control_cninfo: HTTPSConnectionPool(host='webapi.cninfo.com.cn', port=443): Max retries exceeded with url: /api/sysapi/p_sysapi1033?ctype= (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A6%2Cm%3A0+t%3A80%2Cm%3A1+t%3A2%2Cm%3A1+t%3A23%2Cm%3A0+t%3A81+s%3A2048&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_a_indicator_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "akshare has no attribute 'stock_a_indicator_lg'"
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_financial_abstract_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/finance.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "st-delist-risk-scanner",
+      "view": "st_delist_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_a_st_em: HTTPSConnectionPool(host='40.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0+f%3A4%2Cm%3A1+f%3A4&fields=f2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_zh_a_stop_em: HTTPSConnectionPool(host='40.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0+s%3A3&fields=f2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); stock_staq_net_stop: HTTPSConnectionPool(host='5.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=50000&po=1&np=2&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0+s%3A3&fields=f12%2Cf14 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\"))); news_trade_notify_suspend_baidu: Failed to obtain Baidu cookies: Network request failed: Failed to perform, curl: (7) Failed to connect to 127.0.0.1 port 7897 after 0 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "skill": "suitability-report-generator",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "suitability-report-generator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "tech-hype-vs-fundamentals",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "tech-hype-vs-fundamentals",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A6%2Cm%3A0+t%3A80%2Cm%3A1+t%3A2%2Cm%3A1+t%3A23%2Cm%3A0+t%3A81+s%3A2048&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "akshare has no attribute 'stock_a_indicator_lg'"
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_financial_abstract_ths",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='basic.10jqka.com.cn', port=443): Max retries exceeded with url: /new/000001/finance.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "valuation-regime-detector",
+      "view": "stock_buffett_index_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='legulegu.com', port=443): Max retries exceeded with url: /stockdata/marketcap-gdp (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "valuation-regime-detector",
+      "view": "stock_index_pe_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "valuation-regime-detector",
+      "view": "stock_index_pb_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "volatility-regime-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "weekly-market-brief-generator",
+      "view": "stock_individual_info_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169%2Cf170%2Cf46%2Cf44%2Cf51%2Cf168%2Cf47%2Cf164%2Cf116%2Cf60%2Cf45%2Cf52%2Cf50%2Cf48%2Cf167%2Cf117%2Cf71%2Cf161%2Cf49%2Cf530%2Cf135%2Cf136%2Cf137%2Cf138%2Cf139%2Cf141%2Cf142%2Cf144%2Cf145%2Cf147%2Cf148%2Cf140%2Cf143%2Cf146%2Cf149%2Cf55%2Cf62%2Cf162%2Cf92%2Cf173%2Cf104%2Cf105%2Cf84%2Cf85%2Cf183%2Cf184%2Cf185%2Cf186%2Cf187%2Cf188%2Cf189%2Cf190%2Cf191%2Cf192%2Cf107%2Cf111%2Cf86%2Cf177%2Cf78%2Cf110%2Cf262%2Cf263%2Cf264%2Cf267%2Cf268%2Cf255%2Cf256%2Cf257%2Cf258%2Cf127%2Cf199%2Cf128%2Cf198%2Cf259%2Cf260%2Cf261%2Cf171%2Cf277%2Cf278%2Cf279%2Cf288%2Cf152%2Cf250%2Cf251%2Cf252%2Cf253%2Cf254%2Cf269%2Cf270%2Cf271%2Cf272%2Cf273%2Cf274%2Cf275%2Cf276%2Cf265%2Cf266%2Cf289%2Cf290%2Cf286%2Cf285%2Cf292%2Cf293%2Cf294%2Cf295%2Cf43&secid=0.000001 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    },
+    {
+      "skill": "weekly-market-brief-generator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=1&secid=0.000001&beg=20250101&end=20250101 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError(\"HTTPSConnection(host='127.0.0.1', port=7897): Failed to establish a new connection: [Errno 1] Operation not permitted\")))"
+    }
+  ]
+}

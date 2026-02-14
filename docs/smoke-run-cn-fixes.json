@@ -1,0 +1,204 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 28,
+  "failures": 4,
+  "results": [
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_bj_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zcfz_bj_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_snapshot",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_detail",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_name_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_cons_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "cninfo_disclosure_search",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_a_disclosure_report_cninfo: 'demo'"
+    },
+    {
+      "skill": "dragon-tiger-list-analyzer",
+      "view": "dragon_tiger_daily",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "dragon-tiger-list-analyzer",
+      "view": "dragon_tiger_stock_detail",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "stock_gpzy_pledge_ratio_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_balance_sheet_by_report_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_profit_sheet_by_report_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_cash_flow_sheet_by_report_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_sector_fund_flow_rank",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_rank_detail_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_keyword_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_name_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 11 elements, new values have 8 elements"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_name_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 11 elements, new values have 8 elements"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_name_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 11 elements, new values have 8 elements"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_rank_detail_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_keyword_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}

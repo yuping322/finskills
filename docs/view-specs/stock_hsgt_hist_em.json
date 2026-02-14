@@ -1,0 +1,44 @@
+{
+  "name": "stock_hsgt_hist_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-资金流向-沪深港通资金流向-沪深港通历史数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"北向资金\"; choice of {\"北向资金\", \"沪股通\", \"深股通\", \"南向资金\", \"港股通沪\", \"港股通深\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hsgt_hist_em",
+      "description": "东方财富网-数据中心-资金流向-沪深港通资金流向-沪深港通历史数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"北向资金\"; choice of {\"北向资金\", \"沪股通\", \"深股通\", \"南向资金\", \"港股通沪\", \"港股通深\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的所有数据",
+      "url": "https://data.eastmoney.com/hsgt/index.html",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

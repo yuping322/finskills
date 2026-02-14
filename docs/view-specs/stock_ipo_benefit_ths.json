@@ -1,0 +1,71 @@
+{
+  "name": "stock_ipo_benefit_ths",
+  "kind": "tool_view",
+  "description": "同花顺-数据中心-新股数据-IPO受益股",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_ipo_benefit_ths",
+      "description": "同花顺-数据中心-新股数据-IPO受益股",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前交易日的所有数据; 该数据每周更新一次, 返回最近一周的数据",
+      "url": "https://data.10jqka.com.cn/ipo/syg/",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "收盘价": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市值": {
+          "type": "string",
+          "description": "注意单位: 元"
+        },
+        "参股家数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "投资总额": {
+          "type": "string",
+          "description": "注意单位: 元"
+        },
+        "投资占市值比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "参股对象": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_ipo_benefit_ths_df = ak.stock_ipo_benefit_ths()\nprint(stock_ipo_benefit_ths_df)",
+        "data": "数据示例\n\n```\n    序号  股票代码  股票简称 收盘价  涨跌幅  市值  参股家数    投资总额  投资占市值比 参股对象\n0      1  601601  中国太保  29.12 -0.206  1993.28亿     2  34.17亿    1.71   明细\n1      2  600716  凤凰股份   3.82 -1.036    35.76亿     1   4.76亿   13.33   明细\n2      3  600649  城投控股   4.08 -0.730   103.21亿     1   4.67亿    4.52   明细\n3      4  601963  重庆银行   8.59 -1.151   162.82亿     1   3.79亿    2.33   明细\n4      5  600639  浦东金桥  11.10 -0.893    94.38亿     2   3.18亿    3.37   明细\n..   ...     ...   ...    ...    ...       ...   ...     ...     ...  ...\n107  108  000685  中山公用   8.59 -0.116   126.71亿     1      0万    0.00   明细\n108  109  600052  浙江广厦   3.98 -2.690    33.60亿     1      0万    0.00   明细\n109  110  600261  阳光照明   3.62 -0.550    52.57亿     1      0万    0.00   明细\n110  111  600496  精工钢构   3.90 -2.500    78.50亿     1      0万    0.00   明细\n111  112  603987   康德莱  20.00  0.200    88.31亿     1      0万    0.00   明细"
+      }
+    }
+  }
+}

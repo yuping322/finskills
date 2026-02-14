@@ -1,0 +1,85 @@
+{
+  "name": "stock_sy_jz_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-商誉-个股商誉减值明细",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20230331\"; 参见网页选项"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sy_jz_em",
+      "description": "东方财富网-数据中心-特色数据-商誉-个股商誉减值明细",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20230331\"; 参见网页选项"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/sy/jzlist.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "商誉": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "商誉减值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "商誉减值占净资产比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "净利润": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "商誉减值占净利润比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "交易市场": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_sy_jz_em_df = ak.stock_sy_jz_em(date=\"20230331\")\nprint(stock_sy_jz_em_df)",
+        "data": "数据示例\n\n```\n        序号    股票代码  股票简称  ...  商誉减值占净利润比例        公告日期  交易市场\n0        1  600587  新华医疗  ...         NaN  2023-04-28  沪市主板\n1        2  000829  天音控股  ...         NaN  2023-04-29  深市主板\n2        3  600271  航天信息  ...         NaN  2023-04-29  沪市主板\n3        4  600383  金地集团  ...         NaN  2023-04-29  沪市主板\n4        5  000917  电广传媒  ...         NaN  2023-04-28  深市主板\n    ...     ...   ...  ...         ...         ...   ...\n2446  2447  002846  英联股份  ...         NaN  2023-04-29  深市主板\n2447  2448  688625  呈和科技  ...         NaN  2023-04-25   科创板\n2448  2449  601995  中金公司  ...         NaN  2023-04-29  沪市主板\n2449  2450  002724   海洋王  ...         NaN  2023-04-28  深市主板\n2450  2451  002815  崇达技术  ...         NaN  2023-04-27  深市主板\n[2451 rows x 11 columns]"
+      }
+    }
+  }
+}

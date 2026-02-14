@@ -1,0 +1,83 @@
+{
+  "name": "stock_report_disclosure",
+  "kind": "tool_view",
+  "description": "巨潮资讯-数据-预约披露的数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "market": {
+        "type": "string",
+        "description": "market=\"沪深京\"; choice of {\"沪深京\", \"深市\", \"深主板\", \"创业板\", \"沪市\", \"沪主板\", \"科创板\", \"北交所\"}"
+      },
+      "period": {
+        "type": "string",
+        "description": "period=\"2021年报\"; 近四期的财务报告; e.g., choice of {\"2021一季\", \"2021半年报\", \"2021三季\", \"2021年报\"}"
+      }
+    },
+    "required": [
+      "market",
+      "period"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_report_disclosure",
+      "description": "巨潮资讯-数据-预约披露的数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "market": {
+            "type": "string",
+            "description": "market=\"沪深京\"; choice of {\"沪深京\", \"深市\", \"深主板\", \"创业板\", \"沪市\", \"沪主板\", \"科创板\", \"北交所\"}"
+          },
+          "period": {
+            "type": "string",
+            "description": "period=\"2021年报\"; 近四期的财务报告; e.g., choice of {\"2021一季\", \"2021半年报\", \"2021三季\", \"2021年报\"}"
+          }
+        },
+        "required": [
+          "market",
+          "period"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 market 和 period 的预约披露数据",
+      "url": "http://www.cninfo.com.cn/new/commonUrl?url=data/yypl",
+      "output": {
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "首次预约": {
+          "type": "string",
+          "description": "-"
+        },
+        "初次变更": {
+          "type": "string",
+          "description": "-"
+        },
+        "二次变更": {
+          "type": "string",
+          "description": "-"
+        },
+        "三次变更": {
+          "type": "string",
+          "description": "-"
+        },
+        "实际披露": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_report_disclosure_df = ak.stock_report_disclosure(market=\"沪深京\", period=\"2022年报\")\nprint(stock_report_disclosure_df)",
+        "data": "数据示例\n\n```\n      股票代码   股票简称  首次预约        初次变更 二次变更 三次变更 实际披露\n0     000001   平安银行  2023-03-09         NaT  NaN  NaN  2023-03-09\n1     000002  万  科Ａ  2023-03-31         NaT  NaN  NaN  2023-03-31\n2     000004   国华网安  2023-04-21  2023-04-29  NaN  NaN  2023-04-29\n3     000005   ST星源  2023-04-29         NaT  NaN  NaN  2023-04-29\n4     000006   深振业Ａ  2023-04-28         NaT  NaN  NaN  2023-04-28\n      ...    ...         ...         ...  ...  ...         ...\n5102  873223   荣亿精密  2023-04-26         NaT  NaN  NaN  2023-04-26\n5103  873305   九菱科技  2023-04-26         NaT  NaN  NaN  2023-04-26\n5104  873339   恒太照明  2023-04-25  2023-04-12  NaN  NaN  2023-04-12\n5105  873527    夜光明  2023-04-17         NaT  NaN  NaN  2023-04-17\n5106  873593   鼎智科技  2023-04-25  2023-03-17  NaN  NaN         NaT\n[5107 rows x 7 columns]"
+      }
+    }
+  }
+}

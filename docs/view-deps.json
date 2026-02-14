@@ -1,0 +1,630 @@
+{
+  "china": {
+    "ab-ah-premium-monitor": {
+      "views": [
+        "ab_ah_premium_dashboard"
+      ]
+    },
+    "block-deal-monitor": {
+      "views": [
+        "block_deal_dashboard"
+      ]
+    },
+    "bse-selection-analyzer": {
+      "views": [
+        "stock_info_bj_name_code",
+        "stock_bj_a_spot_em",
+        "stock_zcfz_bj_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "concept-board-analyzer": {
+      "views": [
+        "concept_board_snapshot",
+        "concept_board_detail",
+        "stock_board_concept_name_em",
+        "stock_board_concept_spot_em",
+        "stock_board_concept_cons_em"
+      ]
+    },
+    "convertible-bond-scanner": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "disclosure-notice-monitor": {
+      "views": [
+        "notice_daily_dashboard",
+        "cninfo_disclosure_search",
+        "cninfo_disclosure_relation_search",
+        "report_disclosure_calendar"
+      ]
+    },
+    "dividend-corporate-action-tracker": {
+      "views": [
+        "dividend_actions_dashboard",
+        "stock_history_dividend",
+        "stock_history_dividend_detail",
+        "stock_dividend_cninfo"
+      ]
+    },
+    "dragon-tiger-list-analyzer": {
+      "views": [
+        "dragon_tiger_daily",
+        "dragon_tiger_stock_detail"
+      ]
+    },
+    "equity-pledge-risk-monitor": {
+      "views": [
+        "equity_pledge_dashboard",
+        "stock_gpzy_pledge_ratio_em",
+        "stock_gpzy_pledge_ratio_detail_em"
+      ]
+    },
+    "equity-research-orchestrator": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "esg-screener": {
+      "views": [
+        "stock_zh_a_spot_em",
+        "stock_a_indicator_lg",
+        "stock_financial_abstract_ths",
+        "stock_esg_rate_sina",
+        "stock_esg_msci_sina",
+        "stock_esg_rft_sina",
+        "stock_esg_zd_sina",
+        "stock_esg_hz_sina"
+      ]
+    },
+    "etf-allocator": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "event-driven-detector": {
+      "views": [
+        "stock_zh_a_hist",
+        "stock_bid_ask_em"
+      ]
+    },
+    "event-study": {
+      "views": [
+        "stock_zh_a_hist",
+        "stock_bid_ask_em"
+      ]
+    },
+    "factor-crowding-monitor": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "financial-statement-analyzer": {
+      "views": [
+        "stock_financial_abstract_ths",
+        "stock_financial_analysis_indicator",
+        "stock_balance_sheet_by_report_em",
+        "stock_profit_sheet_by_report_em",
+        "stock_cash_flow_sheet_by_report_em"
+      ]
+    },
+    "fund-flow-monitor": {
+      "views": [
+        "fund_flow_dashboard",
+        "stock_market_fund_flow",
+        "stock_sector_fund_flow_rank",
+        "stock_fund_flow_big_deal"
+      ]
+    },
+    "goodwill-risk-monitor": {
+      "views": [
+        "goodwill_dashboard"
+      ]
+    },
+    "high-dividend-strategy": {
+      "views": [
+        "dividend_actions_dashboard",
+        "stock_history_dividend",
+        "stock_history_dividend_detail",
+        "stock_dividend_cninfo"
+      ]
+    },
+    "hot-rank-sentiment-monitor": {
+      "views": [
+        "hot_rank_sentiment_dashboard",
+        "stock_hot_rank_em",
+        "stock_hot_rank_detail_em",
+        "stock_hot_keyword_em"
+      ]
+    },
+    "hsgt-holdings-monitor": {
+      "views": [
+        "hsgt_dashboard",
+        "stock_hsgt_fund_flow_summary_em",
+        "stock_hsgt_hold_stock_em"
+      ]
+    },
+    "industry-board-analyzer": {
+      "views": [
+        "industry_board_snapshot",
+        "industry_board_detail",
+        "stock_board_industry_name_em",
+        "stock_board_industry_spot_em",
+        "stock_board_industry_index_ths",
+        "stock_fund_flow_industry"
+      ]
+    },
+    "industry-chain-mapper": {
+      "views": [
+        "stock_board_industry_name_em",
+        "stock_board_industry_spot_em",
+        "stock_board_industry_index_ths",
+        "stock_fund_flow_industry"
+      ]
+    },
+    "insider-trading-analyzer": {
+      "views": [
+        "stock_ggcg_em",
+        "stock_inner_trade_xq",
+        "stock_shareholder_change_ths"
+      ]
+    },
+    "intraday-microstructure-analyzer": {
+      "views": [
+        "intraday_microstructure_dashboard"
+      ]
+    },
+    "investment-memo-generator": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "ipo-lockup-risk-monitor": {
+      "views": [
+        "restricted_release_dashboard",
+        "stock_restricted_release_summary_em",
+        "stock_restricted_release_detail_em",
+        "stock_restricted_release_stockholder_em"
+      ]
+    },
+    "ipo-newlist-monitor": {
+      "views": [
+        "ipo_newlist_dashboard"
+      ]
+    },
+    "limit-up-limit-down-risk-checker": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "limit-up-pool-analyzer": {
+      "views": [
+        "limit_up_pool_daily"
+      ]
+    },
+    "liquidity-impact-estimator": {
+      "views": [
+        "macro_china_dashboard"
+      ]
+    },
+    "macro-liquidity-monitor": {
+      "views": [
+        "macro_china_dashboard"
+      ]
+    },
+    "margin-risk-monitor": {
+      "views": [
+        "margin_dashboard"
+      ]
+    },
+    "market-breadth-monitor": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "market-overview-dashboard": {
+      "views": [
+        "market_overview_dashboard"
+      ]
+    },
+    "northbound-flow-analyzer": {
+      "views": [
+        "hsgt_dashboard",
+        "stock_hsgt_fund_flow_summary_em",
+        "stock_hsgt_hold_stock_em"
+      ]
+    },
+    "peer-comparison-analyzer": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "policy-sensitivity-brief": {
+      "views": [
+        "macro_china_dashboard"
+      ]
+    },
+    "portfolio-health-check": {
+      "views": [
+        "stock_zh_a_hist"
+      ]
+    },
+    "portfolio-monitor-orchestrator": {
+      "views": [
+        "stock_zh_a_hist"
+      ]
+    },
+    "quant-factor-screener": {
+      "views": [
+        "stock_zh_a_spot_em",
+        "stock_a_indicator_lg",
+        "stock_financial_abstract_ths"
+      ]
+    },
+    "rebalancing-planner": {
+      "views": [
+        "stock_zh_a_hist"
+      ]
+    },
+    "risk-adjusted-return-optimizer": {
+      "views": [
+        "stock_zh_a_hist"
+      ]
+    },
+    "sector-rotation-detector": {
+      "views": [
+        "stock_board_industry_name_em",
+        "stock_board_industry_spot_em",
+        "stock_board_industry_index_ths",
+        "stock_fund_flow_industry"
+      ]
+    },
+    "sentiment-reality-gap": {
+      "views": [
+        "hot_rank_sentiment_dashboard",
+        "stock_hot_rank_em",
+        "stock_hot_rank_detail_em",
+        "stock_hot_keyword_em"
+      ]
+    },
+    "share-repurchase-monitor": {
+      "views": [
+        "repurchase_dashboard"
+      ]
+    },
+    "shareholder-risk-check": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "shareholder-structure-monitor": {
+      "views": [
+        "shareholder_structure_dashboard"
+      ]
+    },
+    "small-cap-growth-identifier": {
+      "views": [
+        "stock_zh_a_spot_em",
+        "stock_a_indicator_lg",
+        "stock_financial_abstract_ths"
+      ]
+    },
+    "st-delist-risk-scanner": {
+      "views": [
+        "st_delist_dashboard"
+      ]
+    },
+    "suitability-report-generator": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "tech-hype-vs-fundamentals": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    },
+    "undervalued-stock-screener": {
+      "views": [
+        "stock_zh_a_spot_em",
+        "stock_a_indicator_lg",
+        "stock_financial_abstract_ths"
+      ]
+    },
+    "valuation-regime-detector": {
+      "views": [
+        "stock_buffett_index_lg",
+        "stock_index_pe_lg",
+        "stock_index_pb_lg"
+      ]
+    },
+    "volatility-regime-monitor": {
+      "views": [
+        "stock_zh_a_hist"
+      ]
+    },
+    "weekly-market-brief-generator": {
+      "views": [
+        "stock_individual_info_em",
+        "stock_zh_a_hist"
+      ]
+    }
+  },
+  "us": {
+    "buyback-monitor": {
+      "scripts": [
+        "sec_edgar.py"
+      ]
+    },
+    "credit-spread-monitor": {
+      "scripts": [
+        "macro_data.py"
+      ]
+    },
+    "dividend-aristocrat-calculator": {
+      "scripts": [
+        "stock_data.py",
+        "financial_calc.py"
+      ]
+    },
+    "earnings-reaction-analyzer": {
+      "scripts": [
+        "sec_edgar.py"
+      ]
+    },
+    "equity-research-orchestrator": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "esg-screener": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "etf-allocator": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "event-driven-detector": {
+      "scripts": [
+        "sec_edgar.py"
+      ]
+    },
+    "event-study": {
+      "scripts": [
+        "sec_edgar.py"
+      ]
+    },
+    "factor-crowding-monitor": {
+      "scripts": [
+        "factor_screener.py"
+      ]
+    },
+    "financial-statement-analyzer": {
+      "scripts": [
+        "stock_data.py",
+        "financial_calc.py"
+      ]
+    },
+    "insider-sentiment-aggregator": {
+      "scripts": [
+        "sec_edgar.py"
+      ]
+    },
+    "insider-trading-analyzer": {
+      "scripts": [
+        "sec_edgar.py"
+      ]
+    },
+    "investment-memo-generator": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "liquidity-impact-estimator": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "macro-liquidity-monitor": {
+      "scripts": [
+        "macro_data.py"
+      ]
+    },
+    "market-breadth-monitor": {
+      "scripts": [
+        "macro_data.py"
+      ]
+    },
+    "options-strategy-analyzer": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "peer-comparison-analyzer": {
+      "scripts": [
+        "stock_data.py",
+        "financial_calc.py"
+      ]
+    },
+    "policy-sensitivity-brief": {
+      "scripts": [
+        "macro_data.py"
+      ]
+    },
+    "portfolio-health-check": {
+      "scripts": [
+        "portfolio_analytics.py"
+      ]
+    },
+    "portfolio-monitor-orchestrator": {
+      "scripts": [
+        "portfolio_analytics.py"
+      ]
+    },
+    "quant-factor-screener": {
+      "scripts": [
+        "factor_screener.py"
+      ]
+    },
+    "rebalancing-planner": {
+      "scripts": [
+        "portfolio_analytics.py"
+      ]
+    },
+    "risk-adjusted-return-optimizer": {
+      "scripts": [
+        "portfolio_analytics.py"
+      ]
+    },
+    "sector-rotation-detector": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "sentiment-reality-gap": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "small-cap-growth-identifier": {
+      "scripts": [
+        "stock_data.py",
+        "financial_calc.py"
+      ]
+    },
+    "suitability-report-generator": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "tax-aware-rebalancing-planner": {
+      "scripts": [
+        "portfolio_analytics.py"
+      ]
+    },
+    "tech-hype-vs-fundamentals": {
+      "scripts": [
+        "stock_data.py",
+        "financial_calc.py"
+      ]
+    },
+    "undervalued-stock-screener": {
+      "scripts": [
+        "stock_data.py",
+        "financial_calc.py"
+      ]
+    },
+    "valuation-regime-detector": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "volatility-regime-monitor": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "weekly-market-brief-generator": {
+      "scripts": [
+        "stock_data.py"
+      ]
+    },
+    "yield-curve-regime-detector": {
+      "scripts": [
+        "macro_data.py"
+      ]
+    }
+  },
+  "china_all_views": [
+    "ab_ah_premium_dashboard",
+    "block_deal_dashboard",
+    "cninfo_disclosure_relation_search",
+    "cninfo_disclosure_search",
+    "concept_board_detail",
+    "concept_board_snapshot",
+    "dividend_actions_dashboard",
+    "dragon_tiger_daily",
+    "dragon_tiger_stock_detail",
+    "equity_pledge_dashboard",
+    "fund_flow_dashboard",
+    "goodwill_dashboard",
+    "hot_rank_sentiment_dashboard",
+    "hsgt_dashboard",
+    "industry_board_detail",
+    "industry_board_snapshot",
+    "intraday_microstructure_dashboard",
+    "ipo_newlist_dashboard",
+    "limit_up_pool_daily",
+    "macro_china_dashboard",
+    "margin_dashboard",
+    "market_overview_dashboard",
+    "notice_daily_dashboard",
+    "report_disclosure_calendar",
+    "repurchase_dashboard",
+    "restricted_release_dashboard",
+    "shareholder_structure_dashboard",
+    "st_delist_dashboard",
+    "stock_a_indicator_lg",
+    "stock_balance_sheet_by_report_em",
+    "stock_bid_ask_em",
+    "stock_bj_a_spot_em",
+    "stock_board_concept_cons_em",
+    "stock_board_concept_name_em",
+    "stock_board_concept_spot_em",
+    "stock_board_industry_index_ths",
+    "stock_board_industry_name_em",
+    "stock_board_industry_spot_em",
+    "stock_buffett_index_lg",
+    "stock_cash_flow_sheet_by_report_em",
+    "stock_dividend_cninfo",
+    "stock_esg_hz_sina",
+    "stock_esg_msci_sina",
+    "stock_esg_rate_sina",
+    "stock_esg_rft_sina",
+    "stock_esg_zd_sina",
+    "stock_financial_abstract_ths",
+    "stock_financial_analysis_indicator",
+    "stock_fund_flow_big_deal",
+    "stock_fund_flow_industry",
+    "stock_ggcg_em",
+    "stock_gpzy_pledge_ratio_detail_em",
+    "stock_gpzy_pledge_ratio_em",
+    "stock_history_dividend",
+    "stock_history_dividend_detail",
+    "stock_hot_keyword_em",
+    "stock_hot_rank_detail_em",
+    "stock_hot_rank_em",
+    "stock_hsgt_fund_flow_summary_em",
+    "stock_hsgt_hold_stock_em",
+    "stock_index_pb_lg",
+    "stock_index_pe_lg",
+    "stock_individual_info_em",
+    "stock_info_bj_name_code",
+    "stock_inner_trade_xq",
+    "stock_market_fund_flow",
+    "stock_profit_sheet_by_report_em",
+    "stock_restricted_release_detail_em",
+    "stock_restricted_release_stockholder_em",
+    "stock_restricted_release_summary_em",
+    "stock_sector_fund_flow_rank",
+    "stock_shareholder_change_ths",
+    "stock_zcfz_bj_em",
+    "stock_zh_a_hist",
+    "stock_zh_a_spot_em"
+  ]
+}

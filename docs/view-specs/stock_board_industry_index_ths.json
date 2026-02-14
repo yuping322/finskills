@@ -1,0 +1,83 @@
+{
+  "name": "stock_board_industry_index_ths",
+  "kind": "tool_view",
+  "description": "同花顺-板块-行业板块-指数日频率数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20200101\"; 开始时间"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20211027\"; 结束时间"
+      }
+    },
+    "required": [
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_industry_index_ths",
+      "description": "同花顺-板块-行业板块-指数日频率数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20200101\"; 开始时间"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20211027\"; 结束时间"
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有日频指数数据",
+      "url": "https://q.10jqka.com.cn/thshy/detail/code/881270/",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "开盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "最高价": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低价": {
+          "type": "number",
+          "description": "-"
+        },
+        "收盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_industry_index_ths_df = ak.stock_board_industry_index_ths(symbol=\"元件\", start_date=\"20240101\", end_date=\"20240718\")\nprint(stock_board_industry_index_ths_df)",
+        "data": "数据示例\n\n```\n      日期       开盘价      最高价  ...      收盘价        成交量          成交额\n0    2024-01-02  8383.164  8434.157  ...  8369.686   378801210  6.537645e+09\n1    2024-01-03  8336.885  8348.720  ...  8200.462   397687380  6.681469e+09\n2    2024-01-04  8181.495  8195.721  ...  8122.310   320899470  5.532075e+09\n3    2024-01-05  8129.346  8193.125  ...  7927.934   400481990  6.126120e+09\n4    2024-01-08  7920.488  7936.585  ...  7687.373   425991150  5.932317e+09\n..          ...       ...       ...  ...       ...         ...           ...\n126  2024-07-12  7963.094  8054.884  ...  7975.548  1195854040  2.105850e+10\n127  2024-07-15  7951.025  7975.132  ...  7909.781   992999090  1.719067e+10\n128  2024-07-16  7883.687  8248.755  ...  8239.074  1328925150  2.387857e+10\n129  2024-07-17  8258.454  8260.010  ...  7946.988  1309263550  2.460237e+10\n130  2024-07-18  7810.944  7838.241  ...  7755.153  1248902920  2.164933e+10\n[131 rows x 7 columns]"
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ from pathlib import Path
 # Ensure project root is on path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common.utils import output_json, safe_div, safe_float, error_exit
+from common.utils import output_json, safe_div, safe_float, error_exit, require_dependency
 
 
 def _get_ticker(symbol: str):
@@ -338,6 +338,9 @@ def main():
                         help="Minimum analyst upside for screening (default 0.30)")
     args = parser.parse_args()
 
+    require_dependency("pandas", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("yfinance", requirements_path="US-market/findata-toolkit/requirements.txt")
+
     try:
         if args.screen:
             data = screen_stocks(args.symbols,
@@ -356,8 +359,6 @@ def main():
 
         output_json(data)
 
-    except ImportError:
-        error_exit("yfinance is required. Install: pip install yfinance")
     except Exception as e:
         error_exit(f"Error fetching data: {e}")
 

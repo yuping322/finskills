@@ -1,0 +1,97 @@
+{
+  "name": "stock_gpzy_pledge_ratio_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-股权质押-上市公司质押比例",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20240906\"; 请访问 http://data.eastmoney.com/gpzy/pledgeRatio.aspx 查询具体交易日"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_gpzy_pledge_ratio_em",
+      "description": "东方财富网-数据中心-特色数据-股权质押-上市公司质押比例",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20240906\"; 请访问 http://data.eastmoney.com/gpzy/pledgeRatio.aspx 查询具体交易日"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定交易日的所有历史数据; 其中的交易日需要根据网站提供的为准; 请访问 http://data.eastmoney.com/gpzy/pledgeRatio.aspx 查询具体交易日",
+      "url": "https://data.eastmoney.com/gpzy/pledgeRatio.aspx",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "交易日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "所属行业": {
+          "type": "string",
+          "description": "-"
+        },
+        "质押比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "质押股数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "质押市值": {
+          "type": "number",
+          "description": "注意单位: 万元"
+        },
+        "质押笔数": {
+          "type": "number",
+          "description": "-"
+        },
+        "无限售股质押数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "限售股质押数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "近一年涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "所属行业代码": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_gpzy_pledge_ratio_em_df = ak.stock_gpzy_pledge_ratio_em(date=\"20241220\")\nprint(stock_gpzy_pledge_ratio_em_df)",
+        "data": "数据示例\n\n```\n      序号  股票代码  股票简称  交易日期  ...   无限售股质押数   限售股质押数 近一年涨跌幅  所属行业代码\n0        1  000567  海德股份  2024-12-20  ...  146779.06      0.0   6.965560  016058\n1        2  000688  国城矿业  2024-12-20  ...   78404.69      0.0  40.018282  016032\n2        3  002485  ST雪发  2024-12-20  ...   37266.20      0.0 -31.400000  016010\n3        4  000020  深华发A  2024-12-20  ...   11610.00      0.0  13.596838  016079\n4        5  603132  金徽股份  2024-12-20  ...       0.00  59960.0  -5.566960  016032\n...    ...     ...   ...         ...  ...        ...      ...        ...     ...\n2305  2306  600640  国脉文化  2024-12-20  ...       0.22      0.0   8.495713  016039\n2306  2307  600630  龙头股份  2024-12-20  ...       0.57      0.0  -3.577285  016010\n2307  2308  002432  九安医疗  2024-12-20  ...       1.20      0.0  13.687060  016082\n2308  2309  601989  中国重工  2024-12-20  ...      76.66      0.0  18.591879  016049\n2309  2310  600642  申能股份  2024-12-20  ...       5.00      0.0  51.730585  016007\n[2310 rows x 13 columns]"
+      }
+    }
+  }
+}

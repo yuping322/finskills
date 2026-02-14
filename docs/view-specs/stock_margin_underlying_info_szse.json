@@ -1,0 +1,77 @@
+{
+  "name": "stock_margin_underlying_info_szse",
+  "kind": "tool_view",
+  "description": "深圳证券交易所-融资融券数据-标的证券信息",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20210205\""
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_margin_underlying_info_szse",
+      "description": "深圳证券交易所-融资融券数据-标的证券信息",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20210205\""
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回交易日的所有历史数据",
+      "url": "https://www.szse.cn/disclosure/margin/object/index.html",
+      "output": {
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "融资标的": {
+          "type": "string",
+          "description": "-"
+        },
+        "融券标的": {
+          "type": "string",
+          "description": "-"
+        },
+        "当日可融资": {
+          "type": "string",
+          "description": "-"
+        },
+        "当日可融券": {
+          "type": "string",
+          "description": "-"
+        },
+        "融券卖出价格限制": {
+          "type": "string",
+          "description": "-"
+        },
+        "涨跌幅限制": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_margin_underlying_info_szse_df = ak.stock_margin_underlying_info_szse(date=\"20210727\")\nprint(stock_margin_underlying_info_szse_df)",
+        "data": "数据示例\n\n```\n    证券代码  证券简称 融资标的 融券标的 当日可融资 当日可融券 融券卖出价格限制 涨跌幅限制\n0     000001  平安银行    Y    Y     Y     Y        Y   10%\n1     000002   万科Ａ    Y    Y     Y     Y        Y   10%\n2     000006  深振业Ａ    Y    Y     Y     Y        Y   10%\n3     000008  神州高铁    Y    Y     Y     Y        Y   10%\n4     000009  中国宝安    Y    Y     Y     Y        Y   10%\n      ...   ...  ...  ...   ...   ...      ...   ...\n1000  301030   C仕净    Y    Y     Y     Y        Y   无限制\n1001  301031  中熔电气    Y    Y     Y     Y        Y   20%\n1002  301032   C新柴    Y    Y     Y     Y        Y   无限制\n1003  301033   C迈普    Y    Y     Y     Y        Y   无限制\n1004  301039  中集车辆    Y    Y     Y     Y        Y   20%"
+      }
+    }
+  }
+}

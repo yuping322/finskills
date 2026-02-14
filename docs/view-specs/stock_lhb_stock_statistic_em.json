@@ -1,0 +1,121 @@
+{
+  "name": "stock_lhb_stock_statistic_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-龙虎榜单-个股上榜统计",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"近一月\"; choice of {\"近一月\", \"近三月\", \"近六月\", \"近一年\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_lhb_stock_statistic_em",
+      "description": "东方财富网-数据中心-龙虎榜单-个股上榜统计",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"近一月\"; choice of {\"近一月\", \"近三月\", \"近六月\", \"近一年\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/stock/tradedetail.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最近上榜日": {
+          "type": "string",
+          "description": "-"
+        },
+        "收盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "-"
+        },
+        "上榜次数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "龙虎榜净买额": {
+          "type": "number",
+          "description": "-"
+        },
+        "龙虎榜买入额": {
+          "type": "number",
+          "description": "-"
+        },
+        "龙虎榜卖出额": {
+          "type": "number",
+          "description": "-"
+        },
+        "龙虎榜总成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "买方机构次数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "卖方机构次数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "机构买入净额": {
+          "type": "number",
+          "description": "-"
+        },
+        "机构买入总额": {
+          "type": "number",
+          "description": "-"
+        },
+        "机构卖出总额": {
+          "type": "number",
+          "description": "-"
+        },
+        "近1个月涨跌幅": {
+          "type": "number",
+          "description": "-"
+        },
+        "近3个月涨跌幅": {
+          "type": "number",
+          "description": "-"
+        },
+        "近6个月涨跌幅": {
+          "type": "number",
+          "description": "-"
+        },
+        "近1年涨跌幅": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_lhb_stock_statistic_em_df = ak.stock_lhb_stock_statistic_em(symbol=\"近一月\")\nprint(stock_lhb_stock_statistic_em_df)",
+        "data": "数据示例\n\n```\n      序号  代码    名称     最近上榜日  ...   近1个月涨跌幅  近3个月涨跌幅 近6个月涨跌幅  近1年涨跌幅\n0      1  605180  华生科技  2024-04-18  ...  39.940828  -8.274079   7.744875   19.350450\n1      2  603603  退市博天  2024-04-18  ... -61.000000 -61.386139 -86.315789  -90.250000\n2      3  002089   新海退  2024-04-17  ... -69.230769 -76.699029 -80.645161  -75.510204\n3      4  000506  中润资源  2024-04-19  ...  55.844156  61.725067  26.849894   11.940299\n4      5  301500  飞南资源  2024-04-19  ...  16.005874  21.788284   3.765324   -1.126408\n..   ...     ...   ...         ...  ...        ...        ...        ...         ...\n653  654  603322  超讯通信  2024-03-21  ...  22.253172   4.969439  39.035551  127.403569\n654  655  603528  多伦科技  2024-03-21  ...  57.685353  -4.803493  20.275862   12.761000\n655  656  605296  神农集团  2024-03-21  ...  19.154229  10.477759  59.590671   33.666462\n656  657  688103  国力股份  2024-03-21  ...  22.362869 -16.219563 -24.842651  -32.964050\n657  658  900921  丹科B股  2024-03-21  ...   2.097902   8.955224   5.797101  -18.435754\n[658 rows x 20 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "stock_sse_summary",
+  "kind": "tool_view",
+  "description": "上海证券交易所-股票数据总貌",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sse_summary",
+      "description": "上海证券交易所-股票数据总貌",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回最近交易日的股票数据总貌(当前交易日的数据需要交易所收盘后统计)",
+      "url": "http://www.sse.com.cn/market/stockdata/statistic/",
+      "output": {},
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_sse_summary_df = ak.stock_sse_summary()\nprint(stock_sse_summary_df)",
+        "data": "数据示例\n\n```\n      项目     股票       科创板         主板\n0   流通股本   40403.47    413.63   39989.84\n1    总市值  516714.68   55719.6  460995.09\n2  平均市盈率      17.92      71.0      16.51\n3   上市公司       2036       377       1659\n4   上市股票       2078       377       1701\n5   流通市值  432772.13   22274.3  410497.83\n6   报告时间   20211230  20211230   20211230\n8    总股本   46234.03    1211.5   45022.54"
+      }
+    }
+  }
+}

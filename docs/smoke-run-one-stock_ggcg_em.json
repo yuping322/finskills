@@ -1,0 +1,15 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 1,
+  "failures": 1,
+  "results": [
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_ggcg_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    }
+  ]
+}

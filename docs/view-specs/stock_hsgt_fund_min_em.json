@@ -1,0 +1,44 @@
+{
+  "name": "stock_hsgt_fund_min_em",
+  "kind": "tool_view",
+  "description": "东方财富-数据中心-沪深港通-市场概括-分时数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"北向资金\"; choice of {\"北向资金\", \"南向资金\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hsgt_fund_min_em",
+      "description": "东方财富-数据中心-沪深港通-市场概括-分时数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"北向资金\"; choice of {\"北向资金\", \"南向资金\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 的所有数据",
+      "url": "https://data.eastmoney.com/hsgt/hsgtDetail/scgk.html",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

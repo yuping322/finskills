@@ -8,7 +8,9 @@ A comprehensive collection of Claude Skills for financial investment analysis, c
 
 ## Overview
 
-FinSkills provides 30 specialized skills (15 for US markets, 15 for A-share markets) designed to help investors and analysts make informed decisions through systematic, data-driven analysis. Each skill follows a consistent architecture with progressive disclosure to optimize context usage.
+FinSkills provides a growing set of specialized skills for US markets and China A-share markets, designed to help investors and analysts make informed decisions through systematic, data-driven analysis. Each skill follows a consistent architecture with progressive disclosure to optimize context usage.
+
+Runtime note (for toolkits / data queries): **Python 3.10–3.12 only**, using a single repo-root virtualenv at `.venv`.
 
 The skills are organized into three analytical tiers plus a data toolkit tier:
 
@@ -19,7 +21,7 @@ The skills are organized into three analytical tiers plus a data toolkit tier:
 | **Portfolio & Documentation** | Risk-Adjusted Return Optimizer, Portfolio Health Check, Suitability Report Generator | Construct, monitor, and document |
 | **Data Toolkit** | FinData Toolkit | Live market data fetching and quantitative calculations |
 
-Each analysis skill can leverage the **FinData Toolkit** — a companion skill that provides live market data and quantitative calculations. When an analysis skill needs real data, it references the toolkit by name; the LLM sees both skills in its context and knows to invoke the toolkit automatically.
+Each analysis skill can leverage shared **FinData Toolkit** scripts for live market data and quantitative calculations. To keep skills self-contained (no cross-skill dependency), each skill includes `references/data-queries.md` with the exact commands to run the shared scripts (via relative paths).
 
 ## Related Projects
 
@@ -71,14 +73,13 @@ finskills/
 │   ├── event-driven-detector/          # 事件驱动机会
 │   ├── quant-factor-screener/          # 量化因子筛选
 │   ├── esg-screener/                   # ESG筛选
-│   └── findata-toolkit/               # 📦 数据工具包（脚本 + 配置）
+│   └── findata-toolkit-cn/            # 📦 数据工具包（views + scripts）
 │       ├── SKILL.md                   # 工具包技能定义
 │       ├── requirements.txt           # Python 依赖
-│       ├── config/data_sources.yaml   # 数据源配置
+│       ├── config/                    # schemas + data source config
 │       └── scripts/                   # 自包含脚本
-│           ├── common/               # 共享工具
-│           ├── stock_data.py         # AKShare: 行情、指标、筛选
-│           └── macro_data.py         # 宏观数据（LPR、PMI、CPI、M2）
+│           ├── views_runner.py        # 统一 view 入口（tool views + composed views）
+│           └── views/                 # composed views（plan definitions）
 ├── README.md                           # This file (English)
 └── README.zh.md                        # Chinese version
 ```
@@ -123,7 +124,7 @@ finskills/
 | 12 | **事件驱动机会识别器** | Analyze A-share corporate events: asset injections, SOE reform, share buyback programs, spin-offs, index rebalancing, lock-up expirations | [China-market/event-driven-detector/](China-market/event-driven-detector/) |
 | 13 | **量化因子筛选器** | Multi-factor A-share screening with China-specific factors (turnover rate, northbound capital), factor timing via PMI/social financing data | [China-market/quant-factor-screener/](China-market/quant-factor-screener/) |
 | 14 | **ESG筛选器** | ESG analysis with Chinese characteristics: dual-carbon goals, common prosperity framework, CSRC ESG disclosure requirements | [China-market/esg-screener/](China-market/esg-screener/) |
-| 15 | **金融数据工具包** 📦 | A股实时数据：行情指标（AKShare）、董监高增减持、北向资金、宏观数据（LPR、PMI、CPI、M2）。无需API密钥。 | [China-market/findata-toolkit/](China-market/findata-toolkit/) |
+| 15 | **金融数据工具包** 📦 | A股实时数据：行情指标（AKShare）、董监高增减持、北向资金、宏观数据（LPR、PMI、CPI、M2）。无需API密钥。 | [China-market/findata-toolkit-cn/](China-market/findata-toolkit-cn/) |
 
 ## Skill Architecture
 
@@ -154,13 +155,25 @@ findata-toolkit/
     └── ...                        # Additional domain scripts
 ```
 
-### How Analysis Skills Use Toolkits
+### How Analysis Skills Use Shared Toolkits
 
-Analysis skills (e.g., *Undervalued Stock Screener*) reference the toolkit by name in their `SKILL.md`:
+Analysis skills do not depend on other skills at runtime. Instead, each analysis skill keeps its data pulls in `references/data-queries.md`, calling the shared toolkit scripts via relative paths.
 
-> For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`).
+Example (US market, run from `US-market/<skill>/`):
 
-The LLM sees both skills in its system prompt. When the analysis skill requires live data, the LLM recognizes the toolkit reference and invokes its scripts automatically. No special wiring is needed — the coupling is through **natural language** in the skill descriptions.
+```bash
+source ../../.venv/bin/activate
+python ../findata-toolkit/scripts/stock_data.py AAPL --metrics
+```
+
+Example (China market, run from `China-market/<skill>/`):
+
+```bash
+source ../../.venv/bin/activate
+python ../findata-toolkit-cn/scripts/views_runner.py stock_zh_a_spot_em
+```
+
+This keeps the workflow reproducible: the exact data queries live with the analysis methodology, while the implementation stays in the shared toolkit code.
 
 ### Progressive Disclosure Design
 
@@ -247,11 +260,15 @@ These skills are designed for Claude (Anthropic's AI assistant). To use them:
 1. **Install skills**: Place the skill directories in your Claude skills directory (typically `$CODEX_HOME/skills/` or similar). Each skill is self-contained and can be installed individually.
 2. **Install toolkit dependencies**: For live data capabilities, install the toolkit's Python dependencies:
    ```bash
-   # US market toolkit
-   cd US-market/findata-toolkit && pip install -r requirements.txt
+   # Create the single repo-root venv (Python 3.10–3.12)
+   make venv
+   source .venv/bin/activate
 
-   # China A-share market toolkit
-   cd China-market/findata-toolkit && pip install -r requirements.txt
+   # US market toolkit
+   python -m pip install -r US-market/findata-toolkit/requirements.txt
+
+   # China A-share market toolkit (and view-service)
+   make install-cn
    ```
 3. **Trigger naturally**: Use natural language queries that match the skill descriptions
 4. **Follow workflows**: Each skill will guide you through its analysis workflow

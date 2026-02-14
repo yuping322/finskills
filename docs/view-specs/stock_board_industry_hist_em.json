@@ -1,0 +1,129 @@
+{
+  "name": "stock_board_industry_hist_em",
+  "kind": "tool_view",
+  "description": "东方财富-沪深板块-行业板块-历史行情数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"小金属\"; 可以通过调用 **ak.stock_board_industry_name_em()** 查看东方财富-行业板块的所有行业代码"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20211201\";"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20220401\";"
+      },
+      "period": {
+        "type": "string",
+        "description": "period=\"日k\"; 周期; choice of {\"日k\", \"周k\", \"月k\"}"
+      },
+      "adjust": {
+        "type": "string",
+        "description": "adjust=\"\"; choice of {'': 不复权, 默认; \"qfq\": 前复权, \"hfq\": 后复权}"
+      }
+    },
+    "required": [
+      "symbol",
+      "start_date",
+      "end_date",
+      "period",
+      "adjust"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_industry_hist_em",
+      "description": "东方财富-沪深板块-行业板块-历史行情数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"小金属\"; 可以通过调用 **ak.stock_board_industry_name_em()** 查看东方财富-行业板块的所有行业代码"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20211201\";"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20220401\";"
+          },
+          "period": {
+            "type": "string",
+            "description": "period=\"日k\"; 周期; choice of {\"日k\", \"周k\", \"月k\"}"
+          },
+          "adjust": {
+            "type": "string",
+            "description": "adjust=\"\"; choice of {'': 不复权, 默认; \"qfq\": 前复权, \"hfq\": 后复权}"
+          }
+        },
+        "required": [
+          "symbol",
+          "start_date",
+          "end_date",
+          "period",
+          "adjust"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 和 adjust 的所有历史数据",
+      "url": "https://quote.eastmoney.com/bk/90.BK1027.html",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "开盘": {
+          "type": "number",
+          "description": "-"
+        },
+        "收盘": {
+          "type": "number",
+          "description": "-"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_industry_hist_em_df = ak.stock_board_industry_hist_em(symbol=\"小金属\", start_date=\"20211201\", end_date=\"20240222\", period=\"日k\", adjust=\"\")\nprint(stock_board_industry_hist_em_df)",
+        "data": "数据示例\n\n```\n        日期      开盘      收盘     最高  ...       成交量        成交额    振幅   换手率\n0    2021-12-01  1915.46  1915.23  1919.43  ...  17207231  3.134633e+10  1.77  3.68\n1    2021-12-02  1909.70  1925.26  1947.38  ...  17723129  3.914958e+10  3.32  3.79\n2    2021-12-03  1912.86  1923.48  1930.06  ...  14027893  3.125242e+10  2.52  3.00\n3    2021-12-06  1924.43  1901.92  1940.57  ...  15612344  3.377371e+10  2.07  3.34\n4    2021-12-07  1914.66  1851.77  1917.07  ...  14501660  3.131906e+10  4.61  3.10\n..          ...      ...      ...      ...  ...       ...           ...   ...   ...\n534  2024-02-08  1234.37  1271.41  1284.17  ...   9309314  1.033029e+10  5.01  1.99\n535  2024-02-19  1271.91  1285.67  1294.59  ...   7797152  9.248781e+09  2.22  1.67\n536  2024-02-20  1279.11  1285.77  1288.37  ...   5182130  6.270108e+09  1.86  1.11\n537  2024-02-21  1274.53  1303.25  1336.49  ...   6059774  7.920041e+09  5.11  1.30\n538  2024-02-22  1298.16  1320.27  1320.27  ...   4594781  5.684279e+09  1.94  0.98\n[539 rows x 11 columns]"
+      }
+    }
+  }
+}

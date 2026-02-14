@@ -1,0 +1,64 @@
+{
+  "name": "stock_history_dividend_detail",
+  "kind": "tool_view",
+  "description": "新浪财经-发行与分配-分红配股",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"600012\"; 股票代码"
+      },
+      "indicator": {
+        "type": "string",
+        "description": "indicator=\"配股\"; choice of {\"分红\", \"配股\"}"
+      },
+      "date": {
+        "type": "string",
+        "description": "date=\"1994-12-24\"; 分红配股的具体日期, e.g., \"1994-12-24\""
+      }
+    },
+    "required": [
+      "symbol",
+      "indicator",
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_history_dividend_detail",
+      "description": "新浪财经-发行与分配-分红配股",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"600012\"; 股票代码"
+          },
+          "indicator": {
+            "type": "string",
+            "description": "indicator=\"配股\"; choice of {\"分红\", \"配股\"}"
+          },
+          "date": {
+            "type": "string",
+            "description": "date=\"1994-12-24\"; 分红配股的具体日期, e.g., \"1994-12-24\""
+          }
+        },
+        "required": [
+          "symbol",
+          "indicator",
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定股票的新浪财经-发行与分配-分红配股详情",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vISSUE_ShareBonus/stockid/300670.phtml",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

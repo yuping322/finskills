@@ -1,0 +1,237 @@
+{
+  "name": "stock_share_change_cninfo",
+  "kind": "tool_view",
+  "description": "巨潮资讯-数据-公司股本变动",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"002594\""
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20091227\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20241021\""
+      }
+    },
+    "required": [
+      "symbol",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_share_change_cninfo",
+      "description": "巨潮资讯-数据-公司股本变动",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"002594\""
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20091227\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20241021\""
+          }
+        },
+        "required": [
+          "symbol",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 在 start_date 和 end_date 之间的公司股本变动数据",
+      "url": "https://webapi.cninfo.com.cn/#/apiDoc",
+      "output": {
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "境外法人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "证券投资基金持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "国家持股-受限": {
+          "type": "number",
+          "description": "-"
+        },
+        "国有法人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "配售法人股": {
+          "type": "number",
+          "description": "-"
+        },
+        "发起人股份": {
+          "type": "number",
+          "description": "-"
+        },
+        "未流通股份": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：境外自然人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "其他流通受限股份": {
+          "type": "number",
+          "description": "-"
+        },
+        "其他流通股": {
+          "type": "number",
+          "description": "-"
+        },
+        "外资持股-受限": {
+          "type": "number",
+          "description": "-"
+        },
+        "内部职工股": {
+          "type": "number",
+          "description": "-"
+        },
+        "境外上市外资股-H股": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：境内法人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "自然人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "人民币普通股": {
+          "type": "number",
+          "description": "-"
+        },
+        "国有法人持股-受限": {
+          "type": "number",
+          "description": "-"
+        },
+        "一般法人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "控股股东、实际控制人": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：限售H股": {
+          "type": "number",
+          "description": "-"
+        },
+        "变动原因": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "境内法人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "战略投资者持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "国家持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：限售B股": {
+          "type": "number",
+          "description": "-"
+        },
+        "其他未流通股": {
+          "type": "number",
+          "description": "-"
+        },
+        "流通受限股份": {
+          "type": "number",
+          "description": "-"
+        },
+        "优先股": {
+          "type": "number",
+          "description": "-"
+        },
+        "高管股": {
+          "type": "number",
+          "description": "-"
+        },
+        "总股本": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：限售高管股": {
+          "type": "number",
+          "description": "-"
+        },
+        "转配股": {
+          "type": "number",
+          "description": "-"
+        },
+        "境内上市外资股-B股": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：境外法人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "募集法人股": {
+          "type": "number",
+          "description": "-"
+        },
+        "已流通股份": {
+          "type": "number",
+          "description": "-"
+        },
+        "其中：境内自然人持股": {
+          "type": "number",
+          "description": "-"
+        },
+        "其他内资持股-受限": {
+          "type": "number",
+          "description": "-"
+        },
+        "变动原因编码": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_share_change_cninfo_df = ak.stock_share_change_cninfo(symbol=\"002594\", start_date=\"20091227\", end_date=\"20241021\")\nprint(stock_share_change_cninfo_df)",
+        "data": "数据示例\n\n```\n   证券简称     机构名称 境外法人持股  ...   其中：境内自然人持股  其他内资持股-受限  变动原因编码\n0   比亚迪  比亚迪股份有限公司    NaN  ...  129518.2500  146457.3960  015001,015019\n1   比亚迪  比亚迪股份有限公司    NaN  ...  129518.2500  146457.3960         015009\n2   比亚迪  比亚迪股份有限公司    NaN  ...  129518.2500  146457.3960         015019\n3   比亚迪  比亚迪股份有限公司    NaN  ...  103909.7150  120525.4050         015019\n4   比亚迪  比亚迪股份有限公司    NaN  ...   82121.6860   98737.3760         015027\n5   比亚迪  比亚迪股份有限公司    NaN  ...  105034.8585  121650.5485         015019\n6   比亚迪  比亚迪股份有限公司    NaN  ...  101057.0665  117672.7565         015019\n7   比亚迪  比亚迪股份有限公司    NaN  ...  101057.0665  117672.7565         015019\n8   比亚迪  比亚迪股份有限公司    NaN  ...  101057.0665  117672.7565         015005\n9   比亚迪  比亚迪股份有限公司    NaN  ...   74641.3870   86835.0265         015019\n10  比亚迪  比亚迪股份有限公司    NaN  ...   77933.1165   90126.7560         015027\n11  比亚迪  比亚迪股份有限公司    NaN  ...   73295.2720   85488.9115         015019\n12  比亚迪  比亚迪股份有限公司    NaN  ...   74625.3530   84758.9925         015019\n13  比亚迪  比亚迪股份有限公司    NaN  ...   73295.2720   81424.3650         015027\n14  比亚迪  比亚迪股份有限公司    NaN  ...   72387.8051   80516.8981         015019\n15  比亚迪  比亚迪股份有限公司    NaN  ...   67996.6256   72061.1721         015019\n16  比亚迪  比亚迪股份有限公司    NaN  ...   72387.8051   76452.3516         015027\n17  比亚迪  比亚迪股份有限公司    NaN  ...   67996.6256   95881.7294         015004\n18  比亚迪  比亚迪股份有限公司    NaN  ...   67044.1386   96322.9706         015019\n19  比亚迪  比亚迪股份有限公司    NaN  ...   67480.9896   92695.2751         015019\n20  比亚迪  比亚迪股份有限公司    NaN  ...   67044.1386   92258.4241         015027\n21  比亚迪  比亚迪股份有限公司    NaN  ...   67480.9896   67480.9896         015027\n22  比亚迪  比亚迪股份有限公司    NaN  ...   67480.9896   67480.9896         015019\n23  比亚迪  比亚迪股份有限公司    NaN  ...   67134.3301   67134.3301         015019\n24  比亚迪  比亚迪股份有限公司    NaN  ...   67092.8936   67092.8936         015019\n25  比亚迪  比亚迪股份有限公司    NaN  ...   67248.1221   67248.1221         015019\n26  比亚迪  比亚迪股份有限公司    NaN  ...   67151.6826   67151.6826         015019\n27  比亚迪  比亚迪股份有限公司    NaN  ...   66747.5312   66747.5312         015019\n28  比亚迪  比亚迪股份有限公司    NaN  ...   66714.9897   66714.9897         015019\n29  比亚迪  比亚迪股份有限公司    NaN  ...   66747.5312   66747.5312         015004\n30  比亚迪  比亚迪股份有限公司    NaN  ...   65808.4620   65808.4620         015019\n31  比亚迪  比亚迪股份有限公司    NaN  ...   65808.4620   65808.4620         015004\n32  比亚迪  比亚迪股份有限公司    NaN  ...   65808.4620   65808.4620         015019\n33  比亚迪  比亚迪股份有限公司    NaN  ...   64837.8251   64837.8251         015999\n34  比亚迪  比亚迪股份有限公司    NaN  ...   64837.8251   64837.8251         015019\n35  比亚迪  比亚迪股份有限公司    NaN  ...   64837.8251   64837.8251         015019\n36  比亚迪  比亚迪股份有限公司    NaN  ...   64837.8251   64837.8251         015019\n37  比亚迪  比亚迪股份有限公司    NaN  ...   64888.0804   64888.0804         015019\n38  比亚迪  比亚迪股份有限公司    NaN  ...   64879.5289   64879.5289         015999\n39  比亚迪  比亚迪股份有限公司    NaN  ...   64879.5289   64879.5289         015016\n40  比亚迪  比亚迪股份有限公司    NaN  ...   64880.8339   64880.8339         015019\n[41 rows x 44 columns]"
+      }
+    }
+  }
+}

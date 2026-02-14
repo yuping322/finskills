@@ -1,0 +1,967 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 137,
+  "failures": 35,
+  "results": [
+    {
+      "skill": "ab-ah-premium-monitor",
+      "view": "ab_ah_premium_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "block-deal-monitor",
+      "view": "block_deal_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_info_bj_name_code",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_bj_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A81+s%3A2048&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zcfz_bj_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_snapshot",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_concept_name_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))); stock_board_concept_spot_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_concept_cons_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))); stock_board_concept_hist_em: HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_cons_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='79.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A90+t%3A3+f%3A%2150&fields=f2%2Cf3%2Cf4%2Cf8%2Cf12%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf24%2Cf25%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf124%2Cf107%2Cf104%2Cf105%2Cf136 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "notice_daily_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "cninfo_disclosure_search",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_zh_a_disclosure_report_cninfo: 'demo'"
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "cninfo_disclosure_relation_search",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "report_disclosure_calendar",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "dividend_actions_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "stock_history_dividend",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "stock_history_dividend_detail",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "dividend-corporate-action-tracker",
+      "view": "stock_dividend_cninfo",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "dragon-tiger-list-analyzer",
+      "view": "dragon_tiger_daily",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_lhb_detail_daily_sina: '股票代码'; stock_lhb_detail_em: 'NoneType' object is not subscriptable; stock_lhb_jgmmtj_em: 'NoneType' object is not subscriptable; stock_lhb_hyyyb_em: 'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "dragon-tiger-list-analyzer",
+      "view": "dragon_tiger_stock_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_lhb_stock_detail_em: 'default'; stock_lhb_stock_statistic_em: '000001'"
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "equity_pledge_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "stock_gpzy_pledge_ratio_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "equity-pledge-risk-monitor",
+      "view": "stock_gpzy_pledge_ratio_detail_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "equity-research-orchestrator",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "equity-research-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_financial_abstract_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_rate_sina",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_msci_sina",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_rft_sina",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_zd_sina",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_esg_hz_sina",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "etf-allocator",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "etf-allocator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_bid_ask_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_bid_ask_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "factor-crowding-monitor",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "factor-crowding-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_financial_abstract_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_financial_analysis_indicator",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_balance_sheet_by_report_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_profit_sheet_by_report_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "financial-statement-analyzer",
+      "view": "stock_cash_flow_sheet_by_report_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "fund_flow_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_market_fund_flow",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_sector_fund_flow_rank",
+      "ok": false,
+      "mode": "run",
+      "error": "'按报告期'"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_fund_flow_big_deal",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "goodwill-risk-monitor",
+      "view": "goodwill_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "dividend_actions_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "stock_history_dividend",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "stock_history_dividend_detail",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "high-dividend-strategy",
+      "view": "stock_dividend_cninfo",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "hot_rank_sentiment_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_rank_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_rank_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 1 elements, new values have 3 elements"
+    },
+    {
+      "skill": "hot-rank-sentiment-monitor",
+      "view": "stock_hot_keyword_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'flag'"
+    },
+    {
+      "skill": "hsgt-holdings-monitor",
+      "view": "hsgt_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hsgt-holdings-monitor",
+      "view": "stock_hsgt_fund_flow_summary_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "hsgt-holdings-monitor",
+      "view": "stock_hsgt_hold_stock_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "industry_board_snapshot",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "industry_board_detail",
+      "ok": false,
+      "mode": "run",
+      "error": "stock_board_industry_spot_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))); stock_board_industry_cons_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))); stock_board_industry_hist_em: HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_board_industry_index_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 11 elements, new values have 8 elements"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_board_industry_index_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 11 elements, new values have 8 elements"
+    },
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_ggcg_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_inner_trade_xq",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "insider-trading-analyzer",
+      "view": "stock_shareholder_change_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "intraday-microstructure-analyzer",
+      "view": "intraday_microstructure_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "investment-memo-generator",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "investment-memo-generator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "restricted_release_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "stock_restricted_release_summary_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "stock_restricted_release_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "ipo-lockup-risk-monitor",
+      "view": "stock_restricted_release_stockholder_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'NoneType' object is not subscriptable"
+    },
+    {
+      "skill": "ipo-newlist-monitor",
+      "view": "ipo_newlist_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "limit-up-limit-down-risk-checker",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "limit-up-limit-down-risk-checker",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "limit-up-pool-analyzer",
+      "view": "limit_up_pool_daily",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "liquidity-impact-estimator",
+      "view": "macro_china_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "macro-liquidity-monitor",
+      "view": "macro_china_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "margin-risk-monitor",
+      "view": "margin_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "market-breadth-monitor",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "market-breadth-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "market-overview-dashboard",
+      "view": "market_overview_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "northbound-flow-analyzer",
+      "view": "hsgt_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "northbound-flow-analyzer",
+      "view": "stock_hsgt_fund_flow_summary_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "northbound-flow-analyzer",
+      "view": "stock_hsgt_hold_stock_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "peer-comparison-analyzer",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "peer-comparison-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "policy-sensitivity-brief",
+      "view": "macro_china_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "portfolio-health-check",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "portfolio-monitor-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_financial_abstract_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "rebalancing-planner",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "risk-adjusted-return-optimizer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_name_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_board_industry_index_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 11 elements, new values have 8 elements"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "hot_rank_sentiment_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_rank_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_rank_detail_em",
+      "ok": false,
+      "mode": "run",
+      "error": "Length mismatch: Expected axis has 1 elements, new values have 3 elements"
+    },
+    {
+      "skill": "sentiment-reality-gap",
+      "view": "stock_hot_keyword_em",
+      "ok": false,
+      "mode": "run",
+      "error": "'flag'"
+    },
+    {
+      "skill": "share-repurchase-monitor",
+      "view": "repurchase_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "shareholder-risk-check",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "shareholder-risk-check",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "shareholder-structure-monitor",
+      "view": "shareholder_structure_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_financial_abstract_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "st-delist-risk-scanner",
+      "view": "st_delist_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "suitability-report-generator",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "suitability-report-generator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "tech-hype-vs-fundamentals",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "tech-hype-vs-fundamentals",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_financial_abstract_ths",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "valuation-regime-detector",
+      "view": "stock_buffett_index_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "valuation-regime-detector",
+      "view": "stock_index_pe_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "valuation-regime-detector",
+      "view": "stock_index_pb_lg",
+      "ok": false,
+      "mode": "run",
+      "error": "'000001'"
+    },
+    {
+      "skill": "volatility-regime-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "weekly-market-brief-generator",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "weekly-market-brief-generator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}

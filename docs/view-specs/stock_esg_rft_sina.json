@@ -1,0 +1,83 @@
+{
+  "name": "stock_esg_rft_sina",
+  "kind": "tool_view",
+  "description": "新浪财经-ESG评级中心-ESG评级-路孚特",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_esg_rft_sina",
+      "description": "新浪财经-ESG评级中心-ESG评级-路孚特",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有数据",
+      "url": "https://finance.sina.com.cn/esg/grade.shtml",
+      "output": {
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "ESG评分": {
+          "type": "string",
+          "description": "-"
+        },
+        "ESG评分日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "环境总评": {
+          "type": "number",
+          "description": "-"
+        },
+        "环境总评日期": {
+          "type": "number",
+          "description": "-"
+        },
+        "社会责任总评": {
+          "type": "number",
+          "description": "-"
+        },
+        "社会责任总评日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "治理总评": {
+          "type": "string",
+          "description": "-"
+        },
+        "治理总评日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "争议总评": {
+          "type": "string",
+          "description": "-"
+        },
+        "争议总评日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "行业": {
+          "type": "string",
+          "description": "-"
+        },
+        "交易所": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_esg_rft_sina_df = ak.stock_esg_rft_sina()\nprint(stock_esg_rft_sina_df)",
+        "data": "数据示例\n\n```\n           股票代码     ESG评分     ESG评分日期  ...      争议总评日期          行业   交易所\n0          MNTX   10.9(D)  2024-03-23  ...  2023-08-26  卡车-建筑-农用机械  纳斯达克\n1     600958.SH  52.3(B-)  2024-03-23  ...  2023-08-26         证券Ⅱ   上交所\n2     000799.SZ  27.4(C-)  2024-03-23  ...  2023-08-26         白酒Ⅱ   深交所\n3     600745.SH  52.5(B-)  2024-03-23  ...  2023-09-09        消费电子   上交所\n4         DISCA   59.9(B)  2024-03-23  ...  2024-03-16     有线-卫星电视  纳斯达克\n         ...       ...         ...  ...         ...         ...   ...\n5418    BILI.US   35.3(C)  2024-03-23  ...  2024-03-23        ????  纳斯达克\n5419    TCOM.US  29.0(C-)  2024-03-23  ...  2023-12-16        ????  纳斯达克\n5420     HCM.US  52.4(B-)  2024-03-23  ...  2023-08-26     ???????  纳斯达克\n5421    XPEV.US   60.4(B)  2024-03-23  ...  2023-08-26          ??   纽交所\n5422      LI.US   35.7(C)  2024-03-23  ...  2023-09-23          ??  纳斯达克\n[5423 rows x 13 columns]"
+      }
+    }
+  }
+}

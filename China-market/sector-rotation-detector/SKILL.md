@@ -81,7 +81,7 @@ license: Apache-2.0
 
 ## 数据增强
 
-如需实时市场数据支撑分析，请使用**金融数据工具包**技能（`findata-toolkit-cn`）。该工具包提供A股实时行情、财务指标、董监高增减持、北向资金、宏观数据等功能，所有数据源免费，无需API密钥。
+如需实时市场数据支撑分析：请参见 `references/data-queries.md`，直接运行共享脚本（`../findata-toolkit-cn/scripts/`）。
 
 ## 重要注意事项
 

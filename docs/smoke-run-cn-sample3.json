@@ -1,0 +1,204 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 28,
+  "failures": 24,
+  "results": [
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "equity-research-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "etf-allocator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "factor-crowding-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "fund-flow-monitor",
+      "view": "fund_flow_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "investment-memo-generator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "limit-up-limit-down-risk-checker",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "liquidity-impact-estimator",
+      "view": "macro_china_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "macro-liquidity-monitor",
+      "view": "macro_china_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "market-breadth-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "peer-comparison-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "policy-sensitivity-brief",
+      "view": "macro_china_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "portfolio-health-check",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "portfolio-monitor-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "rebalancing-planner",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "risk-adjusted-return-optimizer",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "shareholder-risk-check",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "suitability-report-generator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "tech-hype-vs-fundamentals",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "volatility-regime-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "skill": "weekly-market-brief-generator",
+      "view": "stock_zh_a_hist",
+      "ok": false,
+      "mode": "run",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    }
+  ]
+}

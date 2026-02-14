@@ -1,0 +1,87 @@
+{
+  "name": "hsgt_dashboard",
+  "kind": "custom_view",
+  "description": "沪深港通/北向资金聚合：资金流、历史序列、持股排行、板块增持排行（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "hist_symbol": {
+        "type": "string",
+        "description": "北向资金/沪股通/深股通/南向资金/港股通沪/港股通深"
+      },
+      "hold_market": {
+        "type": "string",
+        "description": "北向/沪股通/深股通"
+      },
+      "hold_indicator": {
+        "type": "string",
+        "description": "今日排行/3日排行/5日排行/10日排行/月排行/季排行/年排行"
+      },
+      "board_rank_symbol": {
+        "type": "string",
+        "description": "北向资金增持行业板块排行/概念板块排行/地域板块排行"
+      },
+      "board_rank_indicator": {
+        "type": "string",
+        "description": "今日/3日/5日/10日/1月/1季/1年"
+      },
+      "individual_symbol": {
+        "type": "string",
+        "description": "个股代码（可选；用于查询单股持仓明细）"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD（可选；用于统计/明细）"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD（可选；用于统计/明细）"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "fund_flow_summary",
+      "tool": "stock_hsgt_fund_flow_summary_em",
+      "args": {}
+    },
+    {
+      "key": "hist",
+      "tool": "stock_hsgt_hist_em",
+      "args": {
+        "symbol": "北向资金"
+      }
+    },
+    {
+      "key": "hold_stock_rank",
+      "tool": "stock_hsgt_hold_stock_em",
+      "args": {
+        "market": "北向",
+        "indicator": "今日排行"
+      }
+    },
+    {
+      "key": "board_rank",
+      "tool": "stock_hsgt_board_rank_em",
+      "args": {
+        "symbol": "北向资金增持行业板块排行",
+        "indicator": "今日"
+      }
+    },
+    {
+      "key": "fund_min",
+      "tool": "stock_hsgt_fund_min_em",
+      "args": {
+        "symbol": "北向资金"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_hsgt_fund_flow_summary_em",
+    "stock_hsgt_hist_em",
+    "stock_hsgt_hold_stock_em",
+    "stock_hsgt_board_rank_em",
+    "stock_hsgt_fund_min_em"
+  ]
+}

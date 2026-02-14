@@ -1,0 +1,69 @@
+{
+  "name": "stock_margin_szse",
+  "kind": "tool_view",
+  "description": "深圳证券交易所-融资融券数据-融资融券汇总数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20240411\"; 交易日期"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_margin_szse",
+      "description": "深圳证券交易所-融资融券数据-融资融券汇总数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20240411\"; 交易日期"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定时间内的所有历史数据",
+      "url": "https://www.szse.cn/disclosure/margin/margin/index.html",
+      "output": {
+        "融资买入额": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        },
+        "融资余额": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        },
+        "融券卖出量": {
+          "type": "number",
+          "description": "注意单位: 亿股/亿份"
+        },
+        "融券余量": {
+          "type": "number",
+          "description": "注意单位: 亿股/亿份"
+        },
+        "融券余额": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        },
+        "融资融券余额": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_margin_sse_df = ak.stock_margin_szse(date=\"20240411\")\nprint(stock_margin_sse_df)",
+        "data": "数据示例\n\n```\n    融资买入额     融资余额  融券卖出量   融券余量   融券余额   融资融券余额\n0  321.08  7077.67   0.28  24.34  157.3  7234.97"
+      }
+    }
+  }
+}

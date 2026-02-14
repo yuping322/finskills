@@ -1,0 +1,54 @@
+{
+  "name": "stock_sector_fund_flow_rank",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-资金流向-板块资金流-排名",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "indicator": {
+        "type": "string",
+        "description": "indicator=\"今日\"; choice of {\"今日\", \"5日\", \"10日\"}"
+      },
+      "sector_type": {
+        "type": "string",
+        "description": "sector_type=\"行业资金流\"; choice of {\"行业资金流\", \"概念资金流\", \"地域资金流\"}"
+      }
+    },
+    "required": [
+      "indicator",
+      "sector_type"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sector_fund_flow_rank",
+      "description": "东方财富网-数据中心-资金流向-板块资金流-排名",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "indicator": {
+            "type": "string",
+            "description": "indicator=\"今日\"; choice of {\"今日\", \"5日\", \"10日\"}"
+          },
+          "sector_type": {
+            "type": "string",
+            "description": "sector_type=\"行业资金流\"; choice of {\"行业资金流\", \"概念资金流\", \"地域资金流\"}"
+          }
+        },
+        "required": [
+          "indicator",
+          "sector_type"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定板块的指定期限的资金流排名数据",
+      "url": "https://data.eastmoney.com/bkzj/hy.html",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

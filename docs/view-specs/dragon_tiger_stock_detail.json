@@ -1,0 +1,48 @@
+{
+  "name": "dragon_tiger_stock_detail",
+  "kind": "custom_view",
+  "description": "个股龙虎榜详情：按日期与上榜类型查询（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "股票代码"
+      },
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD"
+      },
+      "flag": {
+        "type": "string",
+        "description": "上榜原因类型（见 stock_lhb_stock_detail_em 的 flag）"
+      }
+    },
+    "required": [
+      "symbol",
+      "flag"
+    ]
+  },
+  "plan": [
+    {
+      "key": "lhb_stock_detail",
+      "tool": "stock_lhb_stock_detail_em",
+      "args": {
+        "symbol": "000001",
+        "date": "20260214",
+        "flag": "default"
+      }
+    },
+    {
+      "key": "lhb_stock_statistic",
+      "tool": "stock_lhb_stock_statistic_em",
+      "args": {
+        "symbol": "000001"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_lhb_stock_detail_em",
+    "stock_lhb_stock_statistic_em"
+  ]
+}

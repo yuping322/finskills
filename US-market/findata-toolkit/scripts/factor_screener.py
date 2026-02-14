@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common.utils import output_json, safe_div, safe_float, error_exit
+from common.utils import output_json, safe_div, safe_float, error_exit, require_dependency
 
 
 # ---------------------------------------------------------------------------
@@ -287,6 +287,9 @@ def main():
     parser.add_argument("--top", type=int, default=10,
                         help="Number of top stocks to return")
     args = parser.parse_args()
+
+    require_dependency("pandas", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("yfinance", requirements_path="US-market/findata-toolkit/requirements.txt")
 
     if args.sp500_sample:
         tickers = [

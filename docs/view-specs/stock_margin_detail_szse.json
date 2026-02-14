@@ -1,0 +1,77 @@
+{
+  "name": "stock_margin_detail_szse",
+  "kind": "tool_view",
+  "description": "深证证券交易所-融资融券数据-融资融券交易明细数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20220118\""
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_margin_detail_szse",
+      "description": "深证证券交易所-融资融券数据-融资融券交易明细数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20220118\""
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 date 的所有历史数据",
+      "url": "https://www.szse.cn/disclosure/margin/margin/index.html",
+      "output": {
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "融资买入额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融资余额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融券卖出量": {
+          "type": "integer",
+          "description": "注意单位: 股/份"
+        },
+        "融券余量": {
+          "type": "integer",
+          "description": "注意单位: 股/份"
+        },
+        "融券余额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融资融券余额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_margin_detail_sse_df = ak.stock_margin_detail_szse(date=\"20230925\")\nprint(stock_margin_detail_sse_df)",
+        "data": "数据示例\n\n```\n        证券代码   证券简称     融资买入额  ...     融券余量      融券余额      融资融券余额\n0     000001   平安银行  67452975  ...  1791277  20098128  4365763792\n1     000002  万  科Ａ  78869157  ...  6637572  87217696  4819262864\n2     000006   深振业Ａ  11862407  ...   893154   4037056   471912480\n3     000008   神州高铁   6467970  ...    37100     89411   264908600\n4     000009   中国宝安   5545586  ...  2540168  26036723  1501197300\n      ...    ...       ...  ...      ...       ...         ...\n1806  301528    多浦乐   9457046  ...      600     52212    60245085\n1807  301529   福赛科技  10576005  ...    67138   3056121    41545975\n1808  301533   威马农机   1615519  ...     1000     43110    23167466\n1809  301548  C崇德科技  23852209  ...        0         0    41105017\n1810  301550   斯菱股份  17612051  ...     2300     98486    36562401\n[1811 rows x 8 columns]"
+      }
+    }
+  }
+}

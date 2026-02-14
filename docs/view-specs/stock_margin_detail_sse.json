@@ -1,0 +1,81 @@
+{
+  "name": "stock_margin_detail_sse",
+  "kind": "tool_view",
+  "description": "上海证券交易所-融资融券数据-融资融券明细数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20210205\""
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_margin_detail_sse",
+      "description": "上海证券交易所-融资融券数据-融资融券明细数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20210205\""
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回交易日的所有历史数据",
+      "url": "http://www.sse.com.cn/market/othersdata/margin/detail/",
+      "output": {
+        "信用交易日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "标的证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "标的证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "融资余额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融资买入额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融资偿还额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融券余量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "融券卖出量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "融券偿还量": {
+          "type": "integer",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_margin_detail_sse_df = ak.stock_margin_detail_sse(date=\"20230922\")\nprint(stock_margin_detail_sse_df)",
+        "data": "数据示例\n\n```\n      信用交易日期  标的证券代码   标的证券简称  ...  融券余量 融券卖出量  融券偿还量\n0     20230922  510050    50ETF  ...  31081200  21114800  11402100\n1     20230922  510100  SZ50ETF  ...         0         0         0\n2     20230922  510150    消费ETF  ...         0         0         0\n3     20230922  510180   180ETF  ...    409300    173200    130900\n4     20230922  510210    综指ETF  ...         0         0         0\n        ...     ...      ...  ...       ...       ...       ...\n1735  20230922  688799     华纳药厂  ...         0         0         0\n1736  20230922  688800      瑞可达  ...    124592      3617     21777\n1737  20230922  688819     天能股份  ...   1231449     75962      3000\n1738  20230922  688981     中芯国际  ...   4747379    389501    606169\n1739  20230922  689009     九号公司  ...  11236510    112012     27234\n[1740 rows x 9 columns]"
+      }
+    }
+  }
+}

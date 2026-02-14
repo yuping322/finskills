@@ -1,0 +1,64 @@
+{
+  "name": "stock_dzjy_mrmx",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-大宗交易-每日明细",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol='债券'; choice of {'A股', 'B股', '基金', '债券'}"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date='20201123'; 开始日期"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date='20201204'; 结束日期"
+      }
+    },
+    "required": [
+      "symbol",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_dzjy_mrmx",
+      "description": "东方财富网-数据中心-大宗交易-每日明细",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol='债券'; choice of {'A股', 'B股', '基金', '债券'}"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date='20201123'; 开始日期"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date='20201204'; 结束日期"
+          }
+        },
+        "required": [
+          "symbol",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/dzjy/dzjy_mrmx.html",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

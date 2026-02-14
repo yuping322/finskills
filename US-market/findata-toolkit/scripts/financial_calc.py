@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common.utils import output_json, safe_div, safe_float, error_exit
+from common.utils import output_json, safe_div, safe_float, error_exit, require_dependency
 
 
 # ---------------------------------------------------------------------------
@@ -723,6 +723,9 @@ def main():
                         help="Working capital analysis")
     args = parser.parse_args()
 
+    require_dependency("pandas", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("yfinance", requirements_path="US-market/findata-toolkit/requirements.txt")
+
     try:
         if args.all:
             data = full_analysis(args.symbol)
@@ -743,8 +746,6 @@ def main():
 
         output_json(data)
 
-    except ImportError:
-        error_exit("yfinance is required. Install: pip install yfinance")
     except Exception as e:
         error_exit(f"Error: {e}")
 

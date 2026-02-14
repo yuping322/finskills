@@ -1,0 +1,69 @@
+{
+  "name": "stock_hold_control_cninfo",
+  "kind": "tool_view",
+  "description": "巨潮资讯-数据中心-专题统计-股东股本-实际控制人持股变动",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"全部\"; choice of {\"单独控制\", \"实际控制人\", \"一致行动人\", \"家族控制\", \"全部\"}; 从 2010 开始"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hold_control_cninfo",
+      "description": "巨潮资讯-数据中心-专题统计-股东股本-实际控制人持股变动",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"全部\"; choice of {\"单独控制\", \"实际控制人\", \"一致行动人\", \"家族控制\", \"全部\"}; 从 2010 开始"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次指定 symbol 的实际控制人持股变动数据, 从 2010 开始",
+      "url": "https://webapi.cninfo.com.cn/#/thematicStatistics",
+      "output": {
+        "证劵代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "控股数量": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "控股比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "控制类型": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_hold_control_cninfo_df = ak.stock_hold_control_cninfo(symbol=\"全部\")\nprint(stock_hold_control_cninfo_df)",
+        "data": "数据示例\n\n```\n        证券代码  证券简称  ...                                        直接控制人名称   控制类型\n0     601777  力帆股份  ...                 尹明善\\r;陈巧凤\\r;尹喜地\\r;尹索微\\r;重庆力帆控股有限公司  一致行动人\n1     002460  赣锋锂业  ...                           李良彬;黄闻;熊剑浪;李良学;罗顺香\\r;李华彪  一致行动人\n2     000966  长源电力  ...                                           中国国电集团公司   单独控制\n3     600019  宝钢股份  ...                                           宝钢集团有限公司   单独控制\n4     600031  三一重工  ...                                       三一集团有限公司;梁稳根   单独控制\n...      ...   ...  ...                                                ...    ...\n5391  600354  敦煌种业  ...                                     酒泉钢铁(集团)有限责任公司   单独控制\n5392  600208  新湖中宝  ...                          衢州工业投资集团有限公司;衢州工业发展集团有限公司   单独控制\n5393  600399  抚顺特钢  ...  江苏沙钢集团有限公司;沙钢集团的股东张家港市保税区润源不锈钢贸易有限公司;宁波梅山保税港区锦...  一致行动人\n5394  002075  沙钢股份  ...  江苏沙钢集团有限公司;宁波梅山保税港区锦程沙洲股权投资有限公司;张家港保税区润源不锈钢贸易有限公司   单独控制\n5395  301552  科力装备  ...                   张万武;郭艳芝;张子恒;天津科达企业管理咨询合伙企业(有限合伙)   家族控制\n[5396 rows x 8 columns]"
+      }
+    }
+  }
+}

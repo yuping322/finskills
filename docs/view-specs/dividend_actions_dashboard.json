@@ -1,0 +1,51 @@
+{
+  "name": "dividend_actions_dashboard",
+  "kind": "custom_view",
+  "description": "分红/配股聚合：分红配送、交易提醒、个股历史分红与配股方案（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "fhps_date": {
+        "type": "string",
+        "description": "分红配送报告期 YYYYMMDD（通常为 XXXX0630 或 XXXX1231）"
+      },
+      "calendar_date": {
+        "type": "string",
+        "description": "交易提醒日期 YYYYMMDD"
+      },
+      "symbol": {
+        "type": "string",
+        "description": "股票代码（可选；用于个股分红/配股详情）"
+      },
+      "allotment_start_date": {
+        "type": "string",
+        "description": "配股方案查询起始 YYYYMMDD"
+      },
+      "allotment_end_date": {
+        "type": "string",
+        "description": "配股方案查询结束 YYYYMMDD"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "fhps_by_period",
+      "tool": "stock_fhps_em",
+      "args": {
+        "date": "20251231"
+      }
+    },
+    {
+      "key": "trade_notify_dividend",
+      "tool": "news_trade_notify_dividend_baidu",
+      "args": {
+        "date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_fhps_em",
+    "news_trade_notify_dividend_baidu"
+  ]
+}

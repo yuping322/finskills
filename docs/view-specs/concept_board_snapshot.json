@@ -1,0 +1,26 @@
+{
+  "name": "concept_board_snapshot",
+  "kind": "custom_view",
+  "description": "概念板块快照：概念列表 + 实时行情（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "concept_list",
+      "tool": "stock_board_concept_name_em",
+      "args": {}
+    },
+    {
+      "key": "concept_spot",
+      "tool": "stock_board_concept_spot_em",
+      "args": {}
+    }
+  ],
+  "depends_on": [
+    "stock_board_concept_name_em",
+    "stock_board_concept_spot_em"
+  ]
+}

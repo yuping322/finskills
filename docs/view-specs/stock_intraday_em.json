@@ -1,0 +1,61 @@
+{
+  "name": "stock_intraday_em",
+  "kind": "tool_view",
+  "description": "东方财富-分时数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"000001\"; 股票代码"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_intraday_em",
+      "description": "东方财富-分时数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"000001\"; 股票代码"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定股票最近一个交易日的分时数据, 包含盘前数据",
+      "url": "https://quote.eastmoney.com/f1.html?newcode=0.000001",
+      "output": {
+        "时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "成交价": {
+          "type": "number",
+          "description": "-"
+        },
+        "手数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "买卖盘性质": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_intraday_em_df = ak.stock_intraday_em(symbol=\"000001\")\nprint(stock_intraday_em_df)",
+        "data": "数据示例\n\n```\n         时间    成交价    手数 买卖盘性质\n0     09:15:00  10.60    11   中性盘\n1     09:15:09  10.57  1547   中性盘\n2     09:15:18  10.57  1549   中性盘\n3     09:15:27  10.57  1549   中性盘\n4     09:15:36  10.57  1552   中性盘\n        ...    ...   ...   ...\n4396  14:56:51  10.50    30    买盘\n4397  14:56:54  10.49   109    卖盘\n4398  14:56:57  10.49    27    卖盘\n4399  14:57:00  10.50    68    买盘\n4400  15:00:00  10.50  8338    买盘\n[4401 rows x 4 columns]"
+      }
+    }
+  }
+}

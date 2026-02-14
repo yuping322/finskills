@@ -1,0 +1,32 @@
+{
+  "name": "notice_daily_dashboard",
+  "kind": "custom_view",
+  "description": "公告类别-按日汇总（stock_notice_report；工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string",
+        "description": "全部/重大事项/财务报告/融资公告/风险提示/资产重组/信息变更/持股变动"
+      },
+      "date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "notice_report",
+      "tool": "stock_notice_report",
+      "args": {
+        "symbol": "重大事项",
+        "date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_notice_report"
+  ]
+}

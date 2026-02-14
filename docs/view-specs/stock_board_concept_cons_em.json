@@ -1,0 +1,91 @@
+{
+  "name": "stock_board_concept_cons_em",
+  "kind": "tool_view",
+  "description": "东方财富-沪深板块-概念板块-板块成份",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_concept_cons_em",
+      "description": "东方财富-沪深板块-概念板块-板块成份",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前时刻所有成份股",
+      "url": "http://quote.eastmoney.com/center/boardlist.html#boards-BK06551",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "注意单位: 手"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市盈率-动态": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_concept_cons_em_df = ak.stock_board_concept_cons_em(symbol=\"融资融券\")\nprint(stock_board_concept_cons_em_df)",
+        "data": "数据示例\n\n```\n       序号  代码    名称    最新价     涨跌幅  ...     今开      昨收    换手率  市盈率-动态    市净率\n0        1  301557   N常友  89.99  211.60  ...  80.23   28.88  83.66   37.89   4.00\n1        2  603409   N汇通  50.81  110.13  ...  48.50   24.18  75.43   38.13   4.44\n2        3  832149   利尔达  17.29   30.00  ...  13.01   13.30  37.53  -49.74  10.49\n3        4  837006  晟楠科技  31.39   29.98  ...  24.24   24.15  47.44 -195.48   8.85\n4        5  831167   鑫汇科  33.87   29.97  ...  29.90   26.06  15.82   59.27   6.26\n...    ...     ...   ...    ...     ...  ...    ...     ...    ...     ...    ...\n3669  3670  603663  三祥新材  24.75  -10.00  ...  24.75   27.50  14.56  102.19   8.02\n3670  3671  603906  龙蟠科技  12.13  -10.01  ...  13.01   13.48   9.35  -19.98   2.73\n3671  3672  000042  中洲控股   6.71  -10.05  ...   7.45    7.46   3.17   -6.45   0.86\n3672  3673  870436  大地电气  25.53  -10.20  ...  26.72   28.43  11.62  -32.46   6.16\n3673  3674  920106  林泰新材  93.35  -11.93  ...  98.00  106.00  25.92   34.45   8.44\n[3674 rows x 16 columns]"
+      }
+    }
+  }
+}

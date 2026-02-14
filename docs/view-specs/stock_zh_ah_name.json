@@ -1,0 +1,35 @@
+{
+  "name": "stock_zh_ah_name",
+  "kind": "tool_view",
+  "description": "A+H 股数据是从腾讯财经获取的数据, 历史数据按日频率更新",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_ah_name",
+      "description": "A+H 股数据是从腾讯财经获取的数据, 历史数据按日频率更新",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有 A+H 上市公司的代码和名称",
+      "url": "https://stockapp.finance.qq.com/mstats/#mod=list&id=hk_ah&module=HK&type=AH",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_ah_name_df = ak.stock_zh_ah_name()\nprint(stock_zh_ah_name_df)",
+        "data": "数据示例\n\n```\n     代码        名称\n0    01211     比亚迪股份\n1    06160      百济神州\n2    01880      中国中免\n3    00941      中国移动\n4    06821       凯莱英\n..     ...       ...\n144  01053    重庆钢铁股份\n145  00588  北京北辰实业股份\n146  02009      金隅集团\n147  02880      辽港股份\n148  01033     中石化油服\n[149 rows x 2 columns]"
+      }
+    }
+  }
+}

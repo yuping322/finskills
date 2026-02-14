@@ -1,0 +1,57 @@
+{
+  "name": "goodwill_dashboard",
+  "kind": "custom_view",
+  "description": "商誉聚合：公司/行业商誉、减值明细与预期（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "报告期/日期 YYYYMMDD（通常为季度末，如 20251231）"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "profile",
+      "tool": "stock_sy_profile_em",
+      "args": {}
+    },
+    {
+      "key": "goodwill_company",
+      "tool": "stock_sy_em",
+      "args": {
+        "date": "20251231"
+      }
+    },
+    {
+      "key": "goodwill_industry",
+      "tool": "stock_sy_hy_em",
+      "args": {
+        "date": "20251231"
+      }
+    },
+    {
+      "key": "impairment_detail",
+      "tool": "stock_sy_jz_em",
+      "args": {
+        "date": "20251231"
+      }
+    },
+    {
+      "key": "impairment_expectation",
+      "tool": "stock_sy_yq_em",
+      "args": {
+        "date": "20251231"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_sy_profile_em",
+    "stock_sy_em",
+    "stock_sy_hy_em",
+    "stock_sy_jz_em",
+    "stock_sy_yq_em"
+  ]
+}

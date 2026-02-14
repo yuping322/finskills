@@ -1,0 +1,105 @@
+{
+  "name": "stock_zt_pool_em",
+  "kind": "tool_view",
+  "description": "东方财富网-行情中心-涨停板行情-涨停股池",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date='20241008'"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zt_pool_em",
+      "description": "东方财富网-行情中心-涨停板行情-涨停股池",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date='20241008'"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 date 的涨停股池数据; 该接口只能获取近期的数据",
+      "url": "https://quote.eastmoney.com/ztb/detail#type=ztgc",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "integer",
+          "description": "-"
+        },
+        "流通市值": {
+          "type": "number",
+          "description": "-"
+        },
+        "总市值": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "封板资金": {
+          "type": "integer",
+          "description": "-"
+        },
+        "首次封板时间": {
+          "type": "string",
+          "description": "注意格式: 09:25:00"
+        },
+        "最后封板时间": {
+          "type": "string",
+          "description": "注意格式: 09:25:00"
+        },
+        "炸板次数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "涨停统计": {
+          "type": "string",
+          "description": "-"
+        },
+        "连板数": {
+          "type": "integer",
+          "description": "注意格式: 1 为首板"
+        },
+        "所属行业": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zt_pool_em_df = ak.stock_zt_pool_em(date='20241008')\nprint(stock_zt_pool_em_df)",
+        "data": "数据示例\n\n```\n      序号 代码    名称      涨跌幅    最新价  ...  最后封板时间 炸板次数 涨停统计 连板数 所属行业\n0      1  000004  国华网安  10.000000  17.93  ...  141354     1  10/6    2  软件开发\n1      2  000021   深科技   9.981852  18.18  ...  142309     1   1/1    1  消费电子\n2      3  000027  深圳能源  10.014306   7.69  ...  142912     3   1/1    1  电力行业\n3      4  000032  深桑达Ａ   9.994223  19.04  ...  144248     1   3/3    3  通信设备\n4      5  000034  神州数码  10.006497  33.86  ...  144533     2   2/2    2  计算机设\n..   ...     ...   ...        ...    ...  ...     ...   ...   ...  ...   ...\n771  772  300222  科大智能  20.053122   9.04  ...  150000     0   1/1    1  电网设备\n772  773  300248   新开普  20.022123  10.85  ...  150000     0   1/1    1  互联网服\n773  774  688095  福昕软件  20.002993  80.21  ...  150000     0   1/1    1  软件开发\n774  775  688205   德科立  20.009701  49.48  ...  150000     0   1/1    1  光学光电\n775  776  688653  康希通信  20.030350  15.82  ...  150000     0   1/1    1   半导体\n[776 rows x 16 columns]"
+      }
+    }
+  }
+}

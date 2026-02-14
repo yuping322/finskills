@@ -1,0 +1,77 @@
+{
+  "name": "stock_dzjy_hyyybtj",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-大宗交易-活跃营业部统计",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol='近3日'; choice of {'当前交易日', '近3日', '近5日', '近10日', '近30日'}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_dzjy_hyyybtj",
+      "description": "东方财富网-数据中心-大宗交易-活跃营业部统计",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol='近3日'; choice of {'当前交易日', '近3日', '近5日', '近10日', '近30日'}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/dzjy/dzjy_hyyybtj.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "最近上榜日": {
+          "type": "string",
+          "description": "-"
+        },
+        "次数总计-买入": {
+          "type": "number",
+          "description": "-"
+        },
+        "次数总计-卖出": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "成交金额统计-买入": {
+          "type": "number",
+          "description": "注意单位: 万元"
+        },
+        "成交金额统计-卖出": {
+          "type": "number",
+          "description": "注意单位: 万元"
+        },
+        "成交金额统计-净买入额": {
+          "type": "number",
+          "description": "注意单位: 万元"
+        },
+        "买入的股票": {
+          "type": "string",
+          "description": ""
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_dzjy_hyyybtj_df = ak.stock_dzjy_hyyybtj(symbol='近3日')\nprint(stock_dzjy_hyyybtj_df)",
+        "data": "数据示例\n\n```\n      序号  ...                                              买入的股票\n0      1  ...  000426|兴业银锡,000703|恒逸石化,000736|中交地产,001236|弘业期...\n1      2  ...  605376|博迁新材,688165|埃夫特,688234|天岳先进,688469|芯联集成...\n2      3  ...  002156|通富微电,300398|飞凯材料,300783|三只松鼠,301091|深城交...\n3      4  ...  002156|通富微电,003009|中天火箭,300398|飞凯材料,688234|天岳先...\n4      5  ...    600021|上海电力,600033|福建高速,601326|秦港股份,603378|亚士创能\n..   ...  ...                                                ...\n242  243  ...                                               None\n243  244  ...                                               None\n244  245  ...                                               None\n245  246  ...                                               None\n246  247  ...                                               None\n[247 rows x 9 columns]"
+      }
+    }
+  }
+}

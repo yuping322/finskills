@@ -1,0 +1,59 @@
+{
+  "name": "stock_history_dividend",
+  "kind": "tool_view",
+  "description": "新浪财经-发行与分配-历史分红",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_history_dividend",
+      "description": "新浪财经-发行与分配-历史分红",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次获取所有股票的历史分红数据",
+      "url": "http://vip.stock.finance.sina.com.cn/q/go.php/vInvestConsult/kind/lsfh/index.phtml",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "上市日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "累计股息": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "年均股息": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "分红次数": {
+          "type": "number",
+          "description": "-"
+        },
+        "融资总额": {
+          "type": "number",
+          "description": "注意单位: 亿"
+        },
+        "融资次数": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_history_dividend_df = ak.stock_history_dividend()\nprint(stock_history_dividend_df)",
+        "data": "数据示例\n\n```\n     代码      名称     上市日期   累计股息  年均股息 分红次数 融资总额 融资次数\n0     000550  江铃汽车  1993-12-01  213.0  6.87    51   0.0000     0\n1     000541  佛山照明  1993-11-23  192.0  6.19    56  10.8842     1\n2     000429  粤高速A  1998-02-20  171.4  6.35    50  16.3350     1\n3     000726   鲁泰A  2000-12-25  143.9  6.00    47   9.5082     1\n4     000581  威孚高科  1998-09-24  143.1  5.50    48  28.5012     1\n...      ...   ...         ...    ...   ...   ...      ...   ...\n5556  920002  万达轴承  2024-05-30    0.0  0.00     0   1.0235     1\n5557  920008  成电光信  2024-08-29    0.0  0.00     0   0.8949     1\n5558  920016  中草香料  2024-09-13    0.0  0.00     0   1.1465     1\n5559  920099  瑞华技术  2024-09-25    0.0  0.00     0   0.0000     0\n5560  920118  太湖远大  2024-08-22    0.0  0.00     0   0.0000     0\n[5561 rows x 8 columns]"
+      }
+    }
+  }
+}

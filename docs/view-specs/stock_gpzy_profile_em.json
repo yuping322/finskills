@@ -1,0 +1,63 @@
+{
+  "name": "stock_gpzy_profile_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-股权质押-股权质押市场概况",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_gpzy_profile_em",
+      "description": "东方财富网-数据中心-特色数据-股权质押-股权质押市场概况",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次所有历史数据, 由于数据量比较大需要等待一定时间",
+      "url": "https://data.eastmoney.com/gpzy/marketProfile.aspx",
+      "output": {
+        "交易日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "A股质押总比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "质押公司数量": {
+          "type": "number",
+          "description": "-"
+        },
+        "质押笔数": {
+          "type": "number",
+          "description": "注意单位: 笔"
+        },
+        "质押总股数": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "质押总市值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "沪深300指数": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_gpzy_profile_em_df = ak.stock_gpzy_profile_em()\nprint(stock_gpzy_profile_em_df)",
+        "data": "数据示例\n\n```\n     交易日期   A股质押总比例  质押公司数量  ... 质押总市值  沪深300指数  涨跌幅\n0    2014-03-07  6.731948    1609  ...  1.629956e+08  2168.3580 -0.4871\n1    2014-03-14  6.754048    1617  ...  1.593885e+08  2122.8360 -2.0994\n2    2014-03-21  6.750488    1614  ...  1.624715e+08  2158.7980  1.6941\n3    2014-03-28  6.716687    1623  ...  1.591070e+08  2151.9650 -0.3165\n4    2014-04-04  6.801723    1628  ...  1.635032e+08  2185.4720  1.5570\n..          ...       ...     ...  ...           ...        ...     ...\n544  2024-11-15  3.619449    2335  ...  2.867691e+08  3968.8308 -3.2947\n545  2024-11-22  3.622143    2326  ...  2.812394e+08  3865.6989 -2.5985\n546  2024-11-29  3.616201    2319  ...  2.863046e+08  3916.5832  1.3163\n547  2024-12-06  3.612298    2322  ...  2.929517e+08  3973.1405  1.4440\n548  2024-12-13  3.617088    2318  ...  2.933758e+08  3933.1808 -1.0057\n[549 rows x 8 columns]"
+      }
+    }
+  }
+}

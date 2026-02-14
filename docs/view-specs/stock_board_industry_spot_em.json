@@ -1,0 +1,53 @@
+{
+  "name": "stock_board_industry_spot_em",
+  "kind": "tool_view",
+  "description": "东方财富网-沪深板块-行业板块-实时行情",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"小金属\""
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_industry_spot_em",
+      "description": "东方财富网-沪深板块-行业板块-实时行情",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"小金属\""
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定板块的实时行情数据",
+      "url": "https://quote.eastmoney.com/bk/90.BK1027.html",
+      "output": {
+        "item": {
+          "type": "string",
+          "description": "-"
+        },
+        "value": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_industry_spot_em_df = ak.stock_board_industry_spot_em(symbol=\"小金属\")\nprint(stock_board_industry_spot_em_df)",
+        "data": "数据示例\n\n```\n  item         value\n0   最新  1.957370e+03\n1   最高  1.990130e+03\n2   最低  1.953700e+03\n3   开盘  1.964160e+03\n4  成交量  1.386981e+07\n5  成交额  2.165428e+10\n6  换手率  2.970000e+00\n7  涨跌额 -1.791000e+01\n8  涨跌幅 -9.100000e-01\n9   振幅  1.840000e+00"
+      }
+    }
+  }
+}

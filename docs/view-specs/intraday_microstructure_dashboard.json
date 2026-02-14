@@ -1,0 +1,49 @@
+{
+  "name": "intraday_microstructure_dashboard",
+  "kind": "custom_view",
+  "description": "日内微观结构聚合：盘口/分时/分钟线（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "股票代码（6位）"
+      },
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD（可选；用于新浪日内分时）"
+      },
+      "minute_period": {
+        "type": "string",
+        "description": "分钟频率：1/5/15/30/60（可选）"
+      },
+      "minute_adjust": {
+        "type": "string",
+        "description": "复权：''/qfq/hfq（可选）"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "plan": [
+    {
+      "key": "bid_ask",
+      "tool": "stock_bid_ask_em",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "intraday_em",
+      "tool": "stock_intraday_em",
+      "args": {
+        "symbol": "000001"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_bid_ask_em",
+    "stock_intraday_em"
+  ]
+}

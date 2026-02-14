@@ -1,0 +1,79 @@
+{
+  "name": "stock_zh_ah_spot",
+  "kind": "tool_view",
+  "description": "A+H 股数据是从腾讯财经获取的数据, 延迟 15 分钟更新",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_ah_spot",
+      "description": "A+H 股数据是从腾讯财经获取的数据, 延迟 15 分钟更新",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有 A+H 上市公司的实时行情数据",
+      "url": "https://stockapp.finance.qq.com/mstats/#mod=list&id=hk_ah&module=HK&type=AH",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "买入": {
+          "type": "number",
+          "description": "-"
+        },
+        "卖出": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_ah_spot_df = ak.stock_zh_ah_spot()\nprint(stock_zh_ah_spot_df)",
+        "data": "数据示例\n\n```\n        代码       名称   最新价   涨跌幅   涨跌额  ...          成交额    今开    昨收    最高    最低\n0    00525   广深铁路股份  1.66 -0.60 -0.01  ...  18427959.54  1.67  1.67  1.69  1.63\n1    01618     中国中冶  1.59 -1.85 -0.03  ...  11468956.78  1.62  1.62  1.63  1.59\n2    02727     上海电气  1.54  0.00  0.00  ...  12801574.00  1.54  1.54  1.57  1.53\n3    03369     秦港股份  1.49  0.00  0.00  ...   6051885.00  1.49  1.49  1.58  1.48\n4    03678     弘业期货  1.41 -0.70 -0.01  ...   1871710.00  1.43  1.42  1.44  1.41\n..     ...      ...   ...   ...   ...  ...          ...   ...   ...   ...   ...\n155  06806     申万宏源  1.39 -1.42 -0.02  ...   4312447.20  1.41  1.41  1.42  1.39\n156  00991     大唐发电  1.24 -2.36 -0.03  ...  29927046.00  1.26  1.27  1.27  1.23\n157  00323  马鞍山钢铁股份  1.22 -0.81 -0.01  ...   2345447.26  1.23  1.23  1.25  1.22\n158  01635     大众公用  1.20  0.84  0.01  ...    371140.00  1.20  1.19  1.20  1.19\n159  01375     中州证券  1.11 -1.77 -0.02  ...   4867240.00  1.13  1.13  1.13  1.09\n[160 rows x 13 columns]"
+      }
+    }
+  }
+}

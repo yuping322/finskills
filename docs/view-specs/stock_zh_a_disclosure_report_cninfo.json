@@ -1,0 +1,115 @@
+{
+  "name": "stock_zh_a_disclosure_report_cninfo",
+  "kind": "tool_view",
+  "description": "巨潮资讯-首页-公告查询-信息披露公告-沪深京",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"000001\"; 股票代码"
+      },
+      "market": {
+        "type": "string",
+        "description": "market=\"沪深京\"; choice of {\"沪深京\", \"港股\", \"三板\", \"基金\", \"债券\", \"监管\", \"预披露\"}"
+      },
+      "keyword": {
+        "type": "string",
+        "description": "keyword=\"\"; 关键词"
+      },
+      "category": {
+        "type": "string",
+        "description": "category=\"\"; choice of {'年报', '半年报', '一季报', '三季报', '业绩预告', '权益分派', '董事会', '监事会', '股东大会', '日常经营', '公司治理', '中介报告', '首发', '增发', '股权激励', '配股', '解禁', '公司债', '可转债', '其他融资', '股权变动', '补充更正', '澄清致歉', '风险提示', '特别处理和退市', '退市整理期'}"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20230618\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20231219\""
+      }
+    },
+    "required": [
+      "symbol",
+      "market",
+      "keyword",
+      "category",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_disclosure_report_cninfo",
+      "description": "巨潮资讯-首页-公告查询-信息披露公告-沪深京",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"000001\"; 股票代码"
+          },
+          "market": {
+            "type": "string",
+            "description": "market=\"沪深京\"; choice of {\"沪深京\", \"港股\", \"三板\", \"基金\", \"债券\", \"监管\", \"预披露\"}"
+          },
+          "keyword": {
+            "type": "string",
+            "description": "keyword=\"\"; 关键词"
+          },
+          "category": {
+            "type": "string",
+            "description": "category=\"\"; choice of {'年报', '半年报', '一季报', '三季报', '业绩预告', '权益分派', '董事会', '监事会', '股东大会', '日常经营', '公司治理', '中介报告', '首发', '增发', '股权激励', '配股', '解禁', '公司债', '可转债', '其他融资', '股权变动', '补充更正', '澄清致歉', '风险提示', '特别处理和退市', '退市整理期'}"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20230618\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20231219\""
+          }
+        },
+        "required": [
+          "symbol",
+          "market",
+          "keyword",
+          "category",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的信息披露公告数据",
+      "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告标题": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告链接": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_disclosure_report_cninfo_df = ak.stock_zh_a_disclosure_report_cninfo(symbol=\"000001\", market=\"沪深京\", category=\"公司治理\", start_date=\"20230619\", end_date=\"20231220\")\nprint(stock_zh_a_disclosure_report_cninfo_df)",
+        "data": "数据示例\n\n```\n   代码    简称  ...        公告时间                               公告链接\n0  000001  平安银行  ...  2023-12-09  http://www.cninfo.com.cn/new/disclosure/detail...\n1  000001  平安银行  ...  2023-11-21  http://www.cninfo.com.cn/new/disclosure/detail...\n2  000001  平安银行  ...  2023-10-25  http://www.cninfo.com.cn/new/disclosure/detail...\n3  000001  平安银行  ...  2023-08-24  http://www.cninfo.com.cn/new/disclosure/detail...\n4  000001  平安银行  ...  2023-07-29  http://www.cninfo.com.cn/new/disclosure/detail...\n5  000001  平安银行  ...  2023-07-25  http://www.cninfo.com.cn/new/disclosure/detail...\n[6 rows x 5 columns]"
+      }
+    }
+  }
+}

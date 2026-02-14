@@ -1,0 +1,75 @@
+{
+  "name": "stock_esg_hz_sina",
+  "kind": "tool_view",
+  "description": "新浪财经-ESG评级中心-ESG评级-华证指数",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_esg_hz_sina",
+      "description": "新浪财经-ESG评级中心-ESG评级-华证指数",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有数据",
+      "url": "https://finance.sina.com.cn/esg/grade.shtml",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "交易市场": {
+          "type": "string",
+          "description": "-"
+        },
+        "ESG评分": {
+          "type": "number",
+          "description": "-"
+        },
+        "ESG等级": {
+          "type": "string",
+          "description": "-"
+        },
+        "环境": {
+          "type": "number",
+          "description": "-"
+        },
+        "环境等级": {
+          "type": "string",
+          "description": "-"
+        },
+        "社会": {
+          "type": "number",
+          "description": "-"
+        },
+        "社会等级": {
+          "type": "string",
+          "description": "-"
+        },
+        "公司治理": {
+          "type": "number",
+          "description": "-"
+        },
+        "公司治理等级": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_esg_hz_sina_df = ak.stock_esg_hz_sina()\nprint(stock_esg_hz_sina_df)",
+        "data": "数据示例\n\n```\n        日期       股票代码 交易市场   股票名称  ESG评分  ... 环境等级     社会 社会等级   公司治理 公司治理等级\n0     2023-04-30  300760.SZ   cn   迈瑞医疗  88.85  ...  BBB  92.77   AA  89.90      A\n1     2023-04-30  601825.SH   cn   沪农商行  88.09  ...  BBB  88.64    A  89.79      A\n2     2023-04-30  601166.SH   cn   兴业银行  88.08  ...   AA  86.00    A  88.78      A\n3     2023-04-30  300021.SZ   cn   大禹节水  87.91  ...    A  91.78   AA  85.77      A\n4     2023-04-30  600803.SH   cn   新奥股份  87.90  ...    A  90.49   AA  85.99      A\n          ...        ...  ...    ...    ...  ...  ...    ...  ...    ...    ...\n5159  2023-04-30  000150.SZ   cn  *ST宜康  60.24  ...    C  69.49  CCC  53.14      C\n5160  2023-04-30  600242.SH   cn  *ST中昌  59.79  ...    C  68.36  CCC  54.08      C\n5161  2023-04-30  000752.SZ   cn  *ST西发  59.55  ...    C  67.36  CCC  56.29      C\n5162  2023-04-30  688086.SH   cn  *ST紫晶  57.11  ...   CC  63.37   CC  47.49      C\n5163  2023-04-30  000038.SZ   cn  *ST大通  56.95  ...   CC  65.05  CCC  49.79      C\n[5164 rows x 12 columns]"
+      }
+    }
+  }
+}

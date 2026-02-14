@@ -1,0 +1,73 @@
+{
+  "name": "stock_shareholder_change_ths",
+  "kind": "tool_view",
+  "description": "同花顺-公司大事-股东持股变动",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"688981\"; 股票代码"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_shareholder_change_ths",
+      "description": "同花顺-公司大事-股东持股变动",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"688981\"; 股票代码"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有数据",
+      "url": "https://basic.10jqka.com.cn/new/688981/event.html",
+      "output": {
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动股东": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动数量": {
+          "type": "string",
+          "description": "注意单位: 股"
+        },
+        "交易均价": {
+          "type": "string",
+          "description": "注意单位: 元"
+        },
+        "剩余股份总数": {
+          "type": "string",
+          "description": "注意单位: 股"
+        },
+        "变动期间": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动途径": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_shareholder_change_ths_df = ak.stock_shareholder_change_ths(symbol=\"688981\")\nprint(stock_shareholder_change_ths_df)",
+        "data": "数据示例\n\n```\n         公告日期                        变动股东  ...                   变动期间         变动途径\n0  2021-08-11           GICPrivateLimited  ...                  2021.08.04-2021.08.04  二级市场\n1  2022-12-16   华夏上证科创板50成份交易型开放式指数证券投资基金  ...  2022.12.14-2022.12.14  二级市场\n2  2023-04-13   华夏上证科创板50成份交易型开放式指数证券投资基金  ...  2023.04.10-2023.04.10  二级市场\n3  2023-08-31   华夏上证科创板50成份交易型开放式指数证券投资基金  ...  2023.08.29-2023.08.29  二级市场\n4  2024-02-28   华夏上证科创板50成份交易型开放式指数证券投资基金  ...  2024.02.26-2024.02.26  二级市场\n5  2024-10-12  易方达上证科创板50成份交易型开放式指数证券投资基金  ...  2024.10.10-2024.10.10  二级市场\n6  2024-10-23  易方达上证科创板50成份交易型开放式指数证券投资基金  ...  2024.10.21-2024.10.21  二级市场\n[7 rows x 7 columns]"
+      }
+    }
+  }
+}

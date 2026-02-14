@@ -1,0 +1,63 @@
+{
+  "name": "stock_info_bj_name_code",
+  "kind": "tool_view",
+  "description": "北京证券交易所股票代码和简称数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_info_bj_name_code",
+      "description": "北京证券交易所股票代码和简称数据",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次获取北京证券交易所所有的股票代码和简称数据",
+      "url": "https://www.bse.cn/nq/listedcompany.html",
+      "output": {
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "总股本": {
+          "type": "integer",
+          "description": "注意单位: 股"
+        },
+        "流通股本": {
+          "type": "integer",
+          "description": "注意单位: 股"
+        },
+        "上市日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "所属行业": {
+          "type": "string",
+          "description": "-"
+        },
+        "地区": {
+          "type": "string",
+          "description": "-"
+        },
+        "报告日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_info_bj_name_code_df = ak.stock_info_bj_name_code()\nprint(stock_info_bj_name_code_df)",
+        "data": "数据示例\n\n```\n       证券代码  证券简称   总股本  ...              所属行业   地区        报告日期\n0    430017  星昊医药  122577200  ...             医药制造业  北京市  2024-02-29\n1    430047  诺思兰德  274873974  ...             医药制造业  北京市  2024-02-29\n2    430090  同辉信息  199333546  ...        软件和信息技术服务业  北京市  2024-02-29\n3    430139  华岭股份  266800000  ...  计算机、通信和其他电子设备制造业  上海市  2024-02-29\n4    430198  微创光电  161363872  ...  计算机、通信和其他电子设备制造业  湖北省  2024-02-29\n..      ...   ...        ...  ...               ...  ...         ...\n239  873693   阿为特   72700000  ...             金属制品业  上海市  2024-02-29\n240  873703  广厦环能   76900000  ...           专用设备制造业  北京市  2024-02-29\n241  873726  卓兆点胶   82077246  ...           专用设备制造业  江苏省  2024-02-29\n242  873806   云星宇  300736667  ...        软件和信息技术服务业  北京市  2024-02-29\n243  873833  美心翼申   82360000  ...           通用设备制造业  重庆市  2024-02-29\n[244 rows x 8 columns]"
+      }
+    }
+  }
+}

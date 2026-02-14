@@ -1,0 +1,25 @@
+{
+  "name": "macro_china_ppi",
+  "kind": "tool_view",
+  "description": "中国-宏观-PPI",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "macro_china_ppi",
+      "description": "中国-宏观-PPI",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "source": "akshare",
+      "output": {}
+    }
+  }
+}

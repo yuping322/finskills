@@ -1,0 +1,41 @@
+{
+  "name": "market_overview_dashboard",
+  "kind": "custom_view",
+  "description": "汇总上交所/深交所市场总貌与成交概况（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD；深交所/上交所部分统计需收盘后可得"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "sse_summary",
+      "tool": "stock_sse_summary",
+      "args": {}
+    },
+    {
+      "key": "szse_summary",
+      "tool": "stock_szse_summary",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "sse_deal_daily",
+      "tool": "stock_sse_deal_daily",
+      "args": {
+        "date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_sse_summary",
+    "stock_szse_summary",
+    "stock_sse_deal_daily"
+  ]
+}

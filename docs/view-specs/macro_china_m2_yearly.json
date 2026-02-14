@@ -1,0 +1,25 @@
+{
+  "name": "macro_china_m2_yearly",
+  "kind": "tool_view",
+  "description": "中国-宏观-M2(年度)",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "macro_china_m2_yearly",
+      "description": "中国-宏观-M2(年度)",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "source": "akshare",
+      "output": {}
+    }
+  }
+}

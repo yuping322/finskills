@@ -1,0 +1,15 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 1,
+  "failures": 0,
+  "results": [
+    {
+      "skill": "fund-flow-monitor",
+      "view": "stock_fund_flow_big_deal",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}

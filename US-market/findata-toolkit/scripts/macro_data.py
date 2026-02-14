@@ -21,7 +21,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common.utils import output_json, safe_float, error_exit
+from common.utils import output_json, safe_float, error_exit, require_dependency
 
 
 def _fetch_fred_series(series_id: str, start: str | None = None,
@@ -354,6 +354,9 @@ def main():
                         help="Business cycle assessment")
     args = parser.parse_args()
 
+    require_dependency("pandas", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("pandas_datareader", requirements_path="US-market/findata-toolkit/requirements.txt")
+
     try:
         if args.rates:
             data = fetch_rates()
@@ -370,8 +373,6 @@ def main():
 
         output_json(data)
 
-    except ImportError:
-        error_exit("pandas-datareader is required. Install: pip install pandas-datareader")
     except Exception as e:
         error_exit(f"Error: {e}")
 

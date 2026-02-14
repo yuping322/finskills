@@ -1,0 +1,95 @@
+{
+  "name": "stock_zh_a_new_em",
+  "kind": "tool_view",
+  "description": "东方财富网-行情中心-沪深个股-新股",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_new_em",
+      "description": "东方财富网-行情中心-沪深个股-新股",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前交易日新股板块的所有股票的行情数据",
+      "url": "https://quote.eastmoney.com/center/gridlist.html#newshares",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "量比": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市盈率-动态": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_new_em_df = ak.stock_zh_a_new_em()\nprint(stock_zh_a_new_em_df)",
+        "data": "数据示例\n\n```\n      序号      代码    名称     最新价   涨跌幅  ...      昨收    量比    换手率  市盈率-动态   市净率\n0      1  301559  N中集环   23.95 -1.11  ...   24.22   NaN  50.66   20.05  2.92\n1      2  688657   C浩辰   89.26  0.42  ...   88.89  0.62  29.22   76.48  2.91\n2      3  688719   C爱科   60.33  0.05  ...   60.30  0.44  18.92   45.79  2.86\n3      4  301558   C三态   14.72  1.73  ...   14.47  0.66  38.74   71.25  8.58\n4      5  603276  恒兴新材   24.17 -0.62  ...   24.32  0.40  12.34   43.70  2.24\n..   ...     ...   ...     ...   ...  ...     ...   ...    ...     ...   ...\n261  262  688152  麒麟信安   81.80  2.06  ...   80.15  1.26   9.45 -225.22  5.02\n262  263  688372  伟测科技  103.70  2.65  ...  101.02  0.98   5.67   83.07  4.95\n263  264  688291   金橙子   30.13  4.22  ...   28.91  1.09   6.76   60.43  3.37\n264  265  001322  箭牌家居   13.56  1.12  ...   13.41  0.82   3.14   38.40  2.75\n265  266  688426  康为世纪   32.25  3.80  ...   31.07  1.76   6.44 -183.28  2.10\n[266 rows x 17 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "stock_zh_a_st_em",
+  "kind": "tool_view",
+  "description": "东方财富网-行情中心-沪深个股-风险警示板",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_st_em",
+      "description": "东方财富网-行情中心-沪深个股-风险警示板",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前交易日风险警示板的所有股票的行情数据",
+      "url": "https://quote.eastmoney.com/center/gridlist.html#st_board",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "量比": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市盈率-动态": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_st_em_df = ak.stock_zh_a_st_em()\nprint(stock_zh_a_st_em_df)",
+        "data": "数据示例\n\n```\n      序号      代码     名称    最新价    涨跌幅  ...     昨收    量比    换手率   市盈率-动态    市净率\n0      1  300313  *ST天山   7.61  10.45  ...   6.89  7.84  11.96   -90.65  33.49\n1      2  300167  ST迪威迅   3.19   7.41  ...   2.97  3.86   9.31    -5.82  54.39\n2      3  002569   ST步森   6.90   5.02  ...   6.57  0.88   0.93   -27.27   7.05\n3      4  000996  *ST中期   5.24   5.01  ...   4.99  0.81   4.47  6823.87   3.73\n4      5  600589  *ST榕泰   5.48   4.98  ...   5.22  1.71   4.07   -24.53  -5.13\n..   ...     ...    ...    ...    ...  ...    ...   ...    ...      ...    ...\n113  114  000615  *ST美谷   4.10  -4.87  ...   4.31  1.25   5.02   -37.97 -15.44\n114  115  000697  *ST炼石   4.82  -4.93  ...   5.07  2.60   1.62    -9.97  -5.81\n115  116  000889   ST中嘉   2.12  -4.93  ...   2.23  0.40   0.91   -68.39   8.04\n116  117  000752  *ST西发   9.01  -4.96  ...   9.48  0.19   1.26   -64.79 -48.62\n117  118  600766  *ST园城  12.34  -5.00  ...  12.99  1.56   1.05  1372.29  47.59\n[118 rows x 17 columns]"
+      }
+    }
+  }
+}

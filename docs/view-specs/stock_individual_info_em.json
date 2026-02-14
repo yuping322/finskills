@@ -1,0 +1,63 @@
+{
+  "name": "stock_individual_info_em",
+  "kind": "tool_view",
+  "description": "东方财富-个股-股票信息",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"603777\"; 股票代码"
+      },
+      "timeout": {
+        "type": "number",
+        "description": "timeout=None; 默认不设置超时参数"
+      }
+    },
+    "required": [
+      "symbol",
+      "timeout"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_individual_info_em",
+      "description": "东方财富-个股-股票信息",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"603777\"; 股票代码"
+          },
+          "timeout": {
+            "type": "number",
+            "description": "timeout=None; 默认不设置超时参数"
+          }
+        },
+        "required": [
+          "symbol",
+          "timeout"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 的个股信息",
+      "url": "http://quote.eastmoney.com/concept/sh603777.html?from=classic",
+      "output": {
+        "item": {
+          "type": "string",
+          "description": "-"
+        },
+        "value": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_individual_info_em_df = ak.stock_individual_info_em(symbol=\"000001\")\nprint(stock_individual_info_em_df)",
+        "data": "数据示例\n\n```\n   item               value\n0    最新               7.05\n1  股票代码             000002\n2  股票简称            万  科Ａ\n3   总股本       11930709471.0\n4   流通股        9716935865.0\n5   总市值  84111501770.550003\n6  流通市值      68504397848.25\n7    行业              房地产开发\n8  上市时间            19910129"
+      }
+    }
+  }
+}

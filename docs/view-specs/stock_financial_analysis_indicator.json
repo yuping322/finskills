@@ -1,0 +1,399 @@
+{
+  "name": "stock_financial_analysis_indicator",
+  "kind": "tool_view",
+  "description": "新浪财经-财务分析-财务指标",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"600004\"; 股票代码"
+      },
+      "start_year": {
+        "type": "string",
+        "description": "start_year=\"2020\"; 开始查询的时间"
+      }
+    },
+    "required": [
+      "symbol",
+      "start_year"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_financial_analysis_indicator",
+      "description": "新浪财经-财务分析-财务指标",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"600004\"; 股票代码"
+          },
+          "start_year": {
+            "type": "string",
+            "description": "start_year=\"2020\"; 开始查询的时间"
+          }
+        },
+        "required": [
+          "symbol",
+          "start_year"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 和 start_year 的所有财务指标历史数据",
+      "url": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600004/ctrl/2019/displaytype/4.phtml",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "摊薄每股收益(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "加权每股收益(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股收益_调整后(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "扣除非经常性损益后的每股收益(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股净资产_调整前(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股净资产_调整后(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股经营性现金流(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股资本公积金(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股未分配利润(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "调整后的每股净资产(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "总资产利润率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "主营业务利润率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "总资产净利润率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "成本费用利润率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "营业利润率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "主营业务成本率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "销售净利率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "股本报酬率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "净资产报酬率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "资产报酬率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "销售毛利率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "三项费用比重": {
+          "type": "number",
+          "description": "-"
+        },
+        "非主营比重": {
+          "type": "number",
+          "description": "-"
+        },
+        "主营利润比重": {
+          "type": "number",
+          "description": "-"
+        },
+        "股息发放率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "投资收益率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "主营业务利润(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "净资产收益率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "加权净资产收益率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "扣除非经常性损益后的净利润(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "主营业务收入增长率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "净利润增长率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "净资产增长率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "总资产增长率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "应收账款周转率(次)": {
+          "type": "number",
+          "description": "-"
+        },
+        "应收账款周转天数(天)": {
+          "type": "number",
+          "description": "-"
+        },
+        "存货周转天数(天)": {
+          "type": "number",
+          "description": "-"
+        },
+        "存货周转率(次)": {
+          "type": "number",
+          "description": "-"
+        },
+        "固定资产周转率(次)": {
+          "type": "number",
+          "description": "-"
+        },
+        "总资产周转率(次)": {
+          "type": "number",
+          "description": "-"
+        },
+        "总资产周转天数(天)": {
+          "type": "number",
+          "description": "-"
+        },
+        "流动资产周转率(次)": {
+          "type": "number",
+          "description": "-"
+        },
+        "流动资产周转天数(天)": {
+          "type": "number",
+          "description": "-"
+        },
+        "股东权益周转率(次)": {
+          "type": "number",
+          "description": "-"
+        },
+        "流动比率": {
+          "type": "number",
+          "description": "-"
+        },
+        "速动比率": {
+          "type": "number",
+          "description": "-"
+        },
+        "现金比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "利息支付倍数": {
+          "type": "number",
+          "description": "-"
+        },
+        "长期债务与营运资金比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "股东权益比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "长期负债比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "股东权益与固定资产比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "负债与所有者权益比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "长期资产与长期资金比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "资本化比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "固定资产净值率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "资本固定化比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "产权比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "清算价值比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "固定资产比重(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "资产负债率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "总资产(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "经营现金净流量对销售收入比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "资产的经营现金流量回报率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "经营现金净流量与净利润的比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "经营现金净流量对负债比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "现金流量比率(%)": {
+          "type": "number",
+          "description": "-"
+        },
+        "短期股票投资(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "短期债券投资(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "短期其它经营性投资(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "长期股票投资(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "长期债券投资(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "长期其它经营性投资(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "1年以内应收帐款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "1-2年以内应收帐款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "2-3年以内应收帐款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "3年以内应收帐款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "1年以内预付货款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "1-2年以内预付货款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "2-3年以内预付货款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "3年以内预付货款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "1年以内其它应收款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "1-2年以内其它应收款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "2-3年以内其它应收款(元)": {
+          "type": "number",
+          "description": "-"
+        },
+        "3年以内其它应收款(元)": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_financial_analysis_indicator_df = ak.stock_financial_analysis_indicator(symbol=\"600004\", start_year=\"2020\")\nprint(stock_financial_analysis_indicator_df)",
+        "data": "数据示例\n\n```\n         日期  摊薄每股收益(元)  ... 2-3年以内其它应收款(元) 3年以内其它应收款(元)\n0   2020-03-31    -0.0307  ...             NaN           NaN\n1   2020-06-30    -0.0816  ...      1189862.00           NaN\n2   2020-09-30    -0.1380  ...             NaN           NaN\n3   2020-12-31    -0.0980  ...      1495234.99           NaN\n4   2021-03-31    -0.0645  ...             NaN           NaN\n5   2021-06-30    -0.1686  ...      3471186.42           NaN\n6   2021-09-30    -0.2038  ...             NaN           NaN\n7   2021-12-31    -0.1628  ...      1380992.96           NaN\n8   2022-03-31    -0.0326  ...             NaN           NaN\n9   2022-06-30    -0.2242  ...      1680204.08           NaN\n10  2022-09-30    -0.2671  ...             NaN           NaN\n11  2022-12-31    -0.4613  ...      2459538.50           NaN\n12  2023-03-31     0.0216  ...             NaN           NaN\n13  2023-06-30     0.0720  ...      2591827.74           NaN\n14  2023-09-30     0.1232  ...             NaN           NaN\n15  2023-12-31     0.2032  ...      7162683.42           NaN\n16  2024-03-31     0.0841  ...             NaN           NaN\n[17 rows x 86 columns]"
+      }
+    }
+  }
+}

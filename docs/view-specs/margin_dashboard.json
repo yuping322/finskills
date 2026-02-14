@@ -1,0 +1,82 @@
+{
+  "name": "margin_dashboard",
+  "kind": "custom_view",
+  "description": "两融汇总视图：沪深两融汇总、明细与账户信息（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD（可选；上交所汇总使用）"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD（可选；上交所汇总使用）"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "margin_ratio_pa",
+      "tool": "stock_margin_ratio_pa",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "margin_account_info",
+      "tool": "stock_margin_account_info",
+      "args": {}
+    },
+    {
+      "key": "margin_sse_summary",
+      "tool": "stock_margin_sse",
+      "args": {
+        "start_date": "20260214",
+        "end_date": "20260214"
+      }
+    },
+    {
+      "key": "margin_sse_detail",
+      "tool": "stock_margin_detail_sse",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "margin_szse_summary",
+      "tool": "stock_margin_szse",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "margin_szse_detail",
+      "tool": "stock_margin_detail_szse",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "margin_underlying_szse",
+      "tool": "stock_margin_underlying_info_szse",
+      "args": {
+        "date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_margin_ratio_pa",
+    "stock_margin_account_info",
+    "stock_margin_sse",
+    "stock_margin_detail_sse",
+    "stock_margin_szse",
+    "stock_margin_detail_szse",
+    "stock_margin_underlying_info_szse"
+  ]
+}

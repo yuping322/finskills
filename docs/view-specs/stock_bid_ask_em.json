@@ -1,0 +1,53 @@
+{
+  "name": "stock_bid_ask_em",
+  "kind": "tool_view",
+  "description": "东方财富-行情报价",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"000001\"; 股票代码"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_bid_ask_em",
+      "description": "东方财富-行情报价",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"000001\"; 股票代码"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定股票的行情报价数据",
+      "url": "https://quote.eastmoney.com/sz000001.html",
+      "output": {
+        "item": {
+          "type": "string",
+          "description": "-"
+        },
+        "value": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_bid_ask_em_df = ak.stock_bid_ask_em(symbol=\"000001\")\nprint(stock_bid_ask_em_df)",
+        "data": "数据示例\n\n```\n          item         value\n0       sell_5  1.049000e+01\n1   sell_5_vol  1.147100e+06\n2       sell_4  1.048000e+01\n3   sell_4_vol  1.035700e+06\n4       sell_3  1.047000e+01\n5   sell_3_vol  1.489100e+06\n6       sell_2  1.046000e+01\n7   sell_2_vol  1.608400e+06\n8       sell_1  1.045000e+01\n9   sell_1_vol  2.339000e+05\n10       buy_1  1.044000e+01\n11   buy_1_vol  3.690000e+05\n12       buy_2  1.043000e+01\n13   buy_2_vol  8.359000e+05\n14       buy_3  1.042000e+01\n15   buy_3_vol  6.016000e+05\n16       buy_4  1.041000e+01\n17   buy_4_vol  7.381000e+05\n18       buy_5  1.040000e+01\n19   buy_5_vol  1.301900e+06\n20          最新  1.045000e+01\n21          均价  1.043000e+01\n22          涨幅  4.800000e-01\n23          涨跌  5.000000e-02\n24          总手  8.726630e+05\n25          金额  9.102786e+08\n26          换手  4.500000e-01\n27          量比  4.400000e-01\n28          最高  1.047000e+01\n29          最低  1.037000e+01\n30          今开  1.038000e+01\n31          昨收  1.040000e+01\n32          涨停  1.144000e+01\n33          跌停  9.360000e+00\n34          外盘  4.715810e+05\n35          内盘  4.010820e+05"
+      }
+    }
+  }
+}

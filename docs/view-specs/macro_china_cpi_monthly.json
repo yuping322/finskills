@@ -1,0 +1,25 @@
+{
+  "name": "macro_china_cpi_monthly",
+  "kind": "tool_view",
+  "description": "中国-宏观-CPI(月度)",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "macro_china_cpi_monthly",
+      "description": "中国-宏观-CPI(月度)",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "source": "akshare",
+      "output": {}
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "cninfo_disclosure_search",
+  "kind": "custom_view",
+  "description": "巨潮资讯信息披露公告查询（按股票/类别/关键词/时间窗；工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "股票代码，如 000001"
+      },
+      "market": {
+        "type": "string",
+        "description": "沪深京/港股/三板/基金/债券/监管/预披露"
+      },
+      "keyword": {
+        "type": "string",
+        "description": "关键词（可选）"
+      },
+      "category": {
+        "type": "string",
+        "description": "公告类别（见接口枚举，如 年报/业绩预告/解禁/可转债/风险提示 等）"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      }
+    },
+    "required": [
+      "symbol",
+      "category"
+    ]
+  },
+  "plan": [
+    {
+      "key": "disclosure_reports",
+      "tool": "stock_zh_a_disclosure_report_cninfo",
+      "args": {
+        "symbol": "000001",
+        "market": "沪深京",
+        "keyword": "",
+        "category": "demo",
+        "start_date": "20250818",
+        "end_date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_zh_a_disclosure_report_cninfo"
+  ]
+}

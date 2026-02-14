@@ -1,0 +1,61 @@
+{
+  "name": "stock_hot_keyword_em",
+  "kind": "tool_view",
+  "description": "东方财富-个股人气榜-热门关键词",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"SZ000665\""
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hot_keyword_em",
+      "description": "东方财富-个股人气榜-热门关键词",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"SZ000665\""
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 的最近交易日时点数据",
+      "url": "http://guba.eastmoney.com/rank/stock?code=000665",
+      "output": {
+        "时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "概念代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "热度": {
+          "type": "integer",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_hot_keyword_em_df = ak.stock_hot_keyword_em(symbol=\"SZ000665\")\nprint(stock_hot_keyword_em_df)",
+        "data": "数据示例\n\n```\n               时间      股票代码   概念名称    概念代码  热度\n0  2022-02-28 12:00:00  SZ000665  元宇宙概念  BK1009  2138\n1  2022-02-28 12:00:00  SZ000665     广电  BK0904  1082\n2  2022-02-28 12:00:00  SZ000665    云计算  BK0579   411\n3  2022-02-28 12:00:00  SZ000665   虚拟现实  BK0722   152\n4  2022-02-28 12:00:00  SZ000665   彩票概念  BK0671   131\n5  2022-02-28 12:00:00  SZ000665   转债标的  BK0528    51\n6  2022-02-28 12:00:00  SZ000665   华为概念  BK0854    36\n7  2022-02-28 12:00:00  SZ000665   智慧城市  BK0628    31\n8  2022-02-28 12:00:00  SZ000665   预盈预增  BK0571    13\n9  2022-02-28 12:00:00  SZ000665   超清视频  BK0859     1"
+      }
+    }
+  }
+}

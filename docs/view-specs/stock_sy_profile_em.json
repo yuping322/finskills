@@ -1,0 +1,63 @@
+{
+  "name": "stock_sy_profile_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-商誉-A股商誉市场概况",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sy_profile_em",
+      "description": "东方财富网-数据中心-特色数据-商誉-A股商誉市场概况",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次所有历史数据",
+      "url": "https://data.eastmoney.com/sy/scgk.html",
+      "output": {
+        "报告期": {
+          "type": "string",
+          "description": "-"
+        },
+        "商誉": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "商誉减值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "净资产": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "商誉占净资产比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "商誉减值占净资产比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "净利润规模": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "商誉减值占净利润比例": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_sy_profile_em_df = ak.stock_sy_profile_em()\nprint(stock_sy_profile_em_df)",
+        "data": "数据示例\n\n```\n           报告期            商誉  ...         净利润规模  商誉减值占净利润比例\n0   2010-12-31  9.305439e+10  ...  8.646720e+11   -0.008547\n1   2011-12-31  1.334065e+11  ...  1.030624e+12   -0.001177\n2   2012-12-31  1.639409e+11  ...  1.224410e+12   -0.000985\n3   2013-12-31  2.051656e+11  ...  1.441550e+12   -0.001916\n4   2014-12-31  3.246068e+11  ...  1.604929e+12   -0.001784\n5   2015-12-31  5.985505e+11  ...  1.757708e+12   -0.005302\n6   2016-12-31  9.667876e+11  ...  1.873202e+12   -0.008425\n7   2017-12-31  1.195754e+12  ...  2.244254e+12   -0.011668\n8   2018-12-31  1.219315e+12  ...  2.327512e+12   -0.049232\n9   2019-12-31  1.190470e+12  ...  2.506131e+12   -0.045300\n10  2020-12-31  1.157767e+12  ...  2.606449e+12   -0.028383\n11  2021-12-31  1.156240e+12  ...  3.307810e+12   -0.015126\n12  2022-12-31  1.198481e+12  ...  3.773819e+12   -0.015187\n13  2023-12-31  1.226307e+12  ...  3.745003e+12         NaN\n14  2024-06-30  1.246240e+12  ...  2.049446e+12         NaN\n15  2024-09-30  1.254842e+12  ...  3.089467e+12         NaN\n[16 rows x 8 columns]"
+      }
+    }
+  }
+}

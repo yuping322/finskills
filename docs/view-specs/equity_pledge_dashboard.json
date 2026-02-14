@@ -1,0 +1,59 @@
+{
+  "name": "equity_pledge_dashboard",
+  "kind": "custom_view",
+  "description": "股权质押风险聚合：质押概览、行业分布、质押比例（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD（部分接口需要可用交易日）"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "profile",
+      "tool": "stock_gpzy_profile_em",
+      "args": {}
+    },
+    {
+      "key": "industry_data",
+      "tool": "stock_gpzy_industry_data_em",
+      "args": {}
+    },
+    {
+      "key": "distribute_company",
+      "tool": "stock_gpzy_distribute_statistics_company_em",
+      "args": {}
+    },
+    {
+      "key": "distribute_bank",
+      "tool": "stock_gpzy_distribute_statistics_bank_em",
+      "args": {}
+    },
+    {
+      "key": "pledge_ratio",
+      "tool": "stock_gpzy_pledge_ratio_em",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "pledge_ratio_detail",
+      "tool": "stock_gpzy_pledge_ratio_detail_em",
+      "args": {
+        "date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_gpzy_profile_em",
+    "stock_gpzy_industry_data_em",
+    "stock_gpzy_distribute_statistics_company_em",
+    "stock_gpzy_distribute_statistics_bank_em",
+    "stock_gpzy_pledge_ratio_em",
+    "stock_gpzy_pledge_ratio_detail_em"
+  ]
+}

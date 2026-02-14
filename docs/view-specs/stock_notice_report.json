@@ -1,0 +1,75 @@
+{
+  "name": "stock_notice_report",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-公告大全-沪深京 A 股公告",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol='财务报告'; choice of {\"全部\", \"重大事项\", \"财务报告\", \"融资公告\", \"风险提示\", \"资产重组\", \"信息变更\", \"持股变动\"}"
+      },
+      "date": {
+        "type": "string",
+        "description": "date=\"20220511\"; 指定日期"
+      }
+    },
+    "required": [
+      "symbol",
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_notice_report",
+      "description": "东方财富网-数据中心-公告大全-沪深京 A 股公告",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol='财务报告'; choice of {\"全部\", \"重大事项\", \"财务报告\", \"融资公告\", \"风险提示\", \"资产重组\", \"信息变更\", \"持股变动\"}"
+          },
+          "date": {
+            "type": "string",
+            "description": "date=\"20220511\"; 指定日期"
+          }
+        },
+        "required": [
+          "symbol",
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 和 date 的数据",
+      "url": "https://data.eastmoney.com/notices/hsa/5.html",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告标题": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告类型": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "网址": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_notice_report_df = ak.stock_notice_report(symbol='财务报告', date=\"20240613\")\nprint(stock_notice_report_df)",
+        "data": "数据示例\n\n```\n      代码  ...                                       网址\n0    123122  ...  https://data.eastmoney.com/notices/detail/1231...\n1    123107  ...  https://data.eastmoney.com/notices/detail/1231...\n2    300941  ...  https://data.eastmoney.com/notices/detail/3009...\n3    300689  ...  https://data.eastmoney.com/notices/detail/3006...\n4    300854  ...  https://data.eastmoney.com/notices/detail/3008...\n..      ...  ...                                                ...\n134  000159  ...  https://data.eastmoney.com/notices/detail/0001...\n135  688478  ...  https://data.eastmoney.com/notices/detail/6884...\n136  688513  ...  https://data.eastmoney.com/notices/detail/6885...\n137  600583  ...  https://data.eastmoney.com/notices/detail/6005...\n138  001301  ...  https://data.eastmoney.com/notices/detail/0013...\n[139 rows x 6 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "stock_zcfz_bj_em",
+  "kind": "tool_view",
+  "description": "东方财富-数据中心-年报季报-业绩快报-资产负债表",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20240331\"; choice of {\"XXXX0331\", \"XXXX0630\", \"XXXX0930\", \"XXXX1231\"}; 从 20081231 开始"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zcfz_bj_em",
+      "description": "东方财富-数据中心-年报季报-业绩快报-资产负债表",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20240331\"; choice of {\"XXXX0331\", \"XXXX0630\", \"XXXX0930\", \"XXXX1231\"}; 从 20081231 开始"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 date 的资产负债表数据",
+      "url": "https://data.eastmoney.com/bbsj/202003/zcfz.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "资产-货币资金": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "资产-应收账款": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "资产-存货": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "资产-总资产": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "资产-总资产同比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "负债-应付账款": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "负债-总负债": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "负债-预收账款": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "负债-总负债同比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "资产负债率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "股东权益合计": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zcfz_bj_em_df = ak.stock_zcfz_bj_em(date=\"20240331\")\nprint(stock_zcfz_bj_em_df)",
+        "data": "数据示例\n\n```\n     序号 股票代码  股票简称  ...  资产负债率    股东权益合计     公告日期\n0      1  873223  荣亿精密  ...  38.708142  2.856643e+08  2024-08-29\n1      2  838030  德众汽车  ...  72.413909  4.696866e+08  2024-08-28\n2      3  830974  凯大催化  ...  26.834128  6.476251e+08  2024-08-28\n3      4  834415  恒拓开源  ...  16.546915  5.229393e+08  2024-06-27\n4      5  920118  太湖远大  ...  57.054651  4.325410e+08  2024-05-23\n..   ...     ...   ...  ...        ...           ...         ...\n249  250  835892  中科美菱  ...  19.425219  6.066262e+08  2024-04-18\n250  251  834261   一诺威  ...  38.597474  1.475388e+09  2024-04-18\n251  252  873703  广厦环能  ...  25.348767  1.018675e+09  2024-04-16\n252  253  838262   太湖雪  ...  36.163348  3.227086e+08  2024-04-15\n253  254  833394   民士达  ...  19.625162  6.865148e+08  2024-04-11\n[254 rows x 15 columns]"
+      }
+    }
+  }
+}

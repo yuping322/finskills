@@ -1,0 +1,129 @@
+{
+  "name": "stock_board_concept_hist_em",
+  "kind": "tool_view",
+  "description": "东方财富-沪深板块-概念板块-历史行情数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"绿色电力\"; 可以通过调用 **ak.stock_board_concept_name_em()** 查看东方财富-概念板块的所有概念代码"
+      },
+      "period": {
+        "type": "string",
+        "description": "period=\"daily\"; choice of {\"daily\", \"weekly\", \"monthly\"}"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20220101\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20221128\""
+      },
+      "adjust": {
+        "type": "string",
+        "description": "adjust=\"\"; choice of {'': 不复权, 默认; \"qfq\": 前复权, \"hfq\": 后复权}"
+      }
+    },
+    "required": [
+      "symbol",
+      "period",
+      "start_date",
+      "end_date",
+      "adjust"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_concept_hist_em",
+      "description": "东方财富-沪深板块-概念板块-历史行情数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"绿色电力\"; 可以通过调用 **ak.stock_board_concept_name_em()** 查看东方财富-概念板块的所有概念代码"
+          },
+          "period": {
+            "type": "string",
+            "description": "period=\"daily\"; choice of {\"daily\", \"weekly\", \"monthly\"}"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20220101\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20221128\""
+          },
+          "adjust": {
+            "type": "string",
+            "description": "adjust=\"\"; choice of {'': 不复权, 默认; \"qfq\": 前复权, \"hfq\": 后复权}"
+          }
+        },
+        "required": [
+          "symbol",
+          "period",
+          "start_date",
+          "end_date",
+          "adjust"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 和 adjust 的历史数据",
+      "url": "http://quote.eastmoney.com/bk/90.BK0715.html",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "开盘": {
+          "type": "number",
+          "description": "-"
+        },
+        "收盘": {
+          "type": "number",
+          "description": "-"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_concept_hist_em_df = ak.stock_board_concept_hist_em(symbol=\"绿色电力\", period=\"daily\", start_date=\"20220101\", end_date=\"20250227\", adjust=\"\")\nprint(stock_board_concept_hist_em_df)",
+        "data": "数据示例\n\n```\n      日期        开盘      收盘      最高  ...     成交量       成交额    振幅   换手率\n0    2022-01-04  1151.48  1143.13  1155.59  ...  57503811  4.502800e+10  1.22  1.42\n1    2022-01-05  1141.91  1106.74  1141.91  ...  54859005  4.212589e+10  3.74  1.35\n2    2022-01-06  1100.52  1115.16  1122.27  ...  42174619  3.282551e+10  2.25  1.04\n3    2022-01-07  1115.49  1089.20  1118.08  ...  44604672  3.478526e+10  2.61  1.10\n4    2022-01-10  1083.43  1082.51  1088.21  ...  36095282  2.706919e+10  1.23  0.89\n..          ...      ...      ...      ...  ...       ...           ...   ...   ...\n756  2025-02-21   985.80   986.71   987.88  ...  42772223  2.825437e+10  0.91  1.06\n757  2025-02-24   986.75   996.56   997.62  ...  43658453  3.027056e+10  1.13  1.08\n758  2025-02-25   990.79   990.51   997.28  ...  38009252  2.627609e+10  1.00  0.94\n759  2025-02-26   991.87  1002.54  1002.57  ...  39788170  2.634823e+10  1.08  0.98\n760  2025-02-27  1002.54   995.28  1003.97  ...  38629884  2.581886e+10  1.89  0.95\n[761 rows x 11 columns]"
+      }
+    }
+  }
+}

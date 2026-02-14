@@ -1,0 +1,115 @@
+{
+  "name": "stock_hsgt_hold_stock_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-沪深港通持股-个股排行",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "market": {
+        "type": "string",
+        "description": "market=\"沪股通\"; choice of {\"北向\", \"沪股通\", \"深股通\"}"
+      },
+      "indicator": {
+        "type": "string",
+        "description": "indicator=\"沪股通\"; choice of {\"今日排行\", \"3日排行\", \"5日排行\", \"10日排行\", \"月排行\", \"季排行\", \"年排行\"}"
+      }
+    },
+    "required": [
+      "market",
+      "indicator"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hsgt_hold_stock_em",
+      "description": "东方财富网-数据中心-沪深港通持股-个股排行",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "market": {
+            "type": "string",
+            "description": "market=\"沪股通\"; choice of {\"北向\", \"沪股通\", \"深股通\"}"
+          },
+          "indicator": {
+            "type": "string",
+            "description": "indicator=\"沪股通\"; choice of {\"今日排行\", \"3日排行\", \"5日排行\", \"10日排行\", \"月排行\", \"季排行\", \"年排行\"}"
+          }
+        },
+        "required": [
+          "market",
+          "indicator"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 market 和 indicator 的所有数据",
+      "url": "https://data.eastmoney.com/hsgtcg/list.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "今日收盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "今日涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "今日持股-股数": {
+          "type": "number",
+          "description": "注意单位: 万"
+        },
+        "今日持股-市值": {
+          "type": "number",
+          "description": "注意单位: 万"
+        },
+        "今日持股-占流通股比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "今日持股-占总股本比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "增持估计-股数": {
+          "type": "number",
+          "description": "注意单位: 万; 主要字段名根据 indicator 变化"
+        },
+        "增持估计-市值": {
+          "type": "number",
+          "description": "注意单位: 万; 主要字段名根据 indicator 变化"
+        },
+        "增持估计-市值增幅": {
+          "type": "string",
+          "description": "注意单位: %; 主要字段名根据 indicator 变化"
+        },
+        "增持估计-占流通股比": {
+          "type": "number",
+          "description": "注意单位: ‰; 主要字段名根据 indicator 变化"
+        },
+        "增持估计-占总股本比": {
+          "type": "number",
+          "description": "注意单位: ‰; 主要字段名根据 indicator 变化"
+        },
+        "所属板块": {
+          "type": "string",
+          "description": "-"
+        },
+        "日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_em_hsgt_hold_stock_df = ak.stock_hsgt_hold_stock_em(market=\"北向\", indicator=\"今日排行\")\nprint(stock_em_hsgt_hold_stock_df)",
+        "data": "数据示例\n\n```\n        序号   代码   名称    今日收盘价  ...  5日增持估计-占流通股比  5日增持估计-占总股本比  所属板块   日期\n0        1  601127   赛力斯    68.50  ...          5.54          5.54  汽车整车  2024-01-10\n1        2  603259  药明康德    67.62  ...          3.06          2.65  医疗服务  2024-01-10\n2        3  600660  福耀玻璃    38.88  ...          5.03          3.86  玻璃玻纤  2024-01-10\n3        4  600309  万华化学    73.00  ...          1.47          1.47  化学制品  2024-01-10\n4        5  600188  兖矿能源    21.67  ...          3.37          2.04  煤炭行业  2024-01-10\n    ...     ...   ...      ...  ...           ...           ...   ...         ...\n1335  1336  601088  中国神华    33.85  ...         -0.58         -0.48  煤炭行业  2024-01-10\n1336  1337  601012  隆基绿能    22.23  ...         -2.44         -2.44  光伏设备  2024-01-10\n1337  1338  601899  紫金矿业    12.28  ...         -1.61         -1.26   贵金属  2024-01-10\n1338  1339  601318  中国平安    37.82  ...         -1.15         -0.68    保险  2024-01-10\n1339  1340  600519  贵州茅台  1641.50  ...         -0.43         -0.43  酿酒行业  2024-01-10\n[1340 rows x 16 columns]"
+      }
+    }
+  }
+}

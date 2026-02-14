@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "tool": "view-service",
+    "kind": "healthcheck",
+    "as_of": "2026-02-14T00:34:47",
+    "elapsed_seconds": 34.243,
+    "python": "3.10.19"
+  },
+  "checks": [
+    {
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {},
+      "provider": "tencent",
+      "backend": "tencent_quotes",
+      "rows": 5190,
+      "columns": [
+        "序号",
+        "代码",
+        "名称",
+        "最新价",
+        "涨跌幅",
+        "涨跌额",
+        "成交量",
+        "成交额",
+        "振幅",
+        "最高",
+        "最低",
+        "今开",
+        "昨收",
+        "量比",
+        "换手率",
+        "市盈率-动态",
+        "市净率",
+        "总市值",
+        "流通市值",
+        "涨速",
+        "5分钟涨跌",
+        "60日涨跌幅",
+        "年初至今涨跌幅"
+      ],
+      "meta": {
+        "provider": "tencent",
+        "script": "view:stock_zh_a_spot_em",
+        "function": "qt.gtimg.cn (multi-quote)",
+        "description": "东方财富网-沪深京 A 股-实时行情数据",
+        "as_of": "2026-02-14T00:34:32",
+        "elapsed_seconds": 18.171,
+        "params": {},
+        "backend": "tencent_quotes"
+      }
+    },
+    {
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {
+        "symbol": "000001",
+        "period": "daily",
+        "start_date": "20251215",
+        "end_date": "20260213",
+        "adjust": "qfq"
+      },
+      "provider": "akshare+tencent",
+      "backend": "tencent_hist_tx",
+      "rows": 43,
+      "columns": [
+        "date",
+        "open",
+        "close",
+        "high",
+        "low",
+        "amount"
+      ],
+      "meta": {
+        "provider": "akshare+tencent",
+        "script": "view:stock_zh_a_hist",
+        "function": "stock_zh_a_hist_tx",
+        "description": "东方财富-沪深京 A 股日频率数据; 历史数据按日频率更新, 当日收盘价请在收盘后获取",
+        "as_of": "2026-02-14T00:34:33",
+        "elapsed_seconds": 1.156,
+        "params": {
+          "symbol": "000001",
+          "start_date": "20251215",
+          "end_date": "20260213",
+          "adjust": "qfq"
+        },
+        "backend": "tencent_hist_tx"
+      }
+    },
+    {
+      "view": "stock_margin_ratio_pa",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {
+        "date": "20260212"
+      },
+      "provider": "akshare",
+      "backend": null,
+      "rows": 2049,
+      "columns": [
+        "证券代码",
+        "证券简称",
+        "融资比例",
+        "融券比例"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_margin_ratio_pa",
+        "function": "stock_margin_ratio_pa",
+        "description": "融资融券-标的证券名单及保证金比例查询",
+        "as_of": "2026-02-14T00:34:34",
+        "elapsed_seconds": 1.355,
+        "params": {
+          "date": "20260212"
+        }
+      }
+    },
+    {
+      "view": "stock_margin_sse",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {
+        "start_date": "20260212",
+        "end_date": "20260212"
+      },
+      "provider": "akshare",
+      "backend": null,
+      "rows": 1,
+      "columns": [
+        "信用交易日期",
+        "融资余额",
+        "融资买入额",
+        "融券余量",
+        "融券余量金额",
+        "融券卖出量",
+        "融资融券余额"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_margin_sse",
+        "function": "stock_margin_sse",
+        "description": "上海证券交易所-融资融券数据-融资融券汇总数据",
+        "as_of": "2026-02-14T00:34:34",
+        "elapsed_seconds": 0.166,
+        "params": {
+          "start_date": "20260212",
+          "end_date": "20260212"
+        }
+      }
+    },
+    {
+      "view": "stock_margin_szse",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {
+        "date": "20260212"
+      },
+      "provider": "akshare",
+      "backend": null,
+      "rows": 1,
+      "columns": [
+        "融资买入额",
+        "融资余额",
+        "融券卖出量",
+        "融券余量",
+        "融券余额",
+        "融资融券余额"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_margin_szse",
+        "function": "stock_margin_szse",
+        "description": "深圳证券交易所-融资融券数据-融资融券汇总数据",
+        "as_of": "2026-02-14T00:34:35",
+        "elapsed_seconds": 0.331,
+        "params": {
+          "date": "20260212"
+        }
+      }
+    },
+    {
+      "view": "stock_repurchase_em",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {},
+      "provider": "akshare",
+      "backend": null,
+      "rows": 4978,
+      "columns": [
+        "序号",
+        "股票代码",
+        "股票简称",
+        "最新价",
+        "计划回购价格区间",
+        "计划回购数量区间-下限",
+        "计划回购数量区间-上限",
+        "占公告前一日总股本比例-下限",
+        "占公告前一日总股本比例-上限",
+        "计划回购金额区间-下限",
+        "计划回购金额区间-上限",
+        "回购起始时间",
+        "实施进度",
+        "已回购股份价格区间-下限",
+        "已回购股份价格区间-上限",
+        "已回购股份数量",
+        "已回购金额",
+        "最新公告日期"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_repurchase_em",
+        "function": "stock_repurchase_em",
+        "description": "东方财富网-数据中心-股票回购-股票回购数据",
+        "as_of": "2026-02-14T00:34:43",
+        "elapsed_seconds": 7.824,
+        "params": {}
+      }
+    },
+    {
+      "view": "stock_dzjy_sctj",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {},
+      "provider": "akshare",
+      "backend": null,
+      "rows": 4500,
+      "columns": [
+        "序号",
+        "交易日期",
+        "上证指数",
+        "上证指数涨跌幅",
+        "大宗交易成交总额",
+        "溢价成交总额",
+        "溢价成交总额占比",
+        "折价成交总额",
+        "折价成交总额占比"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_dzjy_sctj",
+        "function": "stock_dzjy_sctj",
+        "description": "东方财富网-数据中心-大宗交易-市场统计",
+        "as_of": "2026-02-14T00:34:46",
+        "elapsed_seconds": 3.058,
+        "params": {}
+      }
+    },
+    {
+      "view": "stock_dzjy_mrtj",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {
+        "start_date": "20260114",
+        "end_date": "20260213"
+      },
+      "provider": "akshare",
+      "backend": null,
+      "rows": 1496,
+      "columns": [
+        "序号",
+        "交易日期",
+        "证券代码",
+        "证券简称",
+        "涨跌幅",
+        "收盘价",
+        "成交价",
+        "折溢率",
+        "成交笔数",
+        "成交总量",
+        "成交总额",
+        "成交总额/流通市值"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_dzjy_mrtj",
+        "function": "stock_dzjy_mrtj",
+        "description": "东方财富网-数据中心-大宗交易-每日统计",
+        "as_of": "2026-02-14T00:34:46",
+        "elapsed_seconds": 0.445,
+        "params": {
+          "start_date": "20260114",
+          "end_date": "20260213"
+        }
+      }
+    },
+    {
+      "view": "stock_dzjy_mrmx",
+      "ok": true,
+      "category": "ok",
+      "subcategory": null,
+      "error": null,
+      "params": {
+        "symbol": "A股",
+        "start_date": "20260114",
+        "end_date": "20260213"
+      },
+      "provider": "akshare",
+      "backend": null,
+      "rows": 4378,
+      "columns": [
+        "序号",
+        "交易日期",
+        "证券代码",
+        "证券简称",
+        "涨跌幅",
+        "收盘价",
+        "成交价",
+        "折溢率",
+        "成交量",
+        "成交额",
+        "成交额/流通市值",
+        "买方营业部",
+        "卖方营业部"
+      ],
+      "meta": {
+        "provider": "akshare",
+        "script": "view:stock_dzjy_mrmx",
+        "function": "stock_dzjy_mrmx",
+        "description": "东方财富网-数据中心-大宗交易-每日明细",
+        "as_of": "2026-02-14T00:34:47",
+        "elapsed_seconds": 1.305,
+        "params": {
+          "symbol": "A股",
+          "start_date": "20260114",
+          "end_date": "20260213"
+        }
+      }
+    }
+  ],
+  "failures": 0
+}

@@ -1,0 +1,88 @@
+{
+  "name": "block_deal_dashboard",
+  "kind": "custom_view",
+  "description": "大宗交易聚合视图：市场统计、区间每日统计/明细、活跃个股与活跃营业部（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "market": {
+        "type": "string",
+        "description": "每日明细口径；A股/B股/基金/债券"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD；区间起始日期（用于每日统计/每日明细）"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD；区间结束日期（用于每日统计/每日明细）"
+      },
+      "active_stock_window": {
+        "type": "string",
+        "description": "活跃A股统计窗口；近一月/近三月/近六月/近一年"
+      },
+      "active_broker_window": {
+        "type": "string",
+        "description": "活跃营业部统计窗口；当前交易日/近3日/近5日/近10日/近30日"
+      },
+      "broker_rank_window": {
+        "type": "string",
+        "description": "营业部排行窗口；近一月/近三月/近六月/近一年"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "market_stats",
+      "tool": "stock_dzjy_sctj",
+      "args": {}
+    },
+    {
+      "key": "daily_stats",
+      "tool": "stock_dzjy_mrtj",
+      "args": {
+        "start_date": "20260115",
+        "end_date": "20260214"
+      }
+    },
+    {
+      "key": "daily_detail",
+      "tool": "stock_dzjy_mrmx",
+      "args": {
+        "symbol": "A股",
+        "start_date": "20260115",
+        "end_date": "20260214"
+      }
+    },
+    {
+      "key": "active_stocks",
+      "tool": "stock_dzjy_hygtj",
+      "args": {
+        "symbol": "近三月"
+      }
+    },
+    {
+      "key": "active_brokers",
+      "tool": "stock_dzjy_hyyybtj",
+      "args": {
+        "symbol": "近30日"
+      }
+    },
+    {
+      "key": "broker_ranking",
+      "tool": "stock_dzjy_yybph",
+      "args": {
+        "symbol": "近三月"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_dzjy_sctj",
+    "stock_dzjy_mrtj",
+    "stock_dzjy_mrmx",
+    "stock_dzjy_hygtj",
+    "stock_dzjy_hyyybtj",
+    "stock_dzjy_yybph"
+  ]
+}

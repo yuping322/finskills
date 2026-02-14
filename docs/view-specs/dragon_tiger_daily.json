@@ -1,0 +1,54 @@
+{
+  "name": "dragon_tiger_daily",
+  "kind": "custom_view",
+  "description": "龙虎榜日度聚合：上榜明细 + 机构买卖统计 + 活跃营业部（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "交易日 YYYYMMDD"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "lhb_detail_daily_sina",
+      "tool": "stock_lhb_detail_daily_sina",
+      "args": {
+        "date": "20260214"
+      }
+    },
+    {
+      "key": "lhb_detail_em",
+      "tool": "stock_lhb_detail_em",
+      "args": {
+        "start_date": "20260214",
+        "end_date": "20260214"
+      }
+    },
+    {
+      "key": "lhb_institution_buy_sell_stat",
+      "tool": "stock_lhb_jgmmtj_em",
+      "args": {
+        "start_date": "20260214",
+        "end_date": "20260214"
+      }
+    },
+    {
+      "key": "lhb_active_yyb",
+      "tool": "stock_lhb_hyyyb_em",
+      "args": {
+        "start_date": "20260214",
+        "end_date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_lhb_detail_daily_sina",
+    "stock_lhb_detail_em",
+    "stock_lhb_jgmmtj_em",
+    "stock_lhb_hyyyb_em"
+  ]
+}

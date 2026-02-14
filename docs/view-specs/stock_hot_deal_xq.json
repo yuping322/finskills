@@ -1,0 +1,61 @@
+{
+  "name": "stock_hot_deal_xq",
+  "kind": "tool_view",
+  "description": "雪球-沪深股市-热度排行榜-交易排行榜",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"最热门\"; choice of {\"本周新增\", \"最热门\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hot_deal_xq",
+      "description": "雪球-沪深股市-热度排行榜-交易排行榜",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"最热门\"; choice of {\"本周新增\", \"最热门\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 的排行数据",
+      "url": "https://xueqiu.com/hq",
+      "output": {
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "关注": {
+          "type": "number",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "注意单位: 元"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_hot_deal_xq_df = ak.stock_hot_deal_xq(symbol=\"最热门\")\nprint(stock_hot_deal_xq_df)",
+        "data": "数据示例\n\n```\n     股票代码  股票简称   关注      最新价\n0     SH601318  中国平安  304    38.97\n1     SZ002229  鸿博股份  258    24.69\n2     SH600519  贵州茅台  257  1663.36\n3     SZ002594   比亚迪  257   192.68\n4     SH600880  博瑞传播  231     4.90\n        ...   ...  ...      ...\n5420  SZ300932  三友联众    0    15.95\n5421  SZ300956  英力股份    0    18.21\n5422  SH688618  三旺通信    0    52.82\n5423  BJ836149  旭杰科技    0     7.97\n5424  SH688655   迅捷兴    0    14.64\n[5425 rows x 4 columns]"
+      }
+    }
+  }
+}

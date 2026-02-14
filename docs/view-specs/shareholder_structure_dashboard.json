@@ -1,0 +1,125 @@
+{
+  "name": "shareholder_structure_dashboard",
+  "kind": "custom_view",
+  "description": "股东结构/筹码聚合：股东户数、主要股东、流通股东、持股变动与监管披露（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "股票代码（6位）"
+      },
+      "gdhs_quarter": {
+        "type": "string",
+        "description": "股东户数查询季度：最新 或 YYYYMMDD（季度末）"
+      },
+      "cninfo_date": {
+        "type": "string",
+        "description": "巨潮口径股东人数/集中度季度末 YYYYMMDD"
+      },
+      "cninfo_hold_change_scope": {
+        "type": "string",
+        "description": "股本变动市场范围：深市主板/沪市/创业板/科创板/北交所/全部"
+      },
+      "cninfo_control_scope": {
+        "type": "string",
+        "description": "控制人持股变动范围：单独控制/实际控制人/一致行动人/家族控制/全部"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "plan": [
+    {
+      "key": "gdhs_quarter_list",
+      "tool": "stock_zh_a_gdhs",
+      "args": {
+        "symbol": "最新"
+      }
+    },
+    {
+      "key": "gdhs_detail",
+      "tool": "stock_zh_a_gdhs_detail_em",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "main_stock_holder",
+      "tool": "stock_main_stock_holder",
+      "args": {
+        "stock": "000001"
+      }
+    },
+    {
+      "key": "circulate_stock_holder",
+      "tool": "stock_circulate_stock_holder",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "shareholder_change_ths",
+      "tool": "stock_shareholder_change_ths",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "share_hold_change_sse",
+      "tool": "stock_share_hold_change_sse",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "share_hold_change_szse",
+      "tool": "stock_share_hold_change_szse",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "share_hold_change_bse",
+      "tool": "stock_share_hold_change_bse",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "hold_num_cninfo",
+      "tool": "stock_hold_num_cninfo",
+      "args": {
+        "date": "20251231"
+      }
+    },
+    {
+      "key": "hold_change_cninfo",
+      "tool": "stock_hold_change_cninfo",
+      "args": {
+        "symbol": "全部"
+      }
+    },
+    {
+      "key": "hold_control_cninfo",
+      "tool": "stock_hold_control_cninfo",
+      "args": {
+        "symbol": "全部"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_zh_a_gdhs",
+    "stock_zh_a_gdhs_detail_em",
+    "stock_main_stock_holder",
+    "stock_circulate_stock_holder",
+    "stock_shareholder_change_ths",
+    "stock_share_hold_change_sse",
+    "stock_share_hold_change_szse",
+    "stock_share_hold_change_bse",
+    "stock_hold_num_cninfo",
+    "stock_hold_change_cninfo",
+    "stock_hold_control_cninfo"
+  ]
+}

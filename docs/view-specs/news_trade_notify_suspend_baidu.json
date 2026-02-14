@@ -1,0 +1,69 @@
+{
+  "name": "news_trade_notify_suspend_baidu",
+  "kind": "tool_view",
+  "description": "百度股市通-交易提醒-停复牌",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20241107\""
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "news_trade_notify_suspend_baidu",
+      "description": "百度股市通-交易提醒-停复牌",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20241107\""
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 date 的停复牌数据, 提供港股的停复牌数据",
+      "url": "https://gushitong.baidu.com/calendar",
+      "output": {
+        "股票代码": {
+          "type": "string",
+          "description": ""
+        },
+        "股票简称": {
+          "type": "string",
+          "description": ""
+        },
+        "交易所": {
+          "type": "string",
+          "description": ""
+        },
+        "停牌时间": {
+          "type": "string",
+          "description": ""
+        },
+        "复牌时间": {
+          "type": "string",
+          "description": ""
+        },
+        "停牌事项说明": {
+          "type": "string",
+          "description": ""
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nnews_trade_notify_suspend_baidu_df = ak.news_trade_notify_suspend_baidu(date=\"20241107\")\nprint(news_trade_notify_suspend_baidu_df)",
+        "data": "数据示例\n\n```\n     股票代码   股票简称  ...  复牌时间                                  停牌事项说明\n0  002602   世纪华通  ...  2024-11-08                                实行其他风险警示\n1  300473   德尔股份  ...         NaT                                    重大事项\n2  833534   神玥软件  ...         NaT  全国股转公司认定的其他重大事项，具体内容为：公司股价出现较大波动，停牌核查。\n3  836226   卡友信息  ...         NaT                                做市商不足两家。\n4  870215  ST未来能  ...         NaT         主办券商单方解除持续督导且公司无其他主办券商承接持续督导工作。\n5  872577   浏经水务  ...         NaT                        向全国股转公司主动申请终止挂牌。\n6   02288   宏基资本  ...         NaT            将于今天（7/11/2024）上午九时正起短暂停止买卖。\n[7 rows x 6 columns]"
+      }
+    }
+  }
+}

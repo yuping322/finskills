@@ -1,0 +1,69 @@
+{
+  "name": "stock_sse_deal_daily",
+  "kind": "tool_view",
+  "description": "上海证券交易所-数据-股票数据-成交概况-股票成交概况-每日股票情况",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20250221\"; 当前交易日的数据需要交易所收盘后统计; 注意仅支持获取在 20211227（包含）之后的数据"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sse_deal_daily",
+      "description": "上海证券交易所-数据-股票数据-成交概况-股票成交概况-每日股票情况",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20250221\"; 当前交易日的数据需要交易所收盘后统计; 注意仅支持获取在 20211227（包含）之后的数据"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定日期的每日概况数据, 当前交易日数据需要在收盘后获取; 注意仅支持获取在 20211227（包含）之后的数据",
+      "url": "http://www.sse.com.cn/market/stockdata/overview/day/",
+      "output": {
+        "单日情况": {
+          "type": "string",
+          "description": "包含了网页所有字段"
+        },
+        "股票": {
+          "type": "number",
+          "description": "-"
+        },
+        "主板A": {
+          "type": "number",
+          "description": "-"
+        },
+        "主板B": {
+          "type": "number",
+          "description": "-"
+        },
+        "科创板": {
+          "type": "number",
+          "description": "-"
+        },
+        "股票回购": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_sse_deal_daily_df = ak.stock_sse_deal_daily(date=\"20250221\")\nprint(stock_sse_deal_daily_df)",
+        "data": "数据示例\n\n```\n    单日情况           股票          主板A       主板B         科创板  股票回购\n0    挂牌数    2321.0000    1693.0000   43.0000    585.0000   0.0\n1   市价总值  529981.4800  456997.7000  942.6300  72041.1500   0.0\n2   流通市值  501613.5100  445348.4700  713.7700  55551.2700   0.0\n3   成交金额    8561.3100    6413.6300    4.3000   2143.3700   0.3\n4    成交量     608.5800     556.5800    0.7200     51.2900   0.1\n5  平均市盈率      14.3200      13.2000    7.1600     45.7800   NaN\n6    换手率       1.6154       1.4034    0.4565      2.9752   0.0\n7  流通换手率       1.7068       1.4401    0.6029      3.8584   0.0"
+      }
+    }
+  }
+}

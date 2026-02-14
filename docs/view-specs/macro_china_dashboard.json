@@ -1,0 +1,65 @@
+{
+  "name": "macro_china_dashboard",
+  "kind": "custom_view",
+  "description": "宏观仪表盘：利率(LPR/Shibor)、通胀(CPI/PPI)、PMI、社融与M2（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "shibor_tenor": {
+        "type": "string",
+        "description": "Shibor 期限: 隔夜/1周/2周/1月/3月/6月/9月/1年；默认：隔夜"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "lpr",
+      "tool": "macro_china_lpr",
+      "args": {}
+    },
+    {
+      "key": "shibor",
+      "tool": "rate_interbank",
+      "args": {
+        "market": "上海银行同业拆借市场",
+        "symbol": "Shibor人民币",
+        "indicator": "隔夜"
+      }
+    },
+    {
+      "key": "cpi",
+      "tool": "macro_china_cpi_monthly",
+      "args": {}
+    },
+    {
+      "key": "ppi",
+      "tool": "macro_china_ppi",
+      "args": {}
+    },
+    {
+      "key": "pmi",
+      "tool": "macro_china_pmi",
+      "args": {}
+    },
+    {
+      "key": "social_financing",
+      "tool": "macro_china_shrzgm",
+      "args": {}
+    },
+    {
+      "key": "m2",
+      "tool": "macro_china_m2_yearly",
+      "args": {}
+    }
+  ],
+  "depends_on": [
+    "macro_china_lpr",
+    "rate_interbank",
+    "macro_china_cpi_monthly",
+    "macro_china_ppi",
+    "macro_china_pmi",
+    "macro_china_shrzgm",
+    "macro_china_m2_yearly"
+  ]
+}

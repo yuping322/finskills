@@ -1,0 +1,101 @@
+{
+  "name": "stock_ggcg_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-高管持股",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"全部\"; choice of {\"全部\", \"股东增持\", \"股东减持\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_ggcg_em",
+      "description": "东方财富网-数据中心-特色数据-高管持股",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"全部\"; choice of {\"全部\", \"股东增持\", \"股东减持\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取所有高管持股数据数据",
+      "url": "http://data.eastmoney.com/executive/gdzjc.html",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "持股变动信息-增减": {
+          "type": "number",
+          "description": "-"
+        },
+        "持股变动信息-变动数量": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "持股变动信息-占总股本比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "持股变动信息-占流通股比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "变动后持股情况-持股总数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "变动后持股情况-占总股本比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "变动后持股情况-持流通股数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "变动后持股情况-占流通股比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "变动开始日": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动截止日": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告日": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_ggcg_em_df = ak.stock_ggcg_em(symbol=\"全部\")\nprint(stock_ggcg_em_df)",
+        "data": "数据示例\n\n```\n        代码   名称       最新价  ...    变动开始日   变动截止日       公告日\n0       688369  致远互联  44.19  ...  2022-01-05  2022-04-29  2022-04-30\n1       688106  金宏气体  16.33  ...         NaT  2022-04-29  2022-04-30\n2       601966  玲珑轮胎  17.77  ...  2022-04-29  2022-04-29  2022-04-30\n3       601199  江南水务   5.80  ...  2022-01-29  2022-04-29  2022-04-30\n4       600346  恒力石化  20.95  ...         NaT  2022-04-29  2022-04-30\n        ...   ...    ...  ...         ...         ...         ...\n112446  600653  申华控股   1.83  ...  1996-11-29  1996-12-03  1996-12-04\n112447  600653  申华控股   1.83  ...  1996-11-26  1996-11-28  1996-11-29\n112448  600653  申华控股   1.83  ...  1996-11-21  1996-11-25  1996-11-26\n112449  600653  申华控股   1.83  ...         NaT  1996-11-20  1996-11-21\n112450  600651  飞乐音响   2.96  ...         NaT  1994-08-05  1994-08-10"
+      }
+    }
+  }
+}

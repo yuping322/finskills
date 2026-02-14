@@ -17,11 +17,12 @@ import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
-import requests
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common.utils import output_json, safe_float, error_exit
+from common.utils import output_json, safe_float, error_exit, require_dependency
 from common.config import get_config
+
+require_dependency("requests", requirements_path="US-market/findata-toolkit/requirements.txt")
+import requests
 
 BASE_URL = "https://efts.sec.gov/LATEST"
 DATA_URL = "https://data.sec.gov"

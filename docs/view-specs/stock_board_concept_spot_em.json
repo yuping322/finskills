@@ -1,0 +1,39 @@
+{
+  "name": "stock_board_concept_spot_em",
+  "kind": "tool_view",
+  "description": "东方财富网-行情中心-沪深京板块-概念板块-实时行情",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_concept_spot_em",
+      "description": "东方财富网-行情中心-沪深京板块-概念板块-实时行情",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定概念板块的实时行情数据",
+      "url": "https://quote.eastmoney.com/bk/90.BK0818.html",
+      "output": {
+        "item": {
+          "type": "string",
+          "description": "-"
+        },
+        "value": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_concept_spot_em_df = ak.stock_board_concept_spot_em(symbol=\"可燃冰\")\nprint(stock_board_concept_spot_em_df)",
+        "data": "数据示例\n\n```\n  item         value\n0   最新  1.138760e+03\n1   最高  1.149370e+03\n2   最低  1.119960e+03\n3   开盘  1.119960e+03\n4  成交量  4.543638e+06\n5  成交额  2.916916e+09\n6  换手率  1.190000e+00\n7  涨跌额  2.487000e+01\n8  涨跌幅  2.230000e+00\n9   振幅  2.640000e+00"
+      }
+    }
+  }
+}

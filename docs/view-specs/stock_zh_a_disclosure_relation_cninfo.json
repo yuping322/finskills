@@ -1,0 +1,95 @@
+{
+  "name": "stock_zh_a_disclosure_relation_cninfo",
+  "kind": "tool_view",
+  "description": "巨潮资讯-首页-公告查询-信息披露调研-沪深京",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"000001\"; 股票代码"
+      },
+      "market": {
+        "type": "string",
+        "description": "market=\"沪深京\"; choice of {\"沪深京\", \"港股\", \"三板\", \"基金\", \"债券\", \"监管\", \"预披露\"}"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20230618\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20231219\""
+      }
+    },
+    "required": [
+      "symbol",
+      "market",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_disclosure_relation_cninfo",
+      "description": "巨潮资讯-首页-公告查询-信息披露调研-沪深京",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"000001\"; 股票代码"
+          },
+          "market": {
+            "type": "string",
+            "description": "market=\"沪深京\"; choice of {\"沪深京\", \"港股\", \"三板\", \"基金\", \"债券\", \"监管\", \"预披露\"}"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20230618\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20231219\""
+          }
+        },
+        "required": [
+          "symbol",
+          "market",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的信息披露调研数据",
+      "url": "http://www.cninfo.com.cn/new/commonUrl/pageOfSearch?url=disclosure/list/search",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告标题": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告链接": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_disclosure_relation_cninfo_df = ak.stock_zh_a_disclosure_relation_cninfo(symbol=\"000001\", market=\"沪深京\", start_date=\"20230619\", end_date=\"20231220\")\nprint(stock_zh_a_disclosure_relation_cninfo_df)",
+        "data": "数据示例\n\n```\n   代码    简称  ...        公告时间                               公告链接\n0  000001  平安银行  ...  2023-11-08  http://www.cninfo.com.cn/new/disclosure/detail...\n1  000001  平安银行  ...  2023-11-01  http://www.cninfo.com.cn/new/disclosure/detail...\n2  000001  平安银行  ...  2023-10-24  http://www.cninfo.com.cn/new/disclosure/detail...\n3  000001  平安银行  ...  2023-10-24  http://www.cninfo.com.cn/new/disclosure/detail...\n4  000001  平安银行  ...  2023-10-24  http://www.cninfo.com.cn/new/disclosure/detail...\n5  000001  平安银行  ...  2023-10-24  http://www.cninfo.com.cn/new/disclosure/detail...\n6  000001  平安银行  ...  2023-08-23  http://www.cninfo.com.cn/new/disclosure/detail...\n7  000001  平安银行  ...  2023-08-23  http://www.cninfo.com.cn/new/disclosure/detail...\n8  000001  平安银行  ...  2023-08-23  http://www.cninfo.com.cn/new/disclosure/detail...\n9  000001  平安银行  ...  2023-08-23  http://www.cninfo.com.cn/new/disclosure/detail...\n[10 rows x 5 columns]"
+      }
+    }
+  }
+}

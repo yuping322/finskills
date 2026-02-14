@@ -1,0 +1,49 @@
+{
+  "name": "stock_profit_sheet_by_report_em",
+  "kind": "tool_view",
+  "description": "东方财富-股票-财务分析-利润表-报告期",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"SH600519\"; 股票代码"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_profit_sheet_by_report_em",
+      "description": "东方财富-股票-财务分析-利润表-报告期",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"SH600519\"; 股票代码"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的利润表-报告期数据",
+      "url": "https://emweb.securities.eastmoney.com/PC_HSF10/NewFinanceAnalysis/Index?type=web&code=sh600519#lrb-0",
+      "output": {
+        "-": {
+          "type": "string",
+          "description": "203 项，不逐一列出"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_profit_sheet_by_report_em_df = ak.stock_profit_sheet_by_report_em(symbol=\"SH600519\")\nprint(stock_profit_sheet_by_report_em_df)",
+        "data": "数据示例\n\n```\n   SECUCODE SECURITY_CODE  ... ACF_END_INCOME_YOY OPINION_TYPE\n0   600519.SH        600519  ...               None         None\n1   600519.SH        600519  ...               None         None\n2   600519.SH        600519  ...               None         None\n3   600519.SH        600519  ...               None      标准无保留意见\n4   600519.SH        600519  ...               None         None\n..        ...           ...  ...                ...          ...\n87  600519.SH        600519  ...               None      标准无保留意见\n88  600519.SH        600519  ...               None      标准无保留意见\n89  600519.SH        600519  ...               None      标准无保留意见\n90  600519.SH        600519  ...               None      标准无保留意见\n91  600519.SH        600519  ...               None      标准无保留意见\n[92 rows x 203 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "stock_index_pe_lg",
+  "kind": "tool_view",
+  "description": "乐咕乐股-指数市盈率",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"上证50\"; choice of {\"上证50\", \"沪深300\", \"上证380\", \"创业板50\", \"中证500\", \"上证180\", \"深证红利\", \"深证100\", \"中证1000\", \"上证红利\", \"中证100\", \"中证800\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_index_pe_lg",
+      "description": "乐咕乐股-指数市盈率",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"上证50\"; choice of {\"上证50\", \"沪深300\", \"上证380\", \"创业板50\", \"中证500\", \"上证180\", \"深证红利\", \"深证100\", \"中证1000\", \"上证红利\", \"中证100\", \"中证800\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的所有数据",
+      "url": "https://legulegu.com/stockdata/sz50-ttm-lyr",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "指数": {
+          "type": "number",
+          "description": "-"
+        },
+        "等权静态市盈率": {
+          "type": "number",
+          "description": "-"
+        },
+        "静态市盈率": {
+          "type": "number",
+          "description": "-"
+        },
+        "静态市盈率中位数": {
+          "type": "number",
+          "description": "-"
+        },
+        "等权滚动市盈率": {
+          "type": "number",
+          "description": "-"
+        },
+        "滚动市盈率": {
+          "type": "number",
+          "description": "-"
+        },
+        "滚动市盈率中位数": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_index_pe_lg_df = ak.stock_index_pe_lg(symbol=\"上证50\")\nprint(stock_index_pe_lg_df)",
+        "data": "数据示例\n\n```\n      日期         指数  等权静态市盈率  静态市盈率  静态市盈率中位数  等权滚动市盈率  滚动市盈率  滚动市盈率中位数\n0     2005-01-05   831.43    32.48  20.69     27.02    29.52  14.93     18.97\n1     2005-01-06   822.50    32.57  20.37     27.00    29.74  14.69     18.81\n2     2005-01-07   823.62    32.59  20.50     27.10    29.81  14.79     18.73\n3     2005-01-10   832.99    32.99  20.58     27.29    30.13  14.83     19.07\n4     2005-01-11   837.86    33.13  20.69     27.25    30.26  14.91     19.26\n...          ...      ...      ...    ...       ...      ...    ...       ...\n4800  2024-10-14  2723.18    33.03  11.48     17.17    32.32  11.27     17.79\n4801  2024-10-15  2655.12    32.16  11.17     16.68    31.50  10.97     17.43\n4802  2024-10-16  2650.18    31.65  11.19     16.42    30.20  11.00     17.45\n4803  2024-10-17  2610.47    31.47  11.05     16.13    30.05  10.86     16.94\n4804  2024-10-18  2681.91    33.61  11.29     16.60    32.22  11.09     17.35\n[4805 rows x 8 columns]"
+      }
+    }
+  }
+}

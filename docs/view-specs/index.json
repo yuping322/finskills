@@ -1,0 +1,652 @@
+{
+  "views": [
+    {
+      "name": "ab_ah_premium_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "block_deal_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "cninfo_disclosure_relation_search",
+      "kind": "custom_view"
+    },
+    {
+      "name": "cninfo_disclosure_search",
+      "kind": "custom_view"
+    },
+    {
+      "name": "concept_board_detail",
+      "kind": "custom_view"
+    },
+    {
+      "name": "concept_board_snapshot",
+      "kind": "custom_view"
+    },
+    {
+      "name": "dividend_actions_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "dragon_tiger_daily",
+      "kind": "custom_view"
+    },
+    {
+      "name": "dragon_tiger_stock_detail",
+      "kind": "custom_view"
+    },
+    {
+      "name": "equity_pledge_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "fund_flow_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "goodwill_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "hot_rank_sentiment_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "hsgt_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "industry_board_detail",
+      "kind": "custom_view"
+    },
+    {
+      "name": "industry_board_snapshot",
+      "kind": "custom_view"
+    },
+    {
+      "name": "intraday_microstructure_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "ipo_newlist_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "limit_up_pool_daily",
+      "kind": "custom_view"
+    },
+    {
+      "name": "macro_china_cpi_monthly",
+      "kind": "tool_view"
+    },
+    {
+      "name": "macro_china_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "macro_china_lpr",
+      "kind": "tool_view"
+    },
+    {
+      "name": "macro_china_m2_yearly",
+      "kind": "tool_view"
+    },
+    {
+      "name": "macro_china_pmi",
+      "kind": "tool_view"
+    },
+    {
+      "name": "macro_china_ppi",
+      "kind": "tool_view"
+    },
+    {
+      "name": "macro_china_shrzgm",
+      "kind": "tool_view"
+    },
+    {
+      "name": "margin_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "market_overview_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "news_trade_notify_dividend_baidu",
+      "kind": "tool_view"
+    },
+    {
+      "name": "news_trade_notify_suspend_baidu",
+      "kind": "tool_view"
+    },
+    {
+      "name": "notice_daily_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "rate_interbank",
+      "kind": "tool_view"
+    },
+    {
+      "name": "report_disclosure_calendar",
+      "kind": "custom_view"
+    },
+    {
+      "name": "repurchase_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "restricted_release_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "shareholder_structure_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "st_delist_dashboard",
+      "kind": "custom_view"
+    },
+    {
+      "name": "stock_a_indicator_lg",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_balance_sheet_by_report_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_bid_ask_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_bj_a_spot_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_concept_cons_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_concept_hist_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_concept_name_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_concept_spot_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_industry_cons_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_industry_hist_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_industry_index_ths",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_industry_name_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_industry_spot_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_board_industry_summary_ths",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_buffett_index_lg",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_cash_flow_sheet_by_report_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_circulate_stock_holder",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dividend_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dzjy_hygtj",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dzjy_hyyybtj",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dzjy_mrmx",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dzjy_mrtj",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dzjy_sctj",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_dzjy_yybph",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_esg_hz_sina",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_esg_msci_sina",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_esg_rate_sina",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_esg_rft_sina",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_esg_zd_sina",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_fhps_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_financial_abstract_ths",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_financial_analysis_indicator",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_fund_flow_big_deal",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_fund_flow_industry",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_ggcg_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_gpzy_distribute_statistics_bank_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_gpzy_distribute_statistics_company_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_gpzy_industry_data_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_gpzy_pledge_ratio_detail_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_gpzy_pledge_ratio_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_gpzy_profile_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_history_dividend",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_history_dividend_detail",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hold_change_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hold_control_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hold_num_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hot_deal_xq",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hot_keyword_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hot_rank_detail_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hot_rank_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hsgt_board_rank_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hsgt_fund_flow_summary_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hsgt_fund_min_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hsgt_hist_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_hsgt_hold_stock_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_index_pb_lg",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_index_pe_lg",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_individual_fund_flow_rank",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_individual_info_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_info_bj_name_code",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_inner_trade_xq",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_intraday_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_ipo_benefit_ths",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_ipo_declare",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_lhb_detail_daily_sina",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_lhb_detail_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_lhb_hyyyb_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_lhb_jgmmtj_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_lhb_stock_detail_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_lhb_stock_statistic_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_main_fund_flow",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_main_stock_holder",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_account_info",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_detail_sse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_detail_szse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_ratio_pa",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_sse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_szse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_margin_underlying_info_szse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_market_fund_flow",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_new_ipo_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_notice_report",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_profit_sheet_by_report_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_report_disclosure",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_repurchase_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_restricted_release_detail_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_restricted_release_stockholder_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_restricted_release_summary_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sector_fund_flow_rank",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_share_change_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_share_hold_change_bse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_share_hold_change_sse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_share_hold_change_szse",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_shareholder_change_ths",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sse_deal_daily",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sse_summary",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_staq_net_stop",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sy_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sy_hy_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sy_jz_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sy_profile_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_sy_yq_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_szse_summary",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_xgsr_ths",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zcfz_bj_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_disclosure_relation_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_disclosure_report_cninfo",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_gdhs",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_gdhs_detail_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_hist",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_new",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_new_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_spot_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_st_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_a_stop_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_ab_comparison_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_ah_name",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_ah_spot",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zh_ah_spot_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zt_pool_dtgc_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zt_pool_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zt_pool_previous_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zt_pool_strong_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zt_pool_sub_new_em",
+      "kind": "tool_view"
+    },
+    {
+      "name": "stock_zt_pool_zbgc_em",
+      "kind": "tool_view"
+    }
+  ]
+}

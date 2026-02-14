@@ -1,0 +1,115 @@
+{
+  "name": "stock_lhb_jgmmtj_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-龙虎榜单-机构买卖每日统计",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20240417\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20240430\""
+      }
+    },
+    "required": [
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_lhb_jgmmtj_em",
+      "description": "东方财富网-数据中心-龙虎榜单-机构买卖每日统计",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20240417\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20240430\""
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/stock/jgmmtj.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "收盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "-"
+        },
+        "买方机构数": {
+          "type": "number",
+          "description": "-"
+        },
+        "卖方机构数": {
+          "type": "number",
+          "description": "-"
+        },
+        "机构买入总额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "机构卖出总额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "机构买入净额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "市场总成交额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "机构净买额占总成交额比": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "-"
+        },
+        "流通市值": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        },
+        "上榜原因": {
+          "type": "string",
+          "description": "-"
+        },
+        "上榜日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_lhb_jgmmtj_em_df = ak.stock_lhb_jgmmtj_em(start_date=\"20240417\", end_date=\"20240430\")\nprint(stock_lhb_jgmmtj_em_df)",
+        "data": "数据示例\n\n```\n      序号  代码  ...                                    上榜原因                   上榜日期\n0      1  600919  ...           有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券  2024-04-26\n1      2  603486  ...  非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券  2024-04-22\n2      3  688019  ...             有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券  2024-04-29\n3      4  002920  ...                        日跌幅偏离值达到7%的前5只证券  2024-04-19\n4      5  000628  ...                         日换手率达到20%的前5只证券  2024-04-29\n..   ...     ...  ...                                     ...         ...\n334  335  000628  ...                连续三个交易日内，涨幅偏离值累计达到20%的证券  2024-04-26\n335  336  000099  ...                        日涨幅偏离值达到7%的前5只证券  2024-04-18\n336  337  688027  ...             有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券  2024-04-26\n337  338  002085  ...                        日涨幅偏离值达到7%的前5只证券  2024-04-24\n338  339  603882  ...           有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券  2024-04-26\n[339 rows x 16 columns]"
+      }
+    }
+  }
+}

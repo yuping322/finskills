@@ -1,0 +1,4 @@
+[console_scripts]
+finskills-cn-healthcheck = view_service.healthcheck_cn:main
+finskills-cn-smoke = view_service.smoke_cn_skills:main
+finskills-view-service = view_service.http_server:main

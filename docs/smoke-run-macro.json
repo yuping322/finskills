@@ -1,0 +1,29 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 3,
+  "failures": 3,
+  "results": [
+    {
+      "skill": "liquidity-impact-estimator",
+      "view": "macro_china_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "macro_china_shrzgm: HTTPSConnectionPool(host='data.mofcom.gov.cn', port=443): Max retries exceeded with url: /datamofcom/front/gnmy/shrzgmQuery (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))"
+    },
+    {
+      "skill": "macro-liquidity-monitor",
+      "view": "macro_china_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "macro_china_shrzgm: HTTPSConnectionPool(host='data.mofcom.gov.cn', port=443): Max retries exceeded with url: /datamofcom/front/gnmy/shrzgmQuery (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))"
+    },
+    {
+      "skill": "policy-sensitivity-brief",
+      "view": "macro_china_dashboard",
+      "ok": false,
+      "mode": "run",
+      "error": "macro_china_lpr: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPTA_WEB_RATE&columns=ALL&sortColumns=TRADE_DATE&sortTypes=-1&token=894050c76af8597a853f5b408b759f5d&pageNumber=1&pageSize=500&p=1&pageNo=1&pageNum=1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)'))); rate_interbank: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?reportName=RPT_IMP_INTRESTRATEN&columns=REPORT_DATE%2CREPORT_PERIOD%2CIR_RATE%2CCHANGE_RATE%2CINDICATOR_ID%2CLATEST_RECORD%2CMARKET%2CMARKET_CODE%2CCURRENCY%2CCURRENCY_CODE&quoteColumns=&filter=%28MARKET_CODE%3D%22001%22%29%28CURRENCY_CODE%3D%22CNY%22%29%0A++++++++%28INDICATOR_ID%3D%22001%22%29&pageNumber=1&pageSize=500&sortTypes=-1&sortColumns=REPORT_DATE&source=WEB&client=WEB&p=1&pageNo=1&pageNum=1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)'))); macro_china_cpi_monthly: HTTPSConnectionPool(host='datacenter-api.jin10.com', port=443): Max retries exceeded with url: /reports/list_v2?max_date=&category=ec&attr_id=72&_=1770902105898 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)'))); macro_china_shrzgm: HTTPSConnectionPool(host='data.mofcom.gov.cn', port=443): Max retries exceeded with url: /datamofcom/front/gnmy/shrzgmQuery (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1017)'))); macro_china_m2_yearly: HTTPSConnectionPool(host='datacenter-api.jin10.com', port=443): Max retries exceeded with url: /reports/list_v2?max_date=2024-04-10&category=ec&attr_id=59&_=1770902126050 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))"
+    }
+  ]
+}

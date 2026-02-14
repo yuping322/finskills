@@ -1,0 +1,97 @@
+{
+  "name": "stock_main_fund_flow",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-资金流向-主力净流入排名",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"全部股票\"；choice of {\"全部股票\", \"沪深A股\", \"沪市A股\", \"科创板\", \"深市A股\", \"创业板\", \"沪市B股\", \"深市B股\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_main_fund_flow",
+      "description": "东方财富网-数据中心-资金流向-主力净流入排名",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"全部股票\"；choice of {\"全部股票\", \"沪深A股\", \"沪市A股\", \"科创板\", \"深市A股\", \"创业板\", \"沪市B股\", \"深市B股\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的主力净流入排名数据",
+      "url": "https://data.eastmoney.com/zjlx/list.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "今日排行榜-主力净占比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "今日排行榜-今日排名": {
+          "type": "number",
+          "description": "-"
+        },
+        "今日排行榜-今日涨跌": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "5日排行榜-主力净占比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "5日排行榜-5日排名": {
+          "type": "integer",
+          "description": "-"
+        },
+        "5日排行榜-5日涨跌": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "10日排行榜-主力净占比": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "10日排行榜-10日排名": {
+          "type": "integer",
+          "description": "-"
+        },
+        "10日排行榜-10日涨跌": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "所属板块": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_main_fund_flow_df = ak.stock_main_fund_flow(symbol=\"全部股票\")\nprint(stock_main_fund_flow_df)",
+        "data": "数据示例\n\n```\n        序号  代码     名称  ...  10日排行榜-10日排名  10日排行榜-10日涨跌   所属板块\n0        0  200017   深中华B  ...            10          7.77   交运设备\n1        1  001366   播恩集团  ...           124         22.84   农牧饲渔\n2        2  900943   开开Ｂ股  ...            27          2.88   医药商业\n3        3  200771   杭汽轮Ｂ  ...           361          0.28   通用设备\n4        4  002861   瀛通通讯  ...            98         23.18   消费电子\n    ...     ...    ...  ...           ...           ...    ...\n5198  5198  301536   星宸科技  ...          1187          0.00   电子元件\n5199  5199  002089  *ST新海  ...          1180          0.00   通信设备\n5200  5200  001389   广合科技  ...          1185          0.00   电子元件\n5201  5201  001359   平安电工  ...          1184          0.00  非金属材料\n5202  5202  000005   ST星源  ...          1179          0.00   环保行业\n[5203 rows x 14 columns]"
+      }
+    }
+  }
+}

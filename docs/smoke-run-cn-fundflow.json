@@ -1,0 +1,29 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 3,
+  "failures": 0,
+  "results": [
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_fund_flow_industry",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_fund_flow_industry",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_fund_flow_industry",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}

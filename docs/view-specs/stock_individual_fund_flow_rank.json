@@ -1,0 +1,44 @@
+{
+  "name": "stock_individual_fund_flow_rank",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-资金流向-排名",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "indicator": {
+        "type": "string",
+        "description": "indicator=\"今日\"; choice {\"今日\", \"3日\", \"5日\", \"10日\"}"
+      }
+    },
+    "required": [
+      "indicator"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_individual_fund_flow_rank",
+      "description": "东方财富网-数据中心-资金流向-排名",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "indicator": {
+            "type": "string",
+            "description": "indicator=\"今日\"; choice {\"今日\", \"3日\", \"5日\", \"10日\"}"
+          }
+        },
+        "required": [
+          "indicator"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定类型的个股资金流排名数据",
+      "url": "http://data.eastmoney.com/zjlx/detail.html",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

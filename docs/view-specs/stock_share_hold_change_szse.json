@@ -1,0 +1,93 @@
+{
+  "name": "stock_share_hold_change_szse",
+  "kind": "tool_view",
+  "description": "深圳证券交易所-信息披露-监管信息公开-董监高人员股份变动",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"001308\"; choice of {\"全部\", \"具体股票代码\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_share_hold_change_szse",
+      "description": "深圳证券交易所-信息披露-监管信息公开-董监高人员股份变动",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"001308\"; choice of {\"全部\", \"具体股票代码\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的数据",
+      "url": "http://www.szse.cn/disclosure/supervision/change/index.html",
+      "output": {
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "董监高姓名": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动股份数量": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "成交均价": {
+          "type": "number",
+          "description": "-"
+        },
+        "变动原因": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动比例": {
+          "type": "number",
+          "description": "注意单位: 千分之一"
+        },
+        "当日结存股数": {
+          "type": "number",
+          "description": "注意单位: 万股"
+        },
+        "股份变动人姓名": {
+          "type": "string",
+          "description": "-"
+        },
+        "职务": {
+          "type": "string",
+          "description": "-"
+        },
+        "变动人与董监高的关系": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_share_hold_change_szse_df = ak.stock_share_hold_change_szse(symbol=\"001308\")\nprint(stock_share_hold_change_szse_df)",
+        "data": "数据示例\n\n```\n   证券代码  证券简称 董监高姓名 变动日期  ...    当日结存股数  股份变动人姓名     职务  变动人与董监高的关系\n0  001308  康冠科技    凌斌  2023-08-21  ...  18752.80       凌斌     董事          本人\n1  001308  康冠科技    凌斌  2023-08-18  ...  18743.80       凌斌     董事          本人\n2  001308  康冠科技    凌斌  2023-08-17  ...  18737.80       凌斌     董事          本人\n3  001308  康冠科技    凌斌  2023-08-16  ...  18734.80       凌斌     董事          本人\n4  001308  康冠科技    江微  2023-08-09  ...      1.00       江微     监事          本人\n5  001308  康冠科技    吴远  2023-08-08  ...      7.48       吴远     高管          本人\n6  001308  康冠科技   孙建华  2023-08-08  ...      3.88      孙建华  董秘、高管          本人\n7  001308  康冠科技    吴远  2022-08-24  ...      4.95       吴远     高管          本人\n8  001308  康冠科技    吴远  2022-06-17  ...      3.55       吴远     高管          本人\n[9 rows x 12 columns]"
+      }
+    }
+  }
+}

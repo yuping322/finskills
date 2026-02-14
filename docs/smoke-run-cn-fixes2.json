@@ -1,0 +1,36 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 4,
+  "failures": 3,
+  "results": [
+    {
+      "skill": "disclosure-notice-monitor",
+      "view": "cninfo_disclosure_search",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "industry-board-analyzer",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "No tables found"
+    },
+    {
+      "skill": "industry-chain-mapper",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "No tables found"
+    },
+    {
+      "skill": "sector-rotation-detector",
+      "view": "stock_fund_flow_industry",
+      "ok": false,
+      "mode": "run",
+      "error": "No tables found"
+    }
+  ]
+}

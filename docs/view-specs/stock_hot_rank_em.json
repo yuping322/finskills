@@ -1,0 +1,51 @@
+{
+  "name": "stock_hot_rank_em",
+  "kind": "tool_view",
+  "description": "东方财富网站-股票热度",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hot_rank_em",
+      "description": "东方财富网站-股票热度",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前交易日前 100 个股票的人气排名数据",
+      "url": "http://guba.eastmoney.com/rank/",
+      "output": {
+        "当前排名": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_hot_rank_em_df = ak.stock_hot_rank_em()\nprint(stock_hot_rank_em_df)",
+        "data": "数据示例\n\n```\n    当前排名   代码  股票名称    最新价       涨跌额    涨跌幅\n0      1  SZ002261  拓维信息  18.83  0.090384   0.48\n1      2  SH603000   人民网  34.35  2.881965   8.39\n2      3  SH601127   赛力斯  33.72  3.378744  10.02\n3      4  SZ002229  鸿博股份  35.09  0.021054   0.06\n4      5  SZ000936  华西股份  10.41  1.045164  10.04\n..   ...       ...   ...    ...       ...    ...\n95    96  SZ002585  双星新材   9.69  0.968031   9.99\n96    97  SZ002670  国盛金控   8.46  0.520290   6.15\n97    98  SZ300116   保力新   1.53  0.191250  12.50\n98    99  SH603533  掌阅科技  33.14 -3.231150  -9.75\n99   100  SZ301368  丰立智能  58.32  3.563352   6.11\n[100 rows x 6 columns]"
+      }
+    }
+  }
+}

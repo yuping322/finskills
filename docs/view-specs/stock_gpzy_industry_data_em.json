@@ -1,0 +1,59 @@
+{
+  "name": "stock_gpzy_industry_data_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-股权质押-上市公司质押比例-行业数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_gpzy_industry_data_em",
+      "description": "东方财富网-数据中心-特色数据-股权质押-上市公司质押比例-行业数据",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/gpzy/industryData.aspx",
+      "output": {
+        "行业": {
+          "type": "string",
+          "description": "-"
+        },
+        "平均质押比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "公司家数": {
+          "type": "number",
+          "description": "-"
+        },
+        "质押总笔数": {
+          "type": "number",
+          "description": "-"
+        },
+        "质押总股本": {
+          "type": "number",
+          "description": "-"
+        },
+        "最新质押市值": {
+          "type": "number",
+          "description": "-"
+        },
+        "统计时间": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_gpzy_industry_data_em_df = ak.stock_gpzy_industry_data_em()\nprint(stock_gpzy_industry_data_em_df)",
+        "data": "数据示例\n\n```\n    序号  行业    平均质押比例  公司家数  质押总笔数 质押总股本 最新质押市值     统计时间\n0    1   商业百货  20.886207    29    288  1301231.97  5.579849e+06  2024-12-20\n1    2   航空机场  19.988000     5    109  1361284.27  4.552621e+06  2024-12-20\n2    3   多元金融  19.492308    13    111   711850.81  3.957603e+06  2024-12-20\n3    4   综合行业  18.979091    11    113   424101.84  2.326736e+06  2024-12-20\n4    5  房地产开发  18.584063    32    313  1702899.22  6.166608e+06  2024-12-20\n..  ..    ...        ...   ...    ...         ...           ...         ...\n81  82   专业服务   5.231111     9     19    20018.84  1.993565e+05  2024-12-20\n82  83  电子化学品   5.005385    13     27    30328.42  5.075712e+05  2024-12-20\n83  84   铁路公路   4.925556     9     16   183142.87  1.489794e+06  2024-12-20\n84  85     银行   4.596190    42    684  1827327.07  8.201688e+06  2024-12-20\n85  86     保险   0.420000     3     12     6925.00  9.603522e+04  2024-12-20\n[86 rows x 8 columns]"
+      }
+    }
+  }
+}

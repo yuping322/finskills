@@ -1,0 +1,55 @@
+{
+  "name": "stock_esg_rate_sina",
+  "kind": "tool_view",
+  "description": "新浪财经-ESG评级中心-ESG评级-ESG评级数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_esg_rate_sina",
+      "description": "新浪财经-ESG评级中心-ESG评级-ESG评级数据",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有数据",
+      "url": "https://finance.sina.com.cn/esg/grade.shtml",
+      "output": {
+        "成分股代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "评级机构": {
+          "type": "string",
+          "description": "-"
+        },
+        "评级": {
+          "type": "string",
+          "description": "-"
+        },
+        "评级季度": {
+          "type": "string",
+          "description": "-"
+        },
+        "标识": {
+          "type": "string",
+          "description": "-"
+        },
+        "交易市场": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_esg_rate_sina_df = ak.stock_esg_rate_sina()\nprint(stock_esg_rate_sina_df)",
+        "data": "数据示例\n\n```\n    成分股代码              评级机构     评级    评级季度             标识 交易市场\n0      SZ000001             中财绿金院     A-  2022Q4            NaN   cn\n1      SZ000001              商道融绿     B+  2022Q4            NaN   cn\n2      SZ000001                盟浪      A  2022Q2            NaN   cn\n3      SZ000001               中诚信    AA-  2023Q3            NaN   cn\n4      SZ000001  晨星Sustainalytics  24.96  2022Q4  Comprehensive   cn\n         ...               ...    ...     ...            ...  ...\n46888   HK02361                盟浪      -  2022Q2            NaN   hk\n46889   HK02361               中诚信     BB  2023Q3            NaN   hk\n46890   HK02361  晨星Sustainalytics      -  2022Q4                  hk\n46891   HK02361                妙盈      -  2022Q2            NaN   hk\n46892   HK02361             华测CTI      -  2022Q1            NaN   hk\n[46893 rows x 6 columns]"
+      }
+    }
+  }
+}

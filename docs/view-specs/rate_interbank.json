@@ -1,0 +1,59 @@
+{
+  "name": "rate_interbank",
+  "kind": "tool_view",
+  "description": "中国-宏观-同业拆借利率(如 Shibor)",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "market": {
+        "type": "string",
+        "description": "市场，如：上海银行间同业拆放利率(Shibor)"
+      },
+      "symbol": {
+        "type": "string",
+        "description": "品种，如：隔夜/1周/2周/1月/3月等"
+      },
+      "indicator": {
+        "type": "string",
+        "description": "指标，如：利率"
+      }
+    },
+    "required": [
+      "market",
+      "symbol",
+      "indicator"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "rate_interbank",
+      "description": "中国-宏观-同业拆借利率(如 Shibor)",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "market": {
+            "type": "string",
+            "description": "市场，如：上海银行间同业拆放利率(Shibor)"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "品种，如：隔夜/1周/2周/1月/3月等"
+          },
+          "indicator": {
+            "type": "string",
+            "description": "指标，如：利率"
+          }
+        },
+        "required": [
+          "market",
+          "symbol",
+          "indicator"
+        ]
+      }
+    },
+    "extra": {
+      "source": "akshare",
+      "output": {}
+    }
+  }
+}

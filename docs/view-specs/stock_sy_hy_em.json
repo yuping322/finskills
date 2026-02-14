@@ -1,0 +1,65 @@
+{
+  "name": "stock_sy_hy_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-商誉-行业商誉",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20240930\"; 参见网页选项"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sy_hy_em",
+      "description": "东方财富网-数据中心-特色数据-商誉-行业商誉",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20240930\"; 参见网页选项"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/sy/hylist.html",
+      "output": {
+        "公司家数": {
+          "type": "integer",
+          "description": "-"
+        },
+        "商誉规模": {
+          "type": "number",
+          "description": "-"
+        },
+        "净资产": {
+          "type": "number",
+          "description": "-"
+        },
+        "商誉规模占净资产规模比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "净利润规模": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_sy_hy_em_df = ak.stock_sy_hy_em(date=\"20240930\")\nprint(stock_sy_hy_em_df)",
+        "data": "数据示例\n\n```\n     行业名称  公司家数  商誉规模    净资产  商誉规模占净资产规模比例   净利润规模\n0      游戏    22  3.021155e+10  1.206944e+11      0.250314  8.439657e+09\n1      教育    11  3.216185e+09  1.383355e+10      0.232492  5.010300e+08\n2   房地产服务    12  8.534555e+09  4.474023e+10      0.190758  3.724827e+07\n3    航空机场     3  1.397192e+10  8.271383e+10      0.168919  3.396607e+09\n4    医药商业    25  4.362616e+10  2.754810e+11      0.158364  1.496122e+10\n..    ...   ...           ...           ...           ...           ...\n81   工程建设    44  1.700281e+10  3.263842e+12      0.005209  1.297234e+11\n82   钢铁行业    18  1.975099e+09  4.997408e+11      0.003952  1.588223e+10\n83   煤炭行业    12  1.658931e+09  5.478767e+11      0.003028  3.957996e+10\n84   化纤行业    11  4.119727e+08  1.538797e+11      0.002677  8.734288e+09\n85     银行    12  3.267882e+10  1.433628e+13      0.002279  1.027638e+12\n[86 rows x 6 columns]"
+      }
+    }
+  }
+}

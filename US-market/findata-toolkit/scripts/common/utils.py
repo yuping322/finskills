@@ -135,3 +135,19 @@ def pct(val, decimals=2):
     if val is None:
         return "N/A"
     return f"{val * 100:.{decimals}f}%"
+
+
+def require_dependency(module_name: str, *, requirements_path: str) -> None:
+    """
+    Exit with an actionable message when an optional dependency is missing.
+
+    Note: keep this in `common/utils.py` so scripts can check deps before
+    doing work (and before importing heavy third-party libraries).
+    """
+    try:
+        __import__(module_name)
+    except ImportError as e:
+        error_exit(
+            f"Missing dependency: '{module_name}'. Install toolkit deps first (from repo root): "
+            f"pip install -r {requirements_path}"
+        )

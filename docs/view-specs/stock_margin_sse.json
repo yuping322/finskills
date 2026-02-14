@@ -1,0 +1,83 @@
+{
+  "name": "stock_margin_sse",
+  "kind": "tool_view",
+  "description": "上海证券交易所-融资融券数据-融资融券汇总数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20010106\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20010106\""
+      }
+    },
+    "required": [
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_margin_sse",
+      "description": "上海证券交易所-融资融券数据-融资融券汇总数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20010106\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20010106\""
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定时间段内的所有历史数据",
+      "url": "http://www.sse.com.cn/market/othersdata/margin/sum/",
+      "output": {
+        "信用交易日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "融资余额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融资买入额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融券余量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "融券余量金额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        },
+        "融券卖出量": {
+          "type": "integer",
+          "description": "-"
+        },
+        "融资融券余额": {
+          "type": "integer",
+          "description": "注意单位: 元"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_margin_sse_df = ak.stock_margin_sse(start_date=\"20010106\", end_date=\"20210208\")\nprint(stock_margin_sse_df)",
+        "data": "数据示例\n\n```\n      信用交易日期   融资余额     融资买入额  ...    融券余量金额   融券卖出量   融资融券余额\n0     20210208  796355371775  33386752258  ...  87718590706  148374362  884073962481\n1     20210205  798537947597  39256505179  ...  87230537840  169481352  885768485437\n2     20210204  802902827539  41486860920  ...  87780973049  164920794  890683800588\n3     20210203  807189978760  42621756166  ...  88548469683  251518719  895738448443\n4     20210202  807418158794  37533872673  ...  88303226275  230032183  895721385069\n        ...           ...          ...  ...          ...        ...           ...\n1995  20121127   52059352556   1561381214  ...   1384086520  255616186   53443439076\n1996  20121126   52224867623   1322180521  ...   1366826765  234474541   53591694388\n1997  20121123   52163842479   1543727769  ...   1347840020  257859771   53511682499\n1998  20121122   52326315202   1332145449  ...   1302639373  214932697   53628954575\n1999  20121121   52338359165   1943146103  ...   1306569346  308581665   53644928511\n[2000 rows x 7 columns]"
+      }
+    }
+  }
+}

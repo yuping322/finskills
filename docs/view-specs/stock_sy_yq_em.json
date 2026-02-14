@@ -1,0 +1,101 @@
+{
+  "name": "stock_sy_yq_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-商誉-商誉减值预期明细",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20221231\"; 参见网页选项"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_sy_yq_em",
+      "description": "东方财富网-数据中心-特色数据-商誉-商誉减值预期明细",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20221231\"; 参见网页选项"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次所有历史数据",
+      "url": "https://data.eastmoney.com/sy/yqlist.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "业绩变动原因": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新商誉报告期": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新一期商誉": {
+          "type": "number",
+          "description": "主要单位: 元"
+        },
+        "上年商誉": {
+          "type": "number",
+          "description": "主要单位: 元"
+        },
+        "预计净利润-下限": {
+          "type": "integer",
+          "description": "主要单位: 元"
+        },
+        "预计净利润-上限": {
+          "type": "integer",
+          "description": "主要单位: 元"
+        },
+        "业绩变动幅度-下限": {
+          "type": "number",
+          "description": "主要单位: %"
+        },
+        "业绩变动幅度-上限": {
+          "type": "number",
+          "description": "主要单位: %"
+        },
+        "上年度同期净利润": {
+          "type": "number",
+          "description": "主要单位: 元"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "交易市场": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_sy_yq_em_df = ak.stock_sy_yq_em(date=\"20221231\")\nprint(stock_sy_yq_em_df)",
+        "data": "数据示例\n\n```\n      序号    股票代码  股票简称  ...     上年度同期净利润        公告日期  交易市场\n0      1  000010  美丽生态  ...   23458700.0  2023-04-22  深市主板\n1      2  300069  金利华电  ...  -40111200.0  2023-04-18   创业板\n2      3  000546  ST金圆  ...   86300100.0  2023-04-17  深市主板\n3      4  002636  金安国纪  ...  690190000.0  2023-04-15  深市主板\n4      5  002251   步步高  ... -184132100.0  2023-04-15  深市主板\n..   ...     ...   ...  ...          ...         ...   ...\n292  293  300452  山河药辅  ...   89253400.0  2023-01-10   创业板\n293  294  300009  安科生物  ...  206629500.0  2023-01-10   创业板\n294  295  002137   实益达  ...  -95330400.0  2023-01-10  深市主板\n295  296  000576  甘化科工  ...   31860000.0  2023-01-06  深市主板\n296  297  002111  威海广泰  ...   67754400.0  2022-10-29  深市主板\n[297 rows x 14 columns]"
+      }
+    }
+  }
+}

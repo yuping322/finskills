@@ -1,0 +1,25 @@
+{
+  "name": "macro_china_lpr",
+  "kind": "tool_view",
+  "description": "中国-宏观-贷款市场报价利率(LPR)",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "macro_china_lpr",
+      "description": "中国-宏观-贷款市场报价利率(LPR)",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "source": "akshare",
+      "output": {}
+    }
+  }
+}

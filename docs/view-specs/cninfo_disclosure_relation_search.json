@@ -1,0 +1,44 @@
+{
+  "name": "cninfo_disclosure_relation_search",
+  "kind": "custom_view",
+  "description": "巨潮资讯信息披露调研查询（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "股票代码，如 000001"
+      },
+      "market": {
+        "type": "string",
+        "description": "沪深京/港股/三板/基金/债券/监管/预披露"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "plan": [
+    {
+      "key": "disclosure_relations",
+      "tool": "stock_zh_a_disclosure_relation_cninfo",
+      "args": {
+        "symbol": "000001",
+        "market": "沪深京",
+        "start_date": "20250818",
+        "end_date": "20260214"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_zh_a_disclosure_relation_cninfo"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "stock_fund_flow_industry",
+  "kind": "tool_view",
+  "description": "同花顺-数据中心-资金流向-行业资金流",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"即时\"; choice of {“即时”, \"3日排行\", \"5日排行\", \"10日排行\", \"20日排行\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_fund_flow_industry",
+      "description": "同花顺-数据中心-资金流向-行业资金流",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"即时\"; choice of {“即时”, \"3日排行\", \"5日排行\", \"10日排行\", \"20日排行\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的行业资金流数据",
+      "url": "http://data.10jqka.com.cn/funds/hyzjl/#refCountId=data_55f13c2c_254",
+      "output": {},
+      "examples": {
+        "code": "",
+        "data": ""
+      }
+    }
+  }
+}

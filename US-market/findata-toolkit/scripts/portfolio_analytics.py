@@ -16,7 +16,7 @@ from pathlib import Path
 from datetime import datetime, timedelta
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common.utils import output_json, safe_div, safe_float, error_exit
+from common.utils import output_json, safe_div, safe_float, error_exit, require_dependency
 
 
 def _parse_holdings(holdings_str: str) -> dict[str, float]:
@@ -547,6 +547,11 @@ def main():
                         help="Full health score (default)")
     args = parser.parse_args()
 
+    require_dependency("pandas", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("numpy", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("scipy", requirements_path="US-market/findata-toolkit/requirements.txt")
+    require_dependency("yfinance", requirements_path="US-market/findata-toolkit/requirements.txt")
+
     holdings = _parse_holdings(args.holdings)
 
     try:
@@ -563,8 +568,6 @@ def main():
 
         output_json(data)
 
-    except ImportError as e:
-        error_exit(f"Missing dependency: {e}. Install: pip install yfinance numpy scipy")
     except Exception as e:
         error_exit(f"Error: {e}")
 

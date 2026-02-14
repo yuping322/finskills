@@ -1,0 +1,44 @@
+{
+  "name": "industry_board_snapshot",
+  "kind": "custom_view",
+  "description": "行业板块快照：行业一览表/行业代码列表（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "sector_rank_indicator": {
+        "type": "string",
+        "description": "stock_sector_fund_flow_rank 的 indicator；今日/5日/10日"
+      },
+      "include_sector_fund_flow_rank": {
+        "type": "boolean",
+        "description": "是否附带行业资金流排名"
+      }
+    },
+    "required": []
+  },
+  "plan": [
+    {
+      "key": "industry_summary_ths",
+      "tool": "stock_board_industry_summary_ths",
+      "args": {}
+    },
+    {
+      "key": "industry_name_em",
+      "tool": "stock_board_industry_name_em",
+      "args": {}
+    },
+    {
+      "key": "sector_fund_flow_rank",
+      "tool": "stock_sector_fund_flow_rank",
+      "args": {
+        "indicator": "今日",
+        "sector_type": "行业资金流"
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_board_industry_summary_ths",
+    "stock_board_industry_name_em",
+    "stock_sector_fund_flow_rank"
+  ]
+}

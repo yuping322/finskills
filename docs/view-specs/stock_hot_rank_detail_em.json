@@ -1,0 +1,65 @@
+{
+  "name": "stock_hot_rank_detail_em",
+  "kind": "tool_view",
+  "description": "东方财富网-股票热度-历史趋势及粉丝特征",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"SZ000665\""
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_hot_rank_detail_em",
+      "description": "东方财富网-股票热度-历史趋势及粉丝特征",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"SZ000665\""
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回指定 symbol 的股票近期历史数据",
+      "url": "http://guba.eastmoney.com/rank/stock?code=000665",
+      "output": {
+        "时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "排名": {
+          "type": "integer",
+          "description": "-"
+        },
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "新晋粉丝": {
+          "type": "number",
+          "description": "-"
+        },
+        "铁杆粉丝": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_hot_rank_detail_em_df = ak.stock_hot_rank_detail_em(symbol=\"SZ000665\")\nprint(stock_hot_rank_detail_em_df)",
+        "data": "数据示例\n\n```\n          时间    排名  证券代码    新晋粉丝 铁杆粉丝\n0    2021-10-19  3369  SZ000665  0.6241  0.3759\n1    2021-10-20  3788  SZ000665  0.5462  0.4538\n2    2021-10-21  3656  SZ000665  0.5341  0.4659\n3    2021-10-22  3952  SZ000665  0.5227  0.4773\n4    2021-10-23  3975  SZ000665  0.5048  0.4952\n..          ...   ...       ...     ...     ...\n115  2022-02-11    11  SZ000665  0.2307  0.7693\n116  2022-02-12    61  SZ000665  0.2520  0.7480\n117  2022-02-13    81  SZ000665  0.2593  0.7407\n118  2022-02-14    75  SZ000665  0.2263  0.7737\n119  2022-02-15    35  SZ000665  0.1977  0.8023"
+      }
+    }
+  }
+}

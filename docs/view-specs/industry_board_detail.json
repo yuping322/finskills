@@ -1,0 +1,65 @@
+{
+  "name": "industry_board_detail",
+  "kind": "custom_view",
+  "description": "行业板块详情：实时行情/成分股/历史行情（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "行业名称或板块代码（如 小金属 或 BK1027）"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      },
+      "period": {
+        "type": "string",
+        "description": "daily/weekly/monthly"
+      },
+      "adjust": {
+        "type": "string",
+        "description": "''/qfq/hfq"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "plan": [
+    {
+      "key": "spot",
+      "tool": "stock_board_industry_spot_em",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "constituents",
+      "tool": "stock_board_industry_cons_em",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "history",
+      "tool": "stock_board_industry_hist_em",
+      "args": {
+        "symbol": "000001",
+        "start_date": "20251116",
+        "end_date": "20260214",
+        "period": "daily",
+        "adjust": ""
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_board_industry_spot_em",
+    "stock_board_industry_cons_em",
+    "stock_board_industry_hist_em"
+  ]
+}

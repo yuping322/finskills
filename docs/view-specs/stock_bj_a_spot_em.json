@@ -1,0 +1,119 @@
+{
+  "name": "stock_bj_a_spot_em",
+  "kind": "tool_view",
+  "description": "东方财富网-京 A 股-实时行情数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_bj_a_spot_em",
+      "description": "东方财富网-京 A 股-实时行情数据",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有京 A 股上市公司的实时行情数据",
+      "url": "http://quote.eastmoney.com/center/gridlist.html#bj_a_board",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "注意单位: 手"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "量比": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市盈率-动态": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        },
+        "总市值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "流通市值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "涨速": {
+          "type": "number",
+          "description": "-"
+        },
+        "5分钟涨跌": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "60日涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "年初至今涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_bj_a_spot_em_df = ak.stock_bj_a_spot_em()\nprint(stock_bj_a_spot_em_df)",
+        "data": "数据示例\n\n```\n      序号  代码   名称      最新价 涨跌幅  ...    流通市值  涨速 5分钟涨跌 60日涨跌幅 年初至今涨跌幅\n0      1  836149  旭杰科技   7.31  29.84  ...   349965819  0.00   0.00   28.47    -9.53\n1      2  871263  莱赛激光   9.95   8.86  ...   271814568 -0.40   1.84   -8.63   -50.74\n2      3  833873  中设咨询   3.32   4.73  ...   362479267  0.00  -0.90   13.70   -23.33\n3      4  833230  欧康医药   9.61   4.46  ...   321772274  0.31   0.21    6.31   -31.60\n4      5  836892  广咨国际   7.68   4.35  ...  1025658954 -0.13   0.92  -11.52   -30.94\n..   ...     ...   ...    ...    ...  ...         ...   ...    ...     ...      ...\n249  250  833575  康乐卫士  14.93  -8.69  ...  2789441772 -0.86  -0.99  -27.63   -44.99\n250  251  430476  海能技术   6.10  -9.09  ...   392764330 -0.16   0.16  -25.52   -59.03\n251  252  832149   利尔达   4.28  -9.51  ...   490226248 -0.47  -0.93   25.15   -41.61\n252  253  872374  云里物里  11.30  -9.89  ...   330132913  0.71   0.09   29.74   -27.47\n253  254  832175  东方碳素   6.48 -20.20  ...   391996578  0.00   0.00  -21.64   -47.57\n[254 rows x 23 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "stock_restricted_release_detail_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-限售股解禁-解禁详情一览",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20221202\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20241202\""
+      }
+    },
+    "required": [
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_restricted_release_detail_em",
+      "description": "东方财富网-数据中心-限售股解禁-解禁详情一览",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20221202\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20241202\""
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定时间段限售股解禁数据",
+      "url": "https://data.eastmoney.com/dxf/detail.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "解禁时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "限售股类型": {
+          "type": "string",
+          "description": "注意单位: 股"
+        },
+        "解禁数量": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "实际解禁数量": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "实际解禁市值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "占解禁前流通市值比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "解禁前一交易日收盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "解禁前20日涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "解禁后20日涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_restricted_release_detail_em_df = ak.stock_restricted_release_detail_em(start_date=\"20221202\", end_date=\"20221204\")\nprint(stock_restricted_release_detail_em_df)",
+        "data": "数据示例\n\n```\n    序号    股票代码  股票简称        解禁时间  ... 占解禁前流通市值比例  解禁前一交易日收盘价  解禁前20日涨跌幅  解禁后20日涨跌幅\n0    1  002548   金新农  2022-12-02  ...   0.000292        5.98   3.866432       1.18\n1    2  873527   夜光明  2022-12-02  ...   0.006829        9.02  -2.162162      -0.33\n2    3  603127  昭衍新药  2022-12-02  ...   0.000445       58.30  -6.029040      -2.08\n3    4  002511  中顺洁柔  2022-12-02  ...   0.000604       11.97  17.993795       4.91\n4    5  688557  兰剑智能  2022-12-02  ...   0.020572       38.04  -4.086845       1.30\n5    6  603283  赛腾股份  2022-12-02  ...   0.007451       35.55  -2.860892      -3.94\n6    7  688007  光峰科技  2022-12-02  ...   0.003214       26.28   7.978723      -0.42\n7    8  688578   艾力斯  2022-12-02  ...   0.013058       20.80  -9.883470      -0.38\n8    9  300227   光韵达  2022-12-02  ...   0.021127        6.89  -5.793103       0.88\n9   10  300525  博思软件  2022-12-02  ...   0.017589       19.87  -4.481132      -1.88\n10  11  831641   格利尔  2022-12-02  ...   0.422407       12.65        NaN      31.77\n11  12  688489  三未信安  2022-12-02  ...   1.000000      119.50        NaN        NaN\n12  13  301198  喜悦智行  2022-12-02  ...   0.457230       18.83   1.796407       0.70\n13  14  600848  上海临港  2022-12-02  ...   0.015465       12.64   6.260575       0.64\n14  15  000415  渤海租赁  2022-12-02  ...   0.061934        2.29   4.954955      -1.72"
+      }
+    }
+  }
+}

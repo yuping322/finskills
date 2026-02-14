@@ -1,0 +1,95 @@
+{
+  "name": "stock_zh_a_stop_em",
+  "kind": "tool_view",
+  "description": "东方财富网-行情中心-沪深个股-两网及退市",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_stop_em",
+      "description": "东方财富网-行情中心-沪深个股-两网及退市",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前交易日两网及退市的所有股票的行情数据",
+      "url": "http://quote.eastmoney.com/center/gridlist.html#staq_net_board",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "-"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "量比": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市盈率-动态": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_stop_em_df = ak.stock_zh_a_stop_em()\nprint(stock_zh_a_stop_em_df)",
+        "data": "数据示例\n\n```\n      序号 代码    名称      最新价 涨跌幅 涨跌额  ... 今开 昨收 量比 换手率 市盈率-动态市净率\n0      1  400010  鹫  峰 5  1.90  4.97  0.09  ... NaN  1.81 NaN  NaN  -87.16  20.41\n1      2  400069     吉恩5  9.96  4.95  0.47  ... NaN  9.49 NaN  NaN   19.61   3.78\n2      3  400073    上普A5  7.08  4.89  0.33  ... NaN  6.75 NaN  NaN   97.79  11.69\n3      4  400008   水仙Ａ 5  4.96  4.86  0.23  ... NaN  4.73 NaN  NaN -539.13  992.0\n4      5  400059     天珑5  3.50  4.79  0.16  ... NaN  3.34 NaN  NaN   50.29   3.72\n..   ...     ...     ...   ...   ...   ...  ...  ..   ...  ..  ...     ...    ...\n100  101  400027  生  态 5  1.05 -4.55 -0.05  ... NaN   1.1 NaN  NaN  -57.07    4.7\n101  102  400036     天创5  1.64 -4.65 -0.08  ... NaN  1.72 NaN  NaN   103.8   1.57\n102  103  400005   海国实 5  1.01 -4.72 -0.05  ... NaN  1.06 NaN  NaN  -91.82   15.3\n103  104  400039  华  圣 5  0.95 -5.00 -0.05  ... NaN   1.0 NaN  NaN  -65.97   4.64\n104  105  400028  金  马 5  0.95 -5.00 -0.05  ... NaN   1.0 NaN  NaN -226.19    9.3"
+      }
+    }
+  }
+}

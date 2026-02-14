@@ -1,0 +1,79 @@
+{
+  "name": "stock_xgsr_ths",
+  "kind": "tool_view",
+  "description": "同花顺-数据中心-新股数据-新股上市首日",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_xgsr_ths",
+      "description": "同花顺-数据中心-新股数据-新股上市首日",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前交易日的所有数据",
+      "url": "https://data.10jqka.com.cn/ipo/xgsr/",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "上市日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "发行价": {
+          "type": "number",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "首日开盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "首日收盘价": {
+          "type": "number",
+          "description": "-"
+        },
+        "首日最高价": {
+          "type": "number",
+          "description": "-"
+        },
+        "首日最低价": {
+          "type": "number",
+          "description": "-"
+        },
+        "首日涨跌幅": {
+          "type": "number",
+          "description": "-"
+        },
+        "是否破发": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_xgsr_ths_df = ak.stock_xgsr_ths()\nprint(stock_xgsr_ths_df)",
+        "data": "数据示例\n\n```\n        序号  股票代码 股票简称  上市日期  ...   首日最高价  首日最低价 首日涨跌幅 是否破发\n0        1  920019  铜冠矿建  2024-10-11  ...   55.55  33.33   7.3141     否\n1        2  001279  强邦新材  2024-10-11  ...  245.00  87.12  17.3895     否\n2        3  301618  长联科技  2024-09-30  ...  408.00  99.00  17.0398     否\n3        4  688615  合合信息  2024-09-26  ...  116.30  88.93   1.0591     否\n4        5  301551  无线传媒  2024-09-26  ...   39.39  29.11   3.1883     否\n...    ...     ...   ...         ...  ...     ...    ...      ...   ...\n3780  3781  300042  朗科科技  2010-01-08  ...   56.50  51.00   0.3449     是\n3781  3782  601117  中国化学  2010-01-07  ...    5.86   5.65   0.0589     否\n3782  3783  002329  皇氏集团  2010-01-06  ...   29.76  27.68   0.4308     是\n3783  3784  002330   得利斯  2010-01-06  ...   23.98  21.00   0.8194     是\n3784  3785  002331  皖通科技  2010-01-06  ...   45.00  40.62   0.6011     是\n[3785 rows x 12 columns]"
+      }
+    }
+  }
+}

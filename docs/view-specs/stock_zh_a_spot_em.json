@@ -1,0 +1,119 @@
+{
+  "name": "stock_zh_a_spot_em",
+  "kind": "tool_view",
+  "description": "东方财富网-沪深京 A 股-实时行情数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_spot_em",
+      "description": "东方财富网-沪深京 A 股-实时行情数据",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有沪深京 A 股上市公司的实时行情数据",
+      "url": "https://quote.eastmoney.com/center/gridlist.html#hs_a_board",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "涨跌额": {
+          "type": "number",
+          "description": "-"
+        },
+        "成交量": {
+          "type": "number",
+          "description": "注意单位: 手"
+        },
+        "成交额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "振幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最高": {
+          "type": "number",
+          "description": "-"
+        },
+        "最低": {
+          "type": "number",
+          "description": "-"
+        },
+        "今开": {
+          "type": "number",
+          "description": "-"
+        },
+        "昨收": {
+          "type": "number",
+          "description": "-"
+        },
+        "量比": {
+          "type": "number",
+          "description": "-"
+        },
+        "换手率": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "市盈率-动态": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        },
+        "总市值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "流通市值": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "涨速": {
+          "type": "number",
+          "description": "-"
+        },
+        "5分钟涨跌": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "60日涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "年初至今涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_spot_em_df = ak.stock_zh_a_spot_em()\nprint(stock_zh_a_spot_em_df)",
+        "data": "数据示例\n\n```\n        序号 代码    名称    最新价  ...   涨速 5分钟涨跌  60日涨跌幅  年初至今涨跌幅\n0        1  836149  旭杰科技   7.31  ...  0.00   0.00   28.47    -9.53\n1        2  300767  震安科技   9.28  ...  0.00   0.00   -9.55   -46.61\n2        3  300125  ST聆达   4.67  ...  0.00   0.00  177.98   -62.97\n3        4  301027  华蓝集团   8.93  ...  0.00   0.00   17.81   -28.56\n4        5  300584  海辰药业  23.26  ...  0.00   0.00   42.44     0.13\n...    ...     ...   ...    ...  ...   ...    ...     ...      ...\n5630  5631  300531   优博讯  12.45  ... -0.16  -0.24   25.50   -18.52\n5631  5632  301302  华如科技  13.47  ...  0.07  -0.07  -28.88   -46.36\n5632  5633  300496  中科创达  32.30  ... -0.09  -0.12  -44.60   -59.53\n5633  5634  300050  世纪鼎利   5.04  ... -0.20   0.60   72.01     6.55\n5634  5635  832175  东方碳素   6.48  ...  0.00   0.00  -21.64   -47.57\n[5635 rows x 23 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "stock_repurchase_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-股票回购-股票回购数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_repurchase_em",
+      "description": "东方财富网-数据中心-股票回购-股票回购数据",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/gphg/hglist.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股票代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "股票简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "计划回购价格区间": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "计划回购数量区间-下限": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "计划回购数量区间-上限": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "占公告前一日总股本比例-下限": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "占公告前一日总股本比例-上限": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "计划回购金额区间-下限": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "计划回购金额区间-上限": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "回购起始时间": {
+          "type": "string",
+          "description": "-"
+        },
+        "实施进度": {
+          "type": "string",
+          "description": "-"
+        },
+        "已回购股份价格区间-下限": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "已回购股份价格区间-上限": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "已回购股份数量": {
+          "type": "number",
+          "description": "注意单位: 股"
+        },
+        "已回购金额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "最新公告日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_repurchase_em_df = ak.stock_repurchase_em()\nprint(stock_repurchase_em_df)",
+        "data": "数据示例\n\n```\n        序号 股票代码  股票简称  ...  已回购股份数量    已回购金额      最新公告日期\n0        1  600028  中国石化  ...         NaN           NaN  2022-08-29\n1        2  301021  英诺激光  ...      6500.0  1.625000e+05  2022-08-29\n2        3  688185   康希诺  ...    500000.0  1.137614e+08  2022-08-29\n3        4  603700  宁水集团  ...   2291336.0  4.005009e+07  2021-09-15\n4        5  000338  潍柴动力  ...  55950000.0  6.822452e+08  2022-08-27\n    ...     ...   ...  ...         ...           ...         ...\n1977  1978  002048  宁波华翔  ...  23152838.0  1.598245e+08  2012-08-16\n1978  1979  002032   苏泊尔  ...   2750000.0  3.467148e+07  2012-07-18\n1979  1980  002054  德美化工  ...   5484773.0  5.473750e+07  2012-01-05\n1980  1981  002048  宁波华翔  ...  13940012.0  1.442085e+08  2011-12-02\n1981  1982  600380   健康元  ...  29252223.0  2.999997e+08  2011-11-30"
+      }
+    }
+  }
+}

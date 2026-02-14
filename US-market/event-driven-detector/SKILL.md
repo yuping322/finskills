@@ -73,7 +73,7 @@ Rank opportunities by risk-adjusted return. Present per [references/output-templ
 
 ## Data Enhancement
 
-For live market data to support this analysis, use the **FinData Toolkit** skill (`findata-toolkit-us`). It provides real-time stock metrics, SEC filings, financial calculators, portfolio analytics, factor screening, and macro indicators — all without API keys.
+For live market data, see `references/data-queries.md` and run the shared scripts in `../findata-toolkit/scripts/`.
 
 ## Important Guidelines
 

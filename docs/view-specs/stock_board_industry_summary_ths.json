@@ -1,0 +1,79 @@
+{
+  "name": "stock_board_industry_summary_ths",
+  "kind": "tool_view",
+  "description": "同花顺-同花顺行业一览表",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_board_industry_summary_ths",
+      "description": "同花顺-同花顺行业一览表",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回当前时刻同花顺行业一览表",
+      "url": "https://q.10jqka.com.cn/thshy/",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "板块": {
+          "type": "string",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "string",
+          "description": "注意单位: %"
+        },
+        "总成交量": {
+          "type": "number",
+          "description": "注意单位: 万手"
+        },
+        "总成交额": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        },
+        "净流入": {
+          "type": "number",
+          "description": "注意单位: 亿元"
+        },
+        "上涨家数": {
+          "type": "number",
+          "description": "-"
+        },
+        "下跌家数": {
+          "type": "number",
+          "description": "-"
+        },
+        "均价": {
+          "type": "number",
+          "description": "-"
+        },
+        "领涨股": {
+          "type": "number",
+          "description": "-"
+        },
+        "领涨股-最新价": {
+          "type": "string",
+          "description": "-"
+        },
+        "领涨股-涨跌幅": {
+          "type": "string",
+          "description": "注意单位: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_board_industry_summary_ths_df = ak.stock_board_industry_summary_ths()\nprint(stock_board_industry_summary_ths_df)",
+        "data": "数据示例\n\n```\n   序号     板块  涨跌幅 总成交量  总成交额  ...  下跌家数 均价 领涨股  领涨股-最新价 领涨股-涨跌幅\n0    1     传媒  6.17  3737.04  278.19  ...     6   7.44  旗天科技     4.54   20.11\n1    2   通信服务  5.28   764.85   63.64  ...     3   8.32  线上线下    27.64   20.02\n2    3  计算机应用  4.97  3581.73  423.25  ...     9  11.82  当虹科技    24.72   20.00\n3    4  互联网电商  4.46   254.22   15.38  ...     1   6.05   跨境通     1.38    7.81\n4    5   其他电子  4.23   444.29   66.62  ...     2  14.99  百邦科技    20.83   17.29\n..  ..    ...   ...      ...     ...  ...   ...    ...   ...      ...     ...\n71  72  酒店及餐饮  0.70    68.58    7.73  ...     2  11.27  金陵饭店     6.41    2.40\n72  73   港口航运  0.68   779.30   49.41  ...     9   6.34  国航远洋     3.88    2.65\n73  74     银行  0.50  2349.83  147.23  ...     8   6.27  渝农商行     5.15    1.78\n74  75  房地产服务  0.06   267.35   11.01  ...     4   4.12   世联行     1.63    2.52\n75  76    贵金属 -0.73   270.28   35.48  ...     8  13.13  西部黄金    11.69    1.39\n[76 rows x 12 columns]"
+      }
+    }
+  }
+}

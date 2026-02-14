@@ -1,0 +1,57 @@
+{
+  "name": "concept_board_detail",
+  "kind": "custom_view",
+  "description": "概念板块详情：成分股 + 历史行情（工具聚合视图）。",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "概念名称或代码（如 绿色电力）"
+      },
+      "start_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "YYYYMMDD"
+      },
+      "period": {
+        "type": "string",
+        "description": "daily/weekly/monthly"
+      },
+      "adjust": {
+        "type": "string",
+        "description": "''/qfq/hfq"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "plan": [
+    {
+      "key": "constituents",
+      "tool": "stock_board_concept_cons_em",
+      "args": {
+        "symbol": "000001"
+      }
+    },
+    {
+      "key": "history",
+      "tool": "stock_board_concept_hist_em",
+      "args": {
+        "symbol": "000001",
+        "period": "daily",
+        "start_date": "20251116",
+        "end_date": "20260214",
+        "adjust": ""
+      }
+    }
+  ],
+  "depends_on": [
+    "stock_board_concept_cons_em",
+    "stock_board_concept_hist_em"
+  ]
+}

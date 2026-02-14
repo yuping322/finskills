@@ -1,0 +1,69 @@
+{
+  "name": "stock_circulate_stock_holder",
+  "kind": "tool_view",
+  "description": "新浪财经-股东股本-流通股东",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"600000\"; 股票代码"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_circulate_stock_holder",
+      "description": "新浪财经-股东股本-流通股东",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"600000\"; 股票代码"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的流通股东数据",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vCI_CirculateStockHolder/stockid/600000.phtml",
+      "output": {
+        "截止日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "编号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "持股数量": {
+          "type": "integer",
+          "description": "注意单位: 股"
+        },
+        "占流通股比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "股本性质": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_circulate_stock_holder_df = ak.stock_circulate_stock_holder(symbol=\"600000\")\nprint(stock_circulate_stock_holder_df)",
+        "data": "数据示例\n\n```\n      截止日期        公告日期  编号                股东名称        持股数量  占流通股比例   股本性质\n0    2022-09-30  2022-10-29   1          上海国际集团有限公司  6331322671  21.570    国有股\n1    2022-09-30  2022-10-29   2      中国移动通信集团广东有限公司  5334892824  18.175    国有股\n2    2022-09-30  2022-10-29   3   富德生命人寿保险股份有限公司-传统  2779437274   9.469  境内法人股\n3    2022-09-30  2022-10-29   4  富德生命人寿保险股份有限公司-资本金  1763232325   6.007  境内法人股\n4    2022-09-30  2022-10-29   5       上海上国投资产管理有限公司  1395571025   4.755    国有股\n..          ...         ...  ..                 ...         ...     ...    ...\n745  2003-12-31         NaN   6          世纪证券有限责任公司     6882195   0.765    国有股\n746  2003-12-31         NaN   7            汉兴证券投资基金     5921727   0.658  境内法人股\n747  2003-12-31         NaN   8            泰和证券投资基金     4534267   0.504  境内法人股\n748  2003-12-31         NaN   9          博时裕富证券投资基金     4197332   0.466  境内法人股\n749  2003-12-31         NaN  10            同智证券投资基金     3880427   0.431  境内法人股"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "stock_ipo_declare",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-新股申购-首发申报信息-首发申报企业信息",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_ipo_declare",
+      "description": "东方财富网-数据中心-新股申购-首发申报信息-首发申报企业信息",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/xg/xg/sbqy.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "申报企业": {
+          "type": "string",
+          "description": "-"
+        },
+        "拟上市地": {
+          "type": "string",
+          "description": "-"
+        },
+        "保荐机构": {
+          "type": "string",
+          "description": "-"
+        },
+        "会计师事务所": {
+          "type": "string",
+          "description": "-"
+        },
+        "律师事务所": {
+          "type": "string",
+          "description": "-"
+        },
+        "备注": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_ipo_declare_df = ak.stock_ipo_declare()\nprint(stock_ipo_declare_df)",
+        "data": "数据示例\n\n```\n      序号     申报企业 拟上市地  ...               会计师事务所        律师事务所      备注\n0      1     奥精医疗科技股份有限公司  科创板  ...     立信会计师事务所(特殊普通合伙)  北京观韬中茂律师事务所  进一步问询中\n1      2       爱威科技股份有限公司  科创板  ...     天健会计师事务所(特殊普通合伙)    湖南启元律师事务所  进一步问询中\n2      3   北京弘成立业科技股份有限公司  创业板  ...     大华会计师事务所(特殊普通合伙)   北京市君合律师事务所  进一步问询中\n3      4   北京海天瑞声科技股份有限公司  科创板  ...  毕马威华振会计师事务所(特殊普通合伙)   北京市天元律师事务所  进一步问询中\n4      5  北京挖金客信息科技股份有限公司  创业板  ...     容诚会计师事务所(特殊普通合伙)  国浩律师(北京)事务所  进一步问询中\n..   ...              ...  ...  ...                  ...          ...     ...\n106  107   浙江嘉益保温科技股份有限公司  创业板  ...     天健会计师事务所(特殊普通合伙)   北京市金杜律师事务所  进一步问询中\n107  108   浙江日发纺织机械股份有限公司  创业板  ...     天健会计师事务所(特殊普通合伙)    浙江天册律师事务所  进一步问询中\n108  109     浙江泰福泵业股份有限公司  创业板  ...     天健会计师事务所(特殊普通合伙)  国浩律师(杭州)事务所  进一步问询中\n109  110     中兰环保科技股份有限公司  创业板  ...     立信会计师事务所(特殊普通合伙)    北京国枫律师事务所  进一步问询中\n110  111   中联云港数据科技股份有限公司  创业板  ...   天职国际会计师事务所(特殊普通合伙)  国浩律师(北京)事务所  进一步问询中"
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "stock_zh_a_gdhs",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-特色数据-股东户数数据",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"20230930\"; choice of {\"最新\", 每个季度末}, 其中 每个季度末需要写成 `20230930` 格式"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_a_gdhs",
+      "description": "东方财富网-数据中心-特色数据-股东户数数据",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"20230930\"; choice of {\"最新\", 每个季度末}, 其中 每个季度末需要写成 `20230930` 格式"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取返回所有数据",
+      "url": "http://data.eastmoney.com/gdhs/",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "股东户数-本次": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股东户数-上次": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股东户数-增减": {
+          "type": "integer",
+          "description": "-"
+        },
+        "股东户数-增减比例": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "区间涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "股东户数统计截止日-本次": {
+          "type": "string",
+          "description": "-"
+        },
+        "股东户数统计截止日-上次": {
+          "type": "string",
+          "description": "-"
+        },
+        "户均持股市值": {
+          "type": "number",
+          "description": "-"
+        },
+        "户均持股数量": {
+          "type": "number",
+          "description": "-"
+        },
+        "总市值": {
+          "type": "number",
+          "description": "-"
+        },
+        "总股本": {
+          "type": "number",
+          "description": "-"
+        },
+        "公告日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_a_gdhs_df = ak.stock_zh_a_gdhs(symbol=\"20230930\")\nprint(stock_zh_a_gdhs_df)",
+        "data": "数据示例\n\n```\n      代码    名称     最新价  ...     总市值           总股本        公告日期\n0     688235  百济神州  139.04  ...  1.625156e+10  1.150553e+08  2023-11-14\n1     688981  中芯国际   53.02  ...  1.009501e+11  1.973609e+09  2023-11-10\n2     688793   倍轻松   33.65  ...  3.142165e+09  8.594542e+07  2023-10-31\n3     688789  宏华数科   99.91  ...  1.156317e+10  1.204371e+08  2023-10-31\n4     688787  海天瑞声   72.10  ...  5.248291e+09  6.032518e+07  2023-10-31\n      ...   ...     ...  ...           ...           ...         ...\n5153  600810  神马股份    7.44  ...  7.810436e+09  1.044178e+09  2023-10-12\n5154  300809  华辰装备   29.25  ...  7.587976e+09  2.521760e+08  2023-10-12\n5155  002817  黄山胶囊    8.76  ...  2.548316e+09  2.990982e+08  2023-10-12\n5156  688188  柏楚电子  253.11  ...  3.648391e+10  1.462926e+08  2023-10-11\n5157  601666  平煤股份   11.56  ...  2.385597e+10  2.313876e+09  2023-10-11\n[5158 rows x 16 columns]"
+      }
+    }
+  }
+}

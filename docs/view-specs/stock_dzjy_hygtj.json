@@ -1,0 +1,109 @@
+{
+  "name": "stock_dzjy_hygtj",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-大宗交易-活跃 A 股统计",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol='近三月'; choice of {'近一月', '近三月', '近六月', '近一年'}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_dzjy_hygtj",
+      "description": "东方财富网-数据中心-大宗交易-活跃 A 股统计",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol='近三月'; choice of {'近一月', '近三月', '近六月', '近一年'}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/dzjy/dzjy_hygtj.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "证券代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "证券简称": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅": {
+          "type": "number",
+          "description": "注意单位: %"
+        },
+        "最近上榜日": {
+          "type": "string",
+          "description": "-"
+        },
+        "上榜次数-总计": {
+          "type": "integer",
+          "description": "-"
+        },
+        "上榜次数-溢价": {
+          "type": "integer",
+          "description": "-"
+        },
+        "上榜次数-折价": {
+          "type": "integer",
+          "description": ""
+        },
+        "总成交额": {
+          "type": "number",
+          "description": "注意单位: 万元"
+        },
+        "折溢率": {
+          "type": "number",
+          "description": "注意单位: 万元"
+        },
+        "成交总额/流通市值": {
+          "type": "number",
+          "description": "-"
+        },
+        "上榜日后平均涨跌幅-1日": {
+          "type": "number",
+          "description": "注意符号: %"
+        },
+        "上榜日后平均涨跌幅-5日": {
+          "type": "number",
+          "description": "注意符号: %"
+        },
+        "上榜日后平均涨跌幅-10日": {
+          "type": "number",
+          "description": "注意符号: %"
+        },
+        "上榜日后平均涨跌幅-20日": {
+          "type": "number",
+          "description": "注意符号: %"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_dzjy_hygtj_df = ak.stock_dzjy_hygtj(symbol='近三月')\nprint(stock_dzjy_hygtj_df)",
+        "data": "数据示例\n\n```\n        序号 证券代码  证券简称  ... 上榜日后平均涨跌幅-5日  上榜日后平均涨跌幅-10日 上榜日后平均涨跌幅-20日\n0        1  300750  宁德时代  ...     -1.088728      -1.637595      0.231556\n1        2  601156  东航物流  ...      2.363677       3.253657      2.078001\n2        3  601127   赛力斯  ...      3.137805       7.196673      3.697366\n3        4  301498  乖宝宠物  ...      1.984983       4.387132     10.152126\n4        5  689009  九号公司  ...      2.749486       4.166386     -0.388344\n...    ...     ...   ...  ...           ...            ...           ...\n1595  1596  000034  神州数码  ...     -8.193717     -15.026178     -8.664921\n1596  1597  000021   深科技  ...     -1.542700       0.000000      0.000000\n1597  1598  000016  深康佳A  ...     -7.954545      -1.136364      0.000000\n1598  1599  000010  美丽生态  ...     20.187793      60.093897     31.455399\n1599  1600  000009  中国宝安  ...     -5.544148       2.874743     -2.464066\n[1600 rows x 16 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "name": "stock_fhps_em",
+  "kind": "tool_view",
+  "description": "东方财富-数据中心-年报季报-分红配送",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "date=\"20231231\"; choice of {\"XXXX0630\", \"XXXX1231\"}; 从 19901231 开始"
+      }
+    },
+    "required": [
+      "date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_fhps_em",
+      "description": "东方财富-数据中心-年报季报-分红配送",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "date=\"20231231\"; choice of {\"XXXX0630\", \"XXXX1231\"}; 从 19901231 开始"
+          }
+        },
+        "required": [
+          "date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定日期的分红配送数据",
+      "url": "https://data.eastmoney.com/yjfp/",
+      "output": {
+        "代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "送转股份-送转总比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "送转股份-送转比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "送转股份-转股比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "现金分红-现金分红比例": {
+          "type": "number",
+          "description": "-"
+        },
+        "现金分红-股息率": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股收益": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股净资产": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股公积金": {
+          "type": "number",
+          "description": "-"
+        },
+        "每股未分配利润": {
+          "type": "number",
+          "description": "-"
+        },
+        "净利润同比增长": {
+          "type": "number",
+          "description": "-"
+        },
+        "总股本": {
+          "type": "integer",
+          "description": "-"
+        },
+        "预案公告日": {
+          "type": "string",
+          "description": "-"
+        },
+        "股权登记日": {
+          "type": "string",
+          "description": "-"
+        },
+        "除权除息日": {
+          "type": "string",
+          "description": "-"
+        },
+        "方案进度": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新公告日期": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_fhps_em_df = ak.stock_fhps_em(date=\"20231231\")\nprint(stock_fhps_em_df)",
+        "data": "数据示例\n\n```\n      代码    名称  送转股份-送转总比例  ...    除权除息日      方案进度   最新公告日期\n0     300708  聚灿光电         NaN  ...  2024-02-28      实施分配  2024-02-21\n1     688082  盛美上海         NaN  ...         NaT   董事会决议通过  2024-02-29\n2     002286   保龄宝         NaN  ...  2024-03-08      实施分配  2024-03-01\n3     605198   安德利         NaN  ...         NaT  股东大会决议通过  2024-03-07\n4     000063  中兴通讯         NaN  ...         NaT   董事会决议通过  2024-03-09\n...      ...   ...         ...  ...         ...       ...         ...\n3861  600449  宁夏建材         NaN  ...  2024-06-13      实施分配  2024-06-05\n3862  002737  葵花药业         NaN  ...  2024-06-14      实施分配  2024-06-05\n3863  603915  国茂股份         NaN  ...  2024-06-12      实施分配  2024-06-05\n3864  688390   固德威         4.0  ...  2024-06-12      实施分配  2024-06-05\n3865  603002  宏昌电子         NaN  ...  2024-06-14      实施分配  2024-06-05\n[3866 rows x 18 columns]"
+      }
+    }
+  }
+}

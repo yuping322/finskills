@@ -1,0 +1,65 @@
+{
+  "name": "stock_index_pb_lg",
+  "kind": "tool_view",
+  "description": "乐咕乐股-指数市净率",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "description": "symbol=\"上证50\"; choice of {\"上证50\", \"沪深300\", \"上证380\", \"创业板50\", \"中证500\", \"上证180\", \"深证红利\", \"深证100\", \"中证1000\", \"上证红利\", \"中证100\", \"中证800\"}"
+      }
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_index_pb_lg",
+      "description": "乐咕乐股-指数市净率",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "symbol=\"上证50\"; choice of {\"上证50\", \"沪深300\", \"上证380\", \"创业板50\", \"中证500\", \"上证180\", \"深证红利\", \"深证100\", \"中证1000\", \"上证红利\", \"中证100\", \"中证800\"}"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次获取指定 symbol 的所有数据",
+      "url": "https://legulegu.com/stockdata/sz50-pb",
+      "output": {
+        "日期": {
+          "type": "string",
+          "description": "-"
+        },
+        "指数": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率": {
+          "type": "number",
+          "description": "-"
+        },
+        "等权市净率": {
+          "type": "number",
+          "description": "-"
+        },
+        "市净率中位数": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_index_pb_lg_df = ak.stock_index_pb_lg(symbol=\"上证50\")\nprint(stock_index_pb_lg_df)",
+        "data": "数据示例\n\n```\n          日期     指数   市净率  等权市净率  市净率中位数\n0     2005-01-05   831.43  2.10   2.35    2.12\n1     2005-01-06   822.50  2.07   2.34    2.12\n2     2005-01-07   823.62  2.08   2.34    2.13\n3     2005-01-10   832.99  2.08   2.37    2.16\n4     2005-01-11   837.86  2.10   2.38    2.16\n          ...      ...   ...    ...     ...\n4686  2024-04-22  2424.75  1.14   2.97    1.92\n4687  2024-04-23  2413.74  1.14   2.96    1.90\n4688  2024-04-24  2424.12  1.14   2.98    1.90\n4689  2024-04-25  2431.62  1.14   2.96    1.90\n4690  2024-04-26  2461.86  1.15   2.96    1.94\n[4691 rows x 5 columns]"
+      }
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 28,
+  "failures": 0,
+  "results": [
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "equity-research-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "esg-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "etf-allocator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "factor-crowding-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "investment-memo-generator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "limit-up-limit-down-risk-checker",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "market-breadth-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "peer-comparison-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "portfolio-health-check",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "portfolio-monitor-orchestrator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "quant-factor-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "rebalancing-planner",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "risk-adjusted-return-optimizer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "shareholder-risk-check",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "small-cap-growth-identifier",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "suitability-report-generator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "tech-hype-vs-fundamentals",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_zh_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "undervalued-stock-screener",
+      "view": "stock_a_indicator_lg",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "volatility-regime-monitor",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "weekly-market-brief-generator",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}

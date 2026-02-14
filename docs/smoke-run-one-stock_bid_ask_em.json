@@ -1,0 +1,22 @@
+{
+  "mode": "run",
+  "skills": 56,
+  "items": 2,
+  "failures": 0,
+  "results": [
+    {
+      "skill": "event-driven-detector",
+      "view": "stock_bid_ask_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "event-study",
+      "view": "stock_bid_ask_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}

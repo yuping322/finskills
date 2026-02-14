@@ -1,0 +1,87 @@
+{
+  "name": "stock_lhb_hyyyb_em",
+  "kind": "tool_view",
+  "description": "东方财富网-数据中心-龙虎榜单-每日活跃营业部",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "start_date": {
+        "type": "string",
+        "description": "start_date=\"20220311\""
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end_date=\"20220315\""
+      }
+    },
+    "required": [
+      "start_date",
+      "end_date"
+    ]
+  },
+  "tool": {
+    "function": {
+      "name": "stock_lhb_hyyyb_em",
+      "description": "东方财富网-数据中心-龙虎榜单-每日活跃营业部",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "start_date=\"20220311\""
+          },
+          "end_date": {
+            "type": "string",
+            "description": "end_date=\"20220315\""
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    "extra": {
+      "limit": "单次返回所有历史数据",
+      "url": "https://data.eastmoney.com/stock/hyyyb.html",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "上榜日": {
+          "type": "string",
+          "description": "-"
+        },
+        "买入个股数": {
+          "type": "number",
+          "description": "-"
+        },
+        "卖出个股数": {
+          "type": "number",
+          "description": "-"
+        },
+        "买入总金额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "卖出总金额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "总买卖净额": {
+          "type": "number",
+          "description": "注意单位: 元"
+        },
+        "买入股票": {
+          "type": "string",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_lhb_hyyyb_em_df = ak.stock_lhb_hyyyb_em(start_date=\"20220324\", end_date=\"20220324\")\nprint(stock_lhb_hyyyb_em_df)",
+        "data": "数据示例\n\n```\n       序号  ...                                               买入股票\n0        1  ...  中信海直 高新发展 张裕A 新乡化纤 宗申动力 湖南黄金 桂林三金 科华数据 柘中股份 *S...\n1        2  ...  中信海直 焦作万方 北方铜业 钱江摩托 新乡化纤 ST中南 百通能源 宗申动力 万丰奥威 百...\n2        3  ...                                               宗申动力\n3        4  ...                                               罗博特科\n4        5  ...                                          中科通达 神州信息\n...    ...  ...                                                ...\n7532  7533  ...  万科A 中信海直 神州信息 高新发展 康冠科技 宗申动力 万丰奥威 沃尔核材 江特电机 雪迪...\n7533  7534  ...  中信海直 我爱我家 长安汽车 高新发展 天保基建 万丰奥威 荣盛发展 百川股份 万安科技 奥...\n7534  7535  ...                                               长安汽车\n7535  7536  ...  双良节能 鲁信创投 江苏银行 太平洋 东方材料 日出东方 金域医学 国盾量子 信安世纪 财富...\n7536  7537  ...                                          长安汽车 荣盛发展\n[7537 rows x 9 columns]"
+      }
+    }
+  }
+}

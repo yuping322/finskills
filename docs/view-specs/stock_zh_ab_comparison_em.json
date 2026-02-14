@@ -1,0 +1,63 @@
+{
+  "name": "stock_zh_ab_comparison_em",
+  "kind": "tool_view",
+  "description": "东方财富网-行情中心-沪深京个股-AB股比价-全部AB股比价",
+  "params_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  },
+  "tool": {
+    "function": {
+      "name": "stock_zh_ab_comparison_em",
+      "description": "东方财富网-行情中心-沪深京个股-AB股比价-全部AB股比价",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "extra": {
+      "limit": "单次返回全部 AB 股比价的实时行情数据",
+      "url": "https://quote.eastmoney.com/center/gridlist.html#ab_comparison",
+      "output": {
+        "序号": {
+          "type": "integer",
+          "description": "-"
+        },
+        "B股代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价B": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅B": {
+          "type": "number",
+          "description": "-"
+        },
+        "A股代码": {
+          "type": "string",
+          "description": "-"
+        },
+        "最新价A": {
+          "type": "number",
+          "description": "-"
+        },
+        "涨跌幅A": {
+          "type": "number",
+          "description": "-"
+        },
+        "比价": {
+          "type": "number",
+          "description": "-"
+        }
+      },
+      "examples": {
+        "code": "接口示例\n\n```python\nimport akshare as ak\n\nstock_zh_ab_comparison_em_df = ak.stock_zh_ab_comparison_em()\nprint(stock_zh_ab_comparison_em_df)",
+        "data": "数据示例\n\n```\n    序号 B股代码   B股名称   最新价B 涨跌幅B A股代码  A股名称 最新价A 涨跌幅A   比价\n0    1  200026    飞亚达Ｂ  14.38  10.02  000026    飞亚达  6.70  0.60  2.35\n1    2  200030     富奥B   6.05   2.54  000030   富奥股份  3.09  0.65  2.14\n2    3  900917    海欣Ｂ股   6.70   2.13  600851   海欣股份  2.63  0.38  3.55\n3    4  900916    凤凰B股  13.00   1.72  600679   上海凤凰  3.47  0.58  5.22\n4    5  900920    动力Ｂ股   6.23   1.63  600841   动力新科  1.97  1.03  4.41\n..  ..     ...     ...    ...    ...     ...    ...   ...   ...   ...\n68  69  900942    黄山Ｂ股  11.67  -2.99  600054   黄山旅游  7.25 -0.55  2.24\n69  70  900902    市北B股   5.12  -4.30  600604   市北高新  1.63  0.00  4.38\n70  71  900946    天雁B股   8.27  -5.05  600698   湖南天雁  2.13 -1.84  5.41\n71  72  900906    中毅达B  16.88  -5.06  600610    中毅达  2.77 -0.72  8.49\n72  73  900952  *ST锦港B    NaN    NaN  600190  *ST锦港   NaN   NaN  2.82\n[73 rows x 10 columns]"
+      }
+    }
+  }
+}
