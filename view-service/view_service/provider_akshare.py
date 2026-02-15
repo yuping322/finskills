@@ -842,6 +842,13 @@ class AkshareProvider(ToolProvider):
                 except Exception as e:
                     errors = [str(e)]
                     msg = str(e)
+                    
+                    # Special handling for stock_notice_report: KeyError '代码' means no data for that date
+                    if name == "stock_notice_report" and isinstance(e, KeyError) and "'代码'" in msg:
+                        data = []
+                        errors = []
+                        break
+                    
                     retryable = any(
                         s in msg
                         for s in [
