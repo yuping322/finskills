@@ -1,0 +1,99 @@
+{
+  "mode": "run",
+  "skills": 5,
+  "items": 13,
+  "failures": 0,
+  "results": [
+    {
+      "skill": "ab-ah-premium-monitor",
+      "view": "ab_ah_premium_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "block-deal-monitor",
+      "view": "block_deal_dashboard",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_info_bj_name_code",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_bj_a_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zcfz_bj_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "bse-selection-analyzer",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_snapshot",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "concept_board_detail",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_name_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_spot_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "concept-board-analyzer",
+      "view": "stock_board_concept_cons_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_individual_info_em",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    },
+    {
+      "skill": "convertible-bond-scanner",
+      "view": "stock_zh_a_hist",
+      "ok": true,
+      "mode": "run",
+      "error": null
+    }
+  ]
+}
