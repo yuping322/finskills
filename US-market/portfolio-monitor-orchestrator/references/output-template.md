@@ -4,7 +4,11 @@
 
 ## 1) Executive Summary (3–5 bullets)
 
-- [TODO]
+- **Risk snapshot**: Portfolio volatility [X]% (vs benchmark [Y]%); VaR(95%) = [Z]% of portfolio value; max drawdown [W]%
+- **Concentration alert**: Top 5 positions = [X]% of portfolio; HHI = [Y]; [high/moderate/low] idiosyncratic risk
+- **Exposure drift**: [Sector/factor] weights have drifted [+/- X]% from target; [within tolerance / rebalancing recommended]
+- **Liquidity status**: [X]% of portfolio in illiquid positions (>= 5 days to liquidate); [acceptable / concerning]
+- **Stress test result**: Portfolio would lose [X]% in [scenario name]; [better/worse] than benchmark by [Y]%
 
 ## 2) Key Data (Table)
 
@@ -26,7 +30,11 @@
 
 ## 5) Next Steps
 
-- [TODO]
+- **Immediate actions**: [Rebalance positions exceeding limits / Reduce concentration in top holdings / Add hedges if VaR elevated]
+- **Risk mitigation**: If [specific risk metric] exceeds threshold, consider [specific action, e.g., "trim high-beta names" or "add put protection"]
+- **Monitoring frequency**: [Daily risk dashboard / Weekly comprehensive review / Monthly deep-dive with stress tests]
+- **Rebalancing plan**: Execute rebalancing over [timeframe] to bring [sector/factor] exposures back to target
+- **Scenario planning**: Update stress scenarios [quarterly / after major market events]; add custom scenarios for [specific risks]
 
 ## 6) Disclaimer
 

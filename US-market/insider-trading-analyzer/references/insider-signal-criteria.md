@@ -176,3 +176,145 @@ Always check for these patterns that may weaken the bullish signal:
 - Transactions must be reported within 2 business days (Form 4)
 - Some filings are amended — always check for amendments that change transaction details
 - Holiday/weekend transactions may have filing delays
+
+---
+
+## Technical Notes & Implementation Details
+
+### Legal and Regulatory Distinction
+
+**IMPORTANT**: This analysis focuses on **legal insider trading** (SEC Form 4 filings), not illegal insider trading. Legal insider trading refers to transactions by corporate insiders (officers, directors, 10%+ owners) that are properly disclosed to the public. These transactions can provide valuable signals about insiders' view of company prospects.
+
+### Data Timeliness Considerations
+
+- **Filing Deadline**: Form 4 must be filed within 2 business days of the transaction
+- **Processing Lag**: Data aggregators may have additional 1-2 day processing delay
+- **Effective Signal Age**: By the time you receive the signal, the transaction may be 3-5 days old
+- **Market Impact**: Significant insider buying often moves the price immediately after filing
+
+### Context Importance
+
+The same transaction can have different meanings depending on context:
+
+**Strong Signal Contexts**:
+- After >20% stock price decline
+- During sector-wide selloffs
+- Before known positive catalysts
+- When insiders have historically good timing
+
+**Weak Signal Contexts**:
+- After positive earnings announcements
+- During strong price rallies
+- When immediately following new executive appointments
+- When company has active buyback program
+
+### Signal Validation Framework
+
+Before acting on insider signals, validate through:
+
+1. **Historical Accuracy**: Track this insider's past transactions and subsequent stock performance
+2. **Cluster Consistency**: Multiple insiders buying around the same time is stronger than single insider
+3. **Size Significance**: Large purchases relative to compensation and existing holdings
+4. **Strategic Timing**: Buying before known catalysts or after negative news
+5. **Absence of Counter-signals**: No simultaneous selling by other insiders
+
+---
+
+## Backtest Framework
+
+### Backtest Design
+
+**Objective**: Test whether insider buying signals predict future stock outperformance.
+
+**Methodology**:
+1. **Signal Generation**: Identify all insider purchases meeting criteria (open-market, meaningful size, cluster buying)
+2. **Portfolio Construction**: Equal-weight portfolio of all stocks with active signals
+3. **Holding Period**: Hold for 3 months, 6 months, and 12 months (separate tests)
+4. **Benchmark**: Compare against SPY and relevant sector ETFs
+5. **Frequency**: Rebalance weekly (new signals added, expired signals removed)
+
+### Performance Metrics
+
+- **Cumulative Returns**: Total return over holding period
+- **Alpha**: Excess return vs benchmark (CAPM alpha)
+- **Hit Rate**: Percentage of signals with positive returns
+- **Average Win/Loss**: Mean positive vs negative return
+- **Sharpe Ratio**: Risk-adjusted performance
+- **Max Drawdown**: Worst peak-to-trough decline
+
+### Statistical Tests
+
+- **t-test**: Test if mean returns are significantly different from zero
+- **Bootstrap**: Resample returns to assess robustness
+- **Factor Analysis**: Control for market, size, value, momentum factors
+- **Subperiod Analysis**: Test performance across different market regimes
+
+### Falsification Criteria
+
+A signal rule fails if:
+- Hit rate <= 52% (not better than random)
+- Alpha not statistically significant (t-stat < 1.96)
+- Underperforms benchmark in > 60% of rolling 12-month periods
+- Performance deteriorates in recent years (suggests pattern detection by market)
+
+### Robustness Checks
+
+**Alternative Specifications**:
+- Vary holding periods (1 month, 3 months, 6 months, 12 months)
+- Different signal strength thresholds (minimum purchase size, cluster requirements)
+- Sector-specific tests (tech, healthcare, financials, etc.)
+- Market cap segments (large-cap vs small-cap)
+
+**Data Quality Tests**:
+- Exclude micro-caps (< $300M market cap) where manipulation is more common
+- Test with/without 10b5-1 plan transactions
+- Compare real-time vs backfilled data performance
+
+### Expected Results (Based on Academic Literature)
+
+**Typical Findings**:
+- Insider buying shows modest outperformance (2-4% annualized alpha)
+- Stronger for small-cap stocks (less analyst coverage)
+- Cluster buying outperforms individual insider buying
+- Contrarian buying (after price declines) is most effective
+- Signals weaken as more participants detect them
+
+**Realistic Expectations**:
+- Not all signals will be profitable
+- Hit rate typically 55-65% (not 80-90%)
+- Performance varies by market environment
+- Transaction costs can erode returns for small-cap signals
+
+### Implementation Notes
+
+**Data Requirements**:
+- Complete Form 4 filing history (2000-present recommended)
+- Insider compensation data for meaningfulness assessment
+- Historical stock prices and benchmark data
+- Corporate action adjustments (splits, dividends, spin-offs)
+
+**Computational Considerations**:
+- Process ~10,000 Form 4 filings per month
+- Need efficient database for insider historical performance
+- Real-time processing pipeline for signal generation
+- Automated portfolio rebalancing system
+
+**Risk Management**:
+- Position sizing based on signal strength and stock liquidity
+- Stop-loss rules for signals that deteriorate quickly
+- Diversification across multiple signals to reduce idiosyncratic risk
+- Monitor for signal decay (alpha decreasing over time)
+
+### Monitoring and Maintenance
+
+**Quarterly Reviews**:
+- Update signal accuracy statistics
+- Adjust thresholds based on recent performance
+- Review sector-specific effectiveness
+- Monitor for regulatory changes affecting filings
+
+**Annual Reviews**:
+- Comprehensive backtest refresh with latest data
+- Compare performance against academic benchmarks
+- Assess whether signals remain profitable after costs
+- Consider model enhancements or retirement of ineffective rules

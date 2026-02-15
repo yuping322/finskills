@@ -4,7 +4,11 @@
 
 ## 1) Executive Summary (3–5 bullets)
 
-- [TODO]
+- **Allocation recommendation**: [Proposed ETF portfolio] with [X]% in [categories]; expected return [Y]%, volatility [Z]%
+- **Exposure profile**: [Sector/factor tilts vs benchmark]; [overweight/underweight] in [specific exposures]
+- **Risk assessment**: Portfolio concentration (HHI: [X]), effective holdings ([N]), tracking error ([Y]% vs benchmark)
+- **Liquidity check**: [All positions liquid / X% in lower-liquidity ETFs]; estimated rebalancing cost [Y] bps
+- **Key trade-off**: [Specific consideration, e.g., "Higher expected return but +2% tracking error" or "Lower cost but less diversification"]
 
 ## 2) Key Data (Table)
 
@@ -26,7 +30,11 @@
 
 ## 5) Next Steps
 
-- [TODO]
+- **Implementation**: Execute allocation over [timeframe]; use [limit orders / VWAP / rebalancing schedule]
+- **Monitoring**: Track [sector drift / factor exposures / tracking error] [daily/weekly/monthly]
+- **Rebalancing**: Set rebalancing triggers at [+/- X% drift from target] or [quarterly/semi-annual] calendar schedule
+- **Cost management**: Monitor expense ratios and trading costs; consider [tax-loss harvesting / lower-cost alternatives] if available
+- **Review frequency**: Comprehensive allocation review [quarterly / semi-annually / when market regime shifts]
 
 ## 6) Disclaimer
 

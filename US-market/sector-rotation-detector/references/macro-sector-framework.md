@@ -184,3 +184,200 @@ Historical patterns may not hold when structural changes alter sector dynamics:
 - **Rate regime**: Transition from 0% to higher structural rates changes rate-sensitivity calculus
 
 Always note relevant structural shifts when applying historical rotation patterns.
+
+---
+
+## Technical Notes & Implementation Details
+
+### Data Source Considerations
+
+**Primary Data Sources**:
+- **FRED (Federal Reserve Economic Data)**: GDP, PMI, unemployment, inflation, interest rates
+- **Treasury Yield Curve**: Daily Treasury yield curve rates (2Y, 10Y, 30Y)
+- **Sector ETFs**: SPDR Sector ETFs (XLY, XLP, XLE, XLF, XLV, XLI, XLB, XLK, XLU, XLRE)
+- **Credit Markets**: ICE BofA US Corporate Index spreads, Moody's BAA spreads
+- **Commodity Markets**: Oil (WTI), Copper, Gold prices
+- **Volatility Index**: VIX and sector-specific volatility measures
+
+**Data Quality Notes**:
+- **Revision Risk**: Many macro indicators are revised (GDP, employment); use real-time data for backtesting
+- **Frequency Mismatch**: Some data monthly (GDP), some daily (yields); align appropriately
+- **Survivorship Bias**: Sector ETF composition changes over time; adjust for historical accuracy
+
+### Model Implementation Framework
+
+**Phase Identification Algorithm**:
+```
+Phase_Score = Σ(Indicator_Weight × Phase_Match_Score)
+Current_Phase = argmax(Phase_Score)
+Confidence = (Max_Score - Second_Max_Score) / Total_Score
+```
+
+**Indicator Weighting**:
+- **Leading Indicators** (40% weight): Yield curve, PMI, LEI, housing starts
+- **Coincident Indicators** (35% weight): GDP, employment, industrial production
+- **Lagging Indicators** (25% weight): Inflation, unemployment rate, credit spreads
+
+**Signal Generation Logic**:
+1. **Phase Detection**: Identify current business cycle phase
+2. **Sector Ranking**: Rank sectors by expected performance in current phase
+3. **Signal Strength**: Adjust based on indicator confidence and cross-asset confirmation
+4. **Risk Overlay**: Apply risk management constraints (max overweight, diversification)
+
+### Structural Change Adaptation
+
+**Dynamic Weight Adjustment**:
+- **AI Era (2010-present)**: Increase Technology sector weight in late cycle
+- **Energy Transition (2015-present)**: Adjust Energy sector dynamics, include Clean Energy
+- **COVID Impact (2020-present)**: Higher weight to Healthcare and Technology
+- **Rate Regime Shift (2022-present)**: Increased sensitivity to rate changes
+
+**Regime Detection**:
+```
+Regime_Change_Signal = |Current_Indicator - Historical_Mean| / Historical_Std
+If Regime_Change_Signal > 2.0: Flag structural change
+```
+
+### Cross-Asset Confirmation Framework
+
+**Confirmation Matrix**:
+- **Equity-Bond Correlation**: Negative correlation supports equity risk-on
+- **Credit Spread Trend**: Tightening spreads support cyclical outperformance
+- **Commodity Trends**: Rising commodities support inflation-sensitive sectors
+- **Currency Signals**: USD strength impacts multinational earnings
+
+**Divergence Handling**:
+When asset classes send conflicting signals:
+1. **Weight by Historical Reliability**: Some indicators more reliable than others
+2. **Time Lag Consideration**: Some signals lead, others lag
+3. **Magnitude Assessment**: Strong signals override weak conflicting signals
+4. **Explicit Flagging**: Note conflicts for manual review
+
+---
+
+## Backtest Framework
+
+### Backtest Design
+
+**Objective**: Test whether sector rotation based on macro indicators generates alpha.
+
+**Methodology**:
+1. **Historical Signal Generation**: Apply phase identification algorithm to historical data (1960-present)
+2. **Portfolio Construction**: Construct sector portfolios based on rotation signals
+3. **Performance Measurement**: Compare against benchmark (S&P 500) and buy-and-hold
+4. **Regime Analysis**: Test performance across different market environments
+
+### Portfolio Construction Rules
+
+**Base Strategy**:
+- **Overweight**: Top 3 sectors for current phase (15% each vs 10% benchmark)
+- **Underweight**: Bottom 3 sectors for current phase (5% each vs 10% benchmark)
+- **Neutral**: Remaining 4 sectors (10% each)
+- **Rebalancing**: Monthly or when phase changes
+
+**Enhanced Strategies**:
+- **Signal Strength Weighting**: Scale overweights by signal confidence
+- **Momentum Overlay**: Combine rotation with relative momentum
+- **Risk Parity**: Adjust weights by sector volatility
+- **Liquidity Filter**: Exclude sectors with insufficient liquidity
+
+### Performance Metrics
+
+**Return Metrics**:
+- **Annualized Return**: Geometric average return
+- **Excess Return**: Return vs S&P 500 benchmark
+- **Alpha**: CAPM-adjusted excess return
+- **Information Ratio**: Excess return / tracking error
+
+**Risk Metrics**:
+- **Volatility**: Annualized standard deviation
+- **Maximum Drawdown**: Worst peak-to-trough decline
+- **Sharpe Ratio**: Risk-adjusted performance
+- **Sortino Ratio**: Downside risk-adjusted performance
+
+**Turnover Analysis**:
+- **Portfolio Turnover**: Frequency and magnitude of rebalancing
+- **Transaction Costs**: Impact of trading costs on net returns
+- **Holding Period**: Average time positions are held
+
+### Statistical Validation
+
+**Hypothesis Testing**:
+- **H0**: Sector rotation strategy does not outperform benchmark
+- **H1**: Sector rotation strategy generates positive alpha
+- **Test**: t-test on excess returns, bootstrap analysis
+
+**Robustness Checks**:
+- **Time Period Analysis**: Test across different decades
+- **Regime Analysis**: Performance during recessions, expansions, crises
+- **Parameter Sensitivity**: Vary rebalancing frequency, weighting schemes
+- **Sector Definition**: Test with different sector classifications
+
+### Falsification Criteria
+
+Strategy fails if:
+- **Alpha not significant**: t-stat < 1.96 for excess returns
+- **High turnover**: Annual turnover > 200% erodes returns after costs
+- **Regime dependence**: Only works in specific market conditions
+- **Data mining**: Performance deteriorates in out-of-sample testing
+- **Survivorship bias**: Results depend on sector selection criteria
+
+### Implementation Considerations
+
+**Data Requirements**:
+- **Macro Data**: 50+ years of monthly economic indicators
+- **Market Data**: Daily sector ETF prices, total return indices
+- **Corporate Actions**: Adjust for splits, dividends, composition changes
+- **Benchmark Data**: S&P 500 total return for comparison
+
+**Computational Complexity**:
+- **Signal Generation**: Real-time processing of 10+ macro indicators
+- **Portfolio Optimization**: Quadratic programming for risk-adjusted weights
+- **Backtesting**: Efficient historical simulation with realistic costs
+- **Monitoring**: Daily performance tracking and signal updates
+
+**Integration Points**:
+- **Risk Management**: Portfolio-level risk limits and stress testing
+- **Execution**: Sector ETF trading and liquidity management
+- **Reporting**: Performance attribution and signal explanation
+- **Compliance**: Investment guidelines and regulatory constraints
+
+### Model Maintenance
+
+**Monthly Updates**:
+- Update macro indicator data and phase identification
+- Review sector performance vs expectations
+- Adjust signal weights based on recent accuracy
+- Monitor structural change indicators
+
+**Quarterly Reviews**:
+- Comprehensive backtest refresh with latest data
+- Review sector classification changes
+- Assess model performance across recent market conditions
+- Update structural change assumptions
+
+**Annual Overhauls**:
+- Re-estimate phase identification parameters
+- Review and update sector rotation maps
+- Incorporate new research and academic findings
+- Consider adding new indicators or sectors
+
+### Expected Performance
+
+**Academic Evidence**:
+- **Excess Return**: 2-4% annualized alpha before costs
+- **Hit Rate**: 55-65% of quarterly periods outperform benchmark
+- **Sharpe Improvement**: 0.2-0.4 improvement over benchmark
+- **Drawdown Reduction**: 10-20% reduction in maximum drawdown
+
+**Realistic Expectations**:
+- **Not a crystal ball**: Macro signals have noise and false positives
+- **Cyclical dependence**: Works better in some cycles than others
+- **Implementation costs**: Trading costs and tracking error matter
+- **Structural changes**: Historical patterns may not repeat exactly
+
+**Risk Factors**:
+- **Model risk**: Overfitting to historical patterns
+- **Timing risk**: Phase transitions are identified with lag
+- **Structural risk**: Economic changes invalidate historical relationships
+- **Execution risk**: Sector ETF liquidity and tracking error

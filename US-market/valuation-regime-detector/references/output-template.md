@@ -4,7 +4,11 @@
 
 ## 1) Executive Summary (3–5 bullets)
 
-- [TODO]
+- **Valuation regime**: [Market/sector] is currently [cheap/neutral/expensive] at [Xth] percentile of historical valuation range
+- **Forward return expectation**: Based on current valuation, expected [3-year/5-year] annualized return is [X-Y]% (vs historical avg of Z%)
+- **Mean reversion signal**: Valuation is [X] standard deviations from mean; [high/moderate/low] probability of reversion over [timeframe]
+- **Sector dispersion**: Valuation spread between cheapest and most expensive sectors is [wide/normal/narrow], indicating [opportunity/risk]
+- **Key risk**: [Primary concern, e.g., "Earnings growth may not support current multiples" or "Rates rising faster than expected"]
 
 ## 2) Key Data (Table)
 
@@ -26,7 +30,11 @@
 
 ## 5) Next Steps
 
-- [TODO]
+- **Monitor earnings**: Track [earnings growth / margin trends / guidance] to validate valuation assumptions
+- **Positioning**: If valuation is extreme (>= 90th percentile), consider [reducing exposure / adding hedges / rotating to cheaper sectors]
+- **Update frequency**: Re-evaluate valuation regime [quarterly after earnings season / monthly / when multiples move >= X%]
+- **Scenario analysis**: Test sensitivity to [earnings growth / interest rate / risk premium] assumptions
+- **Relative value**: Compare [sector/stock] valuation to [peers / historical range / international markets] for confirmation
 
 ## 6) Disclaimer
 

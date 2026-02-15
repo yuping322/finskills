@@ -81,6 +81,237 @@ FAILURE_MODE {Sudden macro shock causes rapid multiple compression; breadth was 
 
 - If you cannot obtain reliable earnings: use market-level valuation proxies from public sources, or shift to **relative valuation** (sector vs market) with lower confidence.
 
+## Technical Notes & Implementation Details
+
+### Valuation Metric Selection
+
+**Primary Valuation Metrics**:
+- **CAPE (Cyclically Adjusted P/E)**: 10-year average earnings, smooths business cycles
+- **Forward P/E**: Based on consensus estimates, more forward-looking but noisier
+- **Earnings Yield (E/P)**: Inverse of P/E, linear relationship with expected returns
+- **EV/EBITDA**: Adjusts for debt and capital structure, useful for highly leveraged sectors
+- **Price-to-Book**: Stable book value, but less relevant for asset-light businesses
+- **Dividend Yield**: Direct cash return, but ignores growth components
+
+**Metric Selection Criteria**:
+- **Historical Coverage**: At least 20+ years of data for reliable percentile calculations
+- **Economic Rationale**: Clear link to discounted cash flow fundamentals
+- **Stability**: Not overly volatile, but responsive to changing conditions
+- **Coverage**: Available for target universe (index, sectors, individual stocks)
+
+**Data Quality Considerations**:
+- **Earnings Quality**: Adjust for one-time items, accounting changes, share buybacks
+- **Index Composition**: Account for changing index constituents over time
+- **Inflation Adjustment**: Use real terms for long-term comparisons
+- **Survivorship Bias**: Include delisted/bankrupt companies in historical calculations
+
+### Conditioning Variables Framework
+
+**Real Rates Impact**:
+```
+Expected_Return = Base_Valuation_Effect + Real_Rate_Adjustment
+Real_Rate_Adjustment = -λ × ΔReal_Rate
+```
+- **Higher real rates** → Lower equity valuations (higher discount rates)
+- **Falling real rates** → Support higher valuations
+- **Rate sensitivity** varies by sector (growth vs value)
+
+**Credit Stress Integration**:
+```
+Credit_Adjustment = β × Credit_Stress_ZScore
+```
+- **High credit stress** → Risk-off, favors quality over yield
+- **Low credit stress** → Risk-on, supports higher valuations
+- **Credit spreads** often lead equity market turns
+
+**Macro Context Matrix**:
+| Valuation | Real Rates | Credit Stress | Expected Returns |
+|-----------|------------|---------------|------------------|
+| Cheap | Falling | Low | Above average |
+| Cheap | Rising | High | Mixed/uncertain |
+| Expensive | Falling | Low | Still positive |
+| Expensive | Rising | High | Below average |
+
+### Statistical Framework
+
+**Percentile Calculation**:
+```
+Percentile = (Rank - 1) / (N - 1)
+Where Rank = position in sorted historical series
+```
+
+**Z-Score Normalization**:
+```
+Z = (Current - Historical_Mean) / Historical_Std
+Use only within stable sub-periods (e.g., post-1990)
+```
+
+**Regime Classification**:
+- **Cheap**: Percentile ≤ 20
+- **Below Average**: 20 < Percentile ≤ 40
+- **Neutral**: 40 < Percentile ≤ 60
+- **Above Average**: 60 < Percentile ≤ 80
+- **Expensive**: Percentile > 80
+
+**Signal Strength Scoring**:
+```
+Signal_Strength = Base_Valuation_Score + Conditioning_Adjustment
+Base_Valuation_Score = (50 - Percentile) / 50  (range: -1 to +1)
+Conditioning_Adjustment = Σ(Weight × Conditioning_Signal)
+```
+
+### Model Implementation Architecture
+
+**Data Pipeline**:
+1. **Data Collection**: Daily market data, monthly fundamentals
+2. **Quality Control**: Outlier detection, missing data interpolation
+3. **Metric Calculation**: Compute valuation metrics and conditioning variables
+4. **Percentile Ranking**: Rolling historical percentiles
+5. **Signal Generation**: Combine valuation and conditioning signals
+6. **Output Generation**: Regime classification and return expectations
+
+**Computational Efficiency**:
+- **Rolling Windows**: Use efficient rolling window calculations
+- **Vectorization**: Process multiple securities simultaneously
+- **Caching**: Store intermediate calculations for reuse
+- **Incremental Updates**: Update calculations incrementally vs full recalculation
+
+**Storage Requirements**:
+- **Historical Data**: 20+ years of daily price and monthly fundamental data
+- **Intermediate Calculations**: Rolling percentiles, z-scores, conditioning variables
+- **Signal History**: Track regime changes and signal performance over time
+
+## Backtest Framework
+
+### Backtest Design
+
+**Objective**: Test whether valuation regimes predict future equity returns.
+
+**Methodology**:
+1. **Regime Classification**: Apply valuation regime classification to historical data
+2. **Forward Return Calculation**: Calculate 1y/3y/5y forward total returns
+3. **Performance Analysis**: Compare returns across different regimes
+4. **Statistical Testing**: Test significance of return differences
+5. **Robustness Checks**: Test across different time periods and market conditions
+
+### Test Design Specifications
+
+**Sample Period**: Minimum 20 years, preferably 50+ years for statistical power
+**Frequency**: Monthly regime classification (avoid daily noise)
+**Universe**: S&P 500, sector ETFs, international markets
+**Returns**: Total returns (dividends reinvested)
+**Adjustments**: Inflation-adjusted real returns for long-term analysis
+
+### Performance Metrics
+
+**Return Analysis**:
+- **Mean Returns**: Average returns by regime
+- **Median Returns**: Robust measure of central tendency
+- **Return Distribution**: Full distribution analysis (percentiles, skewness)
+- **Hit Rates**: Percentage of periods with positive returns
+- **Volatility**: Return volatility by regime
+
+**Risk Metrics**:
+- **Maximum Drawdown**: Worst peak-to-trough decline by regime
+- **Downside Frequency**: How often returns fall below threshold
+- **Tail Risk**: 5th and 1st percentile return outcomes
+- **Correlation Analysis**: How regime returns correlate with other assets
+
+**Statistical Tests**:
+- **t-Tests**: Test significance of mean return differences
+- **Mann-Whitney U**: Non-parametric test of distribution differences
+- **Chi-Square**: Test independence of regime and return direction
+- **Regression Analysis**: Quantify relationship between valuation and returns
+
+### Falsification Criteria
+
+Model fails if:
+- **No Return Predictability**: Cheap regimes don't outperform expensive regimes
+- **Statistical Insignificance**: t-stat < 1.96 for return differences
+- **Instability**: Relationship breaks down in sub-periods
+- **Data Mining**: Results don't hold out-of-sample
+- **Economic Inconsistency**: Results contradict economic theory
+
+### Robustness Checks
+
+**Alternative Specifications**:
+- **Different Valuation Metrics**: Test CAPE, P/E, EV/EBITDA, dividend yield
+- **Different Percentile Windows**: 10y, 20y, 30y historical periods
+- **Different Conditioning Variables**: Real rates, credit spreads, inflation
+- **Different Return Horizons**: 6 months, 1 year, 3 years, 5 years, 10 years
+
+**Subperiod Analysis**:
+- **Decade-by-Decade**: Test consistency across different decades
+- **Market Regimes**: Test during recessions, expansions, crises
+- **Inflation Environments**: High vs low inflation periods
+- **Rate Regimes**: Rising vs falling interest rate environments
+
+**International Tests**:
+- **Developed Markets**: Europe, Japan, Australia
+- **Emerging Markets**: Asia, Latin America, Eastern Europe
+- **Sector Analysis**: Test across different industry sectors
+- **Factor Analysis**: Interaction with value, momentum, quality factors
+
+### Implementation Considerations
+
+**Data Requirements**:
+- **Price Data**: Daily total return indices for all test assets
+- **Fundamental Data**: Monthly earnings, dividends, book values
+- **Economic Data**: Interest rates, inflation, credit spreads
+- **Corporate Actions**: Splits, mergers, delistings for accurate returns
+
+**Computational Resources**:
+- **Processing Power**: Efficient handling of large datasets
+- **Storage**: Historical data storage and backup systems
+- **Memory**: Sufficient RAM for rolling window calculations
+- **Software**: Statistical packages for advanced analysis
+
+**Quality Assurance**:
+- **Data Validation**: Check for data errors and inconsistencies
+- **Outlier Detection**: Identify and handle extreme values
+- **Methodology Review**: Regular review of calculation methods
+- **Performance Monitoring**: Track model accuracy over time
+
+### Model Maintenance
+
+**Monthly Updates**:
+- Update valuation metrics and regime classifications
+- Review recent performance vs expectations
+- Monitor for structural changes in relationships
+- Adjust conditioning variable weights as needed
+
+**Quarterly Reviews**:
+- Comprehensive backtest refresh with latest data
+- Review regime classification accuracy
+- Assess model performance across recent market conditions
+- Update documentation and methodology notes
+
+**Annual Overhauls**:
+- Re-estimate historical relationships and parameters
+- Review and update valuation metric selection
+- Incorporate new research and academic findings
+- Consider adding new conditioning variables or markets
+
+### Expected Performance
+
+**Academic Evidence**:
+- **Return Spread**: 3-6% annualized return difference between cheap and expensive regimes
+- **Hit Rate**: 65-75% accuracy in predicting return direction
+- **Risk-Adjusted Performance**: 0.3-0.5 Sharpe ratio improvement
+- **Drawdown Reduction**: 20-30% reduction in maximum drawdowns
+
+**Realistic Expectations**:
+- **Not Market Timing**: Valuation works over multi-year horizons, not months
+- **Probabilistic Not Deterministic**: Cheap valuations improve odds, don't guarantee success
+- **Regime Dependence**: Effectiveness varies across market environments
+- **Implementation Lag**: Some delay in recognizing regime changes
+
+**Limitations and Risks**:
+- **Structural Changes**: Economic shifts may invalidate historical relationships
+- **Data Quality**: Fundamental data errors and revisions
+- **Model Risk**: Overfitting to historical patterns
+- **Market Efficiency**: Markets may adapt and reduce predictability
+
 ## Backtest Notes (Minimal)
 
 - Run valuation-regime backtests at monthly frequency to avoid look-ahead noise.
