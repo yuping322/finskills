@@ -11,6 +11,7 @@ from typing import Any
 
 from .provider_base import ToolProvider, ToolResult
 from .tool_registry import ToolRegistry
+from .akshare_health import get_health_monitor, check_akshare_health
 
 
 def _float_or_none(val: Any) -> float | None:
@@ -396,6 +397,18 @@ class AkshareProvider(ToolProvider):
     def call_tool(self, name: str, args: dict[str, Any], *, refresh: bool, meta_script: str) -> ToolResult:
         # refresh is accepted for parity; caching is handled at higher layers for now.
         _ = refresh
+        
+        # 获取健康监控器
+        health_monitor = get_health_monitor()
+        
+        # 执行健康检查（如果需要）
+        health_check_enabled = os.getenv("FINSKILLS_HEALTH_CHECK_ENABLED", "1").strip() in {"1", "true", "yes", "y"}
+        if health_check_enabled:
+            health_result = check_akshare_health(force=False)
+            if not health_result.is_healthy:
+                # 如果健康检查失败，记录警告但继续执行
+                print(f"[AKShare Health] 健康检查失败: {health_result.error}")
+        
         tool = self.registry.tool_index.get(name)
         if not tool:
             raise ValueError(f"Unknown tool: {name}")
@@ -833,11 +846,21 @@ class AkshareProvider(ToolProvider):
             data = None
             errors: list[str] = []
             attempt = 0
+            
+            # 增强的重试配置
+            is_degraded = health_monitor.is_degraded()
+            if is_degraded:
+                # 降级模式：减少重试次数，加快失败
+                max_retries = max(1, max_retries // 2)
+                retry_sleep = retry_sleep / 2
+            
             while True:
                 try:
                     raw = func(**call_kwargs)
                     data = _normalize_result(raw)
                     errors = []
+                    # 记录成功调用
+                    health_monitor.record_call(name, success=True)
                     break
                 except Exception as e:
                     errors = [str(e)]
@@ -847,8 +870,11 @@ class AkshareProvider(ToolProvider):
                     if name == "stock_notice_report" and isinstance(e, KeyError) and "'代码'" in msg:
                         data = []
                         errors = []
+                        # 这不算错误，是正常的无数据情况
+                        health_monitor.record_call(name, success=True)
                         break
                     
+                    # 判断是否可重试
                     retryable = any(
                         s in msg
                         for s in [
@@ -859,12 +885,26 @@ class AkshareProvider(ToolProvider):
                             "UNEXPECTED_EOF_WHILE_READING",
                             "SSLEOFError",
                             "SSLV3_ALERT_HANDSHAKE_FAILURE",
+                            "ConnectionError",
+                            "Timeout",
+                            "HTTPError",
                         ]
                     )
+                    
+                    # 如果是最后一次尝试或不可重试，记录失败并退出
                     if attempt >= max_retries or not retryable:
+                        health_monitor.record_call(name, success=False, error=msg)
                         break
+                    
+                    # 重试前等待
                     attempt += 1
-                    time.sleep(retry_sleep * (attempt + 1))
+                    wait_time = retry_sleep * (attempt + 1)
+                    
+                    # 降级模式下，添加额外的退避时间
+                    if is_degraded:
+                        wait_time *= 1.5
+                    
+                    time.sleep(wait_time)
                     continue
             elapsed = time.time() - started
 
@@ -876,5 +916,9 @@ class AkshareProvider(ToolProvider):
             "as_of": datetime.now().isoformat(timespec="seconds"),
             "elapsed_seconds": round(elapsed, 3),
             "params": call_kwargs,
+            "health_status": {
+                "is_degraded": health_monitor.is_degraded(),
+                "consecutive_failures": health_monitor.get_stats(name).consecutive_failures,
+            } if health_check_enabled else None,
         }
         return ToolResult(meta=meta, data=data, warnings=[], errors=errors)
