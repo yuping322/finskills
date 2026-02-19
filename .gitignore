@@ -12,6 +12,7 @@ env/
 venv/
 ENV/
 .venv
+.venv*/
 
 # IDE
 .vscode/
