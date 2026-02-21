@@ -28,3 +28,6 @@ Thumbs.db
 # FinSkills runtime caches
 cache/
 .cache/
+
+# Testing results
+testing/test-results/
